@@ -226,7 +226,7 @@
             // testLblResult
             // 
             this.testLblResult.AutoSize = true;
-            this.testLblResult.Location = new System.Drawing.Point(555, 242);
+            this.testLblResult.Location = new System.Drawing.Point(416, 255);
             this.testLblResult.Name = "testLblResult";
             this.testLblResult.Size = new System.Drawing.Size(35, 13);
             this.testLblResult.TabIndex = 30;
@@ -235,7 +235,7 @@
             // testLbl4
             // 
             this.testLbl4.AutoSize = true;
-            this.testLbl4.Location = new System.Drawing.Point(402, 211);
+            this.testLbl4.Location = new System.Drawing.Point(255, 255);
             this.testLbl4.Name = "testLbl4";
             this.testLbl4.Size = new System.Drawing.Size(35, 13);
             this.testLbl4.TabIndex = 29;
@@ -244,7 +244,7 @@
             // testLbl5
             // 
             this.testLbl5.AutoSize = true;
-            this.testLbl5.Location = new System.Drawing.Point(453, 211);
+            this.testLbl5.Location = new System.Drawing.Point(416, 171);
             this.testLbl5.Name = "testLbl5";
             this.testLbl5.Size = new System.Drawing.Size(35, 13);
             this.testLbl5.TabIndex = 28;
@@ -253,7 +253,7 @@
             // testLbl6
             // 
             this.testLbl6.AutoSize = true;
-            this.testLbl6.Location = new System.Drawing.Point(506, 211);
+            this.testLbl6.Location = new System.Drawing.Point(416, 201);
             this.testLbl6.Name = "testLbl6";
             this.testLbl6.Size = new System.Drawing.Size(35, 13);
             this.testLbl6.TabIndex = 27;
@@ -262,7 +262,7 @@
             // testLbl7
             // 
             this.testLbl7.AutoSize = true;
-            this.testLbl7.Location = new System.Drawing.Point(556, 211);
+            this.testLbl7.Location = new System.Drawing.Point(416, 228);
             this.testLbl7.Name = "testLbl7";
             this.testLbl7.Size = new System.Drawing.Size(35, 13);
             this.testLbl7.TabIndex = 26;
@@ -271,7 +271,7 @@
             // testLbl3
             // 
             this.testLbl3.AutoSize = true;
-            this.testLbl3.Location = new System.Drawing.Point(346, 211);
+            this.testLbl3.Location = new System.Drawing.Point(255, 228);
             this.testLbl3.Name = "testLbl3";
             this.testLbl3.Size = new System.Drawing.Size(35, 13);
             this.testLbl3.TabIndex = 25;
@@ -280,7 +280,7 @@
             // testLbl2
             // 
             this.testLbl2.AutoSize = true;
-            this.testLbl2.Location = new System.Drawing.Point(299, 211);
+            this.testLbl2.Location = new System.Drawing.Point(255, 201);
             this.testLbl2.Name = "testLbl2";
             this.testLbl2.Size = new System.Drawing.Size(35, 13);
             this.testLbl2.TabIndex = 24;
@@ -289,7 +289,7 @@
             // testLbl1
             // 
             this.testLbl1.AutoSize = true;
-            this.testLbl1.Location = new System.Drawing.Point(252, 211);
+            this.testLbl1.Location = new System.Drawing.Point(255, 171);
             this.testLbl1.Name = "testLbl1";
             this.testLbl1.Size = new System.Drawing.Size(35, 13);
             this.testLbl1.TabIndex = 23;
@@ -297,7 +297,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(271, 242);
+            this.button1.Location = new System.Drawing.Point(246, 292);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;
@@ -352,7 +352,7 @@
             // 
             // flipBtn
             // 
-            this.flipBtn.Location = new System.Drawing.Point(433, 263);
+            this.flipBtn.Location = new System.Drawing.Point(621, 288);
             this.flipBtn.Name = "flipBtn";
             this.flipBtn.Size = new System.Drawing.Size(75, 23);
             this.flipBtn.TabIndex = 16;
