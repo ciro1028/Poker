@@ -26,21 +26,21 @@ namespace Poker
         String[] handSuits = new String[] { "", "", "", "", "", "", "" };
 
         //check hand that is sent from method checkHands() on Form1 
-        public String checkHand(int[] hand)
+        public String checkHand(int[] handToCheck)
         {
+            foreach(int card in handToCheck){
+                Console.WriteLine("Hand to check: " + card);
+            }
+
             String handString = "";
             Boolean isFlush = false;
             Boolean isStraight = false;
             String isPair = "";
 
-            int[] transformedHand = new int[] { };
-            String[] transformedHandSuits = new String[] { };
+            isFlush = checkForFlush(handToCheck);
 
-            transformedHandSuits = transformHandsSuits(hand);
-            isFlush = checkForFlush(transformedHandSuits);
+            isStraight = checkForStraight(handToCheck);
 
-            transformedHand = transformHands(hand);
-            isStraight = checkForStraight(transformedHand);
             //isPair = checkForPairs(transformedHand);
 
             //Array.Sort<int>(transformedHand, new Comparison<int>(
@@ -62,12 +62,19 @@ namespace Poker
                 handString = isPair;
             }
 
-            Console.WriteLine("The hand is a: " + handString);
+            foreach (int card in handToCheck)
+            {
+                Console.WriteLine("Hand checked: " + card);
+            }
+
             return handString;
         }
 
         public Boolean checkForStraight(int[] checkStraightHand)
         {
+            int[] transformedHand = new int[] { };
+            transformedHand = transformHands(checkStraightHand);
+
             Boolean isStraight = false;
             int count = 0;
 
@@ -101,7 +108,6 @@ namespace Poker
             handNumbers = hand;
             for (int i = 0; i < hand.Length; i++)
             {
-                Console.WriteLine("Current number: " + hand[i]);
                 if (hand[i] < 14)
                 {
                     handNumbers[i] = hand[i];
@@ -153,8 +159,11 @@ namespace Poker
             return handSuits;
         }
 
-        public Boolean checkForFlush(String[] checkFlushHand)
+        public Boolean checkForFlush(int[] checkFlushHand)
         {
+            String[] transformedHandSuits = new String[] { };
+            transformedHandSuits = transformHandsSuits(checkFlushHand);
+
             Boolean flush;
             flush = false;
            

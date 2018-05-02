@@ -564,68 +564,69 @@ namespace Poker
 
 
             int randomNumber1;
-            randomNumber1 = random.Next(1, testDeck.Count);
+            randomNumber1 = random.Next(1, testDeck.Count + 1);
             num1 = testDeck[randomNumber1];
             testHandNums[0] = num1;
             testDeck.Remove(num1);
 
             int randomNumber2;
-            randomNumber2 = random.Next(1, testDeck.Count);
-            num2 = testDeck[randomNumber1];
+            randomNumber2 = random.Next(1, testDeck.Count + 1);
+            num2 = testDeck[randomNumber2];
             testHandNums[1] = num2;
             testDeck.Remove(num2);
 
             int randomNumber3;
-            randomNumber3 = random.Next(1, testDeck.Count);
+            randomNumber3 = random.Next(1, testDeck.Count + 1);
             num3 = testDeck[randomNumber3];
             testHandNums[2] = num3;
             testDeck.Remove(num3);
 
             int randomNumber4;
-            randomNumber4 = random.Next(1, testDeck.Count);
+            randomNumber4 = random.Next(1, testDeck.Count + 1);
             num4 = testDeck[randomNumber4];
             testHandNums[3] = num4;
             testDeck.Remove(num4);
 
             int randomNumber5;
-            randomNumber5 = random.Next(1, testDeck.Count);
+            randomNumber5 = random.Next(1, testDeck.Count + 1);
             num5 = testDeck[randomNumber5];
             testHandNums[4] = num5;
             testDeck.Remove(num5);
 
             int randomNumber6;
-            randomNumber6 = random.Next(1, testDeck.Count);
+            randomNumber6 = random.Next(1, testDeck.Count + 1);
             num6 = testDeck[randomNumber6];
             testHandNums[5] = num6;
             testDeck.Remove(num6);
 
             int randomNumber7;
-            randomNumber7 = random.Next(1, testDeck.Count);
+            randomNumber7 = random.Next(1, testDeck.Count + 1);
             num7 = testDeck[randomNumber7];
             testHandNums[6] = num7;
             testDeck.Remove(num7);
 
+            String[] suitedHand = new String[7];
+            suitedHand = hand.transformHandsSuits(testHandNums);
 
+            foreach (int card in testHandNums)
+            {
+                Console.WriteLine("Hand to check: " + card);
+            }
 
-            Array.Sort(testHandNums);
+            foreach (string card in suitedHand)
+            {
+                Console.WriteLine("Suited hand: " + card);
+            }
 
-            String[] suits = new string[7];
-            suits = hand.transformHandsSuits(testHandNums);
+            testLbl1.Text = (testHandNums[0]).ToString();
+            testLbl2.Text = (testHandNums[1]).ToString();
+            testLbl3.Text = (testHandNums[2]).ToString();
+            testLbl4.Text = (testHandNums[3]).ToString();
+            testLbl5.Text = (testHandNums[4]).ToString();
+            testLbl6.Text = (testHandNums[5]).ToString();
+            testLbl7.Text = (testHandNums[6]).ToString();
 
-            lblColors(suits);
-
-            testLblResult.Text = hand.checkHand(testHandNums);
-
-            int[] handTransformed = new int[7];
-            handTransformed = hand.transformHands(testHandNums);
-
-            testLbl1.Text = (handTransformed[0]).ToString();
-            testLbl2.Text = (handTransformed[1]).ToString();
-            testLbl3.Text = (handTransformed[2]).ToString();
-            testLbl4.Text = (handTransformed[3]).ToString();
-            testLbl5.Text = (handTransformed[4]).ToString();
-            testLbl6.Text = (handTransformed[5]).ToString();
-            testLbl7.Text = (handTransformed[6]).ToString();
+            lblColors(suitedHand);
 
 
 
