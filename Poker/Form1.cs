@@ -618,15 +618,22 @@ namespace Poker
                 Console.WriteLine("Suited hand: " + card);
             }
 
-            testLbl1.Text = (testHandNums[0]).ToString();
-            testLbl2.Text = (testHandNums[1]).ToString();
-            testLbl3.Text = (testHandNums[2]).ToString();
-            testLbl4.Text = (testHandNums[3]).ToString();
-            testLbl5.Text = (testHandNums[4]).ToString();
-            testLbl6.Text = (testHandNums[5]).ToString();
-            testLbl7.Text = (testHandNums[6]).ToString();
+            String[] detailedCards = new String[7];
+            for (int i = 0; i < 7; i++){
+                detailedCards[i] = (testHandNums[i]).ToString() + " of " + suitedHand[i];
+            }
 
-            lblColors(suitedHand);
+
+            testLbl1.Text = (detailedCards[0]).ToString();
+            testLbl2.Text = (detailedCards[1]).ToString();
+            testLbl3.Text = (detailedCards[2]).ToString();
+            testLbl4.Text = (detailedCards[3]).ToString();
+            testLbl5.Text = (detailedCards[4]).ToString();
+            testLbl6.Text = (detailedCards[5]).ToString();
+            testLbl7.Text = (detailedCards[6]).ToString();
+
+            //lblColors(suitedHand);
+
 
 
 
