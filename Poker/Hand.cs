@@ -71,7 +71,7 @@ namespace Poker
             Boolean isStraight = false;
             int count = 0;
 
-            //Array.Sort(checkStraightHand);
+            Array.Sort(checkStraightHand);
 
             for(int i = 0; i < checkStraightHand.Length - 1; i++)
             {
