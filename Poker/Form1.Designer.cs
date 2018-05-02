@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.testLbl = new System.Windows.Forms.Label();
+            this.testLblResult = new System.Windows.Forms.Label();
+            this.testLbl4 = new System.Windows.Forms.Label();
+            this.testLbl5 = new System.Windows.Forms.Label();
+            this.testLbl6 = new System.Windows.Forms.Label();
+            this.testLbl7 = new System.Windows.Forms.Label();
+            this.testLbl3 = new System.Windows.Forms.Label();
+            this.testLbl2 = new System.Windows.Forms.Label();
+            this.testLbl1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.secondFlopPB = new System.Windows.Forms.PictureBox();
             this.thirdFlopPB = new System.Windows.Forms.PictureBox();
@@ -178,7 +185,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.testLbl);
+            this.panel1.Controls.Add(this.testLblResult);
+            this.panel1.Controls.Add(this.testLbl4);
+            this.panel1.Controls.Add(this.testLbl5);
+            this.panel1.Controls.Add(this.testLbl6);
+            this.panel1.Controls.Add(this.testLbl7);
+            this.panel1.Controls.Add(this.testLbl3);
+            this.panel1.Controls.Add(this.testLbl2);
+            this.panel1.Controls.Add(this.testLbl1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.secondFlopPB);
             this.panel1.Controls.Add(this.thirdFlopPB);
@@ -209,14 +223,77 @@
             this.panel1.Size = new System.Drawing.Size(958, 549);
             this.panel1.TabIndex = 0;
             // 
-            // testLbl
+            // testLblResult
             // 
-            this.testLbl.AutoSize = true;
-            this.testLbl.Location = new System.Drawing.Point(282, 211);
-            this.testLbl.Name = "testLbl";
-            this.testLbl.Size = new System.Drawing.Size(35, 13);
-            this.testLbl.TabIndex = 23;
-            this.testLbl.Text = "label1";
+            this.testLblResult.AutoSize = true;
+            this.testLblResult.Location = new System.Drawing.Point(555, 242);
+            this.testLblResult.Name = "testLblResult";
+            this.testLblResult.Size = new System.Drawing.Size(35, 13);
+            this.testLblResult.TabIndex = 30;
+            this.testLblResult.Text = "label7";
+            // 
+            // testLbl4
+            // 
+            this.testLbl4.AutoSize = true;
+            this.testLbl4.Location = new System.Drawing.Point(402, 211);
+            this.testLbl4.Name = "testLbl4";
+            this.testLbl4.Size = new System.Drawing.Size(35, 13);
+            this.testLbl4.TabIndex = 29;
+            this.testLbl4.Text = "label6";
+            // 
+            // testLbl5
+            // 
+            this.testLbl5.AutoSize = true;
+            this.testLbl5.Location = new System.Drawing.Point(453, 211);
+            this.testLbl5.Name = "testLbl5";
+            this.testLbl5.Size = new System.Drawing.Size(35, 13);
+            this.testLbl5.TabIndex = 28;
+            this.testLbl5.Text = "label5";
+            // 
+            // testLbl6
+            // 
+            this.testLbl6.AutoSize = true;
+            this.testLbl6.Location = new System.Drawing.Point(506, 211);
+            this.testLbl6.Name = "testLbl6";
+            this.testLbl6.Size = new System.Drawing.Size(35, 13);
+            this.testLbl6.TabIndex = 27;
+            this.testLbl6.Text = "label4";
+            // 
+            // testLbl7
+            // 
+            this.testLbl7.AutoSize = true;
+            this.testLbl7.Location = new System.Drawing.Point(556, 211);
+            this.testLbl7.Name = "testLbl7";
+            this.testLbl7.Size = new System.Drawing.Size(35, 13);
+            this.testLbl7.TabIndex = 26;
+            this.testLbl7.Text = "label3";
+            // 
+            // testLbl3
+            // 
+            this.testLbl3.AutoSize = true;
+            this.testLbl3.Location = new System.Drawing.Point(346, 211);
+            this.testLbl3.Name = "testLbl3";
+            this.testLbl3.Size = new System.Drawing.Size(35, 13);
+            this.testLbl3.TabIndex = 25;
+            this.testLbl3.Text = "label2";
+            // 
+            // testLbl2
+            // 
+            this.testLbl2.AutoSize = true;
+            this.testLbl2.Location = new System.Drawing.Point(299, 211);
+            this.testLbl2.Name = "testLbl2";
+            this.testLbl2.Size = new System.Drawing.Size(35, 13);
+            this.testLbl2.TabIndex = 24;
+            this.testLbl2.Text = "label1";
+            // 
+            // testLbl1
+            // 
+            this.testLbl1.AutoSize = true;
+            this.testLbl1.Location = new System.Drawing.Point(252, 211);
+            this.testLbl1.Name = "testLbl1";
+            this.testLbl1.Size = new System.Drawing.Size(35, 13);
+            this.testLbl1.TabIndex = 23;
+            this.testLbl1.Text = "label1";
             // 
             // button1
             // 
@@ -1554,8 +1631,15 @@
         private System.Windows.Forms.Label hand4Lbl;
         private System.Windows.Forms.Label hand3Lbl;
         private System.Windows.Forms.Label hand2Lbl;
-        private System.Windows.Forms.Label testLbl;
+        private System.Windows.Forms.Label testLbl1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label testLblResult;
+        private System.Windows.Forms.Label testLbl4;
+        private System.Windows.Forms.Label testLbl5;
+        private System.Windows.Forms.Label testLbl6;
+        private System.Windows.Forms.Label testLbl7;
+        private System.Windows.Forms.Label testLbl3;
+        private System.Windows.Forms.Label testLbl2;
     }
 }
 

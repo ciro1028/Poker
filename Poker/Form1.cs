@@ -622,7 +622,7 @@ namespace Poker
 
             testHand = testHand + " --- Hand is a: " + hand.checkHand(testHandNums);
 
-            this.testLbl.Text = testHand;
+            this.testLbl1.Text = testHand;
 
             //String str = "";
 
@@ -635,5 +635,6 @@ namespace Poker
 
             //Console.WriteLine("----------");
         }
+
     }
 }
