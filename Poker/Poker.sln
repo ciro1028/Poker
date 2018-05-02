@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker", "Poker.csproj", "{600DE9F2-2C0E-4B52-8664-A1439AD3DBBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{600DE9F2-2C0E-4B52-8664-A1439AD3DBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600DE9F2-2C0E-4B52-8664-A1439AD3DBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600DE9F2-2C0E-4B52-8664-A1439AD3DBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600DE9F2-2C0E-4B52-8664-A1439AD3DBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
