@@ -608,6 +608,9 @@ namespace Poker
             String[] suitedHand = new String[7];
             suitedHand = hand.transformHandsSuits(testHandNums);
 
+            int[] transformedHand = new int[7];
+            transformedHand = hand.transformHands(testHandNums);
+
             foreach (int card in testHandNums)
             {
                 Console.WriteLine("Hand to check: " + card);
@@ -620,9 +623,11 @@ namespace Poker
 
             String[] detailedCards = new String[7];
             for (int i = 0; i < 7; i++){
-                detailedCards[i] = (testHandNums[i]).ToString() + " of " + suitedHand[i];
+                
+                detailedCards[i] = (transformedHand[i]).ToString() + " of " + suitedHand[i];
             }
 
+            String result = hand.checkHand(testHandNums);
 
             testLbl1.Text = (detailedCards[0]).ToString();
             testLbl2.Text = (detailedCards[1]).ToString();
@@ -631,6 +636,8 @@ namespace Poker
             testLbl5.Text = (detailedCards[4]).ToString();
             testLbl6.Text = (detailedCards[5]).ToString();
             testLbl7.Text = (detailedCards[6]).ToString();
+
+            testLblResult.Text = result;
 
             //lblColors(suitedHand);
 

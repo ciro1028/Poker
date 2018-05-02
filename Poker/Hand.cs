@@ -41,7 +41,7 @@ namespace Poker
 
             isStraight = checkForStraight(handToCheck);
 
-            //isPair = checkForPairs(transformedHand);
+            //isPair = checkForPairs(handToCheck);
 
             //Array.Sort<int>(transformedHand, new Comparison<int>(
                                     //(i1, i2) => i2.CompareTo(i1)
