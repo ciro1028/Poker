@@ -605,24 +605,29 @@ namespace Poker
             testHandNums[6] = num7;
             testDeck.Remove(num7);
 
-            String testHand = "";
+
+
+            Array.Sort(testHandNums);
+
+            String[] suits = new string[7];
+            suits = hand.transformHandsSuits(testHandNums);
+
+            lblColors(suits);
+
+            testLblResult.Text = hand.checkHand(testHandNums);
 
             int[] handTransformed = new int[7];
             handTransformed = hand.transformHands(testHandNums);
 
-            Array.Sort(handTransformed);
+            testLbl1.Text = (handTransformed[0]).ToString();
+            testLbl2.Text = (handTransformed[1]).ToString();
+            testLbl3.Text = (handTransformed[2]).ToString();
+            testLbl4.Text = (handTransformed[3]).ToString();
+            testLbl5.Text = (handTransformed[4]).ToString();
+            testLbl6.Text = (handTransformed[5]).ToString();
+            testLbl7.Text = (handTransformed[6]).ToString();
 
-            for (int i = 0; i < handTransformed.Length; i++){
-                if (i == 0) {
-                    testHand = (handTransformed[i]).ToString();
-                } else {
-                    testHand = testHand + ",  " + handTransformed[i];
-                }
-            }
 
-            testHand = testHand + " --- Hand is a: " + hand.checkHand(testHandNums);
-
-            this.testLbl1.Text = testHand;
 
             //String str = "";
 
@@ -636,5 +641,127 @@ namespace Poker
             //Console.WriteLine("----------");
         }
 
+        public void lblColors(String[] suits) {
+            switch (suits[0])
+            {
+                case "spades":
+                    testLbl1.ForeColor = Color.Blue;
+                    break;
+                case "clubs":
+                    testLbl1.ForeColor = Color.Purple;
+                    break;
+                case "diamonds":
+                    testLbl1.ForeColor = Color.Yellow;
+                    break;
+                case "hearts":
+                    testLbl1.ForeColor = Color.Red;
+                    break;
+                default:
+                    break;
+            }
+
+            switch (suits[1])
+            {
+                case "spades":
+                    testLbl2.ForeColor = Color.Blue;
+                    break;
+                case "clubs":
+                    testLbl2.ForeColor = Color.Purple;
+                    break;
+                case "diamonds":
+                    testLbl2.ForeColor = Color.Yellow;
+                    break;
+                case "hearts":
+                    testLbl2.ForeColor = Color.Red;
+                    break;
+                default:
+                    break;
+            }
+            switch (suits[2])
+            {
+                case "spades":
+                    testLbl3.ForeColor = Color.Blue;
+                    break;
+                case "clubs":
+                    testLbl3.ForeColor = Color.Purple;
+                    break;
+                case "diamonds":
+                    testLbl3.ForeColor = Color.Yellow;
+                    break;
+                case "hearts":
+                    testLbl3.ForeColor = Color.Red;
+                    break;
+                default:
+                    break;
+            }
+            switch (suits[3])
+            {
+                case "spades":
+                    testLbl4.ForeColor = Color.Blue;
+                    break;
+                case "clubs":
+                    testLbl4.ForeColor = Color.Purple;
+                    break;
+                case "diamonds":
+                    testLbl4.ForeColor = Color.Yellow;
+                    break;
+                case "hearts":
+                    testLbl4.ForeColor = Color.Red;
+                    break;
+                default:
+                    break;
+            }
+            switch (suits[4])
+            {
+                case "spades":
+                    testLbl5.ForeColor = Color.Blue;
+                    break;
+                case "clubs":
+                    testLbl5.ForeColor = Color.Purple;
+                    break;
+                case "diamonds":
+                    testLbl5.ForeColor = Color.Yellow;
+                    break;
+                case "hearts":
+                    testLbl5.ForeColor = Color.Red;
+                    break;
+                default:
+                    break;
+            }
+            switch (suits[5])
+            {
+                case "spades":
+                    testLbl6.ForeColor = Color.Blue;
+                    break;
+                case "clubs":
+                    testLbl6.ForeColor = Color.Purple;
+                    break;
+                case "diamonds":
+                    testLbl6.ForeColor = Color.Yellow;
+                    break;
+                case "hearts":
+                    testLbl6.ForeColor = Color.Red;
+                    break;
+                default:
+                    break;
+            }
+            switch (suits[6])
+            {
+                case "spades":
+                    testLbl7.ForeColor = Color.Blue;
+                    break;
+                case "clubs":
+                    testLbl7.ForeColor = Color.Purple;
+                    break;
+                case "diamonds":
+                    testLbl7.ForeColor = Color.Yellow;
+                    break;
+                case "hearts":
+                    testLbl7.ForeColor = Color.Red;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

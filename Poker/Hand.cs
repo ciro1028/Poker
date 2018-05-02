@@ -41,7 +41,7 @@ namespace Poker
 
             transformedHand = transformHands(hand);
             isStraight = checkForStraight(transformedHand);
-            isPair = checkForPairs(transformedHand);
+            //isPair = checkForPairs(transformedHand);
 
             //Array.Sort<int>(transformedHand, new Comparison<int>(
                                     //(i1, i2) => i2.CompareTo(i1)
@@ -66,16 +66,16 @@ namespace Poker
             return handString;
         }
 
-        public Boolean checkForStraight(int[] hand)
+        public Boolean checkForStraight(int[] checkStraightHand)
         {
             Boolean isStraight = false;
             int count = 0;
 
-            Array.Sort(hand);
+            //Array.Sort(checkStraightHand);
 
-            for(int i = 0; i < hand.Length - 1; i++)
+            for(int i = 0; i < checkStraightHand.Length - 1; i++)
             {
-                if ((hand[i + 1] - hand[i]) == 1)
+                if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1)
                 {
                     count++;
                 } else if (count < 4)
@@ -153,7 +153,7 @@ namespace Poker
             return handSuits;
         }
 
-        public Boolean checkForFlush(String[] hand)
+        public Boolean checkForFlush(String[] checkFlushHand)
         {
             Boolean flush;
             flush = false;
@@ -161,11 +161,11 @@ namespace Poker
             for (int i = 0; i < 3; i++)
             {
                 int count = 0;
-                for (int j = 0; j < hand.Length; j++)
+                for (int j = 0; j < checkFlushHand.Length; j++)
                 {
                     if (i != j)
                     {
-                        if (hand[i] == hand[j])
+                        if (checkFlushHand[i] == checkFlushHand[j])
                         {
                             count++;
                         }
