@@ -24,45 +24,28 @@ namespace Poker
         List<int> pairs2 = new List<int>();
         int[] handNumbers = new int[] { 0, 0, 0, 0, 0, 0, 0 };
         String[] handSuits = new String[] { "", "", "", "", "", "", "" };
-        Boolean isRoyal = false;
 
 
         //check hand that is sent from method checkHands() on Form1 
         public String[] checkHand(int[] handToCheck)
         {
-            String handString = "";
-            Boolean isFlush = false;
-            Boolean isStraight = false;
-            String isPair = "";
             String[] handInfo = new String[7];
 
-            isFlush = checkForFlush(handToCheck);
+            int pair = Convert.ToInt32(checkForPairs(handToCheck)[1]);
+            int straight = Convert.ToInt32(checkForStraight(handToCheck)[1]);
+            int flush = Convert.ToInt32(checkForFlush(handToCheck)[1]);
 
-            isStraight = checkForStraight(handToCheck);
-
-            int[] isPairHand = new int[5];
-
-            handInfo = checkForPairs(handToCheck);
-
-            // setting string that is going to be sent to Form1 with the resulted hand
-            if (isFlush && isStraight && isRoyal){
-                handString = "Royal Flush";
-            } else if (isFlush && isStraight)
-            {
-                handString = "Straight Flush";
-            } else if (isFlush)
-            {
-                handString = "Flush";
-            } else if (isStraight)
-            {
-                handString = "Straight";
-            } else
-            {
-                handString = isPair;
+            if (pair > straight && pair > flush){
+                handInfo = checkForPairs(handToCheck);
+            } else if (straight > pair && straight > flush){
+                handInfo = checkForStraight(handToCheck);
+            } else if (flush > pair && flush > straight){
+                handInfo = checkForFlush(handToCheck);
             }
-            isRoyal = false;
 
-            handInfo[6] = getHandNumberStrenght(handString);
+            Console.WriteLine("Pair " + pair);
+            Console.WriteLine("Flush " + flush);
+            Console.WriteLine("Straight " + straight);
 
             return handInfo;
         }
@@ -104,34 +87,34 @@ namespace Poker
             String handNumberStrenght = "";
             switch (hand) {
                 case "High Card":
-                    handNumberStrenght = "10";
+                    handNumberStrenght = "1";
                     break;
                 case "One Pair":
-                    handNumberStrenght = "9";
-                    break;
-                case "Two Pairs":
-                    handNumberStrenght = "8";
-                    break;
-                case "Three of a Kind":
-                    handNumberStrenght = "7";
-                    break;
-                case "Straight":
-                    handNumberStrenght = "6";
-                    break;
-                case "Flush":
-                    handNumberStrenght = "5";
-                    break;
-                case "Full House":
-                    handNumberStrenght = "4";
-                    break;
-                case "Fout of a Kind":
-                    handNumberStrenght = "3";
-                    break;
-                case "Straight Flush":
                     handNumberStrenght = "2";
                     break;
+                case "Two Pairs":
+                    handNumberStrenght = "3";
+                    break;
+                case "Three of a Kind":
+                    handNumberStrenght = "4";
+                    break;
+                case "Straight":
+                    handNumberStrenght = "5";
+                    break;
+                case "Flush":
+                    handNumberStrenght = "6";
+                    break;
+                case "Full House":
+                    handNumberStrenght = "7";
+                    break;
+                case "Fout of a Kind":
+                    handNumberStrenght = "8";
+                    break;
+                case "Straight Flush":
+                    handNumberStrenght = "9";
+                    break;
                 case "Royal Flush":
-                    handNumberStrenght = "1";
+                    handNumberStrenght = "10";
                     break;
                 default:
                     break;
@@ -168,20 +151,21 @@ namespace Poker
         }
 
         // this method checks if the hand is a straight
-        public Boolean checkForStraight(int[] checkStraightHand)
+        public String[] checkForStraight(int[] checkStraightHand)
         {
             int[] transformedHand = new int[] { };
             transformedHand = transformHands(checkStraightHand);
 
-            Boolean isStraight = false;
             int count = 0;
             Boolean checkStraightWithAce = false;
+            List<int> finalHand = new List<int> {};
+            String[] handInfo = new String[7];
 
             Array.Sort(checkStraightHand);
 
-            for(int i = 0; i < checkStraightHand.Length - 1; i++)
+            for(int i = 0; i < 6; i++)
             {
-                if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1)
+                if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1 || checkStraightHand[i + 1] == checkStraightHand[i])
                 {
                     if (count == 0){
                         if (checkStraightHand[i] == 10 || checkStraightHand[i] == 23 || checkStraightHand[i] == 36 || checkStraightHand[i] == 49)
@@ -189,19 +173,35 @@ namespace Poker
                             checkStraightWithAce = true;
                         }
                     }
-                    count++;
+
+                    if (checkStraightHand[i + 1] != checkStraightHand[i]){
+                        finalHand.Add(checkStraightHand[i]);
+
+                        count++;
+                        if (count >= 4){
+                            finalHand.Add(checkStraightHand[i + 1]);
+                        }
+                    }
                 } else if (count < 4)
                 {
                     count = 0;
+                    finalHand.Clear();
                 }
             }
+
+            List<int> distinct = finalHand.Distinct().ToList();
 
             if (checkStraightWithAce){
                 if (count == 3){
                     foreach(int current in transformedHand){
                         if (current == 1){
-                            isStraight = true;
-                            isRoyal = true;
+                            handInfo[0] = "Straight";
+                            handInfo[1] = "6";
+                            handInfo[6] = finalHand[0].ToString();
+                            handInfo[5] = finalHand[1].ToString();
+                            handInfo[4] = finalHand[2].ToString();
+                            handInfo[3] = finalHand[3].ToString();
+                            handInfo[2] = finalHand[4].ToString();
                         }
                     } 
                 }
@@ -209,20 +209,26 @@ namespace Poker
 
             if (count >= 4)
             {
-                isStraight = true;
+                handInfo[0] = "Straight";
+                handInfo[1] = "6";
+                handInfo[6] = finalHand[0].ToString();
+                handInfo[5] = finalHand[1].ToString();
+                handInfo[4] = finalHand[2].ToString();
+                handInfo[3] = finalHand[3].ToString();
+                handInfo[2] = finalHand[4].ToString();
             }
 
-            return isStraight;
+
+            return handInfo;
         }
 
         // this method checks if the hand is a flush
-        public Boolean checkForFlush(int[] checkFlushHand)
+        public String[] checkForFlush(int[] checkFlushHand)
         {
             String[] transformedHandSuits = new String[7];
             transformedHandSuits = transformHandsSuits(checkFlushHand);
 
-            Boolean flush;
-            flush = false;
+            String[] handInfo = new string[6];
 
             for (int i = 0; i < 3; i++)
             {
@@ -240,11 +246,12 @@ namespace Poker
                 }
                 if (count >= 4)
                 {
-                    flush = true;
+                    //handInfo[0] = "Flush";
+                    //handInfo[1] = "5";
                 }
             }
 
-            return flush;
+            return handInfo;
         }
 
         // this method checks if the hand for pairs, kinds, and full house. Also for higher card.
@@ -454,6 +461,8 @@ namespace Poker
             for (int i = 1; i < 6; i++){
                 handInfo[i] = (finalHand[i - 1]).ToString();
             }
+
+            handInfo[1] = getHandNumberStrenght(handInfo[0]);
 
             return handInfo;
         }

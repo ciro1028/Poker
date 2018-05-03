@@ -224,8 +224,6 @@ namespace Poker
                 if (playersList[i] == 1)
                 {
                     hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
-                    setTable.listOfPlayers[i].currentNumberStrenght = hand.checkHand(setTable.listOfPlayers[i].hand)[6];
-                    Console.WriteLine(setTable.listOfPlayers[i].currentNumberStrenght);
                 }
                 if (playersList[i] == 2)
                 {
@@ -285,6 +283,7 @@ namespace Poker
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
+            //test();
             this.flipBtn.Visible = false;
 
             hand.resetHand();
@@ -396,6 +395,9 @@ namespace Poker
             {
                 this.riverPB.Load(("../../images/png/" + correctedNumbers(flopCards[4]) + "_of_" + suit + ".png"));
                 this.riverPB.BackColor = Color.White;
+                this.turnPB.BackColor = Color.White;
+                this.flipBtn.Text = "Deal Flop";
+                this.dealFlopLb.Text = "Deal Flop!";
                 this.flipBtn.Visible = false;
                 this.dealFlopLb.Visible = false;
                 allCardsShown = true;
@@ -673,93 +675,102 @@ namespace Poker
         //    }
         //}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ////int count = 0;
+        //private void test()
+        //{
+        //    int count = 0;
+        //    string handResult = "";
+        //    do
+        //    {
 
-            ////do
-            ////{
+        //        int num1 = 0;
+        //        int num2 = 0;
+        //        int num3 = 0;
+        //        int num4 = 0;
+        //        int num5 = 0;
+        //        int num6 = 0;
+        //        int num7 = 0;
+        //        int[] testHandNums = new int[7];
 
-            //    int num1 = 0;
-            //    int num2 = 0;
-            //    int num3 = 0;
-            //    int num4 = 0;
-            //    int num5 = 0;
-            //    int num6 = 0;
-            //    int num7 = 0;
-            //    int[] testHandNums = new int[7];
+        //        List<int> testDeck = new List<int>();
 
-            //    List<int> testDeck = new List<int>();
+        //        for (int i = 1; i < 53; i++)
+        //        {
+        //            testDeck.Add(i);
+        //        }
 
-            //    for (int i = 1; i < 53; i++)
-            //    {
-            //        testDeck.Add(i);
-            //    }
+        //        String[] handInfo = new string[7];
 
-            //    String[] handInfo = new string[6];
+        //        int randomNumber1;
+        //        randomNumber1 = random.Next(1, testDeck.Count + 1) - 1;
+        //        num1 = testDeck[randomNumber1];
+        //        testHandNums[0] = num1;
+        //        testDeck.Remove(num1);
 
-            //    int randomNumber1;
-            //    randomNumber1 = random.Next(1, testDeck.Count + 1) - 1;
-            //    num1 = testDeck[randomNumber1];
-            //    testHandNums[0] = num1;
-            //    testDeck.Remove(num1);
+        //        int randomNumber2;
+        //        randomNumber2 = random.Next(1, testDeck.Count + 1) - 1;
+        //        num2 = testDeck[randomNumber2];
+        //        testHandNums[1] = num2;
+        //        testDeck.Remove(num2);
 
-            //    int randomNumber2;
-            //    randomNumber2 = random.Next(1, testDeck.Count + 1) - 1;
-            //    num2 = testDeck[randomNumber2];
-            //    testHandNums[1] = num2;
-            //    testDeck.Remove(num2);
+        //        int randomNumber3;
+        //        randomNumber3 = random.Next(1, testDeck.Count + 1) - 1;
+        //        num3 = testDeck[randomNumber3];
+        //        testHandNums[2] = num3;
+        //        testDeck.Remove(num3);
 
-            //    int randomNumber3;
-            //    randomNumber3 = random.Next(1, testDeck.Count + 1) - 1;
-            //    num3 = testDeck[randomNumber3];
-            //    testHandNums[2] = num3;
-            //    testDeck.Remove(num3);
+        //        int randomNumber4;
+        //        randomNumber4 = random.Next(1, testDeck.Count + 1) - 1;
+        //        num4 = testDeck[randomNumber4];
+        //        testHandNums[3] = num4;
+        //        testDeck.Remove(num4);
 
-            //    int randomNumber4;
-            //    randomNumber4 = random.Next(1, testDeck.Count + 1) - 1;
-            //    num4 = testDeck[randomNumber4];
-            //    testHandNums[3] = num4;
-            //    testDeck.Remove(num4);
+        //        int randomNumber5;
+        //        randomNumber5 = random.Next(1, testDeck.Count + 1) - 1;
+        //        num5 = testDeck[randomNumber5];
+        //        testHandNums[4] = num5;
+        //        testDeck.Remove(num5);
 
-            //    int randomNumber5;
-            //    randomNumber5 = random.Next(1, testDeck.Count + 1) - 1;
-            //    num5 = testDeck[randomNumber5];
-            //    testHandNums[4] = num5;
-            //    testDeck.Remove(num5);
+        //        int randomNumber6;
+        //        randomNumber6 = random.Next(1, testDeck.Count + 1) - 1;
+        //        num6 = testDeck[randomNumber6];
+        //        testHandNums[5] = num6;
+        //        testDeck.Remove(num6);
 
-            //    int randomNumber6;
-            //    randomNumber6 = random.Next(1, testDeck.Count + 1) - 1;
-            //    num6 = testDeck[randomNumber6];
-            //    testHandNums[5] = num6;
-            //    testDeck.Remove(num6);
+        //        int randomNumber7;
+        //        randomNumber7 = random.Next(1, testDeck.Count + 1) - 1;
+        //        num7 = testDeck[randomNumber7];
+        //        testHandNums[6] = num7;
+        //        testDeck.Remove(num7);
 
-            //    int randomNumber7;
-            //    randomNumber7 = random.Next(1, testDeck.Count + 1) - 1;
-            //    num7 = testDeck[randomNumber7];
-            //    testHandNums[6] = num7;
-            //    testDeck.Remove(num7);
+        //        handInfo = hand.checkForStraight(testHandNums);
 
-            //    handInfo = hand.checkHand(testHandNums);
+        //        handResult = handInfo[0];
 
-            //    testLblResult.Text = handInfo[0];
 
-            //    testLbl1.Text = (testHandNums[0]).ToString();
-            //    testLbl2.Text = (testHandNums[1]).ToString();
-            //    testLbl3.Text = (testHandNums[2]).ToString();
-            //    testLbl4.Text = (testHandNums[3]).ToString();
-            //    testLbl5.Text = (testHandNums[4]).ToString();
-            //    testLbl6.Text = (testHandNums[5]).ToString();
-            //    testLbl7.Text = (testHandNums[6]).ToString();
+        //        Console.WriteLine("----------------");
+        //        Console.WriteLine("HandInfo " + handInfo[0]);
+        //        Console.WriteLine("Hand is strenght is: " + handInfo[1]);
+        //        Console.WriteLine("Hand: " + handInfo[2] + " " + handInfo[3] + " " + handInfo[4] + " " + handInfo[5] + " " + handInfo[6]);
 
-            //    //count++;
-            //    //eighthPPlayingLbl.Text = count.ToString();
+        //        Console.WriteLine(testHandNums[0].ToString());
+        //        Console.WriteLine(testHandNums[1].ToString());
+        //        Console.WriteLine(testHandNums[2].ToString());
+        //        Console.WriteLine(testHandNums[3].ToString());
+        //        Console.WriteLine(testHandNums[4].ToString());
+        //        Console.WriteLine(testHandNums[5].ToString());
+        //        Console.WriteLine(testHandNums[6].ToString());
+        //        Console.WriteLine("----------------");
+        //        Console.WriteLine("----------------");
+        //        Console.WriteLine("----------------");
 
-            ////} while (testLblResult.Text != "Full House");
-        }
+        //        count++;
+        //        //eighthPPlayingLbl.Text = count.ToString();
 
-        public void lblColors(String[] suits)
-        {
+        //    } while (handResult != "Straight");
+        //}
+
+        //public void lblColors(String[] suits)
+        //{
         //    switch (suits[0])
         //    {
         //        case "spades":
@@ -880,6 +891,6 @@ namespace Poker
         //        default:
         //            break;
         //    }
-        }
+        //}
     }
 }
