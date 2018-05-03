@@ -549,64 +549,122 @@ namespace Poker
         // method to handle each player's turn
         public void betTurn()
         {
-            switch (currentBettingPlayer)
-            {
-                case 1:
-                    this.turnCK1.BackColor = Color.Lime;
-                    this.firstPbetRB.Visible = true;
-                    this.firstPCheckRB.Visible = true;
-                    this.firstPBetBtn.Visible = true;
-                    break;
-                case 2:
-                    this.turnCK2.BackColor = Color.Lime;
-                    this.secondPbetRB.Visible = true;
-                    this.secondPCheckRB.Visible = true;
-                    this.secondPBetBtn.Visible = true;
-                    break;
-                case 3:
-                    this.turnCK3.BackColor = Color.Lime;
-                    this.thirdPbetRB.Visible = true;
-                    this.thirdPCheckRB.Visible = true;
-                    this.thirdPBetBtn.Visible = true;
-                    break;
-                case 4:
-                    this.turnCK4.BackColor = Color.Lime;
-                    this.fourthPbetRB.Visible = true;
-                    this.fourthPCheckRB.Visible = true;
-                    this.fourthPBetBtn.Visible = true;
-                    break;
-                case 5:
-                    this.turnCK5.BackColor = Color.Lime;
-                    this.fifthPbetRB.Visible = true;
-                    this.fifthPCheckRB.Visible = true;
-                    this.fifthPBetBtn.Visible = true;
-                    break;
-                case 6:
-                    this.turnCK6.BackColor = Color.Lime;
-                    this.sixthPbetRB.Visible = true;
-                    this.sixthPCheckRB.Visible = true;
-                    this.sixthPBetBtn.Visible = true;
-                    break;
-                case 7:
-                    this.turnCK7.BackColor = Color.Lime;
-                    this.seventhPbetRB.Visible = true;
-                    this.seventhPCheckRB.Visible = true;
-                    this.seventhPBetBtn.Visible = true;
-                    break;
-                case 8:
-                    this.turnCK8.BackColor = Color.Lime;
-                    this.eighthPbetRB.Visible = true;
-                    this.eighthPCheckRB.Visible = true;
-                    this.eighthPBetBtn.Visible = true;
-                    break;
+            if (currentBettingPlayerCount == 0 && currentBettingPlayer == 0){
+                turnOffPlayers();
+                currentBettingPlayer = 0;
+                Console.WriteLine("Hello");
+            } else {
+                switch (currentBettingPlayer)
+                {
+                    case 1:
+                        this.turnCK1.BackColor = Color.Lime;
+                        this.firstPbetRB.Visible = true;
+                        this.firstPCheckRB.Visible = true;
+                        this.firstPBetBtn.Visible = true;
+                        break;
+                    case 2:
+                        this.turnCK2.BackColor = Color.Lime;
+                        this.secondPbetRB.Visible = true;
+                        this.secondPCheckRB.Visible = true;
+                        this.secondPBetBtn.Visible = true;
+                        break;
+                    case 3:
+                        this.turnCK3.BackColor = Color.Lime;
+                        this.thirdPbetRB.Visible = true;
+                        this.thirdPCheckRB.Visible = true;
+                        this.thirdPBetBtn.Visible = true;
+                        break;
+                    case 4:
+                        this.turnCK4.BackColor = Color.Lime;
+                        this.fourthPbetRB.Visible = true;
+                        this.fourthPCheckRB.Visible = true;
+                        this.fourthPBetBtn.Visible = true;
+                        break;
+                    case 5:
+                        this.turnCK5.BackColor = Color.Lime;
+                        this.fifthPbetRB.Visible = true;
+                        this.fifthPCheckRB.Visible = true;
+                        this.fifthPBetBtn.Visible = true;
+                        break;
+                    case 6:
+                        this.turnCK6.BackColor = Color.Lime;
+                        this.sixthPbetRB.Visible = true;
+                        this.sixthPCheckRB.Visible = true;
+                        this.sixthPBetBtn.Visible = true;
+                        break;
+                    case 7:
+                        this.turnCK7.BackColor = Color.Lime;
+                        this.seventhPbetRB.Visible = true;
+                        this.seventhPCheckRB.Visible = true;
+                        this.seventhPBetBtn.Visible = true;
+                        break;
+                    case 8:
+                        this.turnCK8.BackColor = Color.Lime;
+                        this.eighthPbetRB.Visible = true;
+                        this.eighthPCheckRB.Visible = true;
+                        this.eighthPBetBtn.Visible = true;
+                        break;
+                }
+                if(currentBettingPlayerCount < setTable.listOfPlayers.Count - 1){
+                    currentBettingPlayerCount++;
+                    currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
+                } else {
+                    currentBettingPlayer = 0;
+                    currentBettingPlayerCount = 0;
+                }
+
             }
-            currentBettingPlayerCount++;
-            currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
+            Console.WriteLine("Current betting player: " + currentBettingPlayer);
+            Console.WriteLine("Current betting player count: " + currentBettingPlayerCount);
         }
 
         public void betTurnListener(Object sender, EventArgs e){
+            turnOffPlayers();
             betTurn();
         }
+
+        public void turnOffPlayers(){
+            this.turnCK1.BackColor = Color.Green;
+            this.firstPbetRB.Visible = false;
+            this.firstPCheckRB.Visible = false;
+            this.firstPBetBtn.Visible = false;
+
+            this.turnCK2.BackColor = Color.Green;
+            this.secondPbetRB.Visible = false;
+            this.secondPCheckRB.Visible = false;
+            this.secondPBetBtn.Visible = false;
+
+            this.turnCK3.BackColor = Color.Green;
+            this.thirdPbetRB.Visible = false;
+            this.thirdPCheckRB.Visible = false;
+            this.thirdPBetBtn.Visible = false;
+
+            this.turnCK4.BackColor = Color.Green;
+            this.fourthPbetRB.Visible = false;
+            this.fourthPCheckRB.Visible = false;
+            this.fourthPBetBtn.Visible = false;
+
+            this.turnCK5.BackColor = Color.Green;
+            this.fifthPbetRB.Visible = false;
+            this.fifthPCheckRB.Visible = false;
+            this.fifthPBetBtn.Visible = false;
+
+            this.turnCK6.BackColor = Color.Green;
+            this.sixthPbetRB.Visible = false;
+            this.sixthPCheckRB.Visible = false;
+            this.sixthPBetBtn.Visible = false;
+
+            this.turnCK7.BackColor = Color.Green;
+            this.seventhPbetRB.Visible = false;
+            this.seventhPCheckRB.Visible = false;
+            this.seventhPBetBtn.Visible = false;
+
+            this.turnCK8.BackColor = Color.Green;
+            this.eighthPbetRB.Visible = false;
+            this.eighthPCheckRB.Visible = false;
+            this.eighthPBetBtn.Visible = false;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
