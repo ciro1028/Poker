@@ -604,7 +604,7 @@ namespace Poker
             currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
         }
 
-        private void betTurnListener(object sender, EventHandler e){
+        public void betTurnListener(Object sender, EventArgs e){
             betTurn();
         }
 

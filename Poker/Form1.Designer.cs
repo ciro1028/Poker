@@ -552,6 +552,7 @@
             this.eighthPBetBtn.Text = "Bet";
             this.eighthPBetBtn.UseVisualStyleBackColor = true;
             this.eighthPBetBtn.Visible = false;
+            this.eighthPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // eighthPCheckRB
             // 
@@ -687,6 +688,7 @@
             this.seventhPBetBtn.Text = "Bet";
             this.seventhPBetBtn.UseVisualStyleBackColor = true;
             this.seventhPBetBtn.Visible = false;
+            this.seventhPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // seventhPCheckRB
             // 
@@ -822,6 +824,7 @@
             this.sixthPBetBtn.Text = "Bet";
             this.sixthPBetBtn.UseVisualStyleBackColor = true;
             this.sixthPBetBtn.Visible = false;
+            this.sixthPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // sixthPCheckRB
             // 
@@ -957,6 +960,7 @@
             this.fifthPBetBtn.Text = "Bet";
             this.fifthPBetBtn.UseVisualStyleBackColor = true;
             this.fifthPBetBtn.Visible = false;
+            this.fifthPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // fifthPCheckRB
             // 
@@ -1092,6 +1096,7 @@
             this.fourthPBetBtn.Text = "Bet";
             this.fourthPBetBtn.UseVisualStyleBackColor = true;
             this.fourthPBetBtn.Visible = false;
+            this.fourthPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // fourthPCheckRB
             // 
@@ -1227,6 +1232,7 @@
             this.thirdPBetBtn.Text = "Bet";
             this.thirdPBetBtn.UseVisualStyleBackColor = true;
             this.thirdPBetBtn.Visible = false;
+            this.thirdPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // thirdPCheckRB
             // 
@@ -1362,6 +1368,7 @@
             this.secondPBetBtn.Text = "Bet";
             this.secondPBetBtn.UseVisualStyleBackColor = true;
             this.secondPBetBtn.Visible = false;
+            this.secondPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // secondPCheckRB
             // 
@@ -1497,7 +1504,7 @@
             this.firstPBetBtn.Text = "Bet";
             this.firstPBetBtn.UseVisualStyleBackColor = true;
             this.firstPBetBtn.Visible = false;
-            this.firstPBetBtn.Click()
+            this.firstPBetBtn.Click += new System.EventHandler(this.betTurnListener);
             // 
             // firstPCheckRB
             // 
