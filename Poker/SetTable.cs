@@ -143,13 +143,6 @@ namespace Poker
 
                 flopNumbers[2] = number3;
 
-                string str = "";
-                
-                for (int j = 0; j < 5; j++)
-                {
-                    str = str + " " + flopNumbers[j];
-                }
-
             } else if (countFlop == 1){
                 int randomNumber;
                 randomNumber = random.Next(1, deck.Count);
