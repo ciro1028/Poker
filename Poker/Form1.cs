@@ -561,7 +561,7 @@ namespace Poker
                     this.turnCK2.BackColor = Color.Lime;
                     this.secondPbetRB.Visible = true;
                     this.secondPCheckRB.Visible = true;
-                    this.secondBetBtn.Visible = true;
+                    this.secondPBetBtn.Visible = true;
                     break;
                 case 3:
                     this.turnCK3.BackColor = Color.Lime;
@@ -600,7 +600,12 @@ namespace Poker
                     this.eighthPBetBtn.Visible = true;
                     break;
             }
-            //currentBettingPlayer = set
+            currentBettingPlayerCount++;
+            currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
+        }
+
+        private void betTurnListener(object sender, EventHandler e){
+            betTurn();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -1497,6 +1497,7 @@
             this.firstPBetBtn.Text = "Bet";
             this.firstPBetBtn.UseVisualStyleBackColor = true;
             this.firstPBetBtn.Visible = false;
+            this.firstPBetBtn.Click()
             // 
             // firstPCheckRB
             // 
