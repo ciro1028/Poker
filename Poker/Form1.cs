@@ -541,6 +541,11 @@ namespace Poker
             }
         }
 
+        public void betTurn()
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             int count = 0;

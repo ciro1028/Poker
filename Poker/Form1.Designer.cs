@@ -150,6 +150,14 @@
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
+            this.turnCK8 = new System.Windows.Forms.Panel();
+            this.turnCK2 = new System.Windows.Forms.Panel();
+            this.turnCK7 = new System.Windows.Forms.Panel();
+            this.turnCK6 = new System.Windows.Forms.Panel();
+            this.turnCK4 = new System.Windows.Forms.Panel();
+            this.turnCK3 = new System.Windows.Forms.Panel();
+            this.turnCK1 = new System.Windows.Forms.Panel();
+            this.turnCK5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -481,6 +489,7 @@
             // eighthPlayerPanel
             // 
             this.eighthPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.eighthPlayerPanel.Controls.Add(this.turnCK8);
             this.eighthPlayerPanel.Controls.Add(this.hand8Lbl);
             this.eighthPlayerPanel.Controls.Add(this.name8Lbl);
             this.eighthPlayerPanel.Controls.Add(this.eighthPCurrentLbl);
@@ -604,6 +613,7 @@
             // seventhPlayerPanel
             // 
             this.seventhPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.seventhPlayerPanel.Controls.Add(this.turnCK7);
             this.seventhPlayerPanel.Controls.Add(this.hand7Lbl);
             this.seventhPlayerPanel.Controls.Add(this.name7Lbl);
             this.seventhPlayerPanel.Controls.Add(this.seventhPCurrentLbl);
@@ -727,6 +737,7 @@
             // sixthPlayerPanel
             // 
             this.sixthPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sixthPlayerPanel.Controls.Add(this.turnCK6);
             this.sixthPlayerPanel.Controls.Add(this.hand6Lbl);
             this.sixthPlayerPanel.Controls.Add(this.name6Lbl);
             this.sixthPlayerPanel.Controls.Add(this.sixthPCurrentLbl);
@@ -850,6 +861,7 @@
             // fifthPlayerPanel
             // 
             this.fifthPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.fifthPlayerPanel.Controls.Add(this.turnCK5);
             this.fifthPlayerPanel.Controls.Add(this.hand5Lbl);
             this.fifthPlayerPanel.Controls.Add(this.name5Lbl);
             this.fifthPlayerPanel.Controls.Add(this.fifthPCurrentLbl);
@@ -973,6 +985,7 @@
             // fourthPlayerPanel
             // 
             this.fourthPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.fourthPlayerPanel.Controls.Add(this.turnCK4);
             this.fourthPlayerPanel.Controls.Add(this.hand4Lbl);
             this.fourthPlayerPanel.Controls.Add(this.name4Lbl);
             this.fourthPlayerPanel.Controls.Add(this.fourthPCurrentLbl);
@@ -1096,6 +1109,7 @@
             // thirdPlayerPanel
             // 
             this.thirdPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.thirdPlayerPanel.Controls.Add(this.turnCK3);
             this.thirdPlayerPanel.Controls.Add(this.hand3Lbl);
             this.thirdPlayerPanel.Controls.Add(this.name3Lbl);
             this.thirdPlayerPanel.Controls.Add(this.thirdPCurrentLbl);
@@ -1219,6 +1233,7 @@
             // secondPlayerPanel
             // 
             this.secondPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.secondPlayerPanel.Controls.Add(this.turnCK2);
             this.secondPlayerPanel.Controls.Add(this.hand2Lbl);
             this.secondPlayerPanel.Controls.Add(this.name2Lbl);
             this.secondPlayerPanel.Controls.Add(this.secondPCurrentLbl);
@@ -1342,6 +1357,7 @@
             // firstPlayerPanel
             // 
             this.firstPlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.firstPlayerPanel.Controls.Add(this.turnCK1);
             this.firstPlayerPanel.Controls.Add(this.name1Lbl);
             this.firstPlayerPanel.Controls.Add(this.hand1Lbl);
             this.firstPlayerPanel.Controls.Add(this.firstPCurrentLbl);
@@ -1399,12 +1415,10 @@
             // firstPCheckRB
             // 
             this.firstPCheckRB.AutoSize = true;
-            this.firstPCheckRB.Checked = true;
             this.firstPCheckRB.Location = new System.Drawing.Point(54, 93);
             this.firstPCheckRB.Name = "firstPCheckRB";
             this.firstPCheckRB.Size = new System.Drawing.Size(56, 17);
             this.firstPCheckRB.TabIndex = 8;
-            this.firstPCheckRB.TabStop = true;
             this.firstPCheckRB.Text = "Check";
             this.firstPCheckRB.UseVisualStyleBackColor = true;
             // 
@@ -1462,6 +1476,70 @@
             this.firstPpicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
+            // 
+            // turnCK8
+            // 
+            this.turnCK8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK8.Location = new System.Drawing.Point(55, 12);
+            this.turnCK8.Name = "turnCK8";
+            this.turnCK8.Size = new System.Drawing.Size(17, 17);
+            this.turnCK8.TabIndex = 31;
+            // 
+            // turnCK2
+            // 
+            this.turnCK2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK2.Location = new System.Drawing.Point(55, 12);
+            this.turnCK2.Name = "turnCK2";
+            this.turnCK2.Size = new System.Drawing.Size(17, 17);
+            this.turnCK2.TabIndex = 32;
+            // 
+            // turnCK7
+            // 
+            this.turnCK7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK7.Location = new System.Drawing.Point(55, 12);
+            this.turnCK7.Name = "turnCK7";
+            this.turnCK7.Size = new System.Drawing.Size(17, 17);
+            this.turnCK7.TabIndex = 32;
+            // 
+            // turnCK6
+            // 
+            this.turnCK6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK6.Location = new System.Drawing.Point(54, 12);
+            this.turnCK6.Name = "turnCK6";
+            this.turnCK6.Size = new System.Drawing.Size(17, 17);
+            this.turnCK6.TabIndex = 32;
+            // 
+            // turnCK4
+            // 
+            this.turnCK4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK4.Location = new System.Drawing.Point(54, 12);
+            this.turnCK4.Name = "turnCK4";
+            this.turnCK4.Size = new System.Drawing.Size(17, 17);
+            this.turnCK4.TabIndex = 32;
+            // 
+            // turnCK3
+            // 
+            this.turnCK3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK3.Location = new System.Drawing.Point(54, 12);
+            this.turnCK3.Name = "turnCK3";
+            this.turnCK3.Size = new System.Drawing.Size(17, 17);
+            this.turnCK3.TabIndex = 32;
+            // 
+            // turnCK1
+            // 
+            this.turnCK1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK1.Location = new System.Drawing.Point(54, 12);
+            this.turnCK1.Name = "turnCK1";
+            this.turnCK1.Size = new System.Drawing.Size(17, 17);
+            this.turnCK1.TabIndex = 32;
+            // 
+            // turnCK5
+            // 
+            this.turnCK5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK5.Location = new System.Drawing.Point(54, 12);
+            this.turnCK5.Name = "turnCK5";
+            this.turnCK5.Size = new System.Drawing.Size(17, 17);
+            this.turnCK5.TabIndex = 32;
             // 
             // mainForm
             // 
@@ -1640,6 +1718,14 @@
         private System.Windows.Forms.Label testLbl7;
         private System.Windows.Forms.Label testLbl3;
         private System.Windows.Forms.Label testLbl2;
+        private System.Windows.Forms.Panel turnCK8;
+        private System.Windows.Forms.Panel turnCK2;
+        private System.Windows.Forms.Panel turnCK7;
+        private System.Windows.Forms.Panel turnCK6;
+        private System.Windows.Forms.Panel turnCK4;
+        private System.Windows.Forms.Panel turnCK3;
+        private System.Windows.Forms.Panel turnCK1;
+        private System.Windows.Forms.Panel turnCK5;
     }
 }
 
