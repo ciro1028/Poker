@@ -220,7 +220,7 @@
             this.dealFlopLb.AutoSize = true;
             this.dealFlopLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dealFlopLb.ForeColor = System.Drawing.Color.Maroon;
-            this.dealFlopLb.Location = new System.Drawing.Point(424, 253);
+            this.dealFlopLb.Location = new System.Drawing.Point(425, 253);
             this.dealFlopLb.Name = "dealFlopLb";
             this.dealFlopLb.Size = new System.Drawing.Size(96, 24);
             this.dealFlopLb.TabIndex = 22;
@@ -423,7 +423,6 @@
             // 
             // turnCK8
             // 
-            this.turnCK8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK8.Location = new System.Drawing.Point(55, 12);
             this.turnCK8.Name = "turnCK8";
             this.turnCK8.Size = new System.Drawing.Size(17, 17);
@@ -559,7 +558,6 @@
             // 
             // turnCK7
             // 
-            this.turnCK7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK7.Location = new System.Drawing.Point(55, 12);
             this.turnCK7.Name = "turnCK7";
             this.turnCK7.Size = new System.Drawing.Size(17, 17);
@@ -695,7 +693,6 @@
             // 
             // turnCK6
             // 
-            this.turnCK6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK6.Location = new System.Drawing.Point(54, 12);
             this.turnCK6.Name = "turnCK6";
             this.turnCK6.Size = new System.Drawing.Size(17, 17);
@@ -831,7 +828,6 @@
             // 
             // turnCK5
             // 
-            this.turnCK5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK5.Location = new System.Drawing.Point(54, 12);
             this.turnCK5.Name = "turnCK5";
             this.turnCK5.Size = new System.Drawing.Size(17, 17);
@@ -967,7 +963,6 @@
             // 
             // turnCK4
             // 
-            this.turnCK4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK4.Location = new System.Drawing.Point(54, 12);
             this.turnCK4.Name = "turnCK4";
             this.turnCK4.Size = new System.Drawing.Size(17, 17);
@@ -1103,7 +1098,6 @@
             // 
             // turnCK3
             // 
-            this.turnCK3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK3.Location = new System.Drawing.Point(54, 12);
             this.turnCK3.Name = "turnCK3";
             this.turnCK3.Size = new System.Drawing.Size(17, 17);
@@ -1239,7 +1233,6 @@
             // 
             // turnCK2
             // 
-            this.turnCK2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK2.Location = new System.Drawing.Point(55, 12);
             this.turnCK2.Name = "turnCK2";
             this.turnCK2.Size = new System.Drawing.Size(17, 17);
@@ -1375,7 +1368,6 @@
             // 
             // turnCK1
             // 
-            this.turnCK1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.turnCK1.Location = new System.Drawing.Point(54, 12);
             this.turnCK1.Name = "turnCK1";
             this.turnCK1.Size = new System.Drawing.Size(17, 17);
