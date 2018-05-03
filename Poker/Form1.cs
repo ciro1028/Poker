@@ -29,6 +29,8 @@ namespace Poker
         int[] flopCards = new int[] { 0, 0, 0, 0, 0 };
         int currentBettingPlayer = 0;
         int currentBettingPlayerCount = 0;
+        Boolean allCardsShown = false;
+        int countNumberOfPlayers = 0;
 
         Random random = new Random();
 
@@ -44,56 +46,69 @@ namespace Poker
         public void when1Checked(Object sender, EventArgs e)
         {
             firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when2Checked(Object sender, EventArgs e)
         {
             secondPlayerPanel.Visible = (secondPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (secondPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when3Checked(Object sender, EventArgs e)
         {
             thirdPlayerPanel.Visible = (thirdPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (thirdPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when4Checked(Object sender, EventArgs e)
         {
             fourthPlayerPanel.Visible = (fourthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (fourthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when5Checked(Object sender, EventArgs e)
         {
             fifthPlayerPanel.Visible = (fifthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (fifthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when6Checked(Object sender, EventArgs e)
         {
             sixthPlayerPanel.Visible = (sixthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (sixthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when7Checked(Object sender, EventArgs e)
         {
             seventhPlayerPanel.Visible = (seventhPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (seventhPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when8Checked(Object sender, EventArgs e)
         {
             eighthPlayerPanel.Visible = (eighthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            playersList = setTable.setTable(firstPlayerPanel.Visible, secondPlayerPanel.Visible, thirdPlayerPanel.Visible,
+            if(countNumberOfPlayers < 2){
+                MessageBox.Show("Please select at least two players.", "Select Players", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else {
+                playersList = setTable.setTable(firstPlayerPanel.Visible, secondPlayerPanel.Visible, thirdPlayerPanel.Visible,
                 fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible,
                 seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);
-            setPlayers();
-            
-            disablePlayersBoxes();
+                setPlayers();
 
-            currentBettingPlayer = setTable.listOfPlayers[0].id;
-            betTurn();
+                disablePlayersBoxes();
+
+                currentBettingPlayer = setTable.listOfPlayers[0].id;
+                betTurn();
+            }
         }
 
+        // after table is set the initial cards are set up based on the list of players generated
         public void setPlayers()
         {
             listOfPlayers = setTable.dealCards();
@@ -176,7 +191,7 @@ namespace Poker
 
         public void disablePlayersBoxes()
         {
-            if (startBtn.Enabled)
+            if (startBtn.Visible)
             {
                 firstPPlayingLbl.Enabled = false;
                 secondPPlayingLbl.Enabled = false;
@@ -186,7 +201,7 @@ namespace Poker
                 sixthPPlayingLbl.Enabled = false;
                 seventhPPlayingLbl.Enabled = false;
                 eighthPPlayingLbl.Enabled = false;
-                startBtn.Enabled = false;
+                startBtn.Visible = false;
             }
             else
             {
@@ -198,7 +213,7 @@ namespace Poker
                 sixthPPlayingLbl.Enabled = true;
                 seventhPPlayingLbl.Enabled = true;
                 eighthPPlayingLbl.Enabled = true;
-                startBtn.Enabled = true;
+                startBtn.Visible = true;
             }
         }
 
@@ -273,11 +288,17 @@ namespace Poker
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            resetDeck();
             this.flipBtn.Visible = false;
+
             hand.resetHand();
             cleanLabels();
+            countFlop = 0;
+            allCardsShown = false;
+            currentBettingPlayer = 0;
+            currentBettingPlayerCount = 0;
             disablePlayersBoxes();
+            setTable.resetTable();
+            this.startBtn.Visible = true;
         }
 
         public void cleanLabels()
@@ -335,19 +356,6 @@ namespace Poker
             this.turnPB.BackColor = Color.Transparent;
         }
 
-        public void resetDeck()
-        {
-            List<int> cleanDeck = new List<int>();
-            countFlop = 0;
-
-            for (int i = 1; i < 53; i++)
-            {
-                cleanDeck.Add(i);
-            }
-
-            deck = cleanDeck;
-        }
-
         private void flipBtn_Click(object sender, EventArgs e)
         {
             flipCards();
@@ -361,7 +369,6 @@ namespace Poker
             setFlopCards(flopCards);
             addToHands(flopCards);
             countFlop++;
-
         }
 
         public void setFlopCards(int[] flopCards)
@@ -374,28 +381,31 @@ namespace Poker
                 this.firstFlopPB.BackColor = Color.White;
                 this.secondFlopPB.BackColor = Color.White;
                 this.thirdFlopPB.BackColor = Color.White;
+                this.flipBtn.Text = "Deal Turn";
+                this.dealFlopLb.Text = "Deal Turn!";
+                this.flipBtn.Visible = false;
+                this.dealFlopLb.Visible = false;
             }
             else if (countFlop == 1)
             {
                 this.turnPB.Load(("../../images/png/" + correctedNumbers(flopCards[3]) + "_of_" + suit + ".png"));
                 this.turnPB.BackColor = Color.White;
-                this.flipBtn.Text = "Deal Turn";
-                this.dealFlopLb.Text = "Deal Turn!";
+                this.flipBtn.Text = "Deal River";
+                this.dealFlopLb.Text = "Deal River!";
+                this.flipBtn.Visible = false;
+                this.dealFlopLb.Visible = false;
             }
             else if (countFlop == 2)
             {
                 this.riverPB.Load(("../../images/png/" + correctedNumbers(flopCards[4]) + "_of_" + suit + ".png"));
                 this.riverPB.BackColor = Color.White;
-                this.flipBtn.Text = "Deal River";
-                this.dealFlopLb.Text = "Deal River!";
+                this.flipBtn.Visible = false;
+                this.dealFlopLb.Visible = false;
+                allCardsShown = true;
             }
             else if (countFlop > 2)
             {
                 countFlop = 0;
-                this.flipBtn.Text = "Deal Flop";
-                this.dealFlopLb.Text = "Deal Flop!";
-                this.flipBtn.Visible = false;
-                this.dealFlopLb.Visible = false;
             }
         }
 
@@ -410,13 +420,6 @@ namespace Poker
                         setTable.listOfPlayers[i].hand[2] = flopCards[0];
                         setTable.listOfPlayers[i].hand[3] = flopCards[1];
                         setTable.listOfPlayers[i].hand[4] = flopCards[2];
-
-                        string str = "";
-
-                        for (int j = 0; j < 7; j++)
-                        {
-                            str = str + " " + setTable.listOfPlayers[0].hand[j];
-                        }
                     }
                     if (playersList[i] == 2)
                     {
@@ -469,13 +472,6 @@ namespace Poker
                     if (playersList[i] == 1)
                     {
                         setTable.listOfPlayers[i].hand[5] = flopCards[3];
-
-                        string str = "";
-
-                        for (int j = 0; j < 7; j++)
-                        {
-                            str = str + " " + setTable.listOfPlayers[0].hand[j];
-                        }
                     }
                     if (playersList[i] == 2)
                     {
@@ -515,13 +511,6 @@ namespace Poker
                     if (playersList[i] == 1)
                     {
                         setTable.listOfPlayers[i].hand[6] = flopCards[4];
-
-                        string str = "";
-
-                        for (int j = 0; j < 7; j++)
-                        {
-                            str = str + " " + setTable.listOfPlayers[0].hand[j];
-                        }
                     }
                     if (playersList[i] == 2)
                     {
@@ -552,7 +541,6 @@ namespace Poker
                         setTable.listOfPlayers[i].hand[6] = flopCards[4];
                     }
                 }
-                checkHands();
             }
         }
 
@@ -562,9 +550,13 @@ namespace Poker
             if (currentBettingPlayerCount == 0 && currentBettingPlayer == 0){
                 turnOffPlayers();
                 currentBettingPlayer = 0;
-                Console.WriteLine("Hello");
                 flipBtn.Visible = true;
                 dealFlopLb.Visible = true;
+                if (allCardsShown){
+                    checkHands();
+                    flipBtn.Visible = false;
+                    dealFlopLb.Visible = false;
+                }
             } else {
                 switch (currentBettingPlayer)
                 {
@@ -624,10 +616,7 @@ namespace Poker
                     currentBettingPlayer = 0;
                     currentBettingPlayerCount = 0;
                 }
-
             }
-            Console.WriteLine("Current betting player: " + currentBettingPlayer);
-            Console.WriteLine("Current betting player count: " + currentBettingPlayerCount);
         }
 
         public void betTurnListener(Object sender, EventArgs e){
@@ -677,6 +666,15 @@ namespace Poker
             this.eighthPBetBtn.Visible = false;
         }
 
+
+
+        //public void createDeck()
+        //{
+        //    for (int i = 1; i < 53; i++)
+        //    {
+        //        deck.Add(i);
+        //    }
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {

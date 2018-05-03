@@ -49,6 +49,12 @@ namespace Poker
             return playersList;
         }
 
+        public void resetTable(){
+            playersList.Clear();
+            listOfPlayers.Clear();
+            deck.Clear();
+        }
+
         public List<Player> dealCards()
         {
             for (int i = 0; i < playersList.Count; i++)
