@@ -537,9 +537,88 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            int num1 = 0;
+            int num2 = 0;
+            int num3 = 0;
+            int num4 = 0;
+            int num5 = 0;
+            int num6 = 0;
+            int num7 = 0;
+            int[] testHandNums = new int[7];
+
+            List<int> testDeck = new List<int>();
+
+            for (int i = 1; i < 53; i++)
+            {
+                testDeck.Add(i);
+            }
+
+
+            int randomNumber1;
+            randomNumber1 = random.Next(0, testDeck.Count - 1);
+            num1 = testDeck[randomNumber1];
+            testHandNums[0] = num1;
+            testDeck.Remove(num1);
+
+            int randomNumber2;
+            randomNumber2 = random.Next(1, testDeck.Count + 1);
+            num2 = testDeck[randomNumber2];
+            testHandNums[1] = num2;
+            testDeck.Remove(num2);
+
+            int randomNumber3;
+            randomNumber3 = random.Next(1, testDeck.Count + 1);
+            num3 = testDeck[randomNumber3];
+            testHandNums[2] = num3;
+            testDeck.Remove(num3);
+
+            int randomNumber4;
+            randomNumber4 = random.Next(1, testDeck.Count + 1);
+            num4 = testDeck[randomNumber4];
+            testHandNums[3] = num4;
+            testDeck.Remove(num4);
+
+            int randomNumber5;
+            randomNumber5 = random.Next(1, testDeck.Count + 1);
+            num5 = testDeck[randomNumber5];
+            testHandNums[4] = num5;
+            testDeck.Remove(num5);
+
+            int randomNumber6;
+            randomNumber6 = random.Next(1, testDeck.Count + 1);
+            num6 = testDeck[randomNumber6];
+            testHandNums[5] = num6;
+            testDeck.Remove(num6);
+
+            int randomNumber7;
+            randomNumber7 = random.Next(1, testDeck.Count + 1);
+            num7 = testDeck[randomNumber7];
+            testHandNums[6] = num7;
+            testDeck.Remove(num7);
+
+            String[] suitedHand = new String[7];
+            suitedHand = hand.transformHandsSuits(testHandNums);
+
+            int[] transformedHand = new int[7];
+            transformedHand = hand.transformHands(testHandNums);
+
+            foreach (int card in testHandNums)
+            {
+                Console.WriteLine("Hand to check: " + card);
+            }
+
+            foreach (string card in suitedHand)
+=======
             int count = 0;
+<<<<<<< HEAD
             //do
             //{
+=======
+            do
+>>>>>>> d593e26647406786c86be16dd78895bcc97bc780
+            {
+>>>>>>> 6ab59bd9d6948dded30574f781dfd33f663cfe51
 
                 int num1 = 0;
                 int num2 = 0;
