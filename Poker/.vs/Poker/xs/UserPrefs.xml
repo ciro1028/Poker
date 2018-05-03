@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{600DE9F2-2C0E-4B52-8664-A1439AD3DBBE}|Default">
   <MonoDevelop.Ide.ItemProperties.Poker PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SetTable.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Form1.cs">
     <Files>
-      <File FileName="Hand.cs" Line="192" Column="29" />
-      <File FileName="Form1.cs" Line="612" Column="15" />
-      <File FileName="SetTable.cs" Line="105" Column="42" />
+      <File FileName="Hand.cs" Line="208" Column="98" />
+      <File FileName="Form1.cs" Line="540" Column="1" />
+      <File FileName="SetTable.cs" Line="144" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -125,6 +125,7 @@ namespace Poker
             return handSuits;
         }
 
+        // this method checks if the hand is a straight
         public Boolean checkForStraight(int[] checkStraightHand)
         {
             int[] transformedHand = new int[] { };
@@ -172,6 +173,7 @@ namespace Poker
             return isStraight;
         }
 
+        // this method checks if the hand is a flush
         public Boolean checkForFlush(int[] checkFlushHand)
         {
             String[] transformedHandSuits = new String[7];
@@ -203,6 +205,7 @@ namespace Poker
             return flush;
         }
 
+        // this method checks if the hand for pairs, kinds, and full house. Also for higher card.
         public String[] checkForPairs(int[] handNumbers)
         {
             int count1 = 0;
