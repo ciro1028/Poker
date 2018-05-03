@@ -544,13 +544,9 @@ namespace Poker
         private void button1_Click(object sender, EventArgs e)
         {
             int count = 0;
-<<<<<<< HEAD
+
             //do
             //{
-=======
-            do
-            {
->>>>>>> 6ab59bd9d6948dded30574f781dfd33f663cfe51
 
                 int num1 = 0;
                 int num2 = 0;
