@@ -82,7 +82,7 @@ namespace Poker
         private void startBtn_Click(object sender, EventArgs e)
         {
             playersList = setTable.setTable(firstPlayerPanel.Visible, secondPlayerPanel.Visible, thirdPlayerPanel.Visible,
-                fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible, 
+                fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible,
                 seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);
             setPlayers();
             this.flipBtn.Visible = true;
@@ -182,7 +182,8 @@ namespace Poker
                 seventhPPlayingLbl.Enabled = false;
                 eighthPPlayingLbl.Enabled = false;
                 startBtn.Enabled = false;
-            } else
+            }
+            else
             {
                 firstPPlayingLbl.Enabled = true;
                 secondPPlayingLbl.Enabled = true;
@@ -245,7 +246,8 @@ namespace Poker
             if (cardNumber < 14)
             {
                 suit = "spades";
-            } else
+            }
+            else
             if (cardNumber > 13 && cardNumber < 27)
             {
                 suit = "clubs";
@@ -352,7 +354,7 @@ namespace Poker
             setFlopCards(flopCards);
             addToHands(flopCards);
             countFlop++;
-            
+
         }
 
         public void setFlopCards(int[] flopCards)
@@ -365,15 +367,18 @@ namespace Poker
                 this.firstFlopPB.BackColor = Color.White;
                 this.secondFlopPB.BackColor = Color.White;
                 this.thirdFlopPB.BackColor = Color.White;
-            } else if (countFlop == 1)
+            }
+            else if (countFlop == 1)
             {
                 this.turnPB.Load(("../../images/png/" + correctedNumbers(flopCards[3]) + "_of_" + suit + ".png"));
                 this.turnPB.BackColor = Color.White;
-            } else if (countFlop == 2)
+            }
+            else if (countFlop == 2)
             {
                 this.riverPB.Load(("../../images/png/" + correctedNumbers(flopCards[4]) + "_of_" + suit + ".png"));
                 this.riverPB.BackColor = Color.White;
-            } else if (countFlop > 2)
+            }
+            else if (countFlop > 2)
             {
                 countFlop = 0;
             }
@@ -486,8 +491,9 @@ namespace Poker
                         setTable.listOfPlayers[i].hand[5] = flopCards[3];
                     }
                 }
-                
-            } else if (countFlop == 2)
+
+            }
+            else if (countFlop == 2)
             {
                 for (int i = 0; i < playersList.Count; i++)
                 {
@@ -537,86 +543,12 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            int num1 = 0;
-            int num2 = 0;
-            int num3 = 0;
-            int num4 = 0;
-            int num5 = 0;
-            int num6 = 0;
-            int num7 = 0;
-            int[] testHandNums = new int[7];
-
-            List<int> testDeck = new List<int>();
-
-            for (int i = 1; i < 53; i++)
-            {
-                testDeck.Add(i);
-            }
-
-
-            int randomNumber1;
-            randomNumber1 = random.Next(0, testDeck.Count - 1);
-            num1 = testDeck[randomNumber1];
-            testHandNums[0] = num1;
-            testDeck.Remove(num1);
-
-            int randomNumber2;
-            randomNumber2 = random.Next(1, testDeck.Count + 1);
-            num2 = testDeck[randomNumber2];
-            testHandNums[1] = num2;
-            testDeck.Remove(num2);
-
-            int randomNumber3;
-            randomNumber3 = random.Next(1, testDeck.Count + 1);
-            num3 = testDeck[randomNumber3];
-            testHandNums[2] = num3;
-            testDeck.Remove(num3);
-
-            int randomNumber4;
-            randomNumber4 = random.Next(1, testDeck.Count + 1);
-            num4 = testDeck[randomNumber4];
-            testHandNums[3] = num4;
-            testDeck.Remove(num4);
-
-            int randomNumber5;
-            randomNumber5 = random.Next(1, testDeck.Count + 1);
-            num5 = testDeck[randomNumber5];
-            testHandNums[4] = num5;
-            testDeck.Remove(num5);
-
-            int randomNumber6;
-            randomNumber6 = random.Next(1, testDeck.Count + 1);
-            num6 = testDeck[randomNumber6];
-            testHandNums[5] = num6;
-            testDeck.Remove(num6);
-
-            int randomNumber7;
-            randomNumber7 = random.Next(1, testDeck.Count + 1);
-            num7 = testDeck[randomNumber7];
-            testHandNums[6] = num7;
-            testDeck.Remove(num7);
-
-            String[] suitedHand = new String[7];
-            suitedHand = hand.transformHandsSuits(testHandNums);
-
-            int[] transformedHand = new int[7];
-            transformedHand = hand.transformHands(testHandNums);
-
-            foreach (int card in testHandNums)
-            {
-                Console.WriteLine("Hand to check: " + card);
-            }
-
-            foreach (string card in suitedHand)
-=======
             int count = 0;
 <<<<<<< HEAD
             //do
             //{
 =======
             do
->>>>>>> d593e26647406786c86be16dd78895bcc97bc780
             {
 >>>>>>> 6ab59bd9d6948dded30574f781dfd33f663cfe51
 
@@ -698,7 +630,8 @@ namespace Poker
             //} while (testLblResult.Text != "Full House");
         }
 
-        public void lblColors(String[] suits) {
+        public void lblColors(String[] suits)
+        {
             switch (suits[0])
             {
                 case "spades":
