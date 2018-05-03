@@ -13,6 +13,7 @@ namespace Poker
         public String cash { get; set; }
         public int[] hand { get; set; }
         public Boolean active { get; set; }
+        public String currentBet { get; set;  }
 
         public Player()
         {
@@ -21,15 +22,17 @@ namespace Poker
             cash = "";
             hand = new int[7];
             active = false;
+            currentBet = "";
         }
 
-        public Player(int id,  String name, String cash, int[] hand, Boolean active)
+        public Player(int id,  String name, String cash, int[] hand, Boolean active, String currentBet)
         {
             this.id = id;
             this.name = name;
             this.cash = cash;
             this.hand = hand;
             this.active = active;
+            this.currentBet = currentBet;
         }
     }
 }
