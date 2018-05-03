@@ -55,6 +55,7 @@
             this.secondPPlayingLbl = new System.Windows.Forms.CheckBox();
             this.firstPPlayingLbl = new System.Windows.Forms.CheckBox();
             this.eighthPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK8 = new System.Windows.Forms.Panel();
             this.hand8Lbl = new System.Windows.Forms.Label();
             this.name8Lbl = new System.Windows.Forms.Label();
             this.eighthPCurrentLbl = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.eighthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.eighthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.seventhPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK7 = new System.Windows.Forms.Panel();
             this.hand7Lbl = new System.Windows.Forms.Label();
             this.name7Lbl = new System.Windows.Forms.Label();
             this.seventhPCurrentLbl = new System.Windows.Forms.Label();
@@ -79,6 +81,7 @@
             this.seventhPpicBox2 = new System.Windows.Forms.PictureBox();
             this.seventhPpicBox1 = new System.Windows.Forms.PictureBox();
             this.sixthPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK6 = new System.Windows.Forms.Panel();
             this.hand6Lbl = new System.Windows.Forms.Label();
             this.name6Lbl = new System.Windows.Forms.Label();
             this.sixthPCurrentLbl = new System.Windows.Forms.Label();
@@ -91,6 +94,7 @@
             this.sixthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.sixthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.fifthPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK5 = new System.Windows.Forms.Panel();
             this.hand5Lbl = new System.Windows.Forms.Label();
             this.name5Lbl = new System.Windows.Forms.Label();
             this.fifthPCurrentLbl = new System.Windows.Forms.Label();
@@ -103,6 +107,7 @@
             this.fifthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.fifthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.fourthPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK4 = new System.Windows.Forms.Panel();
             this.hand4Lbl = new System.Windows.Forms.Label();
             this.name4Lbl = new System.Windows.Forms.Label();
             this.fourthPCurrentLbl = new System.Windows.Forms.Label();
@@ -115,6 +120,7 @@
             this.fourthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.fourthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.thirdPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK3 = new System.Windows.Forms.Panel();
             this.hand3Lbl = new System.Windows.Forms.Label();
             this.name3Lbl = new System.Windows.Forms.Label();
             this.thirdPCurrentLbl = new System.Windows.Forms.Label();
@@ -127,6 +133,7 @@
             this.thirdPpicBox2 = new System.Windows.Forms.PictureBox();
             this.thirdPpicBox1 = new System.Windows.Forms.PictureBox();
             this.secondPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK2 = new System.Windows.Forms.Panel();
             this.hand2Lbl = new System.Windows.Forms.Label();
             this.name2Lbl = new System.Windows.Forms.Label();
             this.secondPCurrentLbl = new System.Windows.Forms.Label();
@@ -139,6 +146,7 @@
             this.secondPpicBox2 = new System.Windows.Forms.PictureBox();
             this.secondPpicBox1 = new System.Windows.Forms.PictureBox();
             this.firstPlayerPanel = new System.Windows.Forms.Panel();
+            this.turnCK1 = new System.Windows.Forms.Panel();
             this.name1Lbl = new System.Windows.Forms.Label();
             this.hand1Lbl = new System.Windows.Forms.Label();
             this.firstPCurrentLbl = new System.Windows.Forms.Label();
@@ -150,14 +158,6 @@
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
-            this.turnCK8 = new System.Windows.Forms.Panel();
-            this.turnCK2 = new System.Windows.Forms.Panel();
-            this.turnCK7 = new System.Windows.Forms.Panel();
-            this.turnCK6 = new System.Windows.Forms.Panel();
-            this.turnCK4 = new System.Windows.Forms.Panel();
-            this.turnCK3 = new System.Windows.Forms.Panel();
-            this.turnCK1 = new System.Windows.Forms.Panel();
-            this.turnCK5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -507,6 +507,14 @@
             this.eighthPlayerPanel.TabIndex = 13;
             this.eighthPlayerPanel.Visible = false;
             // 
+            // turnCK8
+            // 
+            this.turnCK8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK8.Location = new System.Drawing.Point(55, 12);
+            this.turnCK8.Name = "turnCK8";
+            this.turnCK8.Size = new System.Drawing.Size(17, 17);
+            this.turnCK8.TabIndex = 31;
+            // 
             // hand8Lbl
             // 
             this.hand8Lbl.AutoSize = true;
@@ -543,6 +551,7 @@
             this.eighthPBetBtn.TabIndex = 9;
             this.eighthPBetBtn.Text = "Bet";
             this.eighthPBetBtn.UseVisualStyleBackColor = true;
+            this.eighthPBetBtn.Visible = false;
             // 
             // eighthPCheckRB
             // 
@@ -555,6 +564,7 @@
             this.eighthPCheckRB.TabStop = true;
             this.eighthPCheckRB.Text = "Check";
             this.eighthPCheckRB.UseVisualStyleBackColor = true;
+            this.eighthPCheckRB.Visible = false;
             // 
             // eighthPbetRB
             // 
@@ -565,6 +575,7 @@
             this.eighthPbetRB.TabIndex = 7;
             this.eighthPbetRB.Text = "Bet";
             this.eighthPbetRB.UseVisualStyleBackColor = true;
+            this.eighthPbetRB.Visible = false;
             // 
             // eighthPAmountTxtB
             // 
@@ -631,6 +642,14 @@
             this.seventhPlayerPanel.TabIndex = 13;
             this.seventhPlayerPanel.Visible = false;
             // 
+            // turnCK7
+            // 
+            this.turnCK7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK7.Location = new System.Drawing.Point(55, 12);
+            this.turnCK7.Name = "turnCK7";
+            this.turnCK7.Size = new System.Drawing.Size(17, 17);
+            this.turnCK7.TabIndex = 32;
+            // 
             // hand7Lbl
             // 
             this.hand7Lbl.AutoSize = true;
@@ -667,6 +686,7 @@
             this.seventhPBetBtn.TabIndex = 9;
             this.seventhPBetBtn.Text = "Bet";
             this.seventhPBetBtn.UseVisualStyleBackColor = true;
+            this.seventhPBetBtn.Visible = false;
             // 
             // seventhPCheckRB
             // 
@@ -679,6 +699,7 @@
             this.seventhPCheckRB.TabStop = true;
             this.seventhPCheckRB.Text = "Check";
             this.seventhPCheckRB.UseVisualStyleBackColor = true;
+            this.seventhPCheckRB.Visible = false;
             // 
             // seventhPbetRB
             // 
@@ -689,6 +710,7 @@
             this.seventhPbetRB.TabIndex = 7;
             this.seventhPbetRB.Text = "Bet";
             this.seventhPbetRB.UseVisualStyleBackColor = true;
+            this.seventhPbetRB.Visible = false;
             // 
             // seventhPAmountTxtB
             // 
@@ -755,6 +777,14 @@
             this.sixthPlayerPanel.TabIndex = 13;
             this.sixthPlayerPanel.Visible = false;
             // 
+            // turnCK6
+            // 
+            this.turnCK6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK6.Location = new System.Drawing.Point(54, 12);
+            this.turnCK6.Name = "turnCK6";
+            this.turnCK6.Size = new System.Drawing.Size(17, 17);
+            this.turnCK6.TabIndex = 32;
+            // 
             // hand6Lbl
             // 
             this.hand6Lbl.AutoSize = true;
@@ -791,6 +821,7 @@
             this.sixthPBetBtn.TabIndex = 9;
             this.sixthPBetBtn.Text = "Bet";
             this.sixthPBetBtn.UseVisualStyleBackColor = true;
+            this.sixthPBetBtn.Visible = false;
             // 
             // sixthPCheckRB
             // 
@@ -803,6 +834,7 @@
             this.sixthPCheckRB.TabStop = true;
             this.sixthPCheckRB.Text = "Check";
             this.sixthPCheckRB.UseVisualStyleBackColor = true;
+            this.sixthPCheckRB.Visible = false;
             // 
             // sixthPbetRB
             // 
@@ -813,6 +845,7 @@
             this.sixthPbetRB.TabIndex = 7;
             this.sixthPbetRB.Text = "Bet";
             this.sixthPbetRB.UseVisualStyleBackColor = true;
+            this.sixthPbetRB.Visible = false;
             // 
             // sixthPAmountTxtB
             // 
@@ -879,6 +912,14 @@
             this.fifthPlayerPanel.TabIndex = 13;
             this.fifthPlayerPanel.Visible = false;
             // 
+            // turnCK5
+            // 
+            this.turnCK5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK5.Location = new System.Drawing.Point(54, 12);
+            this.turnCK5.Name = "turnCK5";
+            this.turnCK5.Size = new System.Drawing.Size(17, 17);
+            this.turnCK5.TabIndex = 32;
+            // 
             // hand5Lbl
             // 
             this.hand5Lbl.AutoSize = true;
@@ -915,6 +956,7 @@
             this.fifthPBetBtn.TabIndex = 9;
             this.fifthPBetBtn.Text = "Bet";
             this.fifthPBetBtn.UseVisualStyleBackColor = true;
+            this.fifthPBetBtn.Visible = false;
             // 
             // fifthPCheckRB
             // 
@@ -927,6 +969,7 @@
             this.fifthPCheckRB.TabStop = true;
             this.fifthPCheckRB.Text = "Check";
             this.fifthPCheckRB.UseVisualStyleBackColor = true;
+            this.fifthPCheckRB.Visible = false;
             // 
             // fifthPbetRB
             // 
@@ -937,6 +980,7 @@
             this.fifthPbetRB.TabIndex = 7;
             this.fifthPbetRB.Text = "Bet";
             this.fifthPbetRB.UseVisualStyleBackColor = true;
+            this.fifthPbetRB.Visible = false;
             // 
             // fifthPAmountTxtB
             // 
@@ -1003,6 +1047,14 @@
             this.fourthPlayerPanel.TabIndex = 13;
             this.fourthPlayerPanel.Visible = false;
             // 
+            // turnCK4
+            // 
+            this.turnCK4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK4.Location = new System.Drawing.Point(54, 12);
+            this.turnCK4.Name = "turnCK4";
+            this.turnCK4.Size = new System.Drawing.Size(17, 17);
+            this.turnCK4.TabIndex = 32;
+            // 
             // hand4Lbl
             // 
             this.hand4Lbl.AutoSize = true;
@@ -1039,6 +1091,7 @@
             this.fourthPBetBtn.TabIndex = 9;
             this.fourthPBetBtn.Text = "Bet";
             this.fourthPBetBtn.UseVisualStyleBackColor = true;
+            this.fourthPBetBtn.Visible = false;
             // 
             // fourthPCheckRB
             // 
@@ -1051,6 +1104,7 @@
             this.fourthPCheckRB.TabStop = true;
             this.fourthPCheckRB.Text = "Check";
             this.fourthPCheckRB.UseVisualStyleBackColor = true;
+            this.fourthPCheckRB.Visible = false;
             // 
             // fourthPbetRB
             // 
@@ -1061,6 +1115,7 @@
             this.fourthPbetRB.TabIndex = 7;
             this.fourthPbetRB.Text = "Bet";
             this.fourthPbetRB.UseVisualStyleBackColor = true;
+            this.fourthPbetRB.Visible = false;
             // 
             // fourthPAmountTxtB
             // 
@@ -1127,6 +1182,14 @@
             this.thirdPlayerPanel.TabIndex = 12;
             this.thirdPlayerPanel.Visible = false;
             // 
+            // turnCK3
+            // 
+            this.turnCK3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK3.Location = new System.Drawing.Point(54, 12);
+            this.turnCK3.Name = "turnCK3";
+            this.turnCK3.Size = new System.Drawing.Size(17, 17);
+            this.turnCK3.TabIndex = 32;
+            // 
             // hand3Lbl
             // 
             this.hand3Lbl.AutoSize = true;
@@ -1163,6 +1226,7 @@
             this.thirdPBetBtn.TabIndex = 9;
             this.thirdPBetBtn.Text = "Bet";
             this.thirdPBetBtn.UseVisualStyleBackColor = true;
+            this.thirdPBetBtn.Visible = false;
             // 
             // thirdPCheckRB
             // 
@@ -1175,6 +1239,7 @@
             this.thirdPCheckRB.TabStop = true;
             this.thirdPCheckRB.Text = "Check";
             this.thirdPCheckRB.UseVisualStyleBackColor = true;
+            this.thirdPCheckRB.Visible = false;
             // 
             // thirdPbetRB
             // 
@@ -1185,6 +1250,7 @@
             this.thirdPbetRB.TabIndex = 7;
             this.thirdPbetRB.Text = "Bet";
             this.thirdPbetRB.UseVisualStyleBackColor = true;
+            this.thirdPbetRB.Visible = false;
             // 
             // thirdPAmountTxtB
             // 
@@ -1251,6 +1317,14 @@
             this.secondPlayerPanel.TabIndex = 11;
             this.secondPlayerPanel.Visible = false;
             // 
+            // turnCK2
+            // 
+            this.turnCK2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK2.Location = new System.Drawing.Point(55, 12);
+            this.turnCK2.Name = "turnCK2";
+            this.turnCK2.Size = new System.Drawing.Size(17, 17);
+            this.turnCK2.TabIndex = 32;
+            // 
             // hand2Lbl
             // 
             this.hand2Lbl.AutoSize = true;
@@ -1287,6 +1361,7 @@
             this.secondPBetBtn.TabIndex = 9;
             this.secondPBetBtn.Text = "Bet";
             this.secondPBetBtn.UseVisualStyleBackColor = true;
+            this.secondPBetBtn.Visible = false;
             // 
             // secondPCheckRB
             // 
@@ -1299,6 +1374,7 @@
             this.secondPCheckRB.TabStop = true;
             this.secondPCheckRB.Text = "Check";
             this.secondPCheckRB.UseVisualStyleBackColor = true;
+            this.secondPCheckRB.Visible = false;
             // 
             // secondPbetRB
             // 
@@ -1309,6 +1385,7 @@
             this.secondPbetRB.TabIndex = 7;
             this.secondPbetRB.Text = "Bet";
             this.secondPbetRB.UseVisualStyleBackColor = true;
+            this.secondPbetRB.Visible = false;
             // 
             // secondPAmountTxtB
             // 
@@ -1375,6 +1452,14 @@
             this.firstPlayerPanel.TabIndex = 1;
             this.firstPlayerPanel.Visible = false;
             // 
+            // turnCK1
+            // 
+            this.turnCK1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.turnCK1.Location = new System.Drawing.Point(54, 12);
+            this.turnCK1.Name = "turnCK1";
+            this.turnCK1.Size = new System.Drawing.Size(17, 17);
+            this.turnCK1.TabIndex = 32;
+            // 
             // name1Lbl
             // 
             this.name1Lbl.AutoSize = true;
@@ -1411,6 +1496,7 @@
             this.firstPBetBtn.TabIndex = 9;
             this.firstPBetBtn.Text = "Bet";
             this.firstPBetBtn.UseVisualStyleBackColor = true;
+            this.firstPBetBtn.Visible = false;
             // 
             // firstPCheckRB
             // 
@@ -1421,6 +1507,7 @@
             this.firstPCheckRB.TabIndex = 8;
             this.firstPCheckRB.Text = "Check";
             this.firstPCheckRB.UseVisualStyleBackColor = true;
+            this.firstPCheckRB.Visible = false;
             // 
             // firstPbetRB
             // 
@@ -1431,6 +1518,7 @@
             this.firstPbetRB.TabIndex = 7;
             this.firstPbetRB.Text = "Bet";
             this.firstPbetRB.UseVisualStyleBackColor = true;
+            this.firstPbetRB.Visible = false;
             // 
             // firstPAmountTxtB
             // 
@@ -1476,70 +1564,6 @@
             this.firstPpicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
-            // 
-            // turnCK8
-            // 
-            this.turnCK8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK8.Location = new System.Drawing.Point(55, 12);
-            this.turnCK8.Name = "turnCK8";
-            this.turnCK8.Size = new System.Drawing.Size(17, 17);
-            this.turnCK8.TabIndex = 31;
-            // 
-            // turnCK2
-            // 
-            this.turnCK2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK2.Location = new System.Drawing.Point(55, 12);
-            this.turnCK2.Name = "turnCK2";
-            this.turnCK2.Size = new System.Drawing.Size(17, 17);
-            this.turnCK2.TabIndex = 32;
-            // 
-            // turnCK7
-            // 
-            this.turnCK7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK7.Location = new System.Drawing.Point(55, 12);
-            this.turnCK7.Name = "turnCK7";
-            this.turnCK7.Size = new System.Drawing.Size(17, 17);
-            this.turnCK7.TabIndex = 32;
-            // 
-            // turnCK6
-            // 
-            this.turnCK6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK6.Location = new System.Drawing.Point(54, 12);
-            this.turnCK6.Name = "turnCK6";
-            this.turnCK6.Size = new System.Drawing.Size(17, 17);
-            this.turnCK6.TabIndex = 32;
-            // 
-            // turnCK4
-            // 
-            this.turnCK4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK4.Location = new System.Drawing.Point(54, 12);
-            this.turnCK4.Name = "turnCK4";
-            this.turnCK4.Size = new System.Drawing.Size(17, 17);
-            this.turnCK4.TabIndex = 32;
-            // 
-            // turnCK3
-            // 
-            this.turnCK3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK3.Location = new System.Drawing.Point(54, 12);
-            this.turnCK3.Name = "turnCK3";
-            this.turnCK3.Size = new System.Drawing.Size(17, 17);
-            this.turnCK3.TabIndex = 32;
-            // 
-            // turnCK1
-            // 
-            this.turnCK1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK1.Location = new System.Drawing.Point(54, 12);
-            this.turnCK1.Name = "turnCK1";
-            this.turnCK1.Size = new System.Drawing.Size(17, 17);
-            this.turnCK1.TabIndex = 32;
-            // 
-            // turnCK5
-            // 
-            this.turnCK5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.turnCK5.Location = new System.Drawing.Point(54, 12);
-            this.turnCK5.Name = "turnCK5";
-            this.turnCK5.Size = new System.Drawing.Size(17, 17);
-            this.turnCK5.TabIndex = 32;
             // 
             // mainForm
             // 
