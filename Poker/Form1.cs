@@ -564,7 +564,7 @@ namespace Poker
 
 
             int randomNumber1;
-            randomNumber1 = random.Next(1, testDeck.Count + 1);
+            randomNumber1 = random.Next(0, testDeck.Count - 1);
             num1 = testDeck[randomNumber1];
             testHandNums[0] = num1;
             testDeck.Remove(num1);
