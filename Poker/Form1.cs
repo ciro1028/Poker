@@ -204,41 +204,39 @@ namespace Poker
                 if (playersList[i] == 1)
                 {
                     string str = "";
-                    hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                     for (int j = 0; j < 7; j++)
                     {
                         str = str + " " + setTable.listOfPlayers[0].hand[j];
                     }
-
-                    Console.WriteLine("Player one hand: " + str);
                 }
                 if (playersList[i] == 2)
                 {
-                    hand2Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand2Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                 }
                 if (playersList[i] == 3)
                 {
-                    hand3Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand3Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                 }
                 if (playersList[i] == 4)
                 {
-                    hand4Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand4Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                 }
                 if (playersList[i] == 5)
                 {
-                    hand5Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand5Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                 }
                 if (playersList[i] == 6)
                 {
-                    hand6Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand6Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                 }
                 if (playersList[i] == 7)
                 {
-                    hand7Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand7Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                 }
                 if (playersList[i] == 8)
                 {
-                    hand8Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand);
+                    hand8Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                 }
             }
         }
@@ -546,8 +544,13 @@ namespace Poker
         private void button1_Click(object sender, EventArgs e)
         {
             int count = 0;
+<<<<<<< HEAD
+            //do
+            //{
+=======
             do
             {
+>>>>>>> 6ab59bd9d6948dded30574f781dfd33f663cfe51
 
                 int num1 = 0;
                 int num2 = 0;
@@ -565,6 +568,7 @@ namespace Poker
                     testDeck.Add(i);
                 }
 
+                String[] handInfo = new string[6];
 
                 int randomNumber1;
                 randomNumber1 = random.Next(1, testDeck.Count + 1) - 1;
@@ -608,7 +612,9 @@ namespace Poker
                 testHandNums[6] = num7;
                 testDeck.Remove(num7);
 
-                testLblResult.Text = hand.checkHand(testHandNums);
+                handInfo = hand.checkHand(testHandNums);
+
+                testLblResult.Text = handInfo[0];
 
                 testLbl1.Text = (testHandNums[0]).ToString();
                 testLbl2.Text = (testHandNums[1]).ToString();
@@ -618,10 +624,10 @@ namespace Poker
                 testLbl6.Text = (testHandNums[5]).ToString();
                 testLbl7.Text = (testHandNums[6]).ToString();
 
-                count++;
-                eighthPPlayingLbl.Text = count.ToString();
+                //count++;
+                //eighthPPlayingLbl.Text = count.ToString();
 
-            } while (testLblResult.Text != "Four of a Kind");
+            //} while (testLblResult.Text != "Full House");
         }
 
         public void lblColors(String[] suits)
