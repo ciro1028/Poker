@@ -87,7 +87,7 @@ namespace Poker
                 fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible,
                 seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);
             setPlayers();
-            this.flipBtn.Visible = true;
+            
             disablePlayersBoxes();
 
             currentBettingPlayer = setTable.listOfPlayers[0].id;
@@ -351,6 +351,8 @@ namespace Poker
         private void flipBtn_Click(object sender, EventArgs e)
         {
             flipCards();
+            currentBettingPlayer = setTable.listOfPlayers[0].id;
+            betTurn();
         }
 
         public void flipCards()
@@ -377,15 +379,23 @@ namespace Poker
             {
                 this.turnPB.Load(("../../images/png/" + correctedNumbers(flopCards[3]) + "_of_" + suit + ".png"));
                 this.turnPB.BackColor = Color.White;
+                this.flipBtn.Text = "Deal Turn";
+                this.dealFlopLb.Text = "Deal Turn!";
             }
             else if (countFlop == 2)
             {
                 this.riverPB.Load(("../../images/png/" + correctedNumbers(flopCards[4]) + "_of_" + suit + ".png"));
                 this.riverPB.BackColor = Color.White;
+                this.flipBtn.Text = "Deal River";
+                this.dealFlopLb.Text = "Deal River!";
             }
             else if (countFlop > 2)
             {
                 countFlop = 0;
+                this.flipBtn.Text = "Deal Flop";
+                this.dealFlopLb.Text = "Deal Flop!";
+                this.flipBtn.Visible = false;
+                this.dealFlopLb.Visible = false;
             }
         }
 
@@ -553,6 +563,8 @@ namespace Poker
                 turnOffPlayers();
                 currentBettingPlayer = 0;
                 Console.WriteLine("Hello");
+                flipBtn.Visible = true;
+                dealFlopLb.Visible = true;
             } else {
                 switch (currentBettingPlayer)
                 {
@@ -668,211 +680,211 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //int count = 0;
+            ////int count = 0;
 
-            //do
-            //{
+            ////do
+            ////{
 
-                int num1 = 0;
-                int num2 = 0;
-                int num3 = 0;
-                int num4 = 0;
-                int num5 = 0;
-                int num6 = 0;
-                int num7 = 0;
-                int[] testHandNums = new int[7];
+            //    int num1 = 0;
+            //    int num2 = 0;
+            //    int num3 = 0;
+            //    int num4 = 0;
+            //    int num5 = 0;
+            //    int num6 = 0;
+            //    int num7 = 0;
+            //    int[] testHandNums = new int[7];
 
-                List<int> testDeck = new List<int>();
+            //    List<int> testDeck = new List<int>();
 
-                for (int i = 1; i < 53; i++)
-                {
-                    testDeck.Add(i);
-                }
+            //    for (int i = 1; i < 53; i++)
+            //    {
+            //        testDeck.Add(i);
+            //    }
 
-                String[] handInfo = new string[6];
+            //    String[] handInfo = new string[6];
 
-                int randomNumber1;
-                randomNumber1 = random.Next(1, testDeck.Count + 1) - 1;
-                num1 = testDeck[randomNumber1];
-                testHandNums[0] = num1;
-                testDeck.Remove(num1);
+            //    int randomNumber1;
+            //    randomNumber1 = random.Next(1, testDeck.Count + 1) - 1;
+            //    num1 = testDeck[randomNumber1];
+            //    testHandNums[0] = num1;
+            //    testDeck.Remove(num1);
 
-                int randomNumber2;
-                randomNumber2 = random.Next(1, testDeck.Count + 1) - 1;
-                num2 = testDeck[randomNumber2];
-                testHandNums[1] = num2;
-                testDeck.Remove(num2);
+            //    int randomNumber2;
+            //    randomNumber2 = random.Next(1, testDeck.Count + 1) - 1;
+            //    num2 = testDeck[randomNumber2];
+            //    testHandNums[1] = num2;
+            //    testDeck.Remove(num2);
 
-                int randomNumber3;
-                randomNumber3 = random.Next(1, testDeck.Count + 1) - 1;
-                num3 = testDeck[randomNumber3];
-                testHandNums[2] = num3;
-                testDeck.Remove(num3);
+            //    int randomNumber3;
+            //    randomNumber3 = random.Next(1, testDeck.Count + 1) - 1;
+            //    num3 = testDeck[randomNumber3];
+            //    testHandNums[2] = num3;
+            //    testDeck.Remove(num3);
 
-                int randomNumber4;
-                randomNumber4 = random.Next(1, testDeck.Count + 1) - 1;
-                num4 = testDeck[randomNumber4];
-                testHandNums[3] = num4;
-                testDeck.Remove(num4);
+            //    int randomNumber4;
+            //    randomNumber4 = random.Next(1, testDeck.Count + 1) - 1;
+            //    num4 = testDeck[randomNumber4];
+            //    testHandNums[3] = num4;
+            //    testDeck.Remove(num4);
 
-                int randomNumber5;
-                randomNumber5 = random.Next(1, testDeck.Count + 1) - 1;
-                num5 = testDeck[randomNumber5];
-                testHandNums[4] = num5;
-                testDeck.Remove(num5);
+            //    int randomNumber5;
+            //    randomNumber5 = random.Next(1, testDeck.Count + 1) - 1;
+            //    num5 = testDeck[randomNumber5];
+            //    testHandNums[4] = num5;
+            //    testDeck.Remove(num5);
 
-                int randomNumber6;
-                randomNumber6 = random.Next(1, testDeck.Count + 1) - 1;
-                num6 = testDeck[randomNumber6];
-                testHandNums[5] = num6;
-                testDeck.Remove(num6);
+            //    int randomNumber6;
+            //    randomNumber6 = random.Next(1, testDeck.Count + 1) - 1;
+            //    num6 = testDeck[randomNumber6];
+            //    testHandNums[5] = num6;
+            //    testDeck.Remove(num6);
 
-                int randomNumber7;
-                randomNumber7 = random.Next(1, testDeck.Count + 1) - 1;
-                num7 = testDeck[randomNumber7];
-                testHandNums[6] = num7;
-                testDeck.Remove(num7);
+            //    int randomNumber7;
+            //    randomNumber7 = random.Next(1, testDeck.Count + 1) - 1;
+            //    num7 = testDeck[randomNumber7];
+            //    testHandNums[6] = num7;
+            //    testDeck.Remove(num7);
 
-                handInfo = hand.checkHand(testHandNums);
+            //    handInfo = hand.checkHand(testHandNums);
 
-                testLblResult.Text = handInfo[0];
+            //    testLblResult.Text = handInfo[0];
 
-                testLbl1.Text = (testHandNums[0]).ToString();
-                testLbl2.Text = (testHandNums[1]).ToString();
-                testLbl3.Text = (testHandNums[2]).ToString();
-                testLbl4.Text = (testHandNums[3]).ToString();
-                testLbl5.Text = (testHandNums[4]).ToString();
-                testLbl6.Text = (testHandNums[5]).ToString();
-                testLbl7.Text = (testHandNums[6]).ToString();
+            //    testLbl1.Text = (testHandNums[0]).ToString();
+            //    testLbl2.Text = (testHandNums[1]).ToString();
+            //    testLbl3.Text = (testHandNums[2]).ToString();
+            //    testLbl4.Text = (testHandNums[3]).ToString();
+            //    testLbl5.Text = (testHandNums[4]).ToString();
+            //    testLbl6.Text = (testHandNums[5]).ToString();
+            //    testLbl7.Text = (testHandNums[6]).ToString();
 
-                //count++;
-                //eighthPPlayingLbl.Text = count.ToString();
+            //    //count++;
+            //    //eighthPPlayingLbl.Text = count.ToString();
 
-            //} while (testLblResult.Text != "Full House");
+            ////} while (testLblResult.Text != "Full House");
         }
 
         public void lblColors(String[] suits)
         {
-            switch (suits[0])
-            {
-                case "spades":
-                    testLbl1.ForeColor = Color.Blue;
-                    break;
-                case "clubs":
-                    testLbl1.ForeColor = Color.Purple;
-                    break;
-                case "diamonds":
-                    testLbl1.ForeColor = Color.Yellow;
-                    break;
-                case "hearts":
-                    testLbl1.ForeColor = Color.Red;
-                    break;
-                default:
-                    break;
-            }
+        //    switch (suits[0])
+        //    {
+        //        case "spades":
+        //            testLbl1.ForeColor = Color.Blue;
+        //            break;
+        //        case "clubs":
+        //            testLbl1.ForeColor = Color.Purple;
+        //            break;
+        //        case "diamonds":
+        //            testLbl1.ForeColor = Color.Yellow;
+        //            break;
+        //        case "hearts":
+        //            testLbl1.ForeColor = Color.Red;
+        //            break;
+        //        default:
+        //            break;
+        //    }
 
-            switch (suits[1])
-            {
-                case "spades":
-                    testLbl2.ForeColor = Color.Blue;
-                    break;
-                case "clubs":
-                    testLbl2.ForeColor = Color.Purple;
-                    break;
-                case "diamonds":
-                    testLbl2.ForeColor = Color.Yellow;
-                    break;
-                case "hearts":
-                    testLbl2.ForeColor = Color.Red;
-                    break;
-                default:
-                    break;
-            }
-            switch (suits[2])
-            {
-                case "spades":
-                    testLbl3.ForeColor = Color.Blue;
-                    break;
-                case "clubs":
-                    testLbl3.ForeColor = Color.Purple;
-                    break;
-                case "diamonds":
-                    testLbl3.ForeColor = Color.Yellow;
-                    break;
-                case "hearts":
-                    testLbl3.ForeColor = Color.Red;
-                    break;
-                default:
-                    break;
-            }
-            switch (suits[3])
-            {
-                case "spades":
-                    testLbl4.ForeColor = Color.Blue;
-                    break;
-                case "clubs":
-                    testLbl4.ForeColor = Color.Purple;
-                    break;
-                case "diamonds":
-                    testLbl4.ForeColor = Color.Yellow;
-                    break;
-                case "hearts":
-                    testLbl4.ForeColor = Color.Red;
-                    break;
-                default:
-                    break;
-            }
-            switch (suits[4])
-            {
-                case "spades":
-                    testLbl5.ForeColor = Color.Blue;
-                    break;
-                case "clubs":
-                    testLbl5.ForeColor = Color.Purple;
-                    break;
-                case "diamonds":
-                    testLbl5.ForeColor = Color.Yellow;
-                    break;
-                case "hearts":
-                    testLbl5.ForeColor = Color.Red;
-                    break;
-                default:
-                    break;
-            }
-            switch (suits[5])
-            {
-                case "spades":
-                    testLbl6.ForeColor = Color.Blue;
-                    break;
-                case "clubs":
-                    testLbl6.ForeColor = Color.Purple;
-                    break;
-                case "diamonds":
-                    testLbl6.ForeColor = Color.Yellow;
-                    break;
-                case "hearts":
-                    testLbl6.ForeColor = Color.Red;
-                    break;
-                default:
-                    break;
-            }
-            switch (suits[6])
-            {
-                case "spades":
-                    testLbl7.ForeColor = Color.Blue;
-                    break;
-                case "clubs":
-                    testLbl7.ForeColor = Color.Purple;
-                    break;
-                case "diamonds":
-                    testLbl7.ForeColor = Color.Yellow;
-                    break;
-                case "hearts":
-                    testLbl7.ForeColor = Color.Red;
-                    break;
-                default:
-                    break;
-            }
+        //    switch (suits[1])
+        //    {
+        //        case "spades":
+        //            testLbl2.ForeColor = Color.Blue;
+        //            break;
+        //        case "clubs":
+        //            testLbl2.ForeColor = Color.Purple;
+        //            break;
+        //        case "diamonds":
+        //            testLbl2.ForeColor = Color.Yellow;
+        //            break;
+        //        case "hearts":
+        //            testLbl2.ForeColor = Color.Red;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    switch (suits[2])
+        //    {
+        //        case "spades":
+        //            testLbl3.ForeColor = Color.Blue;
+        //            break;
+        //        case "clubs":
+        //            testLbl3.ForeColor = Color.Purple;
+        //            break;
+        //        case "diamonds":
+        //            testLbl3.ForeColor = Color.Yellow;
+        //            break;
+        //        case "hearts":
+        //            testLbl3.ForeColor = Color.Red;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    switch (suits[3])
+        //    {
+        //        case "spades":
+        //            testLbl4.ForeColor = Color.Blue;
+        //            break;
+        //        case "clubs":
+        //            testLbl4.ForeColor = Color.Purple;
+        //            break;
+        //        case "diamonds":
+        //            testLbl4.ForeColor = Color.Yellow;
+        //            break;
+        //        case "hearts":
+        //            testLbl4.ForeColor = Color.Red;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    switch (suits[4])
+        //    {
+        //        case "spades":
+        //            testLbl5.ForeColor = Color.Blue;
+        //            break;
+        //        case "clubs":
+        //            testLbl5.ForeColor = Color.Purple;
+        //            break;
+        //        case "diamonds":
+        //            testLbl5.ForeColor = Color.Yellow;
+        //            break;
+        //        case "hearts":
+        //            testLbl5.ForeColor = Color.Red;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    switch (suits[5])
+        //    {
+        //        case "spades":
+        //            testLbl6.ForeColor = Color.Blue;
+        //            break;
+        //        case "clubs":
+        //            testLbl6.ForeColor = Color.Purple;
+        //            break;
+        //        case "diamonds":
+        //            testLbl6.ForeColor = Color.Yellow;
+        //            break;
+        //        case "hearts":
+        //            testLbl6.ForeColor = Color.Red;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    switch (suits[6])
+        //    {
+        //        case "spades":
+        //            testLbl7.ForeColor = Color.Blue;
+        //            break;
+        //        case "clubs":
+        //            testLbl7.ForeColor = Color.Purple;
+        //            break;
+        //        case "diamonds":
+        //            testLbl7.ForeColor = Color.Yellow;
+        //            break;
+        //        case "hearts":
+        //            testLbl7.ForeColor = Color.Red;
+        //            break;
+        //        default:
+        //            break;
+        //    }
         }
     }
 }

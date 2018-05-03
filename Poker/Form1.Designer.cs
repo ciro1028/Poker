@@ -29,15 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.testLblResult = new System.Windows.Forms.Label();
-            this.testLbl4 = new System.Windows.Forms.Label();
-            this.testLbl5 = new System.Windows.Forms.Label();
-            this.testLbl6 = new System.Windows.Forms.Label();
-            this.testLbl7 = new System.Windows.Forms.Label();
-            this.testLbl3 = new System.Windows.Forms.Label();
-            this.testLbl2 = new System.Windows.Forms.Label();
-            this.testLbl1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dealFlopLb = new System.Windows.Forms.Label();
             this.secondFlopPB = new System.Windows.Forms.PictureBox();
             this.thirdFlopPB = new System.Windows.Forms.PictureBox();
             this.turnPB = new System.Windows.Forms.PictureBox();
@@ -193,15 +185,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.testLblResult);
-            this.panel1.Controls.Add(this.testLbl4);
-            this.panel1.Controls.Add(this.testLbl5);
-            this.panel1.Controls.Add(this.testLbl6);
-            this.panel1.Controls.Add(this.testLbl7);
-            this.panel1.Controls.Add(this.testLbl3);
-            this.panel1.Controls.Add(this.testLbl2);
-            this.panel1.Controls.Add(this.testLbl1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.dealFlopLb);
             this.panel1.Controls.Add(this.secondFlopPB);
             this.panel1.Controls.Add(this.thirdFlopPB);
             this.panel1.Controls.Add(this.turnPB);
@@ -231,87 +215,17 @@
             this.panel1.Size = new System.Drawing.Size(958, 549);
             this.panel1.TabIndex = 0;
             // 
-            // testLblResult
+            // dealFlopLb
             // 
-            this.testLblResult.AutoSize = true;
-            this.testLblResult.Location = new System.Drawing.Point(416, 255);
-            this.testLblResult.Name = "testLblResult";
-            this.testLblResult.Size = new System.Drawing.Size(35, 13);
-            this.testLblResult.TabIndex = 30;
-            this.testLblResult.Text = "label7";
-            // 
-            // testLbl4
-            // 
-            this.testLbl4.AutoSize = true;
-            this.testLbl4.Location = new System.Drawing.Point(255, 255);
-            this.testLbl4.Name = "testLbl4";
-            this.testLbl4.Size = new System.Drawing.Size(35, 13);
-            this.testLbl4.TabIndex = 29;
-            this.testLbl4.Text = "label6";
-            // 
-            // testLbl5
-            // 
-            this.testLbl5.AutoSize = true;
-            this.testLbl5.Location = new System.Drawing.Point(416, 171);
-            this.testLbl5.Name = "testLbl5";
-            this.testLbl5.Size = new System.Drawing.Size(35, 13);
-            this.testLbl5.TabIndex = 28;
-            this.testLbl5.Text = "label5";
-            // 
-            // testLbl6
-            // 
-            this.testLbl6.AutoSize = true;
-            this.testLbl6.Location = new System.Drawing.Point(416, 201);
-            this.testLbl6.Name = "testLbl6";
-            this.testLbl6.Size = new System.Drawing.Size(35, 13);
-            this.testLbl6.TabIndex = 27;
-            this.testLbl6.Text = "label4";
-            // 
-            // testLbl7
-            // 
-            this.testLbl7.AutoSize = true;
-            this.testLbl7.Location = new System.Drawing.Point(416, 228);
-            this.testLbl7.Name = "testLbl7";
-            this.testLbl7.Size = new System.Drawing.Size(35, 13);
-            this.testLbl7.TabIndex = 26;
-            this.testLbl7.Text = "label3";
-            // 
-            // testLbl3
-            // 
-            this.testLbl3.AutoSize = true;
-            this.testLbl3.Location = new System.Drawing.Point(255, 228);
-            this.testLbl3.Name = "testLbl3";
-            this.testLbl3.Size = new System.Drawing.Size(35, 13);
-            this.testLbl3.TabIndex = 25;
-            this.testLbl3.Text = "label2";
-            // 
-            // testLbl2
-            // 
-            this.testLbl2.AutoSize = true;
-            this.testLbl2.Location = new System.Drawing.Point(255, 201);
-            this.testLbl2.Name = "testLbl2";
-            this.testLbl2.Size = new System.Drawing.Size(35, 13);
-            this.testLbl2.TabIndex = 24;
-            this.testLbl2.Text = "label1";
-            // 
-            // testLbl1
-            // 
-            this.testLbl1.AutoSize = true;
-            this.testLbl1.Location = new System.Drawing.Point(255, 171);
-            this.testLbl1.Name = "testLbl1";
-            this.testLbl1.Size = new System.Drawing.Size(35, 13);
-            this.testLbl1.TabIndex = 23;
-            this.testLbl1.Text = "label1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(246, 292);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dealFlopLb.AutoSize = true;
+            this.dealFlopLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealFlopLb.ForeColor = System.Drawing.Color.Maroon;
+            this.dealFlopLb.Location = new System.Drawing.Point(424, 253);
+            this.dealFlopLb.Name = "dealFlopLb";
+            this.dealFlopLb.Size = new System.Drawing.Size(96, 24);
+            this.dealFlopLb.TabIndex = 22;
+            this.dealFlopLb.Text = "Deal Flop!";
+            this.dealFlopLb.Visible = false;
             // 
             // secondFlopPB
             // 
@@ -360,11 +274,11 @@
             // 
             // flipBtn
             // 
-            this.flipBtn.Location = new System.Drawing.Point(621, 288);
+            this.flipBtn.Location = new System.Drawing.Point(433, 227);
             this.flipBtn.Name = "flipBtn";
             this.flipBtn.Size = new System.Drawing.Size(75, 23);
             this.flipBtn.TabIndex = 16;
-            this.flipBtn.Text = "Flip";
+            this.flipBtn.Text = "Deal Flop";
             this.flipBtn.UseVisualStyleBackColor = true;
             this.flipBtn.Visible = false;
             this.flipBtn.Click += new System.EventHandler(this.flipBtn_Click);
@@ -1741,15 +1655,6 @@
         private System.Windows.Forms.Label hand4Lbl;
         private System.Windows.Forms.Label hand3Lbl;
         private System.Windows.Forms.Label hand2Lbl;
-        private System.Windows.Forms.Label testLbl1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label testLblResult;
-        private System.Windows.Forms.Label testLbl4;
-        private System.Windows.Forms.Label testLbl5;
-        private System.Windows.Forms.Label testLbl6;
-        private System.Windows.Forms.Label testLbl7;
-        private System.Windows.Forms.Label testLbl3;
-        private System.Windows.Forms.Label testLbl2;
         private System.Windows.Forms.Panel turnCK8;
         private System.Windows.Forms.Panel turnCK2;
         private System.Windows.Forms.Panel turnCK7;
@@ -1758,6 +1663,7 @@
         private System.Windows.Forms.Panel turnCK3;
         private System.Windows.Forms.Panel turnCK1;
         private System.Windows.Forms.Panel turnCK5;
+        private System.Windows.Forms.Label dealFlopLb;
     }
 }
 
