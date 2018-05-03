@@ -399,8 +399,6 @@ namespace Poker
                         {
                             str = str + " " + setTable.listOfPlayers[0].hand[j];
                         }
-
-                        Console.WriteLine("Player one hand first flop: " + str);
                     }
                     if (playersList[i] == 2)
                     {
@@ -445,7 +443,6 @@ namespace Poker
                         setTable.listOfPlayers[i].hand[4] = flopCards[2];
                     }
                 }
-                
             }
             else if (countFlop == 1)
             {
@@ -461,8 +458,6 @@ namespace Poker
                         {
                             str = str + " " + setTable.listOfPlayers[0].hand[j];
                         }
-
-                        Console.WriteLine("Player one hand after second flop: " + str);
                     }
                     if (playersList[i] == 2)
                     {
@@ -508,8 +503,6 @@ namespace Poker
                         {
                             str = str + " " + setTable.listOfPlayers[0].hand[j];
                         }
-
-                        Console.WriteLine("Player one hand after third flop: " + str);
                     }
                     if (playersList[i] == 2)
                     {
@@ -546,6 +539,7 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             int num1 = 0;
             int num2 = 0;
             int num3 = 0;
@@ -617,43 +611,85 @@ namespace Poker
             }
 
             foreach (string card in suitedHand)
+=======
+            int count = 0;
+            do
+>>>>>>> d593e26647406786c86be16dd78895bcc97bc780
             {
-                Console.WriteLine("Suited hand: " + card);
-            }
 
-            String[] detailedCards = new String[7];
-            for (int i = 0; i < 7; i++){
-                
-                detailedCards[i] = (transformedHand[i]).ToString() + " of " + suitedHand[i];
-            }
+                int num1 = 0;
+                int num2 = 0;
+                int num3 = 0;
+                int num4 = 0;
+                int num5 = 0;
+                int num6 = 0;
+                int num7 = 0;
+                int[] testHandNums = new int[7];
 
-            String result = hand.checkHand(testHandNums);
+                List<int> testDeck = new List<int>();
 
-            testLbl1.Text = (detailedCards[0]).ToString();
-            testLbl2.Text = (detailedCards[1]).ToString();
-            testLbl3.Text = (detailedCards[2]).ToString();
-            testLbl4.Text = (detailedCards[3]).ToString();
-            testLbl5.Text = (detailedCards[4]).ToString();
-            testLbl6.Text = (detailedCards[5]).ToString();
-            testLbl7.Text = (detailedCards[6]).ToString();
-
-            testLblResult.Text = result;
-
-            //lblColors(suitedHand);
+                for (int i = 1; i < 53; i++)
+                {
+                    testDeck.Add(i);
+                }
 
 
+                int randomNumber1;
+                randomNumber1 = random.Next(1, testDeck.Count + 1) - 1;
+                num1 = testDeck[randomNumber1];
+                testHandNums[0] = num1;
+                testDeck.Remove(num1);
 
+                int randomNumber2;
+                randomNumber2 = random.Next(1, testDeck.Count + 1) - 1;
+                num2 = testDeck[randomNumber2];
+                testHandNums[1] = num2;
+                testDeck.Remove(num2);
 
-            //String str = "";
+                int randomNumber3;
+                randomNumber3 = random.Next(1, testDeck.Count + 1) - 1;
+                num3 = testDeck[randomNumber3];
+                testHandNums[2] = num3;
+                testDeck.Remove(num3);
 
-            //for (int i = 0; i < setTable.listOfPlayers[0].hand.Length; i++)
-            //{
-            //    str = str + " " + setTable.listOfPlayers[0].hand[i];
-            //}
+                int randomNumber4;
+                randomNumber4 = random.Next(1, testDeck.Count + 1) - 1;
+                num4 = testDeck[randomNumber4];
+                testHandNums[3] = num4;
+                testDeck.Remove(num4);
 
-            //testLbl.Text = str;
+                int randomNumber5;
+                randomNumber5 = random.Next(1, testDeck.Count + 1) - 1;
+                num5 = testDeck[randomNumber5];
+                testHandNums[4] = num5;
+                testDeck.Remove(num5);
 
-            //Console.WriteLine("----------");
+                int randomNumber6;
+                randomNumber6 = random.Next(1, testDeck.Count + 1) - 1;
+                num6 = testDeck[randomNumber6];
+                testHandNums[5] = num6;
+                testDeck.Remove(num6);
+
+                int randomNumber7;
+                randomNumber7 = random.Next(1, testDeck.Count + 1) - 1;
+                num7 = testDeck[randomNumber7];
+                testHandNums[6] = num7;
+                testDeck.Remove(num7);
+
+                testLblResult.Text = hand.checkHand(testHandNums);
+
+                testLbl1.Text = (testHandNums[0]).ToString();
+                testLbl2.Text = (testHandNums[1]).ToString();
+                testLbl3.Text = (testHandNums[2]).ToString();
+                testLbl4.Text = (testHandNums[3]).ToString();
+                testLbl5.Text = (testHandNums[4]).ToString();
+                testLbl6.Text = (testHandNums[5]).ToString();
+                testLbl7.Text = (testHandNums[6]).ToString();
+
+                count++;
+                eighthPPlayingLbl.Text = count.ToString();
+
+            } while (testLblResult.Text != "Four of a Kind");
         }
 
         public void lblColors(String[] suits) {
