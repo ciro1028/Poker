@@ -27,6 +27,8 @@ namespace Poker
         List<int> cardsDealt = new List<int>();
         int countFlop = 0;
         int[] flopCards = new int[] { 0, 0, 0, 0, 0 };
+        int currentBettingPlayer = 0;
+        int currentBettingPlayerCount = 0;
 
         Random random = new Random();
 
@@ -87,6 +89,9 @@ namespace Poker
             setPlayers();
             this.flipBtn.Visible = true;
             disablePlayersBoxes();
+
+            currentBettingPlayer = setTable.listOfPlayers[0].id;
+            betTurn();
         }
 
         public void setPlayers()
@@ -541,14 +546,66 @@ namespace Poker
             }
         }
 
+        // method to handle each player's turn
         public void betTurn()
         {
-
+            switch (currentBettingPlayer)
+            {
+                case 1:
+                    this.turnCK1.BackColor = Color.Lime;
+                    this.firstPbetRB.Visible = true;
+                    this.firstPCheckRB.Visible = true;
+                    this.firstPBetBtn.Visible = true;
+                    break;
+                case 2:
+                    this.turnCK2.BackColor = Color.Lime;
+                    this.secondPbetRB.Visible = true;
+                    this.secondPCheckRB.Visible = true;
+                    this.secondBetBtn.Visible = true;
+                    break;
+                case 3:
+                    this.turnCK3.BackColor = Color.Lime;
+                    this.thirdPbetRB.Visible = true;
+                    this.thirdPCheckRB.Visible = true;
+                    this.thirdPBetBtn.Visible = true;
+                    break;
+                case 4:
+                    this.turnCK4.BackColor = Color.Lime;
+                    this.fourthPbetRB.Visible = true;
+                    this.fourthPCheckRB.Visible = true;
+                    this.fourthPBetBtn.Visible = true;
+                    break;
+                case 5:
+                    this.turnCK5.BackColor = Color.Lime;
+                    this.fifthPbetRB.Visible = true;
+                    this.fifthPCheckRB.Visible = true;
+                    this.fifthPBetBtn.Visible = true;
+                    break;
+                case 6:
+                    this.turnCK6.BackColor = Color.Lime;
+                    this.sixthPbetRB.Visible = true;
+                    this.sixthPCheckRB.Visible = true;
+                    this.sixthPBetBtn.Visible = true;
+                    break;
+                case 7:
+                    this.turnCK7.BackColor = Color.Lime;
+                    this.seventhPbetRB.Visible = true;
+                    this.seventhPCheckRB.Visible = true;
+                    this.seventhPBetBtn.Visible = true;
+                    break;
+                case 8:
+                    this.turnCK8.BackColor = Color.Lime;
+                    this.eighthPbetRB.Visible = true;
+                    this.eighthPCheckRB.Visible = true;
+                    this.eighthPBetBtn.Visible = true;
+                    break;
+            }
+            //currentBettingPlayer = set
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int count = 0;
+            //int count = 0;
 
             //do
             //{
