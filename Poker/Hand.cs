@@ -24,14 +24,12 @@ namespace Poker
         List<int> pairs2 = new List<int>();
         int[] handNumbers = new int[] { 0, 0, 0, 0, 0, 0, 0 };
         String[] handSuits = new String[] { "", "", "", "", "", "", "" };
+        Boolean isRoyal = false;
+
 
         //check hand that is sent from method checkHands() on Form1 
         public String checkHand(int[] handToCheck)
         {
-            foreach(int card in handToCheck){
-                Console.WriteLine("Hand to check: " + card);
-            }
-
             String handString = "";
             Boolean isFlush = false;
             Boolean isStraight = false;
@@ -41,14 +39,16 @@ namespace Poker
 
             isStraight = checkForStraight(handToCheck);
 
-            //isPair = checkForPairs(handToCheck);
-
+            int[] isPairHand = new int[5];
+            isPair = (string)checkForPairs(handToCheck);
             //Array.Sort<int>(transformedHand, new Comparison<int>(
                                     //(i1, i2) => i2.CompareTo(i1)
                                       //));
 
             // setting string that is going to be sent to Form1 with the resulted hand
-            if (isFlush && isStraight)
+            if (isFlush && isStraight && isRoyal){
+                handString = "Royal Flush";
+            } else if (isFlush && isStraight)
             {
                 handString = "Straight Flush";
             } else if (isFlush)
@@ -61,42 +61,9 @@ namespace Poker
             {
                 handString = isPair;
             }
-
-            foreach (int card in handToCheck)
-            {
-                Console.WriteLine("Hand checked: " + card);
-            }
+            isRoyal = false;
 
             return handString;
-        }
-
-        public Boolean checkForStraight(int[] checkStraightHand)
-        {
-            int[] transformedHand = new int[] { };
-            transformedHand = transformHands(checkStraightHand);
-
-            Boolean isStraight = false;
-            int count = 0;
-
-            Array.Sort(checkStraightHand);
-
-            for(int i = 0; i < checkStraightHand.Length - 1; i++)
-            {
-                if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1)
-                {
-                    count++;
-                } else if (count < 4)
-                {
-                    count = 0;
-                }
-            }
-
-            if (count >= 4)
-            {
-                isStraight = true;
-            }
-
-            return isStraight;
         }
 
         // Transforms numbers between 1 and 52 into numbers relative to suits
@@ -159,22 +126,70 @@ namespace Poker
             return handSuits;
         }
 
+        public Boolean checkForStraight(int[] checkStraightHand)
+        {
+            int[] transformedHand = new int[] { };
+            transformedHand = transformHands(checkStraightHand);
+
+            Boolean isStraight = false;
+            int count = 0;
+            Boolean checkStraightWithAce = false;
+
+            Array.Sort(checkStraightHand);
+
+            for(int i = 0; i < checkStraightHand.Length - 1; i++)
+            {
+                if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1)
+                {
+                    if (count == 0){
+                        if (checkStraightHand[i] == 10 || checkStraightHand[i] == 23 || checkStraightHand[i] == 36 || checkStraightHand[i] == 49)
+                        {
+                            checkStraightWithAce = true;
+                        }
+                    }
+                    count++;
+                } else if (count < 4)
+                {
+                    count = 0;
+                }
+            }
+
+            if (checkStraightWithAce){
+                if (count == 3){
+                    foreach(int current in transformedHand){
+                        if (current == 1){
+                            isStraight = true;
+                            isRoyal = true;
+                        }
+                    } 
+                }
+            }
+
+            if (count >= 4)
+            {
+                isStraight = true;
+            }
+
+            return isStraight;
+        }
+
         public Boolean checkForFlush(int[] checkFlushHand)
         {
-            String[] transformedHandSuits = new String[] { };
+            String[] transformedHandSuits = new String[7];
             transformedHandSuits = transformHandsSuits(checkFlushHand);
 
             Boolean flush;
             flush = false;
-           
+
             for (int i = 0; i < 3; i++)
             {
                 int count = 0;
-                for (int j = 0; j < checkFlushHand.Length; j++)
+
+                for (int j = 0; j < 7; j++)
                 {
                     if (i != j)
                     {
-                        if (checkFlushHand[i] == checkFlushHand[j])
+                        if (transformedHandSuits[i] == transformedHandSuits[j])
                         {
                             count++;
                         }
@@ -185,19 +200,26 @@ namespace Poker
                     flush = true;
                 }
             }
-            
+
             return flush;
         }
 
         public String checkForPairs(int[] handNumbers)
         {
-            int count = 0;
+            int count1 = 0;
             int count2 = 0;
+            int count3 = 0;
+            int num1 = 0;
+            int num2 = 0;
+            int num3 = 0;
             Object[] handInfo = new Object[2];
             String pairsString = "";
             int[] finalHand = new int[5];
+
             pairs.Clear();
             pairs2.Clear();
+            List<int> numberNotToCheck = new List<int> {};
+
 
             for (int i = 0; i < 7; i++)
             {
@@ -207,68 +229,138 @@ namespace Poker
                     {
                         if (handNumbers[i] == handNumbers[j] && handNumbers[i] != 0)
                         {
-                            count++;
-                            pairs.Add(handNumbers[i]);
-                            pairs2.Add(handNumbers[i]);
-                            handNumbers[j] = 0;
+                            Boolean isMarked = false;
+                            foreach(int marked in numberNotToCheck){
+                                if (i == marked){
+                                    isMarked = true;
+                                }
+                            }
+
+                            if(!isMarked){
+                                if (num1 == 0 || handNumbers[i] == num1)
+                                {
+                                    num1 = handNumbers[i];
+                                    count1++;
+                                }
+                                else if (num2 == 0 || handNumbers[i] == num2)
+                                {
+                                    num2 = handNumbers[i];
+                                    count2++;
+                                }
+                                else if (num3 == 0 || handNumbers[i] == num3)
+                                {
+                                    num3 = handNumbers[i];
+                                    count3++;
+                                }
+                                numberNotToCheck.Add(j);
+                            }
                         }
                     }
                 }
             }
 
-            for (int i = 0; i < pairs2.Count; i++)
-            {
-                for (int j = i; j < pairs2.Count; j++)
-                {
-                    if (i != j)
-                    {
-                        if (pairs2[i] == pairs2[j])
-                        {
-                            count2++;
-                        }
-                    }
-                }
+            //adding numbers that paired up into an array for sorting.
+            int[] nums = new int[3];
+            if (num1 != 0){
+                nums[0] = num1;
             }
+            if (num2 != 0){
+                nums[1] = num2;
+            }
+            if (num3 != 0){
+                nums[2] = num3;
+            }
+            // sorting array of paired numbers in reverse order
+            Array.Sort(nums);
+            Array.Sort<int>(nums, new Comparison<int>((i1, i2) => i2.CompareTo(i1)));
+            // sortin main hand in reverse order
+            Array.Sort(handNumbers);
+            Array.Sort<int>(handNumbers, new Comparison<int>((i1, i2) => i2.CompareTo(i1)));
 
-            for (int i = 0; i < pairs.Count; i++)
-            {
-                for (int j = i; j < pairs.Count; j++)
-                {
-                    if (i != j)
-                    {
-                        if (pairs[i] == pairs[j])
-                        {
-                            pairs[j] = 0;
-                        }
-                    }
-                }
-                pairs.Remove(0);
-            }
-
-            if (pairs.Count == 2 && count == 2 || pairs.Count == 3 && count == 3)
-            {
-                pairsString = "Two Pairs";
-            }
-            else if (pairs.Count == 1 && count == 1)
-            {
-                pairsString = "One Pair";
-            }
-            else if (pairs.Count == 1 && count == 2)
-            {
-                pairsString = "Three of a kind";
-            }
-            else if (pairs.Count > 1 && count == 3 || count2 == 2 || pairs.Count == 3 && count == 4)
-            {
-                pairsString = "Full house";
-            }
-            else if (pairs.Count >= 1 && count >= 3 && count2 == 3)
-            {
-                pairsString = "Four of a kind";
-
-            } else if (pairs.Count == 0) {
+            if (count1 == 0) {
                 pairsString = "High Card";
+                for (int i = 0; i < 5; i++){
+                    finalHand[i] = handNumbers[i];
+                }
+
+            } else if (count1 > 0 && count1 < 2 && count2 == 0) {
+                pairsString = "One Pair";
+                finalHand[0] = num1;
+                finalHand[1] = num1;
+                List<int> numbersLeft = new List<int> {};
+                foreach(int current in handNumbers){
+                    if (current != num1){
+                        numbersLeft.Add(current);
+                    }
+                }
+                finalHand[2] = numbersLeft[0];
+                finalHand[3] = numbersLeft[1];
+                finalHand[4] = numbersLeft[2];
+
+            } else if (count1 > 1 && count1 < 3 && count2 == 0) {
+                pairsString = "Three of a Kind";
+                finalHand[0] = num1;
+                finalHand[1] = num1;
+                finalHand[2] = num1;
+                List<int> numbersLeft = new List<int> { };
+                foreach (int current in handNumbers)
+                {
+                    if (current != num1)
+                    {
+                        numbersLeft.Add(current);
+                    }
+                }
+                finalHand[3] = numbersLeft[0];
+                finalHand[4] = numbersLeft[1];
+            } else if (count1 > 2 || count2 > 2) {
+                pairsString = "Four of a Kind";
+                if(count1 > count2){
+                    finalHand[0] = num1;
+                    finalHand[1] = num1;
+                    finalHand[2] = num1;
+                    finalHand[3] = num1;
+                } else {
+                    finalHand[0] = num2;
+                    finalHand[1] = num2;
+                    finalHand[2] = num2;
+                    finalHand[3] = num2;
+                }
+                List<int> numbersLeft = new List<int> { };
+                foreach (int current in handNumbers)
+                {
+                    if (current != num1)
+                    {
+                        numbersLeft.Add(current);
+                    }
+                }
+                finalHand[4] = numbersLeft[0];
+            } else if (count1 == 1 && count2 == 1 || count1 == 1 && count2 == 1 && count3 ==1){
+                pairsString = "Two Pair";
+                finalHand[0] = nums[0];
+                finalHand[1] = nums[0];
+                finalHand[2] = nums[1];
+                finalHand[3] = nums[1];
+
+                List<int> numbersLeft = new List<int> { };
+                foreach (int current in handNumbers)
+                {
+                    if (current != num1 && current != num2 && current != num3)
+                    {
+                        numbersLeft.Add(current);
+                    }
+                }
+                finalHand[4] = numbersLeft[0];
+            } else {
+                pairsString = "Full House";
             }
 
+
+            Console.WriteLine("");
+            Array.Sort(finalHand);
+            Array.Sort<int>(finalHand, new Comparison<int>((i1, i2) => i2.CompareTo(i1)));
+            foreach(int card in finalHand){
+                Console.Write(card + " ");
+            }
             return pairsString;
         }
 

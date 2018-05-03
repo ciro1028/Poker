@@ -150,8 +150,6 @@ namespace Poker
                     str = str + " " + flopNumbers[j];
                 }
 
-                Console.WriteLine("Player one hand inside setFlop: " + str);
-
             } else if (countFlop == 1){
                 int randomNumber;
                 randomNumber = random.Next(1, deck.Count);
