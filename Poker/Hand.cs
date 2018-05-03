@@ -34,7 +34,7 @@ namespace Poker
             Boolean isFlush = false;
             Boolean isStraight = false;
             String isPair = "";
-            String[] handInfo = new String[6];
+            String[] handInfo = new String[7];
 
             isFlush = checkForFlush(handToCheck);
 
@@ -61,6 +61,8 @@ namespace Poker
                 handString = isPair;
             }
             isRoyal = false;
+
+            handInfo[6] = getHandNumberStrenght(handString);
 
             return handInfo;
         }
@@ -95,6 +97,46 @@ namespace Poker
                 }
             }
             return handNumbers;
+        }
+
+        // transform the hand into a number to compare the strenght of it later
+        public String getHandNumberStrenght(String hand){
+            String handNumberStrenght = "";
+            switch (hand) {
+                case "High Card":
+                    handNumberStrenght = "10";
+                    break;
+                case "One Pair":
+                    handNumberStrenght = "9";
+                    break;
+                case "Two Pairs":
+                    handNumberStrenght = "8";
+                    break;
+                case "Three of a Kind":
+                    handNumberStrenght = "7";
+                    break;
+                case "Straight":
+                    handNumberStrenght = "6";
+                    break;
+                case "Flush":
+                    handNumberStrenght = "5";
+                    break;
+                case "Full House":
+                    handNumberStrenght = "4";
+                    break;
+                case "Fout of a Kind":
+                    handNumberStrenght = "3";
+                    break;
+                case "Straight Flush":
+                    handNumberStrenght = "2";
+                    break;
+                case "Royal Flush":
+                    handNumberStrenght = "1";
+                    break;
+                default:
+                    break;
+            }
+            return handNumberStrenght;
         }
 
         // Transforms numbers into suits

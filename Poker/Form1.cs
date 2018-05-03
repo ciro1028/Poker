@@ -223,12 +223,9 @@ namespace Poker
             {
                 if (playersList[i] == 1)
                 {
-                    string str = "";
                     hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
-                    for (int j = 0; j < 7; j++)
-                    {
-                        str = str + " " + setTable.listOfPlayers[0].hand[j];
-                    }
+                    setTable.listOfPlayers[i].currentNumberStrenght = hand.checkHand(setTable.listOfPlayers[i].hand)[6];
+                    Console.WriteLine(setTable.listOfPlayers[i].currentNumberStrenght);
                 }
                 if (playersList[i] == 2)
                 {
