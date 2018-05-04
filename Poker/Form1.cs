@@ -225,10 +225,12 @@ namespace Poker
                 {
                     p1WinPanel.Visible = true;
                     hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
-                    this.p1resultHand1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    foreach(int current in setTable.listOfPlayers[i].hand){
-                        Console.WriteLine(current);
-                    }
+                    this.p1resultHand1.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[2] + "_of_" + suit + ".png");
+                    this.p1resultHand2.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[3] + "_of_" + suit + ".png");
+                    this.p1resultHand3.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[4] + "_of_" + suit + ".png");
+                    this.p1resultHand4.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[5] + "_of_" + suit + ".png");
+                    //this.p1resultHand5.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[6] + "_of_" + suit + ".png");
+
                 }
                 if (playersList[i] == 2)
                 {
