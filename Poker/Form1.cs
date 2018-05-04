@@ -223,7 +223,12 @@ namespace Poker
             {
                 if (playersList[i] == 1)
                 {
+                    p1WinPanel.Visible = true;
                     hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    this.p1resultHand1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    foreach(int current in setTable.listOfPlayers[i].hand){
+                        Console.WriteLine(current);
+                    }
                 }
                 if (playersList[i] == 2)
                 {
@@ -350,6 +355,14 @@ namespace Poker
             this.riverPB.BackColor = Color.Transparent;
             this.riverPB.Image = null;
             this.turnPB.BackColor = Color.Transparent;
+            this.p1WinPanel.Visible = false;
+            this.p2WinPanel.Visible = false;
+            this.p3WinPanel.Visible = false;
+            this.p4WinPanel.Visible = false;
+            this.p5WinPanel.Visible = false;
+            this.p6WinPanel.Visible = false;
+            this.p7WinPanel.Visible = false;
+            this.p8WinPanel.Visible = false;
         }
 
         private void flipBtn_Click(object sender, EventArgs e)

@@ -43,10 +43,6 @@ namespace Poker
                 handInfo = checkForFlush(handToCheck);
             }
 
-            Console.WriteLine("Pair " + pair);
-            Console.WriteLine("Flush " + flush);
-            Console.WriteLine("Straight " + straight);
-
             return handInfo;
         }
 
@@ -217,7 +213,6 @@ namespace Poker
                 handInfo[3] = finalHand[3].ToString();
                 handInfo[2] = finalHand[4].ToString();
             }
-
 
             return handInfo;
         }
