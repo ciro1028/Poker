@@ -159,6 +159,7 @@
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
+            this.potAmountlbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -202,6 +203,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.potAmountlbl);
             this.panel1.Controls.Add(this.winLbl);
             this.panel1.Controls.Add(this.dealFlopLb);
             this.panel1.Controls.Add(this.secondFlopPB);
@@ -520,6 +522,7 @@
             this.eighthPCheckRB.Text = "Check";
             this.eighthPCheckRB.UseVisualStyleBackColor = true;
             this.eighthPCheckRB.Visible = false;
+            this.eighthPCheckRB.CheckedChanged += new System.EventHandler(this.eighthRB);
             // 
             // eighthPbetRB
             // 
@@ -531,6 +534,7 @@
             this.eighthPbetRB.Text = "Bet";
             this.eighthPbetRB.UseVisualStyleBackColor = true;
             this.eighthPbetRB.Visible = false;
+            this.eighthPbetRB.CheckedChanged += new System.EventHandler(this.eighthRB);
             // 
             // eighthPAmountTxtB
             // 
@@ -665,6 +669,7 @@
             this.seventhPCheckRB.Text = "Check";
             this.seventhPCheckRB.UseVisualStyleBackColor = true;
             this.seventhPCheckRB.Visible = false;
+            this.seventhPCheckRB.CheckedChanged += new System.EventHandler(this.seventhRB);
             // 
             // seventhPbetRB
             // 
@@ -676,6 +681,7 @@
             this.seventhPbetRB.Text = "Bet";
             this.seventhPbetRB.UseVisualStyleBackColor = true;
             this.seventhPbetRB.Visible = false;
+            this.seventhPbetRB.CheckedChanged += new System.EventHandler(this.seventhRB);
             // 
             // seventhPAmountTxtB
             // 
@@ -810,6 +816,7 @@
             this.sixthPCheckRB.Text = "Check";
             this.sixthPCheckRB.UseVisualStyleBackColor = true;
             this.sixthPCheckRB.Visible = false;
+            this.sixthPCheckRB.CheckedChanged += new System.EventHandler(this.sixthRB);
             // 
             // sixthPbetRB
             // 
@@ -821,6 +828,7 @@
             this.sixthPbetRB.Text = "Bet";
             this.sixthPbetRB.UseVisualStyleBackColor = true;
             this.sixthPbetRB.Visible = false;
+            this.sixthPbetRB.CheckedChanged += new System.EventHandler(this.sixthRB);
             // 
             // sixthPAmountTxtB
             // 
@@ -955,6 +963,7 @@
             this.fifthPCheckRB.Text = "Check";
             this.fifthPCheckRB.UseVisualStyleBackColor = true;
             this.fifthPCheckRB.Visible = false;
+            this.fifthPCheckRB.CheckedChanged += new System.EventHandler(this.fifthRB);
             // 
             // fifthPbetRB
             // 
@@ -966,6 +975,7 @@
             this.fifthPbetRB.Text = "Bet";
             this.fifthPbetRB.UseVisualStyleBackColor = true;
             this.fifthPbetRB.Visible = false;
+            this.fifthPbetRB.CheckedChanged += new System.EventHandler(this.fifthRB);
             // 
             // fifthPAmountTxtB
             // 
@@ -1100,6 +1110,7 @@
             this.fourthPCheckRB.Text = "Check";
             this.fourthPCheckRB.UseVisualStyleBackColor = true;
             this.fourthPCheckRB.Visible = false;
+            this.fourthPCheckRB.CheckedChanged += new System.EventHandler(this.fourthRB);
             // 
             // fourthPbetRB
             // 
@@ -1111,6 +1122,7 @@
             this.fourthPbetRB.Text = "Bet";
             this.fourthPbetRB.UseVisualStyleBackColor = true;
             this.fourthPbetRB.Visible = false;
+            this.fourthPbetRB.CheckedChanged += new System.EventHandler(this.fourthRB);
             // 
             // fourthPAmountTxtB
             // 
@@ -1245,6 +1257,7 @@
             this.thirdPCheckRB.Text = "Check";
             this.thirdPCheckRB.UseVisualStyleBackColor = true;
             this.thirdPCheckRB.Visible = false;
+            this.thirdPCheckRB.CheckedChanged += new System.EventHandler(this.thirdRB);
             // 
             // thirdPbetRB
             // 
@@ -1256,6 +1269,7 @@
             this.thirdPbetRB.Text = "Bet";
             this.thirdPbetRB.UseVisualStyleBackColor = true;
             this.thirdPbetRB.Visible = false;
+            this.thirdPbetRB.CheckedChanged += new System.EventHandler(this.thirdRB);
             // 
             // thirdPAmountTxtB
             // 
@@ -1390,6 +1404,7 @@
             this.secondPCheckRB.Text = "Check";
             this.secondPCheckRB.UseVisualStyleBackColor = true;
             this.secondPCheckRB.Visible = false;
+            this.secondPCheckRB.CheckedChanged += new System.EventHandler(this.secondRB);
             // 
             // secondPbetRB
             // 
@@ -1401,6 +1416,7 @@
             this.secondPbetRB.Text = "Bet";
             this.secondPbetRB.UseVisualStyleBackColor = true;
             this.secondPbetRB.Visible = false;
+            this.secondPbetRB.CheckedChanged += new System.EventHandler(this.secondRB);
             // 
             // secondPAmountTxtB
             // 
@@ -1535,6 +1551,7 @@
             this.firstPCheckRB.Text = "Check";
             this.firstPCheckRB.UseVisualStyleBackColor = true;
             this.firstPCheckRB.Visible = false;
+            this.firstPCheckRB.CheckedChanged += new System.EventHandler(this.firstRB);
             // 
             // firstPbetRB
             // 
@@ -1546,6 +1563,7 @@
             this.firstPbetRB.Text = "Bet";
             this.firstPbetRB.UseVisualStyleBackColor = true;
             this.firstPbetRB.Visible = false;
+            this.firstPbetRB.CheckedChanged += new System.EventHandler(this.firstRB);
             // 
             // firstPAmountTxtB
             // 
@@ -1590,6 +1608,17 @@
             this.firstPpicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
+            // 
+            // potAmountlbl
+            // 
+            this.potAmountlbl.AutoSize = true;
+            this.potAmountlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.potAmountlbl.ForeColor = System.Drawing.Color.Blue;
+            this.potAmountlbl.Location = new System.Drawing.Point(416, 286);
+            this.potAmountlbl.Name = "potAmountlbl";
+            this.potAmountlbl.Size = new System.Drawing.Size(101, 20);
+            this.potAmountlbl.TabIndex = 12;
+            this.potAmountlbl.Text = "Pot Amount: ";
             // 
             // mainForm
             // 
@@ -1793,6 +1822,7 @@
         private System.Windows.Forms.Panel p2WinPanel;
         private System.Windows.Forms.Label hand2Lbl;
         private System.Windows.Forms.Panel p1WinPanel;
+        private System.Windows.Forms.Label potAmountlbl;
     }
 }
 

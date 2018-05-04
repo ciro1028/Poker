@@ -91,6 +91,108 @@ namespace Poker
             countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
+        public void firstRB(Object sender, EventArgs e)
+        {
+            if (firstPbetRB.Checked)
+            {
+                firstPAmountTxtB.Visible = true;
+                firstPBetBtn.Text = "Bet!";
+            } else
+            {
+                firstPAmountTxtB.Visible = false;
+                firstPBetBtn.Text = "Check!";
+            }
+        }
+
+        public void secondRB(Object sender, EventArgs e)
+        {
+
+        }
+
+        public void thirdRB(Object sender, EventArgs e)
+        {
+            if (firstPbetRB.Checked)
+            {
+                firstPAmountTxtB.Visible = true;
+                firstPBetBtn.Text = "Bet!";
+            }
+            else
+            {
+                firstPAmountTxtB.Visible = false;
+                firstPBetBtn.Text = "Check!";
+            }
+        }
+
+        public void fourthRB(Object sender, EventArgs e)
+        {
+            if (firstPbetRB.Checked)
+            {
+                firstPAmountTxtB.Visible = true;
+                firstPBetBtn.Text = "Bet!";
+            }
+            else
+            {
+                firstPAmountTxtB.Visible = false;
+                firstPBetBtn.Text = "Check!";
+            }
+        }
+
+        public void fifthRB(Object sender, EventArgs e)
+        {
+            if (firstPbetRB.Checked)
+            {
+                firstPAmountTxtB.Visible = true;
+                firstPBetBtn.Text = "Bet!";
+            }
+            else
+            {
+                firstPAmountTxtB.Visible = false;
+                firstPBetBtn.Text = "Check!";
+            }
+        }
+
+        public void sixthRB(Object sender, EventArgs e)
+        {
+            if (firstPbetRB.Checked)
+            {
+                firstPAmountTxtB.Visible = true;
+                firstPBetBtn.Text = "Bet!";
+            }
+            else
+            {
+                firstPAmountTxtB.Visible = false;
+                firstPBetBtn.Text = "Check!";
+            }
+        }
+
+        public void seventhRB(Object sender, EventArgs e)
+        {
+            if (firstPbetRB.Checked)
+            {
+                firstPAmountTxtB.Visible = true;
+                firstPBetBtn.Text = "Bet!";
+            }
+            else
+            {
+                firstPAmountTxtB.Visible = false;
+                firstPBetBtn.Text = "Check!";
+            }
+        }
+
+        public void eighthRB(Object sender, EventArgs e)
+        {
+            if (firstPbetRB.Checked)
+            {
+                firstPAmountTxtB.Visible = true;
+                firstPBetBtn.Text = "Bet!";
+            }
+            else
+            {
+                firstPAmountTxtB.Visible = false;
+                firstPBetBtn.Text = "Check!";
+            }
+        }
+
         private void startBtn_Click(object sender, EventArgs e)
         {
             if(countNumberOfPlayers < 2){
@@ -667,6 +769,16 @@ namespace Poker
         }
 
         public void betTurnListener(Object sender, EventArgs e){
+            if (firstPBetBtn.Visible)
+            {
+                if (firstPCheckRB.Checked)
+                {
+                    firstBetAmountLbl.Text = "Check!"
+                } else
+                {
+
+                }
+            }
             turnOffPlayers();
             betTurn();
         }
