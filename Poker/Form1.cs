@@ -227,35 +227,71 @@ namespace Poker
 
                     hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                     int location = (this.p1WinPanel.Size.Width - this.hand1Lbl.Size.Width) / 2;
-                    this.hand1Lbl.Location = new Point(location, 47);
+                    int location2 = (this.p1WinPanel.Size.Height - this.hand1Lbl.Size.Height) / 2;
+                    this.hand1Lbl.Location = new Point(location, location2);
                 }
                 if (playersList[i] == 2)
                 {
+                    p2WinPanel.Visible = true;
+
                     hand2Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    int location = (this.p2WinPanel.Size.Width - this.hand2Lbl.Size.Width) / 2;
+                    int location2 = (this.p2WinPanel.Size.Height - this.hand2Lbl.Size.Height) / 2;
+                    this.hand2Lbl.Location = new Point(location, location2);
                 }
                 if (playersList[i] == 3)
                 {
+                    p3WinPanel.Visible = true;
+
                     hand3Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    int location = (this.p3WinPanel.Size.Width - this.hand3Lbl.Size.Width) / 2;
+                    int location2 = (this.p3WinPanel.Size.Height - this.hand3Lbl.Size.Height) / 2;
+                    this.hand3Lbl.Location = new Point(location, location2);
                 }
                 if (playersList[i] == 4)
                 {
+                    p4WinPanel.Visible = true;
+
                     hand4Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    int location = (this.p4WinPanel.Size.Width - this.hand4Lbl.Size.Width) / 2;
+                    int location2 = (this.p4WinPanel.Size.Height - this.hand4Lbl.Size.Height) / 2;
+                    this.hand4Lbl.Location = new Point(location, location2);
                 }
                 if (playersList[i] == 5)
                 {
+                    p5WinPanel.Visible = true;
+
                     hand5Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    int location = (this.p5WinPanel.Size.Width - this.hand5Lbl.Size.Width) / 2;
+                    int location2 = (this.p5WinPanel.Size.Height - this.hand5Lbl.Size.Height) / 2;
+                    this.hand5Lbl.Location = new Point(location, location2);
                 }
                 if (playersList[i] == 6)
                 {
+                    p6WinPanel.Visible = true;
+
                     hand6Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    int location = (this.p6WinPanel.Size.Width - this.hand6Lbl.Size.Width) / 2;
+                    int location2 = (this.p6WinPanel.Size.Height - this.hand6Lbl.Size.Height) / 2;
+                    this.hand6Lbl.Location = new Point(location, location2);
                 }
                 if (playersList[i] == 7)
                 {
+                    p7WinPanel.Visible = true;
+
                     hand7Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    int location = (this.p7WinPanel.Size.Width - this.hand7Lbl.Size.Width) / 2;
+                    int location2 = (this.p7WinPanel.Size.Height - this.hand7Lbl.Size.Height) / 2;
+                    this.hand7Lbl.Location = new Point(location, location2);
                 }
                 if (playersList[i] == 8)
                 {
+                    p8WinPanel.Visible = true;
+
                     hand8Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    int location = (this.p8WinPanel.Size.Width - this.hand8Lbl.Size.Width) / 2;
+                    int location2 = (this.p8WinPanel.Size.Height - this.hand8Lbl.Size.Height) / 2;
+                    this.hand8Lbl.Location = new Point(location, location2);
                 }
             }
         }
