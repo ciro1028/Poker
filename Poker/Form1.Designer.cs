@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.potAmountlbl = new System.Windows.Forms.Label();
             this.winLbl = new System.Windows.Forms.Label();
             this.dealFlopLb = new System.Windows.Forms.Label();
             this.secondFlopPB = new System.Windows.Forms.PictureBox();
@@ -159,7 +160,7 @@
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
-            this.potAmountlbl = new System.Windows.Forms.Label();
+            this.currentBetAmountLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -203,6 +204,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.currentBetAmountLbl);
             this.panel1.Controls.Add(this.potAmountlbl);
             this.panel1.Controls.Add(this.winLbl);
             this.panel1.Controls.Add(this.dealFlopLb);
@@ -235,6 +237,17 @@
             this.panel1.Size = new System.Drawing.Size(958, 549);
             this.panel1.TabIndex = 0;
             // 
+            // potAmountlbl
+            // 
+            this.potAmountlbl.AutoSize = true;
+            this.potAmountlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.potAmountlbl.ForeColor = System.Drawing.Color.Blue;
+            this.potAmountlbl.Location = new System.Drawing.Point(529, 293);
+            this.potAmountlbl.Name = "potAmountlbl";
+            this.potAmountlbl.Size = new System.Drawing.Size(101, 20);
+            this.potAmountlbl.TabIndex = 12;
+            this.potAmountlbl.Text = "Pot Amount: ";
+            // 
             // winLbl
             // 
             this.winLbl.AutoSize = true;
@@ -251,7 +264,7 @@
             // 
             this.dealFlopLb.AutoSize = true;
             this.dealFlopLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealFlopLb.ForeColor = System.Drawing.Color.Maroon;
+            this.dealFlopLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.dealFlopLb.Location = new System.Drawing.Point(425, 253);
             this.dealFlopLb.Name = "dealFlopLb";
             this.dealFlopLb.Size = new System.Drawing.Size(96, 24);
@@ -1609,16 +1622,16 @@
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
             // 
-            // potAmountlbl
+            // currentBetAmountLbl
             // 
-            this.potAmountlbl.AutoSize = true;
-            this.potAmountlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.potAmountlbl.ForeColor = System.Drawing.Color.Blue;
-            this.potAmountlbl.Location = new System.Drawing.Point(416, 286);
-            this.potAmountlbl.Name = "potAmountlbl";
-            this.potAmountlbl.Size = new System.Drawing.Size(101, 20);
-            this.potAmountlbl.TabIndex = 12;
-            this.potAmountlbl.Text = "Pot Amount: ";
+            this.currentBetAmountLbl.AutoSize = true;
+            this.currentBetAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentBetAmountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.currentBetAmountLbl.Location = new System.Drawing.Point(255, 295);
+            this.currentBetAmountLbl.Name = "currentBetAmountLbl";
+            this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 20);
+            this.currentBetAmountLbl.TabIndex = 1;
+            this.currentBetAmountLbl.Text = "Current Bet Amount: ";
             // 
             // mainForm
             // 
@@ -1823,6 +1836,7 @@
         private System.Windows.Forms.Label hand2Lbl;
         private System.Windows.Forms.Panel p1WinPanel;
         private System.Windows.Forms.Label potAmountlbl;
+        private System.Windows.Forms.Label currentBetAmountLbl;
     }
 }
 
