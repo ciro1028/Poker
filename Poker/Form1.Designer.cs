@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.currentBetAmountLbl = new System.Windows.Forms.Label();
             this.potAmountlbl = new System.Windows.Forms.Label();
             this.winLbl = new System.Windows.Forms.Label();
             this.dealFlopLb = new System.Windows.Forms.Label();
@@ -160,7 +161,6 @@
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
-            this.currentBetAmountLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -236,6 +236,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(958, 549);
             this.panel1.TabIndex = 0;
+            // 
+            // currentBetAmountLbl
+            // 
+            this.currentBetAmountLbl.AutoSize = true;
+            this.currentBetAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentBetAmountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.currentBetAmountLbl.Location = new System.Drawing.Point(255, 295);
+            this.currentBetAmountLbl.Name = "currentBetAmountLbl";
+            this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 20);
+            this.currentBetAmountLbl.TabIndex = 1;
+            this.currentBetAmountLbl.Text = "Current Bet Amount: ";
+            this.currentBetAmountLbl.Visible = false;
             // 
             // potAmountlbl
             // 
@@ -556,6 +568,7 @@
             this.eighthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.eighthPAmountTxtB.TabIndex = 6;
             this.eighthPAmountTxtB.Visible = false;
+            this.eighthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // eighthBetAmountLbl
             // 
@@ -703,6 +716,7 @@
             this.seventhPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.seventhPAmountTxtB.TabIndex = 6;
             this.seventhPAmountTxtB.Visible = false;
+            this.seventhPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // seventhBetAmountLbl
             // 
@@ -850,6 +864,7 @@
             this.sixthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.sixthPAmountTxtB.TabIndex = 6;
             this.sixthPAmountTxtB.Visible = false;
+            this.sixthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // sixthBetAmountLbl
             // 
@@ -997,6 +1012,7 @@
             this.fifthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.fifthPAmountTxtB.TabIndex = 6;
             this.fifthPAmountTxtB.Visible = false;
+            this.fifthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // fifthBetAmountLbl
             // 
@@ -1144,6 +1160,7 @@
             this.fourthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.fourthPAmountTxtB.TabIndex = 6;
             this.fourthPAmountTxtB.Visible = false;
+            this.fourthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // fourthBetAmountLbl
             // 
@@ -1291,6 +1308,7 @@
             this.thirdPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.thirdPAmountTxtB.TabIndex = 6;
             this.thirdPAmountTxtB.Visible = false;
+            this.thirdPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // thirdBetAmountLbl
             // 
@@ -1438,6 +1456,7 @@
             this.secondPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.secondPAmountTxtB.TabIndex = 6;
             this.secondPAmountTxtB.Visible = false;
+            this.secondPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // secondBetAmountLbl
             // 
@@ -1584,7 +1603,9 @@
             this.firstPAmountTxtB.Name = "firstPAmountTxtB";
             this.firstPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.firstPAmountTxtB.TabIndex = 6;
+            this.firstPAmountTxtB.Text = "0";
             this.firstPAmountTxtB.Visible = false;
+            this.firstPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             // 
             // firstBetAmountLbl
             // 
@@ -1621,17 +1642,6 @@
             this.firstPpicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
-            // 
-            // currentBetAmountLbl
-            // 
-            this.currentBetAmountLbl.AutoSize = true;
-            this.currentBetAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentBetAmountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.currentBetAmountLbl.Location = new System.Drawing.Point(255, 295);
-            this.currentBetAmountLbl.Name = "currentBetAmountLbl";
-            this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 20);
-            this.currentBetAmountLbl.TabIndex = 1;
-            this.currentBetAmountLbl.Text = "Current Bet Amount: ";
             // 
             // mainForm
             // 

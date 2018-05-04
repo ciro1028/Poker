@@ -970,6 +970,13 @@ namespace Poker
             this.eighthPBetBtn.Visible = false;
         }
 
+        private void guessTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
 
         //public void createDeck()
