@@ -98,7 +98,7 @@ namespace Poker
 
             switch (currentBettingPlayer)
             {
-                case 2:
+                case 1:
                     int player = currentBettingPlayer - 1;
                     int p1Cash = Convert.ToInt32(setTable.listOfPlayers[player].cash);
                     int betAmount1 = Convert.ToInt32(firstPAmountTxtB.Text);
@@ -113,11 +113,24 @@ namespace Poker
                         firstPmoneyLbl.Text = setTable.listOfPlayers[player].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount1 + ".00";
                         currentBetAmount = betAmount1;
+                        firstPAmountTxtB.Visible = false;
+                        firstPAmountTxtB.Text = "0";
+                        //check to see if the current player is the last player, if yes, reset count
+                        if (currentBettingPlayerCount < setTable.listOfPlayers.Count - 1)
+                        {
+                            currentBettingPlayerCount++;
+                            currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
+                        }
+                        else
+                        {
+                            currentBettingPlayer = 0;
+                            currentBettingPlayerCount = 0;
+                        }
                         turnOffPlayers();
                         betTurn();
                     }
                     break;
-                case 3:
+                case 2:
                     int player2 = currentBettingPlayer - 1;
 
                     int p2Cash = Convert.ToInt32(setTable.listOfPlayers[player2].cash);
@@ -136,11 +149,14 @@ namespace Poker
                         secondPmoneyLbl.Text = setTable.listOfPlayers[player2].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount2 + ".00";
                         currentBetAmount = betAmount2;
+                        secondPAmountTxtB.Visible = false;
+                        secondPAmountTxtB.Text = "0";
+                        checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
                     }
                     break;
-                case 4:
+                case 3:
                     int player3 = currentBettingPlayer - 1;
 
                     int p3Cash = Convert.ToInt32(setTable.listOfPlayers[player3].cash);
@@ -159,6 +175,9 @@ namespace Poker
                         thirdPmoneyLbl.Text = setTable.listOfPlayers[player3].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount3 + ".00";
                         currentBetAmount = betAmount3;
+                        thirdPAmountTxtB.Visible = false;
+                        thirdPAmountTxtB.Text = "0";
+                        checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
                     }
@@ -181,6 +200,22 @@ namespace Poker
             }
         }
 
+        public void checkIfLastPlayer(){
+            //check to see if the current player is the last player, if yes, reset count
+            if (currentBettingPlayerCount < setTable.listOfPlayers.Count - 1)
+            {
+                currentBettingPlayerCount++;
+                currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
+            }
+            else
+            {
+                currentBettingPlayer = 0;
+                currentBettingPlayerCount = 0;
+                currentBetAmountLbl.Visible = false;
+
+            }
+        }
+
         // method to handle each player's turn
         public void betTurn()
         {
@@ -190,6 +225,7 @@ namespace Poker
                 currentBettingPlayer = 0;
                 flipBtn.Visible = true;
                 dealFlopLb.Visible = true;
+                currentBetAmount = 0;
                 if (allCardsShown)
                 {
                     checkHands();
@@ -206,6 +242,7 @@ namespace Poker
                         this.firstPbetRB.Visible = true;
                         this.firstPCheckRB.Visible = true;
                         this.firstPBetBtn.Visible = true;
+                        this.firstPCheckRB.Checked = true;
                         if (currentBetAmount > 0) {
                             firstPCheckRB.Visible = false;
                             firstPbetRB.Checked = true;
@@ -216,6 +253,7 @@ namespace Poker
                         this.secondPbetRB.Visible = true;
                         this.secondPCheckRB.Visible = true;
                         this.secondPBetBtn.Visible = true;
+                        this.secondPCheckRB.Checked = true;
                         if (currentBetAmount > 0)
                         {
                             secondPCheckRB.Visible = false;
@@ -227,6 +265,7 @@ namespace Poker
                         this.thirdPbetRB.Visible = true;
                         this.thirdPCheckRB.Visible = true;
                         this.thirdPBetBtn.Visible = true;
+                        this.thirdPCheckRB.Checked = true;
                         if (currentBetAmount > 0)
                         {
                             thirdPCheckRB.Visible = false;
@@ -238,42 +277,39 @@ namespace Poker
                         this.fourthPbetRB.Visible = true;
                         this.fourthPCheckRB.Visible = true;
                         this.fourthPBetBtn.Visible = true;
+                        this.fourthPCheckRB.Checked = true;
                         break;
                     case 5:
                         this.turnCK5.BackColor = Color.Lime;
                         this.fifthPbetRB.Visible = true;
                         this.fifthPCheckRB.Visible = true;
                         this.fifthPBetBtn.Visible = true;
+                        this.fifthPCheckRB.Checked = true;
                         break;
                     case 6:
                         this.turnCK6.BackColor = Color.Lime;
                         this.sixthPbetRB.Visible = true;
                         this.sixthPCheckRB.Visible = true;
                         this.sixthPBetBtn.Visible = true;
+                        this.sixthPCheckRB.Checked = true;
                         break;
                     case 7:
                         this.turnCK7.BackColor = Color.Lime;
                         this.seventhPbetRB.Visible = true;
                         this.seventhPCheckRB.Visible = true;
                         this.seventhPBetBtn.Visible = true;
+                        this.seventhPCheckRB.Checked = true;
                         break;
                     case 8:
                         this.turnCK8.BackColor = Color.Lime;
                         this.eighthPbetRB.Visible = true;
                         this.eighthPCheckRB.Visible = true;
                         this.eighthPBetBtn.Visible = true;
+                        this.eighthPCheckRB.Checked = true;
                         break;
                 }
-                if (currentBettingPlayerCount < setTable.listOfPlayers.Count - 1)
-                {
-                    currentBettingPlayerCount++;
-                    currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
-                }
-                else
-                {
-                    currentBettingPlayer = 0;
-                    currentBettingPlayerCount = 0;
-                }
+
+
             }
         }
 
@@ -703,6 +739,7 @@ namespace Poker
         {
             flipCards();
             currentBettingPlayer = setTable.listOfPlayers[0].id;
+            currentBettingPlayerCount = 0;
             betTurn();
             currentBetAmount = 0;
         }
