@@ -534,7 +534,6 @@
             // p8WinPanel
             // 
             this.p8WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p8WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p8WinPanel.Controls.Add(this.p8resultHand5);
             this.p8WinPanel.Controls.Add(this.p8resultHand4);
             this.p8WinPanel.Controls.Add(this.p8resultHand3);
@@ -735,7 +734,6 @@
             // p7WinPanel
             // 
             this.p7WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p7WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p7WinPanel.Controls.Add(this.p7resultHand5);
             this.p7WinPanel.Controls.Add(this.p7resultHand4);
             this.p7WinPanel.Controls.Add(this.p7resultHand3);
@@ -936,7 +934,6 @@
             // p6WinPanel
             // 
             this.p6WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p6WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p6WinPanel.Controls.Add(this.p6resultHand5);
             this.p6WinPanel.Controls.Add(this.p6resultHand4);
             this.p6WinPanel.Controls.Add(this.p6resultHand3);
@@ -1137,7 +1134,6 @@
             // p5WinPanel
             // 
             this.p5WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p5WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p5WinPanel.Controls.Add(this.p5resultHand5);
             this.p5WinPanel.Controls.Add(this.p5resultHand4);
             this.p5WinPanel.Controls.Add(this.p5resultHand3);
@@ -1338,7 +1334,6 @@
             // p4WinPanel
             // 
             this.p4WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p4WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p4WinPanel.Controls.Add(this.p4resultHand5);
             this.p4WinPanel.Controls.Add(this.p4resultHand4);
             this.p4WinPanel.Controls.Add(this.p4resultHand3);
@@ -1539,7 +1534,6 @@
             // p3WinPanel
             // 
             this.p3WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p3WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p3WinPanel.Controls.Add(this.p3resultHand5);
             this.p3WinPanel.Controls.Add(this.p3resultHand4);
             this.p3WinPanel.Controls.Add(this.p3resultHand3);
@@ -1740,7 +1734,6 @@
             // p2WinPanel
             // 
             this.p2WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p2WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p2WinPanel.Controls.Add(this.p2resultHand5);
             this.p2WinPanel.Controls.Add(this.p2resultHand4);
             this.p2WinPanel.Controls.Add(this.p2resultHand3);
@@ -1941,7 +1934,6 @@
             // p1WinPanel
             // 
             this.p1WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p1WinPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.p1WinPanel.Controls.Add(this.p1resultHand5);
             this.p1WinPanel.Controls.Add(this.p1resultHand4);
             this.p1WinPanel.Controls.Add(this.p1resultHand3);
