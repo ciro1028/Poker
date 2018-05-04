@@ -115,17 +115,7 @@ namespace Poker
                         currentBetAmount = betAmount1;
                         firstPAmountTxtB.Visible = false;
                         firstPAmountTxtB.Text = "0";
-                        //check to see if the current player is the last player, if yes, reset count
-                        if (currentBettingPlayerCount < setTable.listOfPlayers.Count - 1)
-                        {
-                            currentBettingPlayerCount++;
-                            currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
-                        }
-                        else
-                        {
-                            currentBettingPlayer = 0;
-                            currentBettingPlayerCount = 0;
-                        }
+                        checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
                     }
@@ -182,21 +172,136 @@ namespace Poker
                         betTurn();
                     }
                     break;
-                //case 5:
-                    
-                //    break;
-                //case 6:
-                    
-                //    break;
-                //case 7:
-                    
-                //    break;
-                //case 8:
-                    
-                //    break;
-                //case 9:
-                    
-                    //break;
+                case 4:
+                    int player4 = currentBettingPlayer - 1;
+
+                    int p4Cash = Convert.ToInt32(setTable.listOfPlayers[player4].cash);
+                    int betAmount4 = Convert.ToInt32(fourthPAmountTxtB.Text);
+                    if (betAmount4 < currentBetAmount)
+                    {
+                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    else
+                    {
+                        potAmount = potAmount + betAmount4;
+                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+                        fourthPCurrentLbl.Text = "Current Bet: $" + betAmount4 + ".00";
+                        setTable.listOfPlayers[player4].cash = (p4Cash - betAmount4).ToString();
+                        fourthPmoneyLbl.Text = setTable.listOfPlayers[player4].cash;
+                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount4 + ".00";
+                        currentBetAmount = betAmount4;
+                        fourthPAmountTxtB.Visible = false;
+                        fourthPAmountTxtB.Text = "0";
+                        checkIfLastPlayer();
+                        turnOffPlayers();
+                        betTurn();
+                    }
+                    break;
+                case 5:
+                    int player5 = currentBettingPlayer - 1;
+
+                    int p5Cash = Convert.ToInt32(setTable.listOfPlayers[player5].cash);
+                    int betAmount5 = Convert.ToInt32(fifthPAmountTxtB.Text);
+                    if (betAmount5 < currentBetAmount)
+                    {
+                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    else
+                    {
+                        potAmount = potAmount + betAmount5;
+                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+                        fifthPCurrentLbl.Text = "Current Bet: $" + betAmount5 + ".00";
+                        setTable.listOfPlayers[player5].cash = (p5Cash - betAmount5).ToString();
+                        fifthPmoneyLbl.Text = setTable.listOfPlayers[player5].cash;
+                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount5 + ".00";
+                        currentBetAmount = betAmount5;
+                        fifthPAmountTxtB.Visible = false;
+                        fifthPAmountTxtB.Text = "0";
+                        checkIfLastPlayer();
+                        turnOffPlayers();
+                        betTurn();
+                    }
+                    break;
+                case 6:
+                    int player6 = currentBettingPlayer - 1;
+
+                    int p6Cash = Convert.ToInt32(setTable.listOfPlayers[player6].cash);
+                    int betAmount6 = Convert.ToInt32(sixthPAmountTxtB.Text);
+                    if (betAmount6 < currentBetAmount)
+                    {
+                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    else
+                    {
+                        potAmount = potAmount + betAmount6;
+                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+                        thirdPCurrentLbl.Text = "Current Bet: $" + betAmount6 + ".00";
+                        setTable.listOfPlayers[player6].cash = (p6Cash - betAmount6).ToString();
+                        sixthPmoneyLbl.Text = setTable.listOfPlayers[player6].cash;
+                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount6 + ".00";
+                        currentBetAmount = betAmount6;
+                        sixthPAmountTxtB.Visible = false;
+                        sixthPAmountTxtB.Text = "0";
+                        checkIfLastPlayer();
+                        turnOffPlayers();
+                        betTurn();
+                    }
+                    break;
+                case 7:
+                    int player7 = currentBettingPlayer - 1;
+
+                    int p7Cash = Convert.ToInt32(setTable.listOfPlayers[player7].cash);
+                    int betAmount7 = Convert.ToInt32(seventhPAmountTxtB.Text);
+                    if (betAmount7 < currentBetAmount)
+                    {
+                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    else
+                    {
+                        potAmount = potAmount + betAmount7;
+                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+                        seventhPCurrentLbl.Text = "Current Bet: $" + betAmount7 + ".00";
+                        setTable.listOfPlayers[player7].cash = (p7Cash - betAmount7).ToString();
+                        seventhPmoneyLbl.Text = setTable.listOfPlayers[player7].cash;
+                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount7 + ".00";
+                        currentBetAmount = betAmount7;
+                        seventhPAmountTxtB.Visible = false;
+                        seventhPAmountTxtB.Text = "0";
+                        checkIfLastPlayer();
+                        turnOffPlayers();
+                        betTurn();
+                    }
+                    break;
+                case 8:
+                    int player8 = currentBettingPlayer - 1;
+
+                    int p8Cash = Convert.ToInt32(setTable.listOfPlayers[player8].cash);
+                    int betAmount8 = Convert.ToInt32(eighthPAmountTxtB.Text);
+                    if (betAmount8 < currentBetAmount)
+                    {
+                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    else
+                    {
+                        potAmount = potAmount + betAmount8;
+                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+                        eighthPCurrentLbl.Text = "Current Bet: $" + betAmount8 + ".00";
+                        setTable.listOfPlayers[player8].cash = (p8Cash - betAmount8).ToString();
+                        eighthPmoneyLbl.Text = setTable.listOfPlayers[player8].cash;
+                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount8 + ".00";
+                        currentBetAmount = betAmount8;
+                        eighthPAmountTxtB.Visible = false;
+                        eighthPAmountTxtB.Text = "0";
+                        checkIfLastPlayer();
+                        turnOffPlayers();
+                        betTurn();
+                    }
+                    break;
             }
         }
 
@@ -278,6 +383,11 @@ namespace Poker
                         this.fourthPCheckRB.Visible = true;
                         this.fourthPBetBtn.Visible = true;
                         this.fourthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            fourthPCheckRB.Visible = false;
+                            fourthPbetRB.Checked = true;
+                        }
                         break;
                     case 5:
                         this.turnCK5.BackColor = Color.Lime;
@@ -285,6 +395,11 @@ namespace Poker
                         this.fifthPCheckRB.Visible = true;
                         this.fifthPBetBtn.Visible = true;
                         this.fifthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            fifthPCheckRB.Visible = false;
+                            fifthPbetRB.Checked = true;
+                        }
                         break;
                     case 6:
                         this.turnCK6.BackColor = Color.Lime;
@@ -292,6 +407,11 @@ namespace Poker
                         this.sixthPCheckRB.Visible = true;
                         this.sixthPBetBtn.Visible = true;
                         this.sixthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            sixthPCheckRB.Visible = false;
+                            sixthPbetRB.Checked = true;
+                        }
                         break;
                     case 7:
                         this.turnCK7.BackColor = Color.Lime;
@@ -299,6 +419,11 @@ namespace Poker
                         this.seventhPCheckRB.Visible = true;
                         this.seventhPBetBtn.Visible = true;
                         this.seventhPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            seventhPCheckRB.Visible = false;
+                            seventhPbetRB.Checked = true;
+                        }
                         break;
                     case 8:
                         this.turnCK8.BackColor = Color.Lime;
@@ -306,6 +431,11 @@ namespace Poker
                         this.eighthPCheckRB.Visible = true;
                         this.eighthPBetBtn.Visible = true;
                         this.eighthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            eighthPCheckRB.Visible = false;
+                            eighthPbetRB.Checked = true;
+                        }
                         break;
                 }
 
@@ -438,6 +568,7 @@ namespace Poker
 
                 currentBettingPlayer = setTable.listOfPlayers[0].id;
                 betTurn();
+                currentBetAmountLbl.Visible = true;
                 potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                 currentBetAmountLbl.Text = "Current Bet Amount: " + "$" + currentBetAmount + ".00";
             }
@@ -985,6 +1116,48 @@ namespace Poker
                 MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 
                 firstPAmountTxtB.Text = "10";
+            }
+            if (secondPAmountTxtB.Text == "" || Convert.ToInt32(secondPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                secondPAmountTxtB.Text = "10";
+            }
+            if (thirdPAmountTxtB.Text == "" || Convert.ToInt32(thirdPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                thirdPAmountTxtB.Text = "10";
+            }
+            if (fourthPAmountTxtB.Text == "" || Convert.ToInt32(fourthPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                fourthPAmountTxtB.Text = "10";
+            }
+            if (fifthPAmountTxtB.Text == "" || Convert.ToInt32(fifthPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                fifthPAmountTxtB.Text = "10";
+            }
+            if (sixthPAmountTxtB.Text == "" || Convert.ToInt32(sixthPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                sixthPAmountTxtB.Text = "10";
+            }
+            if (seventhPAmountTxtB.Text == "" || Convert.ToInt32(seventhPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                seventhPAmountTxtB.Text = "10";
+            }
+            if (eighthPAmountTxtB.Text == "" || Convert.ToInt32(eighthPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                eighthPAmountTxtB.Text = "10";
             }
         }
 
