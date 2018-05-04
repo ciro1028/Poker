@@ -26,21 +26,45 @@ namespace Poker
         String[] handSuits = new String[] { "", "", "", "", "", "", "" };
 
 
+
         //check hand that is sent from method checkHands() on Form1 
         public String[] checkHand(int[] handToCheck)
         {
             String[] handInfo = new String[7];
+            String[] royalArray = new String[7];
+            String[] sFArray = new String[7];
+            String[] flushArray = new String[7];
+            String[] straightArray = new String[7];
+            String[] pairsArray = new String[7];
 
-            int pair = Convert.ToInt32(checkForPairs(handToCheck)[1]);
-            int straight = Convert.ToInt32(checkForStraight(handToCheck)[1]);
-            int flush = Convert.ToInt32(checkForFlush(handToCheck)[1]);
+            String[] chooseNumbers = new String[5];
 
-            if (pair > straight && pair > flush){
-                handInfo = checkForPairs(handToCheck);
-            } else if (straight > pair && straight > flush){
-                handInfo = checkForStraight(handToCheck);
-            } else if (flush > pair && flush > straight){
-                handInfo = checkForFlush(handToCheck);
+            royalArray = checkForRoyalFlush(handToCheck);
+            sFArray = checkFoStraightFlush(handToCheck);
+            flushArray = checkForFlush(handToCheck);
+            straightArray = checkForStraight(handToCheck);
+            pairsArray = checkForPairs(handToCheck);
+
+            chooseNumbers[0] = royalArray[1];
+            chooseNumbers[1] = sFArray[1];
+            chooseNumbers[2] = flushArray[1];
+            chooseNumbers[3] = straightArray[1];
+            chooseNumbers[4] = pairsArray[1];
+
+            Array.Sort(chooseNumbers);
+
+            String strenghtNumber = chooseNumbers[4];
+
+            if (strenghtNumber == "10"){
+                handInfo = royalArray;
+            } else if (strenghtNumber == "9"){
+                handInfo = sFArray;
+            } else if (strenghtNumber == "6"){
+                handInfo = flushArray;
+            } else if (strenghtNumber == "5"){
+                handInfo = straightArray;
+            } else {
+                handInfo = pairsArray;
             }
 
             return handInfo;
@@ -146,6 +170,84 @@ namespace Poker
             return handSuits;
         }
 
+        public String[] checkForRoyalFlush(int[] checkRFHand){
+            String[] handInfo = new String[8];
+
+            foreach(int current in checkRFHand){
+                Console.WriteLine("checkRFHand " + current);
+            }
+
+            String flush = checkForFlush(checkRFHand)[1];
+
+            int[] flushFinal = new int[6];
+            flushFinal[0] = Convert.ToInt32(checkForFlush(checkRFHand)[2]);
+            flushFinal[1] = Convert.ToInt32(checkForFlush(checkRFHand)[3]);
+            flushFinal[2] = Convert.ToInt32(checkForFlush(checkRFHand)[4]);
+            flushFinal[3] = Convert.ToInt32(checkForFlush(checkRFHand)[5]);
+            flushFinal[4] = Convert.ToInt32(checkForFlush(checkRFHand)[6]);
+            flushFinal[5] = 0;
+
+            if(flush == "6"){
+                if (
+                    flushFinal[0] == 13 &&
+                    flushFinal[1] == 12 &&
+                    flushFinal[2] == 11 &&
+                    flushFinal[3] == 10 &&
+                    flushFinal[4] == 1
+                ) {
+                    handInfo[0] = "Royal Flush";
+                    handInfo[1] = "10";
+                    handInfo[2] = "1";
+                    handInfo[3] = "13";
+                    handInfo[4] = "12";
+                    handInfo[5] = "11";
+                    handInfo[6] = "10";
+                    handInfo[7] = "true";
+                }
+            }
+
+            return handInfo;
+        }
+
+        public String[] checkFoStraightFlush(int[] checkSFHand) {
+
+            String[] handInfo = new String[8];
+
+            String flush = checkForFlush(checkSFHand)[1];
+
+            int[] flushFinal = new int[6];
+            flushFinal[0] = Convert.ToInt32(checkForFlush(checkSFHand)[2]);
+            flushFinal[1] = Convert.ToInt32(checkForFlush(checkSFHand)[3]);
+            flushFinal[2] = Convert.ToInt32(checkForFlush(checkSFHand)[4]);
+            flushFinal[3] = Convert.ToInt32(checkForFlush(checkSFHand)[5]);
+            flushFinal[4] = Convert.ToInt32(checkForFlush(checkSFHand)[6]);
+            flushFinal[5] = 0;
+
+            if (flush == "6"){
+                int count = 0;
+                for (int i = 0; i < 5; i++){
+                    if (flushFinal[i] - flushFinal[i + 1] == 1 && flushFinal[i + 1] != 0){
+                        count++;
+                    } else if (count < 4){
+                        count = 0;
+                    }
+                }
+
+                if (count == 4){
+                    handInfo[0] = "Straight Flush";
+                    handInfo[1] = "9";
+                    handInfo[2] = flushFinal[0].ToString();
+                    handInfo[3] = flushFinal[1].ToString();
+                    handInfo[4] = flushFinal[2].ToString();
+                    handInfo[5] = flushFinal[3].ToString();
+                    handInfo[6] = flushFinal[4].ToString();
+                    handInfo[7] = "true";
+                }
+            }
+
+            return handInfo;
+        }
+
         // this method checks if the hand is a straight
         public String[] checkForStraight(int[] checkStraightHand)
         {
@@ -155,63 +257,66 @@ namespace Poker
             int count = 0;
             Boolean checkStraightWithAce = false;
             List<int> finalHand = new List<int> {};
-            String[] handInfo = new String[7];
+
+            String[] handInfo = new String[8];
 
             Array.Sort(checkStraightHand);
 
-            for(int i = 0; i < 6; i++)
+
+            for (int i = 0; i < 6; i++)
             {
-                if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1 || checkStraightHand[i + 1] == checkStraightHand[i])
+                if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1 || checkStraightHand[i + 1] == checkStraightHand[i] || checkStraightHand[i] == 1)
                 {
-                    if (count == 0){
+                    if (count == 0)
+                    {
                         if (checkStraightHand[i] == 10 || checkStraightHand[i] == 23 || checkStraightHand[i] == 36 || checkStraightHand[i] == 49)
                         {
                             checkStraightWithAce = true;
                         }
                     }
 
-                    if (checkStraightHand[i + 1] != checkStraightHand[i]){
+                    if (checkStraightHand[i + 1] != checkStraightHand[i])
+                    {
                         finalHand.Add(checkStraightHand[i]);
 
                         count++;
-                        if (count >= 4){
+                        if (count >= 4)
+                        {
                             finalHand.Add(checkStraightHand[i + 1]);
                         }
                     }
+
+                    if (count >= 3 && checkStraightWithAce)
+                    {
+                        foreach (int current in checkStraightHand){
+                            if (current == 1){
+                                finalHand.Add(13);
+                                finalHand.Add(1);
+                                count++;
+                            }
+                        }
+                    }
+
                 } else if (count < 4)
                 {
                     count = 0;
                     finalHand.Clear();
                 }
+
             }
 
             List<int> distinct = finalHand.Distinct().ToList();
 
-            if (checkStraightWithAce){
-                if (count == 3){
-                    foreach(int current in transformedHand){
-                        if (current == 1){
-                            handInfo[0] = "Straight";
-                            handInfo[1] = "6";
-                            handInfo[6] = finalHand[0].ToString();
-                            handInfo[5] = finalHand[1].ToString();
-                            handInfo[4] = finalHand[2].ToString();
-                            handInfo[3] = finalHand[3].ToString();
-                            handInfo[2] = finalHand[4].ToString();
-                        }
-                    } 
-                }
-            }
-
-            if (count >= 4)
+            if (count >= 4 )
             {
                 handInfo[0] = "Straight";
                 handInfo[1] = "6";
-                handInfo[6] = finalHand[0].ToString();
-                handInfo[5] = finalHand[1].ToString();
-                handInfo[4] = finalHand[2].ToString();
-                handInfo[3] = finalHand[3].ToString();
-                handInfo[2] = finalHand[4].ToString();
+                handInfo[6] = distinct[0].ToString();
+                handInfo[5] = distinct[1].ToString();
+                handInfo[4] = distinct[2].ToString();
+                handInfo[3] = distinct[3].ToString();
+                handInfo[2] = distinct[4].ToString();
+                handInfo[7] = "true";
             }
 
             return handInfo;
@@ -223,26 +328,62 @@ namespace Poker
             String[] transformedHandSuits = new String[7];
             transformedHandSuits = transformHandsSuits(checkFlushHand);
 
-            String[] handInfo = new string[6];
+            List<int> tempHand = new List<int> { };
+            List<String> tempHandSuits = new List<String> { };
+
+            int[] finalHand = new int[5];
+            String[] finalHandSuits = new String[5];
+            String[] handInfo = new string[8];
 
             for (int i = 0; i < 3; i++)
             {
                 int count = 0;
 
-                for (int j = 0; j < 7; j++)
+                for (int j = i + 1; j < 7; j++)
                 {
-                    if (i != j)
+                    if (transformedHandSuits[i] == transformedHandSuits[j])
                     {
-                        if (transformedHandSuits[i] == transformedHandSuits[j])
-                        {
+                        if (count == 0) {
+                            tempHand.Add(checkFlushHand[i]);
+                            tempHand.Add(checkFlushHand[j]);
+                            tempHandSuits.Add(transformedHandSuits[i]);
+                            tempHandSuits.Add(transformedHandSuits[j]);
+                            count++;
+                        } else {
+                            tempHand.Add(checkFlushHand[j]);
+                            tempHandSuits.Add(transformedHandSuits[j]);
                             count++;
                         }
                     }
                 }
                 if (count >= 4)
                 {
-                    //handInfo[0] = "Flush";
-                    //handInfo[1] = "5";
+                    
+                    finalHand = transformHands(tempHand.ToArray());
+                    finalHandSuits = tempHandSuits.ToArray();
+
+                    Array.Sort(finalHand);
+                    int[] tempArray = new int[5];
+                    int countTemp = 4;
+                    for (int j = 0; j < 5; j++)
+                    {
+
+                        tempArray[j] = finalHand[countTemp];
+                        countTemp--;
+                    }
+                    finalHand = tempArray;
+
+                    handInfo[0] = "Flush";
+                    handInfo[1] = "6";
+                    handInfo[2] = finalHand[0].ToString();
+                    handInfo[3] = finalHand[1].ToString();
+                    handInfo[4] = finalHand[2].ToString();
+                    handInfo[5] = finalHand[3].ToString();
+                    handInfo[6] = finalHand[4].ToString();
+
+                    handInfo[7] = "true";
+
+                    break;
                 }
             }
 
@@ -258,7 +399,7 @@ namespace Poker
             int num1 = 0;
             int num2 = 0;
             int num3 = 0;
-            String[] handInfo = new String[6];
+            String[] handInfo = new String[8];
             String pairsString = "";
             int[] finalHand = new int[5];
 
@@ -404,6 +545,7 @@ namespace Poker
                         numbersLeft.Add(current);
                     }
                 }
+                finalHand[4] = numbersLeft[0];
             } else {
                 pairsString = "Full House";
                 if(count1 > count2 && count1 > count3){
@@ -452,12 +594,16 @@ namespace Poker
             Array.Sort<int>(finalHand, new Comparison<int>((i1, i2) => i2.CompareTo(i1)));
 
             handInfo[0] = pairsString;
-
-            for (int i = 1; i < 6; i++){
-                handInfo[i] = (finalHand[i - 1]).ToString();
-            }
-
             handInfo[1] = getHandNumberStrenght(handInfo[0]);
+
+            handInfo[2] = finalHand[0].ToString();
+            handInfo[3] = finalHand[1].ToString();
+            handInfo[4] = finalHand[2].ToString();
+            handInfo[5] = finalHand[3].ToString();
+            handInfo[6] = finalHand[4].ToString();
+
+
+            handInfo[7] = "true";
 
             return handInfo;
         }
