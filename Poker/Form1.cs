@@ -978,6 +978,16 @@ namespace Poker
             }
         }
 
+        private void onLeave(object sender, EventArgs e)
+        {
+            if (firstPAmountTxtB.Text == "" || Convert.ToInt32(firstPAmountTxtB.Text) < 10)
+            {
+                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
+                firstPAmountTxtB.Text = "10";
+            }
+        }
+
 
         //public void createDeck()
         //{
