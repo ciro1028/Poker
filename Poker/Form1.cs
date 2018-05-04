@@ -224,13 +224,10 @@ namespace Poker
                 if (playersList[i] == 1)
                 {
                     p1WinPanel.Visible = true;
-                    p1WinPanel.BringToFront();
-                    firstPpicBox1.Visible = false;
-                    fifthPpicBox2.Visible = false;
+
                     hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
-                    this.p1resultHand1.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[2] + "_of_" + suit + ".png");
-
-
+                    int location = (this.p1WinPanel.Size.Width - this.hand1Lbl.Size.Width) / 2;
+                    this.hand1Lbl.Location = new Point(location, 47);
                 }
                 if (playersList[i] == 2)
                 {
