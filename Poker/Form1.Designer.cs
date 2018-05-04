@@ -455,9 +455,9 @@
             // 
             this.p8WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p8WinPanel.Controls.Add(this.hand8Lbl);
-            this.p8WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p8WinPanel.Location = new System.Drawing.Point(7, 91);
             this.p8WinPanel.Name = "p8WinPanel";
-            this.p8WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p8WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p8WinPanel.TabIndex = 37;
             this.p8WinPanel.Visible = false;
             // 
@@ -466,7 +466,7 @@
             this.hand8Lbl.AutoSize = true;
             this.hand8Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand8Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand8Lbl.Location = new System.Drawing.Point(31, 47);
+            this.hand8Lbl.Location = new System.Drawing.Point(41, 16);
             this.hand8Lbl.Name = "hand8Lbl";
             this.hand8Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand8Lbl.TabIndex = 11;
@@ -600,9 +600,9 @@
             // 
             this.p7WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p7WinPanel.Controls.Add(this.hand7Lbl);
-            this.p7WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p7WinPanel.Location = new System.Drawing.Point(7, 91);
             this.p7WinPanel.Name = "p7WinPanel";
-            this.p7WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p7WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p7WinPanel.TabIndex = 36;
             this.p7WinPanel.Visible = false;
             // 
@@ -611,7 +611,7 @@
             this.hand7Lbl.AutoSize = true;
             this.hand7Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand7Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand7Lbl.Location = new System.Drawing.Point(31, 51);
+            this.hand7Lbl.Location = new System.Drawing.Point(38, 15);
             this.hand7Lbl.Name = "hand7Lbl";
             this.hand7Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand7Lbl.TabIndex = 11;
@@ -745,9 +745,9 @@
             // 
             this.p6WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p6WinPanel.Controls.Add(this.hand6Lbl);
-            this.p6WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p6WinPanel.Location = new System.Drawing.Point(7, 91);
             this.p6WinPanel.Name = "p6WinPanel";
-            this.p6WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p6WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p6WinPanel.TabIndex = 35;
             this.p6WinPanel.Visible = false;
             // 
@@ -756,7 +756,7 @@
             this.hand6Lbl.AutoSize = true;
             this.hand6Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand6Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand6Lbl.Location = new System.Drawing.Point(31, 48);
+            this.hand6Lbl.Location = new System.Drawing.Point(38, 17);
             this.hand6Lbl.Name = "hand6Lbl";
             this.hand6Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand6Lbl.TabIndex = 11;
@@ -890,9 +890,9 @@
             // 
             this.p5WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p5WinPanel.Controls.Add(this.hand5Lbl);
-            this.p5WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p5WinPanel.Location = new System.Drawing.Point(7, 91);
             this.p5WinPanel.Name = "p5WinPanel";
-            this.p5WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p5WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p5WinPanel.TabIndex = 34;
             this.p5WinPanel.Visible = false;
             // 
@@ -901,7 +901,7 @@
             this.hand5Lbl.AutoSize = true;
             this.hand5Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand5Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand5Lbl.Location = new System.Drawing.Point(26, 48);
+            this.hand5Lbl.Location = new System.Drawing.Point(35, 17);
             this.hand5Lbl.Name = "hand5Lbl";
             this.hand5Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand5Lbl.TabIndex = 11;
@@ -1035,9 +1035,9 @@
             // 
             this.p4WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p4WinPanel.Controls.Add(this.hand4Lbl);
-            this.p4WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p4WinPanel.Location = new System.Drawing.Point(7, 91);
             this.p4WinPanel.Name = "p4WinPanel";
-            this.p4WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p4WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p4WinPanel.TabIndex = 33;
             this.p4WinPanel.Visible = false;
             // 
@@ -1046,7 +1046,7 @@
             this.hand4Lbl.AutoSize = true;
             this.hand4Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand4Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand4Lbl.Location = new System.Drawing.Point(36, 48);
+            this.hand4Lbl.Location = new System.Drawing.Point(41, 17);
             this.hand4Lbl.Name = "hand4Lbl";
             this.hand4Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand4Lbl.TabIndex = 11;
@@ -1180,9 +1180,9 @@
             // 
             this.p3WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p3WinPanel.Controls.Add(this.hand3Lbl);
-            this.p3WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p3WinPanel.Location = new System.Drawing.Point(6, 91);
             this.p3WinPanel.Name = "p3WinPanel";
-            this.p3WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p3WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p3WinPanel.TabIndex = 33;
             this.p3WinPanel.Visible = false;
             // 
@@ -1191,7 +1191,7 @@
             this.hand3Lbl.AutoSize = true;
             this.hand3Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand3Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand3Lbl.Location = new System.Drawing.Point(31, 48);
+            this.hand3Lbl.Location = new System.Drawing.Point(36, 17);
             this.hand3Lbl.Name = "hand3Lbl";
             this.hand3Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand3Lbl.TabIndex = 11;
@@ -1325,9 +1325,9 @@
             // 
             this.p2WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p2WinPanel.Controls.Add(this.hand2Lbl);
-            this.p2WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p2WinPanel.Location = new System.Drawing.Point(7, 91);
             this.p2WinPanel.Name = "p2WinPanel";
-            this.p2WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p2WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p2WinPanel.TabIndex = 33;
             this.p2WinPanel.Visible = false;
             // 
@@ -1336,7 +1336,7 @@
             this.hand2Lbl.AutoSize = true;
             this.hand2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand2Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand2Lbl.Location = new System.Drawing.Point(31, 51);
+            this.hand2Lbl.Location = new System.Drawing.Point(35, 15);
             this.hand2Lbl.Name = "hand2Lbl";
             this.hand2Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand2Lbl.TabIndex = 11;
@@ -1470,9 +1470,9 @@
             // 
             this.p1WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.p1WinPanel.Controls.Add(this.hand1Lbl);
-            this.p1WinPanel.Location = new System.Drawing.Point(12, 15);
+            this.p1WinPanel.Location = new System.Drawing.Point(6, 91);
             this.p1WinPanel.Name = "p1WinPanel";
-            this.p1WinPanel.Size = new System.Drawing.Size(186, 116);
+            this.p1WinPanel.Size = new System.Drawing.Size(197, 51);
             this.p1WinPanel.TabIndex = 23;
             this.p1WinPanel.Visible = false;
             // 
@@ -1481,7 +1481,7 @@
             this.hand1Lbl.AutoSize = true;
             this.hand1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand1Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand1Lbl.Location = new System.Drawing.Point(31, 47);
+            this.hand1Lbl.Location = new System.Drawing.Point(36, 16);
             this.hand1Lbl.Name = "hand1Lbl";
             this.hand1Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand1Lbl.TabIndex = 11;
