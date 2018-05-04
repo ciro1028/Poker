@@ -567,6 +567,7 @@
             this.eighthPAmountTxtB.Name = "eighthPAmountTxtB";
             this.eighthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.eighthPAmountTxtB.TabIndex = 6;
+            this.eighthPAmountTxtB.Text = "10";
             this.eighthPAmountTxtB.Visible = false;
             this.eighthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             this.eighthPAmountTxtB.Leave += new System.EventHandler(this.onLeave);
@@ -716,6 +717,7 @@
             this.seventhPAmountTxtB.Name = "seventhPAmountTxtB";
             this.seventhPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.seventhPAmountTxtB.TabIndex = 6;
+            this.seventhPAmountTxtB.Text = "10";
             this.seventhPAmountTxtB.Visible = false;
             this.seventhPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             this.seventhPAmountTxtB.Leave += new System.EventHandler(this.onLeave);
@@ -865,6 +867,7 @@
             this.sixthPAmountTxtB.Name = "sixthPAmountTxtB";
             this.sixthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.sixthPAmountTxtB.TabIndex = 6;
+            this.sixthPAmountTxtB.Text = "10";
             this.sixthPAmountTxtB.Visible = false;
             this.sixthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             this.sixthPAmountTxtB.Leave += new System.EventHandler(this.onLeave);
@@ -1014,6 +1017,7 @@
             this.fifthPAmountTxtB.Name = "fifthPAmountTxtB";
             this.fifthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.fifthPAmountTxtB.TabIndex = 6;
+            this.fifthPAmountTxtB.Text = "10";
             this.fifthPAmountTxtB.Visible = false;
             this.fifthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             this.fifthPAmountTxtB.Leave += new System.EventHandler(this.onLeave);
@@ -1163,6 +1167,7 @@
             this.fourthPAmountTxtB.Name = "fourthPAmountTxtB";
             this.fourthPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.fourthPAmountTxtB.TabIndex = 6;
+            this.fourthPAmountTxtB.Text = "10";
             this.fourthPAmountTxtB.Visible = false;
             this.fourthPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             this.fourthPAmountTxtB.Leave += new System.EventHandler(this.onLeave);
@@ -1312,6 +1317,7 @@
             this.thirdPAmountTxtB.Name = "thirdPAmountTxtB";
             this.thirdPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.thirdPAmountTxtB.TabIndex = 6;
+            this.thirdPAmountTxtB.Text = "10";
             this.thirdPAmountTxtB.Visible = false;
             this.thirdPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             this.thirdPAmountTxtB.Leave += new System.EventHandler(this.onLeave);
@@ -1461,6 +1467,7 @@
             this.secondPAmountTxtB.Name = "secondPAmountTxtB";
             this.secondPAmountTxtB.Size = new System.Drawing.Size(53, 20);
             this.secondPAmountTxtB.TabIndex = 6;
+            this.secondPAmountTxtB.Text = "10";
             this.secondPAmountTxtB.Visible = false;
             this.secondPAmountTxtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guessTxt_KeyPress);
             this.secondPAmountTxtB.Leave += new System.EventHandler(this.onLeave);
