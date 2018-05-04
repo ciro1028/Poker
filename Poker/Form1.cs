@@ -224,6 +224,9 @@ namespace Poker
                 if (playersList[i] == 1)
                 {
                     p1WinPanel.Visible = true;
+                    p1WinPanel.BringToFront();
+                    firstPlayerPanel.Visible = false;
+
                     hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
                     this.p1resultHand1.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[2] + "_of_" + suit + ".png");
                     this.p1resultHand2.Load("../../images/png/" + hand.checkHand(setTable.listOfPlayers[i].hand)[3] + "_of_" + suit + ".png");
