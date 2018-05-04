@@ -49,11 +49,6 @@
             this.firstPPlayingLbl = new System.Windows.Forms.CheckBox();
             this.eighthPlayerPanel = new System.Windows.Forms.Panel();
             this.p8WinPanel = new System.Windows.Forms.Panel();
-            this.p8resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p8resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p8resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p8resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p8resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand8Lbl = new System.Windows.Forms.Label();
             this.turnCK8 = new System.Windows.Forms.Panel();
             this.name8Lbl = new System.Windows.Forms.Label();
@@ -68,11 +63,6 @@
             this.eighthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.seventhPlayerPanel = new System.Windows.Forms.Panel();
             this.p7WinPanel = new System.Windows.Forms.Panel();
-            this.p7resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p7resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p7resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p7resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p7resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand7Lbl = new System.Windows.Forms.Label();
             this.turnCK7 = new System.Windows.Forms.Panel();
             this.name7Lbl = new System.Windows.Forms.Label();
@@ -87,11 +77,6 @@
             this.seventhPpicBox1 = new System.Windows.Forms.PictureBox();
             this.sixthPlayerPanel = new System.Windows.Forms.Panel();
             this.p6WinPanel = new System.Windows.Forms.Panel();
-            this.p6resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p6resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p6resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p6resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p6resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand6Lbl = new System.Windows.Forms.Label();
             this.turnCK6 = new System.Windows.Forms.Panel();
             this.name6Lbl = new System.Windows.Forms.Label();
@@ -106,11 +91,6 @@
             this.sixthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.fifthPlayerPanel = new System.Windows.Forms.Panel();
             this.p5WinPanel = new System.Windows.Forms.Panel();
-            this.p5resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p5resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p5resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p5resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p5resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand5Lbl = new System.Windows.Forms.Label();
             this.turnCK5 = new System.Windows.Forms.Panel();
             this.name5Lbl = new System.Windows.Forms.Label();
@@ -125,11 +105,6 @@
             this.fifthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.fourthPlayerPanel = new System.Windows.Forms.Panel();
             this.p4WinPanel = new System.Windows.Forms.Panel();
-            this.p4resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p4resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p4resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p4resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p4resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand4Lbl = new System.Windows.Forms.Label();
             this.turnCK4 = new System.Windows.Forms.Panel();
             this.name4Lbl = new System.Windows.Forms.Label();
@@ -144,11 +119,6 @@
             this.fourthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.thirdPlayerPanel = new System.Windows.Forms.Panel();
             this.p3WinPanel = new System.Windows.Forms.Panel();
-            this.p3resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p3resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p3resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p3resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p3resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand3Lbl = new System.Windows.Forms.Label();
             this.turnCK3 = new System.Windows.Forms.Panel();
             this.name3Lbl = new System.Windows.Forms.Label();
@@ -163,11 +133,6 @@
             this.thirdPpicBox1 = new System.Windows.Forms.PictureBox();
             this.secondPlayerPanel = new System.Windows.Forms.Panel();
             this.p2WinPanel = new System.Windows.Forms.Panel();
-            this.p2resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p2resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p2resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p2resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p2resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand2Lbl = new System.Windows.Forms.Label();
             this.turnCK2 = new System.Windows.Forms.Panel();
             this.name2Lbl = new System.Windows.Forms.Label();
@@ -182,11 +147,6 @@
             this.secondPpicBox1 = new System.Windows.Forms.PictureBox();
             this.firstPlayerPanel = new System.Windows.Forms.Panel();
             this.p1WinPanel = new System.Windows.Forms.Panel();
-            this.p1resultHand5 = new System.Windows.Forms.PictureBox();
-            this.p1resultHand4 = new System.Windows.Forms.PictureBox();
-            this.p1resultHand3 = new System.Windows.Forms.PictureBox();
-            this.p1resultHand2 = new System.Windows.Forms.PictureBox();
-            this.p1resultHand1 = new System.Windows.Forms.PictureBox();
             this.hand1Lbl = new System.Windows.Forms.Label();
             this.turnCK1 = new System.Windows.Forms.Panel();
             this.name1Lbl = new System.Windows.Forms.Label();
@@ -207,74 +167,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.firstFlopPB)).BeginInit();
             this.eighthPlayerPanel.SuspendLayout();
             this.p8WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eighthPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eighthPpicBox1)).BeginInit();
             this.seventhPlayerPanel.SuspendLayout();
             this.p7WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seventhPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seventhPpicBox1)).BeginInit();
             this.sixthPlayerPanel.SuspendLayout();
             this.p6WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sixthPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sixthPpicBox1)).BeginInit();
             this.fifthPlayerPanel.SuspendLayout();
             this.p5WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fifthPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fifthPpicBox1)).BeginInit();
             this.fourthPlayerPanel.SuspendLayout();
             this.p4WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fourthPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fourthPpicBox1)).BeginInit();
             this.thirdPlayerPanel.SuspendLayout();
             this.p3WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdPpicBox1)).BeginInit();
             this.secondPlayerPanel.SuspendLayout();
             this.p2WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondPpicBox1)).BeginInit();
             this.firstPlayerPanel.SuspendLayout();
             this.p1WinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstPpicBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstPpicBox1)).BeginInit();
             this.SuspendLayout();
@@ -534,11 +454,6 @@
             // p8WinPanel
             // 
             this.p8WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p8WinPanel.Controls.Add(this.p8resultHand5);
-            this.p8WinPanel.Controls.Add(this.p8resultHand4);
-            this.p8WinPanel.Controls.Add(this.p8resultHand3);
-            this.p8WinPanel.Controls.Add(this.p8resultHand2);
-            this.p8WinPanel.Controls.Add(this.p8resultHand1);
             this.p8WinPanel.Controls.Add(this.hand8Lbl);
             this.p8WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p8WinPanel.Name = "p8WinPanel";
@@ -546,62 +461,12 @@
             this.p8WinPanel.TabIndex = 37;
             this.p8WinPanel.Visible = false;
             // 
-            // p8resultHand5
-            // 
-            this.p8resultHand5.BackColor = System.Drawing.Color.White;
-            this.p8resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p8resultHand5.Name = "p8resultHand5";
-            this.p8resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p8resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p8resultHand5.TabIndex = 16;
-            this.p8resultHand5.TabStop = false;
-            // 
-            // p8resultHand4
-            // 
-            this.p8resultHand4.BackColor = System.Drawing.Color.White;
-            this.p8resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p8resultHand4.Name = "p8resultHand4";
-            this.p8resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p8resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p8resultHand4.TabIndex = 15;
-            this.p8resultHand4.TabStop = false;
-            // 
-            // p8resultHand3
-            // 
-            this.p8resultHand3.BackColor = System.Drawing.Color.White;
-            this.p8resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p8resultHand3.Name = "p8resultHand3";
-            this.p8resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p8resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p8resultHand3.TabIndex = 14;
-            this.p8resultHand3.TabStop = false;
-            // 
-            // p8resultHand2
-            // 
-            this.p8resultHand2.BackColor = System.Drawing.Color.White;
-            this.p8resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p8resultHand2.Name = "p8resultHand2";
-            this.p8resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p8resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p8resultHand2.TabIndex = 13;
-            this.p8resultHand2.TabStop = false;
-            // 
-            // p8resultHand1
-            // 
-            this.p8resultHand1.BackColor = System.Drawing.Color.White;
-            this.p8resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p8resultHand1.Name = "p8resultHand1";
-            this.p8resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p8resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p8resultHand1.TabIndex = 12;
-            this.p8resultHand1.TabStop = false;
-            // 
             // hand8Lbl
             // 
             this.hand8Lbl.AutoSize = true;
             this.hand8Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand8Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand8Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand8Lbl.Location = new System.Drawing.Point(31, 47);
             this.hand8Lbl.Name = "hand8Lbl";
             this.hand8Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand8Lbl.TabIndex = 11;
@@ -734,11 +599,6 @@
             // p7WinPanel
             // 
             this.p7WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p7WinPanel.Controls.Add(this.p7resultHand5);
-            this.p7WinPanel.Controls.Add(this.p7resultHand4);
-            this.p7WinPanel.Controls.Add(this.p7resultHand3);
-            this.p7WinPanel.Controls.Add(this.p7resultHand2);
-            this.p7WinPanel.Controls.Add(this.p7resultHand1);
             this.p7WinPanel.Controls.Add(this.hand7Lbl);
             this.p7WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p7WinPanel.Name = "p7WinPanel";
@@ -746,62 +606,12 @@
             this.p7WinPanel.TabIndex = 36;
             this.p7WinPanel.Visible = false;
             // 
-            // p7resultHand5
-            // 
-            this.p7resultHand5.BackColor = System.Drawing.Color.White;
-            this.p7resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p7resultHand5.Name = "p7resultHand5";
-            this.p7resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p7resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p7resultHand5.TabIndex = 16;
-            this.p7resultHand5.TabStop = false;
-            // 
-            // p7resultHand4
-            // 
-            this.p7resultHand4.BackColor = System.Drawing.Color.White;
-            this.p7resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p7resultHand4.Name = "p7resultHand4";
-            this.p7resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p7resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p7resultHand4.TabIndex = 15;
-            this.p7resultHand4.TabStop = false;
-            // 
-            // p7resultHand3
-            // 
-            this.p7resultHand3.BackColor = System.Drawing.Color.White;
-            this.p7resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p7resultHand3.Name = "p7resultHand3";
-            this.p7resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p7resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p7resultHand3.TabIndex = 14;
-            this.p7resultHand3.TabStop = false;
-            // 
-            // p7resultHand2
-            // 
-            this.p7resultHand2.BackColor = System.Drawing.Color.White;
-            this.p7resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p7resultHand2.Name = "p7resultHand2";
-            this.p7resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p7resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p7resultHand2.TabIndex = 13;
-            this.p7resultHand2.TabStop = false;
-            // 
-            // p7resultHand1
-            // 
-            this.p7resultHand1.BackColor = System.Drawing.Color.White;
-            this.p7resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p7resultHand1.Name = "p7resultHand1";
-            this.p7resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p7resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p7resultHand1.TabIndex = 12;
-            this.p7resultHand1.TabStop = false;
-            // 
             // hand7Lbl
             // 
             this.hand7Lbl.AutoSize = true;
             this.hand7Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand7Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand7Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand7Lbl.Location = new System.Drawing.Point(31, 51);
             this.hand7Lbl.Name = "hand7Lbl";
             this.hand7Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand7Lbl.TabIndex = 11;
@@ -934,11 +744,6 @@
             // p6WinPanel
             // 
             this.p6WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p6WinPanel.Controls.Add(this.p6resultHand5);
-            this.p6WinPanel.Controls.Add(this.p6resultHand4);
-            this.p6WinPanel.Controls.Add(this.p6resultHand3);
-            this.p6WinPanel.Controls.Add(this.p6resultHand2);
-            this.p6WinPanel.Controls.Add(this.p6resultHand1);
             this.p6WinPanel.Controls.Add(this.hand6Lbl);
             this.p6WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p6WinPanel.Name = "p6WinPanel";
@@ -946,62 +751,12 @@
             this.p6WinPanel.TabIndex = 35;
             this.p6WinPanel.Visible = false;
             // 
-            // p6resultHand5
-            // 
-            this.p6resultHand5.BackColor = System.Drawing.Color.White;
-            this.p6resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p6resultHand5.Name = "p6resultHand5";
-            this.p6resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p6resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p6resultHand5.TabIndex = 16;
-            this.p6resultHand5.TabStop = false;
-            // 
-            // p6resultHand4
-            // 
-            this.p6resultHand4.BackColor = System.Drawing.Color.White;
-            this.p6resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p6resultHand4.Name = "p6resultHand4";
-            this.p6resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p6resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p6resultHand4.TabIndex = 15;
-            this.p6resultHand4.TabStop = false;
-            // 
-            // p6resultHand3
-            // 
-            this.p6resultHand3.BackColor = System.Drawing.Color.White;
-            this.p6resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p6resultHand3.Name = "p6resultHand3";
-            this.p6resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p6resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p6resultHand3.TabIndex = 14;
-            this.p6resultHand3.TabStop = false;
-            // 
-            // p6resultHand2
-            // 
-            this.p6resultHand2.BackColor = System.Drawing.Color.White;
-            this.p6resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p6resultHand2.Name = "p6resultHand2";
-            this.p6resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p6resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p6resultHand2.TabIndex = 13;
-            this.p6resultHand2.TabStop = false;
-            // 
-            // p6resultHand1
-            // 
-            this.p6resultHand1.BackColor = System.Drawing.Color.White;
-            this.p6resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p6resultHand1.Name = "p6resultHand1";
-            this.p6resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p6resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p6resultHand1.TabIndex = 12;
-            this.p6resultHand1.TabStop = false;
-            // 
             // hand6Lbl
             // 
             this.hand6Lbl.AutoSize = true;
             this.hand6Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand6Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand6Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand6Lbl.Location = new System.Drawing.Point(31, 48);
             this.hand6Lbl.Name = "hand6Lbl";
             this.hand6Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand6Lbl.TabIndex = 11;
@@ -1134,11 +889,6 @@
             // p5WinPanel
             // 
             this.p5WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p5WinPanel.Controls.Add(this.p5resultHand5);
-            this.p5WinPanel.Controls.Add(this.p5resultHand4);
-            this.p5WinPanel.Controls.Add(this.p5resultHand3);
-            this.p5WinPanel.Controls.Add(this.p5resultHand2);
-            this.p5WinPanel.Controls.Add(this.p5resultHand1);
             this.p5WinPanel.Controls.Add(this.hand5Lbl);
             this.p5WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p5WinPanel.Name = "p5WinPanel";
@@ -1146,62 +896,12 @@
             this.p5WinPanel.TabIndex = 34;
             this.p5WinPanel.Visible = false;
             // 
-            // p5resultHand5
-            // 
-            this.p5resultHand5.BackColor = System.Drawing.Color.White;
-            this.p5resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p5resultHand5.Name = "p5resultHand5";
-            this.p5resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p5resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p5resultHand5.TabIndex = 16;
-            this.p5resultHand5.TabStop = false;
-            // 
-            // p5resultHand4
-            // 
-            this.p5resultHand4.BackColor = System.Drawing.Color.White;
-            this.p5resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p5resultHand4.Name = "p5resultHand4";
-            this.p5resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p5resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p5resultHand4.TabIndex = 15;
-            this.p5resultHand4.TabStop = false;
-            // 
-            // p5resultHand3
-            // 
-            this.p5resultHand3.BackColor = System.Drawing.Color.White;
-            this.p5resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p5resultHand3.Name = "p5resultHand3";
-            this.p5resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p5resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p5resultHand3.TabIndex = 14;
-            this.p5resultHand3.TabStop = false;
-            // 
-            // p5resultHand2
-            // 
-            this.p5resultHand2.BackColor = System.Drawing.Color.White;
-            this.p5resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p5resultHand2.Name = "p5resultHand2";
-            this.p5resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p5resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p5resultHand2.TabIndex = 13;
-            this.p5resultHand2.TabStop = false;
-            // 
-            // p5resultHand1
-            // 
-            this.p5resultHand1.BackColor = System.Drawing.Color.White;
-            this.p5resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p5resultHand1.Name = "p5resultHand1";
-            this.p5resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p5resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p5resultHand1.TabIndex = 12;
-            this.p5resultHand1.TabStop = false;
-            // 
             // hand5Lbl
             // 
             this.hand5Lbl.AutoSize = true;
             this.hand5Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand5Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand5Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand5Lbl.Location = new System.Drawing.Point(26, 48);
             this.hand5Lbl.Name = "hand5Lbl";
             this.hand5Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand5Lbl.TabIndex = 11;
@@ -1334,11 +1034,6 @@
             // p4WinPanel
             // 
             this.p4WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p4WinPanel.Controls.Add(this.p4resultHand5);
-            this.p4WinPanel.Controls.Add(this.p4resultHand4);
-            this.p4WinPanel.Controls.Add(this.p4resultHand3);
-            this.p4WinPanel.Controls.Add(this.p4resultHand2);
-            this.p4WinPanel.Controls.Add(this.p4resultHand1);
             this.p4WinPanel.Controls.Add(this.hand4Lbl);
             this.p4WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p4WinPanel.Name = "p4WinPanel";
@@ -1346,62 +1041,12 @@
             this.p4WinPanel.TabIndex = 33;
             this.p4WinPanel.Visible = false;
             // 
-            // p4resultHand5
-            // 
-            this.p4resultHand5.BackColor = System.Drawing.Color.White;
-            this.p4resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p4resultHand5.Name = "p4resultHand5";
-            this.p4resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p4resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4resultHand5.TabIndex = 16;
-            this.p4resultHand5.TabStop = false;
-            // 
-            // p4resultHand4
-            // 
-            this.p4resultHand4.BackColor = System.Drawing.Color.White;
-            this.p4resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p4resultHand4.Name = "p4resultHand4";
-            this.p4resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p4resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4resultHand4.TabIndex = 15;
-            this.p4resultHand4.TabStop = false;
-            // 
-            // p4resultHand3
-            // 
-            this.p4resultHand3.BackColor = System.Drawing.Color.White;
-            this.p4resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p4resultHand3.Name = "p4resultHand3";
-            this.p4resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p4resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4resultHand3.TabIndex = 14;
-            this.p4resultHand3.TabStop = false;
-            // 
-            // p4resultHand2
-            // 
-            this.p4resultHand2.BackColor = System.Drawing.Color.White;
-            this.p4resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p4resultHand2.Name = "p4resultHand2";
-            this.p4resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p4resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4resultHand2.TabIndex = 13;
-            this.p4resultHand2.TabStop = false;
-            // 
-            // p4resultHand1
-            // 
-            this.p4resultHand1.BackColor = System.Drawing.Color.White;
-            this.p4resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p4resultHand1.Name = "p4resultHand1";
-            this.p4resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p4resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4resultHand1.TabIndex = 12;
-            this.p4resultHand1.TabStop = false;
-            // 
             // hand4Lbl
             // 
             this.hand4Lbl.AutoSize = true;
             this.hand4Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand4Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand4Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand4Lbl.Location = new System.Drawing.Point(36, 48);
             this.hand4Lbl.Name = "hand4Lbl";
             this.hand4Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand4Lbl.TabIndex = 11;
@@ -1534,11 +1179,6 @@
             // p3WinPanel
             // 
             this.p3WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p3WinPanel.Controls.Add(this.p3resultHand5);
-            this.p3WinPanel.Controls.Add(this.p3resultHand4);
-            this.p3WinPanel.Controls.Add(this.p3resultHand3);
-            this.p3WinPanel.Controls.Add(this.p3resultHand2);
-            this.p3WinPanel.Controls.Add(this.p3resultHand1);
             this.p3WinPanel.Controls.Add(this.hand3Lbl);
             this.p3WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p3WinPanel.Name = "p3WinPanel";
@@ -1546,62 +1186,12 @@
             this.p3WinPanel.TabIndex = 33;
             this.p3WinPanel.Visible = false;
             // 
-            // p3resultHand5
-            // 
-            this.p3resultHand5.BackColor = System.Drawing.Color.White;
-            this.p3resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p3resultHand5.Name = "p3resultHand5";
-            this.p3resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p3resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p3resultHand5.TabIndex = 16;
-            this.p3resultHand5.TabStop = false;
-            // 
-            // p3resultHand4
-            // 
-            this.p3resultHand4.BackColor = System.Drawing.Color.White;
-            this.p3resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p3resultHand4.Name = "p3resultHand4";
-            this.p3resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p3resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p3resultHand4.TabIndex = 15;
-            this.p3resultHand4.TabStop = false;
-            // 
-            // p3resultHand3
-            // 
-            this.p3resultHand3.BackColor = System.Drawing.Color.White;
-            this.p3resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p3resultHand3.Name = "p3resultHand3";
-            this.p3resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p3resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p3resultHand3.TabIndex = 14;
-            this.p3resultHand3.TabStop = false;
-            // 
-            // p3resultHand2
-            // 
-            this.p3resultHand2.BackColor = System.Drawing.Color.White;
-            this.p3resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p3resultHand2.Name = "p3resultHand2";
-            this.p3resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p3resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p3resultHand2.TabIndex = 13;
-            this.p3resultHand2.TabStop = false;
-            // 
-            // p3resultHand1
-            // 
-            this.p3resultHand1.BackColor = System.Drawing.Color.White;
-            this.p3resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p3resultHand1.Name = "p3resultHand1";
-            this.p3resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p3resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p3resultHand1.TabIndex = 12;
-            this.p3resultHand1.TabStop = false;
-            // 
             // hand3Lbl
             // 
             this.hand3Lbl.AutoSize = true;
             this.hand3Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand3Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand3Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand3Lbl.Location = new System.Drawing.Point(31, 48);
             this.hand3Lbl.Name = "hand3Lbl";
             this.hand3Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand3Lbl.TabIndex = 11;
@@ -1734,11 +1324,6 @@
             // p2WinPanel
             // 
             this.p2WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p2WinPanel.Controls.Add(this.p2resultHand5);
-            this.p2WinPanel.Controls.Add(this.p2resultHand4);
-            this.p2WinPanel.Controls.Add(this.p2resultHand3);
-            this.p2WinPanel.Controls.Add(this.p2resultHand2);
-            this.p2WinPanel.Controls.Add(this.p2resultHand1);
             this.p2WinPanel.Controls.Add(this.hand2Lbl);
             this.p2WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p2WinPanel.Name = "p2WinPanel";
@@ -1746,62 +1331,12 @@
             this.p2WinPanel.TabIndex = 33;
             this.p2WinPanel.Visible = false;
             // 
-            // p2resultHand5
-            // 
-            this.p2resultHand5.BackColor = System.Drawing.Color.White;
-            this.p2resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p2resultHand5.Name = "p2resultHand5";
-            this.p2resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p2resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2resultHand5.TabIndex = 16;
-            this.p2resultHand5.TabStop = false;
-            // 
-            // p2resultHand4
-            // 
-            this.p2resultHand4.BackColor = System.Drawing.Color.White;
-            this.p2resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p2resultHand4.Name = "p2resultHand4";
-            this.p2resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p2resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2resultHand4.TabIndex = 15;
-            this.p2resultHand4.TabStop = false;
-            // 
-            // p2resultHand3
-            // 
-            this.p2resultHand3.BackColor = System.Drawing.Color.White;
-            this.p2resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p2resultHand3.Name = "p2resultHand3";
-            this.p2resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p2resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2resultHand3.TabIndex = 14;
-            this.p2resultHand3.TabStop = false;
-            // 
-            // p2resultHand2
-            // 
-            this.p2resultHand2.BackColor = System.Drawing.Color.White;
-            this.p2resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p2resultHand2.Name = "p2resultHand2";
-            this.p2resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p2resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2resultHand2.TabIndex = 13;
-            this.p2resultHand2.TabStop = false;
-            // 
-            // p2resultHand1
-            // 
-            this.p2resultHand1.BackColor = System.Drawing.Color.White;
-            this.p2resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p2resultHand1.Name = "p2resultHand1";
-            this.p2resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p2resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2resultHand1.TabIndex = 12;
-            this.p2resultHand1.TabStop = false;
-            // 
             // hand2Lbl
             // 
             this.hand2Lbl.AutoSize = true;
             this.hand2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand2Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand2Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand2Lbl.Location = new System.Drawing.Point(31, 51);
             this.hand2Lbl.Name = "hand2Lbl";
             this.hand2Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand2Lbl.TabIndex = 11;
@@ -1934,11 +1469,6 @@
             // p1WinPanel
             // 
             this.p1WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.p1WinPanel.Controls.Add(this.p1resultHand5);
-            this.p1WinPanel.Controls.Add(this.p1resultHand4);
-            this.p1WinPanel.Controls.Add(this.p1resultHand3);
-            this.p1WinPanel.Controls.Add(this.p1resultHand2);
-            this.p1WinPanel.Controls.Add(this.p1resultHand1);
             this.p1WinPanel.Controls.Add(this.hand1Lbl);
             this.p1WinPanel.Location = new System.Drawing.Point(12, 15);
             this.p1WinPanel.Name = "p1WinPanel";
@@ -1946,62 +1476,12 @@
             this.p1WinPanel.TabIndex = 23;
             this.p1WinPanel.Visible = false;
             // 
-            // p1resultHand5
-            // 
-            this.p1resultHand5.BackColor = System.Drawing.Color.White;
-            this.p1resultHand5.Location = new System.Drawing.Point(148, 35);
-            this.p1resultHand5.Name = "p1resultHand5";
-            this.p1resultHand5.Size = new System.Drawing.Size(31, 42);
-            this.p1resultHand5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p1resultHand5.TabIndex = 16;
-            this.p1resultHand5.TabStop = false;
-            // 
-            // p1resultHand4
-            // 
-            this.p1resultHand4.BackColor = System.Drawing.Color.White;
-            this.p1resultHand4.Location = new System.Drawing.Point(111, 35);
-            this.p1resultHand4.Name = "p1resultHand4";
-            this.p1resultHand4.Size = new System.Drawing.Size(31, 42);
-            this.p1resultHand4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p1resultHand4.TabIndex = 15;
-            this.p1resultHand4.TabStop = false;
-            // 
-            // p1resultHand3
-            // 
-            this.p1resultHand3.BackColor = System.Drawing.Color.White;
-            this.p1resultHand3.Location = new System.Drawing.Point(75, 35);
-            this.p1resultHand3.Name = "p1resultHand3";
-            this.p1resultHand3.Size = new System.Drawing.Size(31, 42);
-            this.p1resultHand3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p1resultHand3.TabIndex = 14;
-            this.p1resultHand3.TabStop = false;
-            // 
-            // p1resultHand2
-            // 
-            this.p1resultHand2.BackColor = System.Drawing.Color.White;
-            this.p1resultHand2.Location = new System.Drawing.Point(40, 35);
-            this.p1resultHand2.Name = "p1resultHand2";
-            this.p1resultHand2.Size = new System.Drawing.Size(31, 42);
-            this.p1resultHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p1resultHand2.TabIndex = 13;
-            this.p1resultHand2.TabStop = false;
-            // 
-            // p1resultHand1
-            // 
-            this.p1resultHand1.BackColor = System.Drawing.Color.White;
-            this.p1resultHand1.Location = new System.Drawing.Point(3, 35);
-            this.p1resultHand1.Name = "p1resultHand1";
-            this.p1resultHand1.Size = new System.Drawing.Size(31, 42);
-            this.p1resultHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p1resultHand1.TabIndex = 12;
-            this.p1resultHand1.TabStop = false;
-            // 
             // hand1Lbl
             // 
             this.hand1Lbl.AutoSize = true;
             this.hand1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hand1Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.hand1Lbl.Location = new System.Drawing.Point(31, 5);
+            this.hand1Lbl.Location = new System.Drawing.Point(31, 47);
             this.hand1Lbl.Name = "hand1Lbl";
             this.hand1Lbl.Size = new System.Drawing.Size(122, 20);
             this.hand1Lbl.TabIndex = 11;
@@ -2132,88 +1612,48 @@
             this.eighthPlayerPanel.PerformLayout();
             this.p8WinPanel.ResumeLayout(false);
             this.p8WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p8resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eighthPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eighthPpicBox1)).EndInit();
             this.seventhPlayerPanel.ResumeLayout(false);
             this.seventhPlayerPanel.PerformLayout();
             this.p7WinPanel.ResumeLayout(false);
             this.p7WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p7resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seventhPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seventhPpicBox1)).EndInit();
             this.sixthPlayerPanel.ResumeLayout(false);
             this.sixthPlayerPanel.PerformLayout();
             this.p6WinPanel.ResumeLayout(false);
             this.p6WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p6resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sixthPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sixthPpicBox1)).EndInit();
             this.fifthPlayerPanel.ResumeLayout(false);
             this.fifthPlayerPanel.PerformLayout();
             this.p5WinPanel.ResumeLayout(false);
             this.p5WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p5resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fifthPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fifthPpicBox1)).EndInit();
             this.fourthPlayerPanel.ResumeLayout(false);
             this.fourthPlayerPanel.PerformLayout();
             this.p4WinPanel.ResumeLayout(false);
             this.p4WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fourthPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fourthPpicBox1)).EndInit();
             this.thirdPlayerPanel.ResumeLayout(false);
             this.thirdPlayerPanel.PerformLayout();
             this.p3WinPanel.ResumeLayout(false);
             this.p3WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p3resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdPpicBox1)).EndInit();
             this.secondPlayerPanel.ResumeLayout(false);
             this.secondPlayerPanel.PerformLayout();
             this.p2WinPanel.ResumeLayout(false);
             this.p2WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondPpicBox1)).EndInit();
             this.firstPlayerPanel.ResumeLayout(false);
             this.firstPlayerPanel.PerformLayout();
             this.p1WinPanel.ResumeLayout(false);
             this.p1WinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1resultHand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstPpicBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstPpicBox1)).EndInit();
             this.ResumeLayout(false);
@@ -2339,60 +1779,20 @@
         private System.Windows.Forms.Label dealFlopLb;
         private System.Windows.Forms.Label winLbl;
         private System.Windows.Forms.Panel p8WinPanel;
-        private System.Windows.Forms.PictureBox p8resultHand5;
-        private System.Windows.Forms.PictureBox p8resultHand4;
-        private System.Windows.Forms.PictureBox p8resultHand3;
-        private System.Windows.Forms.PictureBox p8resultHand2;
-        private System.Windows.Forms.PictureBox p8resultHand1;
         private System.Windows.Forms.Label hand8Lbl;
         private System.Windows.Forms.Panel p7WinPanel;
-        private System.Windows.Forms.PictureBox p7resultHand5;
-        private System.Windows.Forms.PictureBox p7resultHand4;
-        private System.Windows.Forms.PictureBox p7resultHand3;
-        private System.Windows.Forms.PictureBox p7resultHand2;
-        private System.Windows.Forms.PictureBox p7resultHand1;
         private System.Windows.Forms.Label hand7Lbl;
         private System.Windows.Forms.Panel p6WinPanel;
-        private System.Windows.Forms.PictureBox p6resultHand5;
-        private System.Windows.Forms.PictureBox p6resultHand4;
-        private System.Windows.Forms.PictureBox p6resultHand3;
-        private System.Windows.Forms.PictureBox p6resultHand2;
-        private System.Windows.Forms.PictureBox p6resultHand1;
         private System.Windows.Forms.Label hand6Lbl;
         private System.Windows.Forms.Panel p5WinPanel;
-        private System.Windows.Forms.PictureBox p5resultHand5;
-        private System.Windows.Forms.PictureBox p5resultHand4;
-        private System.Windows.Forms.PictureBox p5resultHand3;
-        private System.Windows.Forms.PictureBox p5resultHand2;
-        private System.Windows.Forms.PictureBox p5resultHand1;
         private System.Windows.Forms.Label hand5Lbl;
         private System.Windows.Forms.Panel p4WinPanel;
-        private System.Windows.Forms.PictureBox p4resultHand5;
-        private System.Windows.Forms.PictureBox p4resultHand4;
-        private System.Windows.Forms.PictureBox p4resultHand3;
-        private System.Windows.Forms.PictureBox p4resultHand2;
-        private System.Windows.Forms.PictureBox p4resultHand1;
         private System.Windows.Forms.Label hand4Lbl;
         private System.Windows.Forms.Panel p3WinPanel;
-        private System.Windows.Forms.PictureBox p3resultHand5;
-        private System.Windows.Forms.PictureBox p3resultHand4;
-        private System.Windows.Forms.PictureBox p3resultHand3;
-        private System.Windows.Forms.PictureBox p3resultHand2;
-        private System.Windows.Forms.PictureBox p3resultHand1;
         private System.Windows.Forms.Label hand3Lbl;
         private System.Windows.Forms.Panel p2WinPanel;
-        private System.Windows.Forms.PictureBox p2resultHand5;
-        private System.Windows.Forms.PictureBox p2resultHand4;
-        private System.Windows.Forms.PictureBox p2resultHand3;
-        private System.Windows.Forms.PictureBox p2resultHand2;
-        private System.Windows.Forms.PictureBox p2resultHand1;
         private System.Windows.Forms.Label hand2Lbl;
         private System.Windows.Forms.Panel p1WinPanel;
-        private System.Windows.Forms.PictureBox p1resultHand5;
-        private System.Windows.Forms.PictureBox p1resultHand4;
-        private System.Windows.Forms.PictureBox p1resultHand3;
-        private System.Windows.Forms.PictureBox p1resultHand2;
-        private System.Windows.Forms.PictureBox p1resultHand1;
     }
 }
 
