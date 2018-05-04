@@ -61,42 +61,42 @@ namespace Poker
             {
                 if (playersList[i] == 1)
                 {
-                    Player player1 = new Player(1, "Mark", "200k", setPlayerCards(), true, "", "");
+                    Player player1 = new Player(1, "Mark", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player1);
                 }
                 if (playersList[i] == 2)
                 {
-                    Player player2 = new Player(2, "Paul", "200k", setPlayerCards(), true, "", "");
+                    Player player2 = new Player(2, "Paul", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player2);
                 }
                 if (playersList[i] == 3)
                 {
-                    Player player3 = new Player(3, "Susan", "200k", setPlayerCards(), true, "", "");
+                    Player player3 = new Player(3, "Susan", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player3);
                 }
                 if (playersList[i] == 4)
                 {
-                    Player player4 = new Player(4, "Lucas", "200k", setPlayerCards(), true, "", "");
+                    Player player4 = new Player(4, "Lucas", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player4);
                 }
                 if (playersList[i] == 5)
                 {
-                    Player player5 = new Player(5, "Juan", "200k", setPlayerCards(), true, "", "");
+                    Player player5 = new Player(5, "Juan", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player5);
                 }
                 if (playersList[i] == 6)
                 {
-                    Player player6 = new Player(6, "Maria", "200k", setPlayerCards(), true, "", "");
+                    Player player6 = new Player(6, "Maria", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player6);
                 }
                 if (playersList[i] == 7)
                 {
-                    Player player7 = new Player(7, "Brianna", "200k", setPlayerCards(), true, "", "");
+                    Player player7 = new Player(7, "Brianna", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player7);
                 }
                 if (playersList[i] == 8)
                 {
-                    Player player8 = new Player(8, "Bob", "200k", setPlayerCards(), true, "", "");
+                    Player player8 = new Player(8, "Bob", "20000", setPlayerCards(), true, "", "");
                     listOfPlayers.Add(player8);
                 }
             }
