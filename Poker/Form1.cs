@@ -955,6 +955,11 @@ namespace Poker
             }
         }
 
+        public void fold(object sender, EventArgs e)
+        {
+
+        }
+
         private void startBtn_Click(object sender, EventArgs e)
         {
             if (countNumberOfPlayers < 2)
