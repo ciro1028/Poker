@@ -173,10 +173,6 @@ namespace Poker
         public String[] checkForRoyalFlush(int[] checkRFHand){
             String[] handInfo = new String[8];
 
-            foreach(int current in checkRFHand){
-                Console.WriteLine("checkRFHand " + current);
-            }
-
             String flush = checkForFlush(checkRFHand)[1];
 
             int[] flushFinal = new int[6];
@@ -262,30 +258,39 @@ namespace Poker
 
             Array.Sort(checkStraightHand);
 
-
             for (int i = 0; i < 6; i++)
             {
+                //after numbers are put in order, this goes through each number of the hand and checks to see if
+                // the next number is only one more. First if checks if the next number is a plus one, the next check if the number
+                // is a repeated number which still allows the straight to be true, and the last if checks to see if
+                // the number is an ace because the ace can form straight on the high or low ends.
                 if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1 || checkStraightHand[i + 1] == checkStraightHand[i] || checkStraightHand[i] == 1)
                 {
+                    // this checks to see if the first number of the straight is a 10, if so the ace should also be taken in consideration.
                     if (count == 0)
                     {
-                        if (checkStraightHand[i] == 10 || checkStraightHand[i] == 23 || checkStraightHand[i] == 36 || checkStraightHand[i] == 49)
+                        if (checkStraightHand[i] == 10)
                         {
                             checkStraightWithAce = true;
                         }
                     }
 
-                    if (checkStraightHand[i + 1] != checkStraightHand[i])
+                    // this checks if next number in the sequence is a plus one, then the number is 
+                    // added to the final hand and the count goes one+.
+                    if ((checkStraightHand[i + 1] - checkStraightHand[i]) == 1 && checkStraightHand[i + 1] != checkStraightHand[i])
                     {
                         finalHand.Add(checkStraightHand[i]);
-
                         count++;
+                        // if statement to check if the next number is the last number in the hand, if so,
+                        // in addition to the current number, the final number is also added to the final hand.
                         if (count >= 4)
                         {
                             finalHand.Add(checkStraightHand[i + 1]);
                         }
                     }
 
+                    // checks to see if there is a straight starting with a 10 and if there is an ace in the hand, if so
+                    // confirms that the hand is a straight
                     if (count >= 3 && checkStraightWithAce)
                     {
                         foreach (int current in checkStraightHand){
@@ -296,8 +301,9 @@ namespace Poker
                             }
                         }
                     }
-
-                } else if (count < 4)
+                } 
+                // reset count if next number in the sequence is not a plus 1.
+                else if (count < 4)
                 {
                     count = 0;
                     finalHand.Clear();
@@ -310,7 +316,7 @@ namespace Poker
             if (count >= 4 )
             {
                 handInfo[0] = "Straight";
-                handInfo[1] = "6";
+                handInfo[1] = "5";
                 handInfo[6] = distinct[0].ToString();
                 handInfo[5] = distinct[1].ToString();
                 handInfo[4] = distinct[2].ToString();
@@ -318,7 +324,6 @@ namespace Poker
                 handInfo[2] = distinct[4].ToString();
                 handInfo[7] = "true";
             }
-
             return handInfo;
         }
 
@@ -530,8 +535,8 @@ namespace Poker
                     }
                     finalHand[4] = numbersLeft[0];
                 }
-            } else if (count1 == 1 && count2 == 1 || count1 == 1 && count2 == 1 && count3 ==1){
-                pairsString = "Two Pair";
+            } else if (count1 == 1 && count2 == 1 && count3 == 0 || count1 == 1 && count2 == 1 && count3 == 1){
+                pairsString = "Two Pairs";
                 finalHand[0] = nums[0];
                 finalHand[1] = nums[0];
                 finalHand[2] = nums[1];
@@ -545,6 +550,7 @@ namespace Poker
                         numbersLeft.Add(current);
                     }
                 }
+
                 finalHand[4] = numbersLeft[0];
             } else {
                 pairsString = "Full House";

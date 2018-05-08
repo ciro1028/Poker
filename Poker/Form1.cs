@@ -33,6 +33,8 @@ namespace Poker
         int countNumberOfPlayers = 0;
         int potAmount = 0;
         int currentBetAmount = 10;
+        int currentRaiser = 0;
+        List<int> strenghtList = new List<int> { };
 
         Random random = new Random();
 
@@ -102,19 +104,32 @@ namespace Poker
                     int player = currentBettingPlayer - 1;
                     int p1Cash = Convert.ToInt32(setTable.listOfPlayers[player].cash);
                     int betAmount1 = Convert.ToInt32(firstPAmountTxtB.Text);
-                    if (betAmount1 < currentBetAmount){
+                    String currentBetText = "Current Bet: $" + betAmount1 + ".00";
+                    if (betAmount1 < currentBetAmount)
+                    {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    } else {
+                    }
+                    else
+                    {
+                        if (firstPCheckRB.Checked)
+                        {
+                            betAmount1 = 0;
+                            currentBetText = "Current Bet: Check";
+                        }
+                        if (betAmount1 > currentBetAmount)
+                        {
+                            currentRaiser = 1;
+                        }
                         potAmount = potAmount + betAmount1;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        firstPCurrentLbl.Text = "Current Bet: $" + betAmount1 + ".00";
+                        firstPCurrentLbl.Text = currentBetText;
                         setTable.listOfPlayers[player].cash = (p1Cash - betAmount1).ToString();
                         firstPmoneyLbl.Text = setTable.listOfPlayers[player].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount1 + ".00";
                         currentBetAmount = betAmount1;
                         firstPAmountTxtB.Visible = false;
-                        firstPAmountTxtB.Text = "0";
+                        firstPAmountTxtB.Text = "10";
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -122,25 +137,42 @@ namespace Poker
                     break;
                 case 2:
                     int player2 = currentBettingPlayer - 1;
-
                     int p2Cash = Convert.ToInt32(setTable.listOfPlayers[player2].cash);
                     int betAmount2 = Convert.ToInt32(secondPAmountTxtB.Text);
+                    String currentBetText2 = "Current Bet: $" + betAmount2 + ".00";
                     if (betAmount2 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                     }
                     else
                     {
+                        if (secondPCheckRB.Checked)
+                        {
+                            betAmount2 = 0;
+                            currentBetText2 = "Current Bet: Check";
+                        }
+                        if (betAmount2 > currentBetAmount)
+                        {
+                            currentRaiser = 2;
+                        }
                         potAmount = potAmount + betAmount2;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        secondPCurrentLbl.Text = "Current Bet: $" + betAmount2 + ".00";
+                        secondPCurrentLbl.Text = currentBetText2;
                         setTable.listOfPlayers[player2].cash = (p2Cash - betAmount2).ToString();
                         secondPmoneyLbl.Text = setTable.listOfPlayers[player2].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount2 + ".00";
+
                         currentBetAmount = betAmount2;
                         secondPAmountTxtB.Visible = false;
-                        secondPAmountTxtB.Text = "0";
+                        if (secondPCheckRB.Checked)
+                        {
+                            secondPAmountTxtB.Text = "0";
+                        }
+                        else
+                        {
+                            secondPAmountTxtB.Text = "10";
+                        }
+
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -148,9 +180,9 @@ namespace Poker
                     break;
                 case 3:
                     int player3 = currentBettingPlayer - 1;
-
                     int p3Cash = Convert.ToInt32(setTable.listOfPlayers[player3].cash);
                     int betAmount3 = Convert.ToInt32(thirdPAmountTxtB.Text);
+                    String currentBetText3 = "Current Bet: $" + betAmount3 + ".00";
                     if (betAmount3 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -158,15 +190,31 @@ namespace Poker
                     }
                     else
                     {
+                        if (thirdPCheckRB.Checked)
+                        {
+                            betAmount3 = 0;
+                            currentBetText3 = "Current Bet: Check";
+                        }
+                        if (betAmount3 > currentBetAmount)
+                        {
+                            currentRaiser = 3;
+                        }
                         potAmount = potAmount + betAmount3;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        thirdPCurrentLbl.Text = "Current Bet: $" + betAmount3 + ".00";
+                        thirdPCurrentLbl.Text = currentBetText3;
                         setTable.listOfPlayers[player3].cash = (p3Cash - betAmount3).ToString();
                         thirdPmoneyLbl.Text = setTable.listOfPlayers[player3].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount3 + ".00";
                         currentBetAmount = betAmount3;
                         thirdPAmountTxtB.Visible = false;
-                        thirdPAmountTxtB.Text = "0";
+                        if (thirdPCheckRB.Checked)
+                        {
+                            thirdPAmountTxtB.Text = "0";
+                        }
+                        else
+                        {
+                            thirdPAmountTxtB.Text = "10";
+                        }
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -174,9 +222,9 @@ namespace Poker
                     break;
                 case 4:
                     int player4 = currentBettingPlayer - 1;
-
                     int p4Cash = Convert.ToInt32(setTable.listOfPlayers[player4].cash);
                     int betAmount4 = Convert.ToInt32(fourthPAmountTxtB.Text);
+                    String currentBetText4 = "Current Bet: $" + betAmount4 + ".00";
                     if (betAmount4 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -184,15 +232,31 @@ namespace Poker
                     }
                     else
                     {
+                        if (fourthPCheckRB.Checked)
+                        {
+                            betAmount4 = 0;
+                            currentBetText4 = "Current Bet: Check";
+                        }
+                        if (betAmount4 > currentBetAmount)
+                        {
+                            currentRaiser = 4;
+                        }
                         potAmount = potAmount + betAmount4;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        fourthPCurrentLbl.Text = "Current Bet: $" + betAmount4 + ".00";
+                        fourthPCurrentLbl.Text = currentBetText4;
                         setTable.listOfPlayers[player4].cash = (p4Cash - betAmount4).ToString();
                         fourthPmoneyLbl.Text = setTable.listOfPlayers[player4].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount4 + ".00";
                         currentBetAmount = betAmount4;
                         fourthPAmountTxtB.Visible = false;
-                        fourthPAmountTxtB.Text = "0";
+                        if (fourthPCheckRB.Checked)
+                        {
+                            fourthPAmountTxtB.Text = "0";
+                        }
+                        else
+                        {
+                            fourthPAmountTxtB.Text = "10";
+                        }
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -200,9 +264,9 @@ namespace Poker
                     break;
                 case 5:
                     int player5 = currentBettingPlayer - 1;
-
                     int p5Cash = Convert.ToInt32(setTable.listOfPlayers[player5].cash);
                     int betAmount5 = Convert.ToInt32(fifthPAmountTxtB.Text);
+                    String currentBetText5 = "Current Bet: $" + betAmount5 + ".00";
                     if (betAmount5 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -210,15 +274,24 @@ namespace Poker
                     }
                     else
                     {
+                        if (fifthPCheckRB.Checked)
+                        {
+                            betAmount5 = 0;
+                            currentBetText5 = "Current Bet: Check";
+                        }
+                        if (betAmount5 > currentBetAmount)
+                        {
+                            currentRaiser = 5;
+                        }
                         potAmount = potAmount + betAmount5;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        fifthPCurrentLbl.Text = "Current Bet: $" + betAmount5 + ".00";
+                        fifthPCurrentLbl.Text = currentBetText5;
                         setTable.listOfPlayers[player5].cash = (p5Cash - betAmount5).ToString();
                         fifthPmoneyLbl.Text = setTable.listOfPlayers[player5].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount5 + ".00";
                         currentBetAmount = betAmount5;
                         fifthPAmountTxtB.Visible = false;
-                        fifthPAmountTxtB.Text = "0";
+                        fifthPAmountTxtB.Text = "10";
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -226,9 +299,9 @@ namespace Poker
                     break;
                 case 6:
                     int player6 = currentBettingPlayer - 1;
-
                     int p6Cash = Convert.ToInt32(setTable.listOfPlayers[player6].cash);
                     int betAmount6 = Convert.ToInt32(sixthPAmountTxtB.Text);
+                    String currentBetText6 = "Current Bet: $" + betAmount6 + ".00";
                     if (betAmount6 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -236,15 +309,24 @@ namespace Poker
                     }
                     else
                     {
+                        if (sixthPCheckRB.Checked)
+                        {
+                            betAmount6 = 0;
+                            currentBetText6 = "Current Bet: Check";
+                        }
+                        if (betAmount6 > currentBetAmount)
+                        {
+                            currentRaiser = 6;
+                        }
                         potAmount = potAmount + betAmount6;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        thirdPCurrentLbl.Text = "Current Bet: $" + betAmount6 + ".00";
+                        sixthPCurrentLbl.Text = currentBetText6;
                         setTable.listOfPlayers[player6].cash = (p6Cash - betAmount6).ToString();
                         sixthPmoneyLbl.Text = setTable.listOfPlayers[player6].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount6 + ".00";
                         currentBetAmount = betAmount6;
                         sixthPAmountTxtB.Visible = false;
-                        sixthPAmountTxtB.Text = "0";
+                        sixthPAmountTxtB.Text = "10";
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -255,6 +337,7 @@ namespace Poker
 
                     int p7Cash = Convert.ToInt32(setTable.listOfPlayers[player7].cash);
                     int betAmount7 = Convert.ToInt32(seventhPAmountTxtB.Text);
+                    String currentBetText7 = "Current Bet: $" + betAmount7 + ".00";
                     if (betAmount7 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -262,15 +345,24 @@ namespace Poker
                     }
                     else
                     {
+                        if (seventhPCheckRB.Checked)
+                        {
+                            betAmount7 = 0;
+                            currentBetText7 = "Current Bet: Check";
+                        }
+                        if (betAmount7 > currentBetAmount)
+                        {
+                            currentRaiser = 7;
+                        }
                         potAmount = potAmount + betAmount7;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        seventhPCurrentLbl.Text = "Current Bet: $" + betAmount7 + ".00";
+                        seventhPCurrentLbl.Text = currentBetText7;
                         setTable.listOfPlayers[player7].cash = (p7Cash - betAmount7).ToString();
                         seventhPmoneyLbl.Text = setTable.listOfPlayers[player7].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount7 + ".00";
                         currentBetAmount = betAmount7;
                         seventhPAmountTxtB.Visible = false;
-                        seventhPAmountTxtB.Text = "0";
+                        seventhPAmountTxtB.Text = "10";
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -278,9 +370,9 @@ namespace Poker
                     break;
                 case 8:
                     int player8 = currentBettingPlayer - 1;
-
                     int p8Cash = Convert.ToInt32(setTable.listOfPlayers[player8].cash);
                     int betAmount8 = Convert.ToInt32(eighthPAmountTxtB.Text);
+                    String currentBetText8 = "Current Bet: $" + betAmount8 + ".00";
                     if (betAmount8 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -288,15 +380,24 @@ namespace Poker
                     }
                     else
                     {
+                        if (eighthPCheckRB.Checked)
+                        {
+                            betAmount8 = 0;
+                            currentBetText8 = "Current Bet: Check";
+                        }
+                        if (betAmount8 > currentBetAmount)
+                        {
+                            currentRaiser = 8;
+                        }
                         potAmount = potAmount + betAmount8;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        eighthPCurrentLbl.Text = "Current Bet: $" + betAmount8 + ".00";
+                        eighthPCurrentLbl.Text = currentBetText8;
                         setTable.listOfPlayers[player8].cash = (p8Cash - betAmount8).ToString();
                         eighthPmoneyLbl.Text = setTable.listOfPlayers[player8].cash;
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount8 + ".00";
                         currentBetAmount = betAmount8;
                         eighthPAmountTxtB.Visible = false;
-                        eighthPAmountTxtB.Text = "0";
+                        eighthPAmountTxtB.Text = "10";
                         checkIfLastPlayer();
                         turnOffPlayers();
                         betTurn();
@@ -305,7 +406,8 @@ namespace Poker
             }
         }
 
-        public void checkIfLastPlayer(){
+        public void checkIfLastPlayer()
+        {
             //check to see if the current player is the last player, if yes, reset count
             if (currentBettingPlayerCount < setTable.listOfPlayers.Count - 1)
             {
@@ -321,25 +423,259 @@ namespace Poker
             }
         }
 
+        // method to gather all strenght numbers from each player
+        // compare them and see who got the highest.
+        // If more than one player get the winning number than further comparison is made
+        public void checkWinner(){
+            int[] arrayStrenght = strenghtList.ToArray();
+            //String strToReturn = "";
+
+            List<Player> winners = new List<Player> { };
+            Array.Sort(arrayStrenght);
+            Array.Sort<int>(arrayStrenght, new Comparison<int>((i1, i2) => i2.CompareTo(i1)));
+
+            foreach (var player in listOfPlayers)
+            {
+                if (player.currentNumberStrenght == arrayStrenght[0]){
+                    winners.Add(player);
+                }
+            }
+
+            if(winners.Count == 1){
+                winLbl.Text = "The winner is a " + winners[0].name;
+                //strToReturn = "The winner is a " + winners[0].name;
+                winners[0].cash = (Convert.ToInt32(winners[0].cash) + potAmount).ToString();
+            } else {
+                List<int[]> handsToCompareList = new List<int[]> { };
+                foreach (var player in winners)
+                {
+                    handsToCompareList.Add(player.finalHand);
+                }
+
+                // transform all 1's in 14's to be comparable to the power of an ace
+                for (int i = 0; i < handsToCompareList.Count; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (handsToCompareList[i][j] == 1)
+                        {
+                            if (arrayStrenght[0] != 5)
+                            {
+                                handsToCompareList[i][j] = 14;
+                            }
+                            else
+                            {
+                                if (handsToCompareList[i][4] == 10)
+                                {
+                                    handsToCompareList[i][j] = 14;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                int winnerIndex = compareSimilarHands(handsToCompareList, arrayStrenght[0]);
+                //int winnerIndex = compareSimilarHands(handsToCompareList, type);
+
+                winLbl.Text = "The winner is a " + setTable.listOfPlayers[winnerIndex].name;
+                //strToReturn = "The winner is " + winners[winnerIndex].name;
+
+                setTable.listOfPlayers[winnerIndex].cash = (Convert.ToInt32(setTable.listOfPlayers[winnerIndex].cash) + potAmount).ToString();
+            }
+            refreshMoney();
+            winLbl.Visible = true;
+
+            //return strToReturn;
+        }
+
+        // compare similar winning hands and determine who got the best
+        public int compareSimilarHands(List<int[]> winnersHands, int strenght){
+            int handIndex = 0;
+            if (strenght == 1 || strenght == 5 || strenght == 6 || strenght == 9){
+                handIndex = selectHighestHandByHighestCard(winnersHands, 0);
+            } else if (strenght == 2 || strenght == 4 || strenght == 7){
+                handIndex = selectHighestHandByHighestCard(selectPairs(winnersHands), 0);
+            } else {
+                handIndex = selectHighestHandByHighestCard(selectPairs(winnersHands), 1);
+            }
+            return handIndex;
+        }
+
+        public void refreshMoney(){
+
+            for (int i = 0; i < setTable.listOfPlayers.Count; i++)
+            {
+                switch (listOfPlayers[i].id){
+                    case 1:
+                        firstPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                    case 2:
+                        secondPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                    case 3:
+                        thirdPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                    case 4:
+                        fourthPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                    case 5:
+                        fifthPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                    case 6:
+                        sixthPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                    case 7:
+                        seventhPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                    case 8:
+                        eighthPmoneyLbl.Text = setTable.listOfPlayers[i].cash;
+                        break;
+                }
+            }
+        }
+
+        public List<int[]> selectPairs(List<int[]> winnersHands){
+            List<int[]> highestPairs = new List<int[]> { };
+            // select pairs from each hand and put the number that paired up into a list
+            List<int> pairs = new List<int> { };
+            for (int i = 0; i < winnersHands.Count; i++)
+            {
+                int count = 0;
+                for (int j = 0; j < 5; j++)
+                {
+                    for (int f = j + 1; f < 5; f++)
+                    {
+                        if (winnersHands[i][j] == winnersHands[i][f])
+                        {
+                            count++;
+                        }
+                    }
+                    if (count > 0)
+                    {
+                        pairs.Add(winnersHands[i][j]);
+                        break;
+                    }
+                }
+            }
+
+            // sort pairs and put them in order
+            int[] pairsArray = pairs.ToArray();
+            Array.Sort(pairsArray);
+
+            int maxCard = 0;
+            // finding largest pair
+            if (pairsArray.Length > 0){
+                maxCard  = pairsArray.Max();
+            }
+
+            int[] emptyArray = new int[] { 0, 0, 0, 0, 0 };
+
+            // keep the hands that have the largest pair and cleaning the ones that don't.
+            for (int i = 0; i < winnersHands.Count; i++)
+            {
+                int pos = Array.IndexOf(winnersHands[i], maxCard);
+                if (pos > -1)
+                {
+                    highestPairs.Add(winnersHands[i]);
+                }
+                else
+                {
+                    highestPairs.Add(emptyArray);
+                }
+            }
+
+            return highestPairs;
+        }
+
+        public int selectHighestHandByHighestCard(List<int[]> hands, int type){
+            // gathering largesr card from each player
+            List<int> largest = new List<int> { };
+            int index = 0;
+            int[] zeroArray = new int[5] { 0, 0, 0, 0, 0 };
+
+            for (int i = 0; i < 5; i++)
+            {
+                // adding highest card from each player into a list
+                for (int j = 0; j < hands.Count; j++)
+                {
+                    largest.Add(hands[j][i]);
+                }
+
+                // getting largest card among all players
+                int maxNumber = largest.Max();
+                int maxIndex = largest.IndexOf(maxNumber);
+                int count = 0;
+
+                // checking to see if there's more than one player with the highest card
+                for (int j = 0; j < hands.Count; j++)
+                {
+                    if (maxNumber == hands[j][i])
+                    {
+                        if (type == 0){
+                            count++;
+                        } else if (type == 1 && maxNumber != hands[j][i + 1]){
+                                largest[maxIndex] = 0;
+                                maxNumber = largest.Max();
+                                maxIndex = largest.IndexOf(maxNumber);
+                        } else if (type == 1 && maxNumber == hands[j][i + 1]){
+                                count++;
+                        }
+                    }
+                    else
+                    {
+                        // exclude all players that don't have the highest card
+                        hands[j] = zeroArray;
+                    }
+                }
+                largest.Clear();
+                // if only one player has the highest card than break and return the player's index
+                if (count == 1)
+                {
+                    index = maxIndex;
+                    break;
+                }
+            }
+            return index;
+        }
+
         // method to handle each player's turn
         public void betTurn()
         {
-            if (currentBettingPlayerCount == 0 && currentBettingPlayer == 0)
+            if (currentRaiser == currentBettingPlayer)
+            {
+                currentBettingPlayer = 0;
+                currentBettingPlayerCount = 0;
+                currentRaiser = 0;
+            }
+
+            if (currentBettingPlayerCount == 0 && currentBettingPlayer == 0 && (currentRaiser == currentBettingPlayer || currentRaiser == 1))
             {
                 turnOffPlayers();
                 currentBettingPlayer = 0;
                 flipBtn.Visible = true;
                 dealFlopLb.Visible = true;
                 currentBetAmount = 0;
+                currentBetAmountLbl.Text = "Current Bet: ";
                 if (allCardsShown)
                 {
                     checkHands();
+                    checkWinner();
                     flipBtn.Visible = false;
                     dealFlopLb.Visible = false;
                 }
+                currentRaiser = 0;
             }
             else
             {
+                if (currentRaiser != 0 && currentBettingPlayer == 0)
+                {
+                    if(currentRaiser == 1){
+                        currentRaiser = 0;
+                    }
+                    currentBettingPlayer = setTable.listOfPlayers[0].id;
+                    currentBettingPlayerCount = 0;
+                }
+
                 switch (currentBettingPlayer)
                 {
                     case 1:
@@ -348,9 +684,15 @@ namespace Poker
                         this.firstPCheckRB.Visible = true;
                         this.firstPBetBtn.Visible = true;
                         this.firstPCheckRB.Checked = true;
-                        if (currentBetAmount > 0) {
+                        if (currentBetAmount > 0)
+                        {
                             firstPCheckRB.Visible = false;
                             firstPbetRB.Checked = true;
+                        }
+                        if(currentBetAmount == 0){
+                            this.firstPAmountTxtB.Text = "10";
+                        } else {
+                            this.firstPAmountTxtB.Text = currentBetAmount.ToString();
                         }
                         break;
                     case 2:
@@ -359,10 +701,22 @@ namespace Poker
                         this.secondPCheckRB.Visible = true;
                         this.secondPBetBtn.Visible = true;
                         this.secondPCheckRB.Checked = true;
+                        if (secondPCheckRB.Checked)
+                        {
+                            secondPAmountTxtB.Text = "10";
+                        }
                         if (currentBetAmount > 0)
                         {
                             secondPCheckRB.Visible = false;
                             secondPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.secondPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.secondPAmountTxtB.Text = currentBetAmount.ToString();
                         }
                         break;
                     case 3:
@@ -376,6 +730,14 @@ namespace Poker
                             thirdPCheckRB.Visible = false;
                             thirdPbetRB.Checked = true;
                         }
+                        if (currentBetAmount == 0)
+                        {
+                            this.thirdPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.thirdPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
                         break;
                     case 4:
                         this.turnCK4.BackColor = Color.Lime;
@@ -387,6 +749,14 @@ namespace Poker
                         {
                             fourthPCheckRB.Visible = false;
                             fourthPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.fourthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.fourthPAmountTxtB.Text = currentBetAmount.ToString();
                         }
                         break;
                     case 5:
@@ -400,6 +770,14 @@ namespace Poker
                             fifthPCheckRB.Visible = false;
                             fifthPbetRB.Checked = true;
                         }
+                        if (currentBetAmount == 0)
+                        {
+                            this.fifthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.fifthPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
                         break;
                     case 6:
                         this.turnCK6.BackColor = Color.Lime;
@@ -411,6 +789,14 @@ namespace Poker
                         {
                             sixthPCheckRB.Visible = false;
                             sixthPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.sixthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.sixthPAmountTxtB.Text = currentBetAmount.ToString();
                         }
                         break;
                     case 7:
@@ -424,6 +810,14 @@ namespace Poker
                             seventhPCheckRB.Visible = false;
                             seventhPbetRB.Checked = true;
                         }
+                        if (currentBetAmount == 0)
+                        {
+                            this.seventhPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.seventhPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
                         break;
                     case 8:
                         this.turnCK8.BackColor = Color.Lime;
@@ -436,10 +830,16 @@ namespace Poker
                             eighthPCheckRB.Visible = false;
                             eighthPbetRB.Checked = true;
                         }
+                        if (currentBetAmount == 0)
+                        {
+                            this.eighthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.eighthPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
                         break;
                 }
-
-
             }
         }
 
@@ -449,7 +849,8 @@ namespace Poker
             {
                 firstPAmountTxtB.Visible = true;
                 firstPBetBtn.Text = "Bet!";
-            } else
+            }
+            else
             {
                 firstPAmountTxtB.Visible = false;
                 firstPBetBtn.Text = "Check!";
@@ -556,9 +957,12 @@ namespace Poker
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            if(countNumberOfPlayers < 2){
+            if (countNumberOfPlayers < 2)
+            {
                 MessageBox.Show("Please select at least two players.", "Select Players", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else {
+            }
+            else
+            {
                 playersList = setTable.setTable(firstPlayerPanel.Visible, secondPlayerPanel.Visible, thirdPlayerPanel.Visible,
                 fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible,
                 seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);
@@ -689,77 +1093,187 @@ namespace Poker
             {
                 if (playersList[i] == 1)
                 {
-                    p1WinPanel.Visible = true;
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand1Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand1Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p1WinPanel.Size.Width - this.hand1Lbl.Size.Width) / 2;
                     int location2 = (this.p1WinPanel.Size.Height - this.hand1Lbl.Size.Height) / 2;
                     this.hand1Lbl.Location = new Point(location, location2);
+                    p1WinPanel.Visible = true;
                 }
                 if (playersList[i] == 2)
                 {
-                    p2WinPanel.Visible = true;
+                    
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand2Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand2Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p2WinPanel.Size.Width - this.hand2Lbl.Size.Width) / 2;
                     int location2 = (this.p2WinPanel.Size.Height - this.hand2Lbl.Size.Height) / 2;
                     this.hand2Lbl.Location = new Point(location, location2);
+                    p2WinPanel.Visible = true;
                 }
                 if (playersList[i] == 3)
                 {
-                    p3WinPanel.Visible = true;
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand3Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand3Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p3WinPanel.Size.Width - this.hand3Lbl.Size.Width) / 2;
                     int location2 = (this.p3WinPanel.Size.Height - this.hand3Lbl.Size.Height) / 2;
                     this.hand3Lbl.Location = new Point(location, location2);
+                    p3WinPanel.Visible = true;
                 }
                 if (playersList[i] == 4)
                 {
-                    p4WinPanel.Visible = true;
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand4Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand4Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p4WinPanel.Size.Width - this.hand4Lbl.Size.Width) / 2;
                     int location2 = (this.p4WinPanel.Size.Height - this.hand4Lbl.Size.Height) / 2;
                     this.hand4Lbl.Location = new Point(location, location2);
+                    p4WinPanel.Visible = true;
                 }
                 if (playersList[i] == 5)
                 {
-                    p5WinPanel.Visible = true;
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand5Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand5Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p5WinPanel.Size.Width - this.hand5Lbl.Size.Width) / 2;
                     int location2 = (this.p5WinPanel.Size.Height - this.hand5Lbl.Size.Height) / 2;
                     this.hand5Lbl.Location = new Point(location, location2);
+                    p5WinPanel.Visible = true;
                 }
                 if (playersList[i] == 6)
                 {
-                    p6WinPanel.Visible = true;
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand6Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand6Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p6WinPanel.Size.Width - this.hand6Lbl.Size.Width) / 2;
                     int location2 = (this.p6WinPanel.Size.Height - this.hand6Lbl.Size.Height) / 2;
                     this.hand6Lbl.Location = new Point(location, location2);
+                    p6WinPanel.Visible = true;
                 }
                 if (playersList[i] == 7)
                 {
-                    p7WinPanel.Visible = true;
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand7Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand7Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p7WinPanel.Size.Width - this.hand7Lbl.Size.Width) / 2;
                     int location2 = (this.p7WinPanel.Size.Height - this.hand7Lbl.Size.Height) / 2;
                     this.hand7Lbl.Location = new Point(location, location2);
+                    p7WinPanel.Visible = true;
                 }
                 if (playersList[i] == 8)
                 {
-                    p8WinPanel.Visible = true;
+                    int number = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[1]);
+                    strenghtList.Add(number);
 
-                    hand8Lbl.Text = hand.checkHand(setTable.listOfPlayers[i].hand)[0];
+                    hand8Lbl.Text = (translateNumber(strenghtList[i]));
+                    setTable.listOfPlayers[i].currentNumberStrenght = strenghtList[i];
+                    setTable.listOfPlayers[i].finalHand[0] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[2]);
+                    setTable.listOfPlayers[i].finalHand[1] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[3]);
+                    setTable.listOfPlayers[i].finalHand[2] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[4]);
+                    setTable.listOfPlayers[i].finalHand[3] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[5]);
+                    setTable.listOfPlayers[i].finalHand[4] = Convert.ToInt32(hand.checkHand(setTable.listOfPlayers[i].hand)[6]);
+
                     int location = (this.p8WinPanel.Size.Width - this.hand8Lbl.Size.Width) / 2;
                     int location2 = (this.p8WinPanel.Size.Height - this.hand8Lbl.Size.Height) / 2;
                     this.hand8Lbl.Location = new Point(location, location2);
+                    p8WinPanel.Visible = true;
                 }
             }
+        }
+
+        public String translateNumber(int number){
+            String strenght = "";
+            switch(number){
+                case 1:
+                    strenght = "High Card";
+                    break;
+                case 2:
+                    strenght = "One Pair";
+                    break;
+                case 3:
+                    strenght = "Two Pairs";
+                    break;
+                case 4:
+                    strenght = "Three of a Kind";
+                    break;
+                case 5:
+                    strenght = "Straight";
+                    break;
+                case 6:
+                    strenght = "Flush";
+                    break;
+                case 7:
+                    strenght = "Full House";
+                    break;
+                case 8:
+                    strenght = "Four of a Kind";
+                    break;
+                case 9:
+                    strenght = "Straight Flush";
+                    break;
+                case 10:
+                    strenght = "Royal Flush";
+                    break;
+            }
+            return strenght;
         }
 
         private int correctedNumbers(int cardNumber)
@@ -789,18 +1303,20 @@ namespace Poker
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            //test();
-            this.flipBtn.Visible = false;
+            test();
+            //this.flipBtn.Visible = false;
 
-            hand.resetHand();
-            cleanLabels();
-            countFlop = 0;
-            allCardsShown = false;
-            currentBettingPlayer = 0;
-            currentBettingPlayerCount = 0;
-            disablePlayersBoxes();
-            setTable.resetTable();
-            this.startBtn.Visible = true;
+            //hand.resetHand();
+            //cleanLabels();
+            //countFlop = 0;
+            //allCardsShown = false;
+            //currentBettingPlayer = 0;
+            //currentBettingPlayerCount = 0;
+            //disablePlayersBoxes();
+            //setTable.resetTable();
+            //this.startBtn.Visible = true;
+            //winLbl.Visible = false;
+            //strenghtList.Clear();
         }
 
         public void cleanLabels()
@@ -873,6 +1389,7 @@ namespace Poker
             currentBettingPlayerCount = 0;
             betTurn();
             currentBetAmount = 0;
+            currentBetAmountLbl.Visible = true;
         }
 
         public void flipCards()
@@ -1059,7 +1576,8 @@ namespace Poker
             }
         }
 
-        public void turnOffPlayers(){
+        public void turnOffPlayers()
+        {
             this.turnCK1.BackColor = Color.Green;
             this.firstPbetRB.Visible = false;
             this.firstPCheckRB.Visible = false;
@@ -1113,51 +1631,67 @@ namespace Poker
         {
             if (firstPAmountTxtB.Text == "" || Convert.ToInt32(firstPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
-                firstPAmountTxtB.Text = "10";
+                if (!firstPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    firstPAmountTxtB.Text = "10";
+                }
             }
             if (secondPAmountTxtB.Text == "" || Convert.ToInt32(secondPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                secondPAmountTxtB.Text = "10";
+                if (!secondPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    secondPAmountTxtB.Text = "10";
+                }
             }
             if (thirdPAmountTxtB.Text == "" || Convert.ToInt32(thirdPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                thirdPAmountTxtB.Text = "10";
+                if (!thirdPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    thirdPAmountTxtB.Text = "10";
+                }
             }
             if (fourthPAmountTxtB.Text == "" || Convert.ToInt32(fourthPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                fourthPAmountTxtB.Text = "10";
+                if (!fourthPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    fourthPAmountTxtB.Text = "10";
+                }
             }
             if (fifthPAmountTxtB.Text == "" || Convert.ToInt32(fifthPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                fifthPAmountTxtB.Text = "10";
+                if (!fifthPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    fifthPAmountTxtB.Text = "10";
+                }
             }
             if (sixthPAmountTxtB.Text == "" || Convert.ToInt32(sixthPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                sixthPAmountTxtB.Text = "10";
+                if (!sixthPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    sixthPAmountTxtB.Text = "10";
+                }
             }
             if (seventhPAmountTxtB.Text == "" || Convert.ToInt32(seventhPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                seventhPAmountTxtB.Text = "10";
+                if (!seventhPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    seventhPAmountTxtB.Text = "10";
+                }
             }
             if (eighthPAmountTxtB.Text == "" || Convert.ToInt32(eighthPAmountTxtB.Text) < 10)
             {
-                MessageBox.Show("Bet Amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                eighthPAmountTxtB.Text = "10";
+                if (!eighthPCheckRB.Checked)
+                {
+                    MessageBox.Show("Bet amount cannot be less than 10", "Bet Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    eighthPAmountTxtB.Text = "10";
+                }
             }
         }
 
@@ -1170,12 +1704,28 @@ namespace Poker
         //    }
         //}
 
-        //private void test()
-        //{
-        //    int count = 0;
+        private void test()
+        {
+            int[] ar1 = new int[] { 13, 12, 10, 10, 10 };
+            int[] ar2 = new int[] { 13, 11, 10, 10, 10};
+            int[] ar3 = new int[] { 11, 11, 8, 7, 7 }; 
+            int[] ar4 = new int[] { 11, 11, 5, 1, 1 };
+
+            int[] stringArrayInitializer = new int[5];
+            Player p1 = new Player(1, "Mark", "20000", ar1, true, "", "", 0, ar1);
+            Player p2 = new Player(2, "Paul", "20000", ar2, true, "", "", 0, ar2);
+            Player p3 = new Player(3, "Susan", "20000", ar2, true, "", "", 0, ar3);
+            Player p4 = new Player(4, "Lucas", "20000", ar4, true, "", "", 0, ar4);
+
+            List<Player> group = new List<Player> { p1, p2, p3, p4 };
+            //String index = checkWinner(group, 4);
+
+           //Console.WriteLine(index);
+
+            //    int count = 0;
         //    string handResult = "";
-        //    //do
-        //    //{
+        //    do
+        //    {
 
         //        int num1 = 0;
         //        int num2 = 0;
@@ -1268,133 +1818,9 @@ namespace Poker
         //        //Console.WriteLine("----------------");
 
         //        count++;
-        //        //eighthPPlayingLbl.Text = count.ToString();
+        //        eighthPPlayingLbl.Text = count.ToString();
 
-        //    //} while (handResult != "Royal Flush");
-        //}
-
-        //public void lblColors(String[] suits)
-        //{
-        //    switch (suits[0])
-        //    {
-        //        case "spades":
-        //            testLbl1.ForeColor = Color.Blue;
-        //            break;
-        //        case "clubs":
-        //            testLbl1.ForeColor = Color.Purple;
-        //            break;
-        //        case "diamonds":
-        //            testLbl1.ForeColor = Color.Yellow;
-        //            break;
-        //        case "hearts":
-        //            testLbl1.ForeColor = Color.Red;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-
-        //    switch (suits[1])
-        //    {
-        //        case "spades":
-        //            testLbl2.ForeColor = Color.Blue;
-        //            break;
-        //        case "clubs":
-        //            testLbl2.ForeColor = Color.Purple;
-        //            break;
-        //        case "diamonds":
-        //            testLbl2.ForeColor = Color.Yellow;
-        //            break;
-        //        case "hearts":
-        //            testLbl2.ForeColor = Color.Red;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //    switch (suits[2])
-        //    {
-        //        case "spades":
-        //            testLbl3.ForeColor = Color.Blue;
-        //            break;
-        //        case "clubs":
-        //            testLbl3.ForeColor = Color.Purple;
-        //            break;
-        //        case "diamonds":
-        //            testLbl3.ForeColor = Color.Yellow;
-        //            break;
-        //        case "hearts":
-        //            testLbl3.ForeColor = Color.Red;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //    switch (suits[3])
-        //    {
-        //        case "spades":
-        //            testLbl4.ForeColor = Color.Blue;
-        //            break;
-        //        case "clubs":
-        //            testLbl4.ForeColor = Color.Purple;
-        //            break;
-        //        case "diamonds":
-        //            testLbl4.ForeColor = Color.Yellow;
-        //            break;
-        //        case "hearts":
-        //            testLbl4.ForeColor = Color.Red;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //    switch (suits[4])
-        //    {
-        //        case "spades":
-        //            testLbl5.ForeColor = Color.Blue;
-        //            break;
-        //        case "clubs":
-        //            testLbl5.ForeColor = Color.Purple;
-        //            break;
-        //        case "diamonds":
-        //            testLbl5.ForeColor = Color.Yellow;
-        //            break;
-        //        case "hearts":
-        //            testLbl5.ForeColor = Color.Red;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //    switch (suits[5])
-        //    {
-        //        case "spades":
-        //            testLbl6.ForeColor = Color.Blue;
-        //            break;
-        //        case "clubs":
-        //            testLbl6.ForeColor = Color.Purple;
-        //            break;
-        //        case "diamonds":
-        //            testLbl6.ForeColor = Color.Yellow;
-        //            break;
-        //        case "hearts":
-        //            testLbl6.ForeColor = Color.Red;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //    switch (suits[6])
-        //    {
-        //        case "spades":
-        //            testLbl7.ForeColor = Color.Blue;
-        //            break;
-        //        case "clubs":
-        //            testLbl7.ForeColor = Color.Purple;
-        //            break;
-        //        case "diamonds":
-        //            testLbl7.ForeColor = Color.Yellow;
-        //            break;
-        //        case "hearts":
-        //            testLbl7.ForeColor = Color.Red;
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
+        //    } while (handResult != "");
+        }
     }
 }
