@@ -378,7 +378,6 @@
             this.eighthPPlayingLbl.TabIndex = 2;
             this.eighthPPlayingLbl.Text = "Player 8 playing?";
             this.eighthPPlayingLbl.UseVisualStyleBackColor = true;
-            this.eighthPPlayingLbl.CheckedChanged += new System.EventHandler(this.when8Checked);
             // 
             // seventhPPlayingLbl
             // 
@@ -390,7 +389,6 @@
             this.seventhPPlayingLbl.TabIndex = 2;
             this.seventhPPlayingLbl.Text = "Player 7 playing?";
             this.seventhPPlayingLbl.UseVisualStyleBackColor = true;
-            this.seventhPPlayingLbl.CheckedChanged += new System.EventHandler(this.when7Checked);
             // 
             // sixthPPlayingLbl
             // 
@@ -402,7 +400,6 @@
             this.sixthPPlayingLbl.TabIndex = 2;
             this.sixthPPlayingLbl.Text = "Player 6 playing?";
             this.sixthPPlayingLbl.UseVisualStyleBackColor = true;
-            this.sixthPPlayingLbl.CheckedChanged += new System.EventHandler(this.when6Checked);
             // 
             // fifthPPlayingLbl
             // 
@@ -414,7 +411,6 @@
             this.fifthPPlayingLbl.TabIndex = 2;
             this.fifthPPlayingLbl.Text = "Player 5 playing?";
             this.fifthPPlayingLbl.UseVisualStyleBackColor = true;
-            this.fifthPPlayingLbl.CheckedChanged += new System.EventHandler(this.when5Checked);
             // 
             // fourthPPlayingLbl
             // 
@@ -426,7 +422,6 @@
             this.fourthPPlayingLbl.TabIndex = 2;
             this.fourthPPlayingLbl.Text = "Player 4 playing?";
             this.fourthPPlayingLbl.UseVisualStyleBackColor = true;
-            this.fourthPPlayingLbl.CheckedChanged += new System.EventHandler(this.when4Checked);
             // 
             // thirdPPlayingLbl
             // 
@@ -438,7 +433,6 @@
             this.thirdPPlayingLbl.TabIndex = 2;
             this.thirdPPlayingLbl.Text = "Player 3 playing?";
             this.thirdPPlayingLbl.UseVisualStyleBackColor = true;
-            this.thirdPPlayingLbl.CheckedChanged += new System.EventHandler(this.when3Checked);
             // 
             // secondPPlayingLbl
             // 
@@ -450,7 +444,6 @@
             this.secondPPlayingLbl.TabIndex = 2;
             this.secondPPlayingLbl.Text = "Player 2 playing?";
             this.secondPPlayingLbl.UseVisualStyleBackColor = true;
-            this.secondPPlayingLbl.CheckedChanged += new System.EventHandler(this.when2Checked);
             // 
             // firstPPlayingLbl
             // 
@@ -463,7 +456,7 @@
             this.firstPPlayingLbl.TabIndex = 2;
             this.firstPPlayingLbl.Text = "Player 1 playing?";
             this.firstPPlayingLbl.UseVisualStyleBackColor = true;
-            this.firstPPlayingLbl.CheckedChanged += new System.EventHandler(this.when1Checked);
+            this.firstPPlayingLbl.CheckedChanged += new System.EventHandler(this.whenChecked);
             // 
             // eighthPlayerPanel
             // 

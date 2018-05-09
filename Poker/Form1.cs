@@ -49,34 +49,35 @@ namespace Poker
 
         public void whenChecked(Object sender, EventArgs e)
         {
-            if(turnCK1.BackColor == Color.Lime){
+            if(firstPPlayingLbl.Checked || !firstPPlayingLbl.Checked)
+            {
                 firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (turnCK2.BackColor == Color.Lime)
+            } else if (secondPPlayingLbl.Checked || !secondPPlayingLbl.Checked)
             {
                 secondPlayerPanel.Visible = (secondPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (secondPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (turnCK3.BackColor == Color.Lime)
+            } else if (thirdPPlayingLbl.Checked || !thirdPPlayingLbl.Checked)
             {
                 thirdPlayerPanel.Visible = (thirdPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (thirdPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (turnCK4.BackColor == Color.Lime)
+            } else if (fourthPPlayingLbl.Checked || !fourthPPlayingLbl.Checked)
             {
                 fourthPlayerPanel.Visible = (fourthPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (fourthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (turnCK5.BackColor == Color.Lime)
+            } else if (fifthPPlayingLbl.Checked || !fifthPPlayingLbl.Checked)
             {
                 fifthPlayerPanel.Visible = (fifthPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (fifthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (turnCK6.BackColor == Color.Lime)
+            } else if (sixthPPlayingLbl.Checked || !sixthPPlayingLbl.Checked)
             {
                 sixthPlayerPanel.Visible = (sixthPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (sixthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (turnCK7.BackColor == Color.Lime)
+            } else if (seventhPPlayingLbl.Checked || !seventhPPlayingLbl.Checked)
             {
                 seventhPlayerPanel.Visible = (seventhPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (seventhPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (turnCK8.BackColor == Color.Lime)
+            } else if (eighthPPlayingLbl.Checked || !eighthPPlayingLbl.Checked)
             {
                 eighthPlayerPanel.Visible = (eighthPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
