@@ -53,7 +53,8 @@ namespace Poker
             {
                 firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (secondPPlayingLbl.Checked || !secondPPlayingLbl.Checked)
+            } 
+            if (secondPPlayingLbl.Checked || !secondPPlayingLbl.Checked)
             {
                 secondPlayerPanel.Visible = (secondPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (secondPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
