@@ -49,9 +49,8 @@ namespace Poker
 
         public void when1Checked(Object sender, EventArgs e)
         {
-
            firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+            countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when2Checked(Object sender, EventArgs e)
@@ -99,7 +98,6 @@ namespace Poker
 
         public void betTurnListener(Object sender, EventArgs e)
         {
-
             switch (currentBettingPlayer)
             {
                 case 1:
@@ -421,7 +419,6 @@ namespace Poker
                 currentBettingPlayer = 0;
                 currentBettingPlayerCount = 0;
                 currentBetAmountLbl.Visible = false;
-
             }
         }
 
@@ -982,6 +979,7 @@ namespace Poker
                 currentBetAmountLbl.Visible = true;
                 potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                 currentBetAmountLbl.Text = "Current Bet Amount: " + "$" + currentBetAmount + ".00";
+                potAmountlbl.Visible = true;
             }
         }
 
