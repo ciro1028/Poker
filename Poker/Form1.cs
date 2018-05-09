@@ -47,8 +47,9 @@ namespace Poker
             InitializeComponent();
         }
 
-        public void whenChecked(Object sender, EventArgs e)
+        public void when1Checked(Object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if(firstPPlayingLbl.Checked || !firstPPlayingLbl.Checked)
             {
                 firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
@@ -83,6 +84,52 @@ namespace Poker
                 eighthPlayerPanel.Visible = (eighthPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
             }
+=======
+            firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+        }
+
+        public void when2Checked(Object sender, EventArgs e)
+        {
+            secondPlayerPanel.Visible = (secondPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (secondPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+        }
+
+        public void when3Checked(Object sender, EventArgs e)
+        {
+            thirdPlayerPanel.Visible = (thirdPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (thirdPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+        }
+
+        public void when4Checked(Object sender, EventArgs e)
+        {
+            fourthPlayerPanel.Visible = (fourthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (fourthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+        }
+
+        public void when5Checked(Object sender, EventArgs e)
+        {
+            fifthPlayerPanel.Visible = (fifthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (fifthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+        }
+
+        public void when6Checked(Object sender, EventArgs e)
+        {
+            sixthPlayerPanel.Visible = (sixthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (sixthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+        }
+
+        public void when7Checked(Object sender, EventArgs e)
+        {
+            seventhPlayerPanel.Visible = (seventhPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (seventhPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+        }
+
+        public void when8Checked(Object sender, EventArgs e)
+        {
+            eighthPlayerPanel.Visible = (eighthPlayerPanel.Visible) ? false : true;
+            countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+>>>>>>> parent of 2840b6a... commit
         }
 
         public void betTurnListener(Object sender, EventArgs e)
@@ -432,7 +479,7 @@ namespace Poker
             }
 
             if(winners.Count == 1){
-                winLbl.Text = "The winner is " + winners[0].name;
+                winLbl.Text = "The winner is a " + winners[0].name;
                 //strToReturn = "The winner is a " + winners[0].name;
                 winners[0].cash = (Convert.ToInt32(winners[0].cash) + potAmount).ToString();
             } else {
@@ -674,7 +721,6 @@ namespace Poker
                         this.firstPCheckRB.Visible = true;
                         this.firstPBetBtn.Visible = true;
                         this.firstPCheckRB.Checked = true;
-                        this.fold1.Visible = true;
                         if (currentBetAmount > 0)
                         {
                             firstPCheckRB.Visible = false;
@@ -692,7 +738,6 @@ namespace Poker
                         this.secondPCheckRB.Visible = true;
                         this.secondPBetBtn.Visible = true;
                         this.secondPCheckRB.Checked = true;
-                        this.fold2.Visible = true;
                         if (secondPCheckRB.Checked)
                         {
                             secondPAmountTxtB.Text = "10";
@@ -717,7 +762,6 @@ namespace Poker
                         this.thirdPCheckRB.Visible = true;
                         this.thirdPBetBtn.Visible = true;
                         this.thirdPCheckRB.Checked = true;
-                        this.fold3.Visible = true;
                         if (currentBetAmount > 0)
                         {
                             thirdPCheckRB.Visible = false;
@@ -738,7 +782,6 @@ namespace Poker
                         this.fourthPCheckRB.Visible = true;
                         this.fourthPBetBtn.Visible = true;
                         this.fourthPCheckRB.Checked = true;
-                        this.fold4.Visible = true;
                         if (currentBetAmount > 0)
                         {
                             fourthPCheckRB.Visible = false;
@@ -759,7 +802,6 @@ namespace Poker
                         this.fifthPCheckRB.Visible = true;
                         this.fifthPBetBtn.Visible = true;
                         this.fifthPCheckRB.Checked = true;
-                        this.fold5.Visible = true;
                         if (currentBetAmount > 0)
                         {
                             fifthPCheckRB.Visible = false;
@@ -780,7 +822,6 @@ namespace Poker
                         this.sixthPCheckRB.Visible = true;
                         this.sixthPBetBtn.Visible = true;
                         this.sixthPCheckRB.Checked = true;
-                        this.fold6.Visible = true;
                         if (currentBetAmount > 0)
                         {
                             sixthPCheckRB.Visible = false;
@@ -801,7 +842,6 @@ namespace Poker
                         this.seventhPCheckRB.Visible = true;
                         this.seventhPBetBtn.Visible = true;
                         this.seventhPCheckRB.Checked = true;
-                        this.fold7.Visible = true;
                         if (currentBetAmount > 0)
                         {
                             seventhPCheckRB.Visible = false;
@@ -822,7 +862,6 @@ namespace Poker
                         this.eighthPCheckRB.Visible = true;
                         this.eighthPBetBtn.Visible = true;
                         this.eighthPCheckRB.Checked = true;
-                        this.fold8.Visible = true;
                         if (currentBetAmount > 0)
                         {
                             eighthPCheckRB.Visible = false;
@@ -955,141 +994,8 @@ namespace Poker
 
         public void fold(object sender, EventArgs e)
         {
-            Player player1 = new Player();
-            Player player2 = new Player();
-            Player player3 = new Player();
-            Player player4 = new Player();
-            Player player5 = new Player();
-            Player player6 = new Player();
-            Player player7 = new Player();
-            Player player8 = new Player();
-            for (int i = 0; i < setTable.listOfPlayers.Count; i++)
-            {
-                if (setTable.listOfPlayers[i].id == 1)
-                {
-                    player1 = setTable.listOfPlayers[i];
-                    this.firstPbetRB.Visible = false;
-                    this.firstPAmountTxtB.Visible = false;
-                    this.firstPBetBtn.Visible = false;
-                    this.firstPCurrentLbl.Visible = false;
-                    this.firstPCheckRB.Visible = false;
-                    this.fold1.Visible = false;
-                    checkIfLastPlayer();
-                    turnOffPlayers();
-                    betTurn();
-                }
-                else if (setTable.listOfPlayers[i].id == 2)
-                {
-                    player2 = setTable.listOfPlayers[i];
-                    this.secondPbetRB.Visible = false;
-                    this.secondPAmountTxtB.Visible = false;
-                    this.secondPBetBtn.Visible = false;
-                    this.secondPCurrentLbl.Visible = false;
-                    this.secondPCheckRB.Visible = false;
-                    this.fold2.Visible = false;
-                    betTurn();
-                }
-                else if (setTable.listOfPlayers[i].id == 3)
-                {
-                    player3 = setTable.listOfPlayers[i];
-                    this.thirdPbetRB.Visible = false;
-                    this.thirdPAmountTxtB.Visible = false;
-                    this.thirdPBetBtn.Visible = false;
-                    this.thirdPCurrentLbl.Visible = false;
-                    this.thirdPCheckRB.Visible = false;
-                    this.fold3.Visible = false;
-                    betTurn();
-                }
-                else if (setTable.listOfPlayers[i].id == 4)
-                {
-                    player4 = setTable.listOfPlayers[i];
-                    this.fourthPbetRB.Visible = false;
-                    this.fourthPAmountTxtB.Visible = false;
-                    this.fourthPBetBtn.Visible = false;
-                    this.fourthPCurrentLbl.Visible = false;
-                    this.fourthPCheckRB.Visible = false;
-                    this.fold4.Visible = false;
-                    betTurn();
-                }
-                else if (setTable.listOfPlayers[i].id == 5)
-                {
-                    player5 = setTable.listOfPlayers[i];
-                    this.fifthPbetRB.Visible = false;
-                    this.fifthPAmountTxtB.Visible = false;
-                    this.fifthPBetBtn.Visible = false;
-                    this.fifthPCurrentLbl.Visible = false;
-                    this.fifthPCheckRB.Visible = false;
-                    this.fold5.Visible = false;
-                    betTurn();
-                }
-                else if (setTable.listOfPlayers[i].id == 6)
-                {
-                    player6 = setTable.listOfPlayers[i];
-                    this.sixthPbetRB.Visible = false;
-                    this.sixthPAmountTxtB.Visible = false;
-                    this.sixthPBetBtn.Visible = false;
-                    this.sixthPCurrentLbl.Visible = false;
-                    this.sixthPCheckRB.Visible = false;
-                    this.fold6.Visible = false;
-                    betTurn();
-                }
-                else if (setTable.listOfPlayers[i].id == 7)
-                {
-                    player7 = setTable.listOfPlayers[i];
-                    this.seventhPbetRB.Visible = false;
-                    this.seventhPAmountTxtB.Visible = false;
-                    this.seventhPBetBtn.Visible = false;
-                    this.seventhPCurrentLbl.Visible = false;
-                    this.seventhPCheckRB.Visible = false;
-                    this.fold7.Visible = false;
-                    betTurn();
-                }
-                else if (setTable.listOfPlayers[i].id == 8)
-                {
-                    player8 = setTable.listOfPlayers[i];
-                    this.eighthPbetRB.Visible = false;
-                    this.eighthPAmountTxtB.Visible = false;
-                    this.eighthPBetBtn.Visible = false;
-                    this.eighthPCurrentLbl.Visible = false;
-                    this.eighthPCheckRB.Visible = false;
-                    this.fold8.Visible = false;
-                    betTurn();
-                }
-            }
 
-            if (this.turnCK1.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player1);
-            }
-            else if (this.turnCK2.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player2);
-            }
-            else if (this.turnCK3.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player3);
-            }
-            else if (this.turnCK4.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player4);
-            }
-            else if (this.turnCK5.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player5);
-            }
-            else if (this.turnCK6.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player6);
-            }
-            else if (this.turnCK7.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player7);
-            }
-            else if (this.turnCK8.BackColor == Color.Lime)
-            {
-                setTable.listOfPlayers.Remove(player8);
-            }
-        } 
+        }
 
         private void startBtn_Click(object sender, EventArgs e)
         {
@@ -1439,20 +1345,20 @@ namespace Poker
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            //test();
-            this.flipBtn.Visible = false;
+            test();
+            //this.flipBtn.Visible = false;
 
-            hand.resetHand();
-            cleanLabels();
-            countFlop = 0;
-            allCardsShown = false;
-            currentBettingPlayer = 0;
-            currentBettingPlayerCount = 0;
-            disablePlayersBoxes();
-            setTable.resetTable();
-            this.startBtn.Visible = true;
-            winLbl.Visible = false;
-            strenghtList.Clear();
+            //hand.resetHand();
+            //cleanLabels();
+            //countFlop = 0;
+            //allCardsShown = false;
+            //currentBettingPlayer = 0;
+            //currentBettingPlayerCount = 0;
+            //disablePlayersBoxes();
+            //setTable.resetTable();
+            //this.startBtn.Visible = true;
+            //winLbl.Visible = false;
+            //strenghtList.Clear();
         }
 
         public void cleanLabels()
@@ -1718,49 +1624,41 @@ namespace Poker
             this.firstPbetRB.Visible = false;
             this.firstPCheckRB.Visible = false;
             this.firstPBetBtn.Visible = false;
-            this.fold1.Visible = false;
 
             this.turnCK2.BackColor = Color.Green;
             this.secondPbetRB.Visible = false;
             this.secondPCheckRB.Visible = false;
             this.secondPBetBtn.Visible = false;
-            this.fold2.Visible = false;
 
             this.turnCK3.BackColor = Color.Green;
             this.thirdPbetRB.Visible = false;
             this.thirdPCheckRB.Visible = false;
             this.thirdPBetBtn.Visible = false;
-            this.fold3.Visible = false;
 
             this.turnCK4.BackColor = Color.Green;
             this.fourthPbetRB.Visible = false;
             this.fourthPCheckRB.Visible = false;
             this.fourthPBetBtn.Visible = false;
-            this.fold4.Visible = false;
 
             this.turnCK5.BackColor = Color.Green;
             this.fifthPbetRB.Visible = false;
             this.fifthPCheckRB.Visible = false;
             this.fifthPBetBtn.Visible = false;
-            this.fold5.Visible = false;
 
             this.turnCK6.BackColor = Color.Green;
             this.sixthPbetRB.Visible = false;
             this.sixthPCheckRB.Visible = false;
             this.sixthPBetBtn.Visible = false;
-            this.fold6.Visible = false;
 
             this.turnCK7.BackColor = Color.Green;
             this.seventhPbetRB.Visible = false;
             this.seventhPCheckRB.Visible = false;
             this.seventhPBetBtn.Visible = false;
-            this.fold7.Visible = false;
 
             this.turnCK8.BackColor = Color.Green;
             this.eighthPbetRB.Visible = false;
             this.eighthPCheckRB.Visible = false;
             this.eighthPBetBtn.Visible = false;
-            this.fold8.Visible = false;
         }
 
         private void guessTxt_KeyPress(object sender, KeyPressEventArgs e)
