@@ -3,9 +3,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Form1.cs">
     <Files>
       <File FileName="Hand.cs" Line="600" Column="13" />
-      <File FileName="Form1.cs" Line="662" Column="21" />
-      <File FileName="Player.cs" Line="9" Column="12" />
-      <File FileName="SetTable.cs" Line="80" Column="21" />
+      <File FileName="Form1.cs" Line="85" Column="9" />
+      <File FileName="SetTable.cs" Line="66" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
