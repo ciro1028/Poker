@@ -267,6 +267,7 @@
             this.potAmountlbl.Size = new System.Drawing.Size(101, 20);
             this.potAmountlbl.TabIndex = 12;
             this.potAmountlbl.Text = "Pot Amount: ";
+            this.potAmountlbl.Visible = false;
             // 
             // winLbl
             // 
@@ -342,7 +343,7 @@
             this.flipBtn.Location = new System.Drawing.Point(433, 227);
             this.flipBtn.Name = "flipBtn";
             this.flipBtn.Size = new System.Drawing.Size(75, 23);
-            this.flipBtn.TabIndex = 16;
+            this.flipBtn.TabIndex = 1;
             this.flipBtn.Text = "Deal Flop";
             this.flipBtn.UseVisualStyleBackColor = true;
             this.flipBtn.Visible = false;
@@ -549,7 +550,7 @@
             this.eighthPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.eighthPBetBtn.Name = "eighthPBetBtn";
             this.eighthPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.eighthPBetBtn.TabIndex = 9;
+            this.eighthPBetBtn.TabIndex = 1;
             this.eighthPBetBtn.Text = "Bet";
             this.eighthPBetBtn.UseVisualStyleBackColor = true;
             this.eighthPBetBtn.Visible = false;
@@ -711,7 +712,7 @@
             this.seventhPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.seventhPBetBtn.Name = "seventhPBetBtn";
             this.seventhPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.seventhPBetBtn.TabIndex = 9;
+            this.seventhPBetBtn.TabIndex = 1;
             this.seventhPBetBtn.Text = "Bet";
             this.seventhPBetBtn.UseVisualStyleBackColor = true;
             this.seventhPBetBtn.Visible = false;
@@ -873,7 +874,7 @@
             this.sixthPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.sixthPBetBtn.Name = "sixthPBetBtn";
             this.sixthPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.sixthPBetBtn.TabIndex = 9;
+            this.sixthPBetBtn.TabIndex = 1;
             this.sixthPBetBtn.Text = "Bet";
             this.sixthPBetBtn.UseVisualStyleBackColor = true;
             this.sixthPBetBtn.Visible = false;
@@ -1035,7 +1036,7 @@
             this.fifthPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.fifthPBetBtn.Name = "fifthPBetBtn";
             this.fifthPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.fifthPBetBtn.TabIndex = 9;
+            this.fifthPBetBtn.TabIndex = 1;
             this.fifthPBetBtn.Text = "Bet";
             this.fifthPBetBtn.UseVisualStyleBackColor = true;
             this.fifthPBetBtn.Visible = false;
