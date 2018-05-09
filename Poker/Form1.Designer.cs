@@ -354,7 +354,7 @@
             this.resetBtn.Location = new System.Drawing.Point(621, 506);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(75, 23);
-            this.resetBtn.TabIndex = 15;
+            this.resetBtn.TabIndex = 30;
             this.resetBtn.Text = "Reset";
             this.resetBtn.UseVisualStyleBackColor = true;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
@@ -485,7 +485,7 @@
             this.eighthPlayerPanel.Location = new System.Drawing.Point(711, 12);
             this.eighthPlayerPanel.Name = "eighthPlayerPanel";
             this.eighthPlayerPanel.Size = new System.Drawing.Size(217, 153);
-            this.eighthPlayerPanel.TabIndex = 13;
+            this.eighthPlayerPanel.TabIndex = 8;
             this.eighthPlayerPanel.Visible = false;
             // 
             // fold8
@@ -647,7 +647,7 @@
             this.seventhPlayerPanel.Location = new System.Drawing.Point(711, 171);
             this.seventhPlayerPanel.Name = "seventhPlayerPanel";
             this.seventhPlayerPanel.Size = new System.Drawing.Size(217, 153);
-            this.seventhPlayerPanel.TabIndex = 13;
+            this.seventhPlayerPanel.TabIndex = 7;
             this.seventhPlayerPanel.Visible = false;
             // 
             // fold7
@@ -809,7 +809,7 @@
             this.sixthPlayerPanel.Location = new System.Drawing.Point(711, 330);
             this.sixthPlayerPanel.Name = "sixthPlayerPanel";
             this.sixthPlayerPanel.Size = new System.Drawing.Size(217, 153);
-            this.sixthPlayerPanel.TabIndex = 13;
+            this.sixthPlayerPanel.TabIndex = 6;
             this.sixthPlayerPanel.Visible = false;
             // 
             // fold6
@@ -971,7 +971,7 @@
             this.fifthPlayerPanel.Location = new System.Drawing.Point(479, 330);
             this.fifthPlayerPanel.Name = "fifthPlayerPanel";
             this.fifthPlayerPanel.Size = new System.Drawing.Size(217, 153);
-            this.fifthPlayerPanel.TabIndex = 13;
+            this.fifthPlayerPanel.TabIndex = 5;
             this.fifthPlayerPanel.Visible = false;
             // 
             // fold5
@@ -1133,7 +1133,7 @@
             this.fourthPlayerPanel.Location = new System.Drawing.Point(246, 330);
             this.fourthPlayerPanel.Name = "fourthPlayerPanel";
             this.fourthPlayerPanel.Size = new System.Drawing.Size(217, 153);
-            this.fourthPlayerPanel.TabIndex = 13;
+            this.fourthPlayerPanel.TabIndex = 4;
             this.fourthPlayerPanel.Visible = false;
             // 
             // fold4
@@ -1295,7 +1295,7 @@
             this.thirdPlayerPanel.Location = new System.Drawing.Point(12, 330);
             this.thirdPlayerPanel.Name = "thirdPlayerPanel";
             this.thirdPlayerPanel.Size = new System.Drawing.Size(217, 153);
-            this.thirdPlayerPanel.TabIndex = 12;
+            this.thirdPlayerPanel.TabIndex = 3;
             this.thirdPlayerPanel.Visible = false;
             // 
             // fold3
@@ -1457,7 +1457,7 @@
             this.secondPlayerPanel.Location = new System.Drawing.Point(12, 171);
             this.secondPlayerPanel.Name = "secondPlayerPanel";
             this.secondPlayerPanel.Size = new System.Drawing.Size(217, 153);
-            this.secondPlayerPanel.TabIndex = 11;
+            this.secondPlayerPanel.TabIndex = 2;
             this.secondPlayerPanel.Visible = false;
             // 
             // fold2
