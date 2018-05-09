@@ -50,6 +50,7 @@
             this.secondPPlayingLbl = new System.Windows.Forms.CheckBox();
             this.firstPPlayingLbl = new System.Windows.Forms.CheckBox();
             this.eighthPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold8 = new System.Windows.Forms.Button();
             this.p8WinPanel = new System.Windows.Forms.Panel();
             this.hand8Lbl = new System.Windows.Forms.Label();
             this.turnCK8 = new System.Windows.Forms.Panel();
@@ -64,6 +65,7 @@
             this.eighthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.eighthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.seventhPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold7 = new System.Windows.Forms.Button();
             this.p7WinPanel = new System.Windows.Forms.Panel();
             this.hand7Lbl = new System.Windows.Forms.Label();
             this.turnCK7 = new System.Windows.Forms.Panel();
@@ -78,6 +80,7 @@
             this.seventhPpicBox2 = new System.Windows.Forms.PictureBox();
             this.seventhPpicBox1 = new System.Windows.Forms.PictureBox();
             this.sixthPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold6 = new System.Windows.Forms.Button();
             this.p6WinPanel = new System.Windows.Forms.Panel();
             this.hand6Lbl = new System.Windows.Forms.Label();
             this.turnCK6 = new System.Windows.Forms.Panel();
@@ -92,6 +95,7 @@
             this.sixthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.sixthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.fifthPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold5 = new System.Windows.Forms.Button();
             this.p5WinPanel = new System.Windows.Forms.Panel();
             this.hand5Lbl = new System.Windows.Forms.Label();
             this.turnCK5 = new System.Windows.Forms.Panel();
@@ -106,6 +110,7 @@
             this.fifthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.fifthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.fourthPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold4 = new System.Windows.Forms.Button();
             this.p4WinPanel = new System.Windows.Forms.Panel();
             this.hand4Lbl = new System.Windows.Forms.Label();
             this.turnCK4 = new System.Windows.Forms.Panel();
@@ -120,6 +125,7 @@
             this.fourthPpicBox2 = new System.Windows.Forms.PictureBox();
             this.fourthPpicBox1 = new System.Windows.Forms.PictureBox();
             this.thirdPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold3 = new System.Windows.Forms.Button();
             this.p3WinPanel = new System.Windows.Forms.Panel();
             this.hand3Lbl = new System.Windows.Forms.Label();
             this.turnCK3 = new System.Windows.Forms.Panel();
@@ -134,6 +140,7 @@
             this.thirdPpicBox2 = new System.Windows.Forms.PictureBox();
             this.thirdPpicBox1 = new System.Windows.Forms.PictureBox();
             this.secondPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold2 = new System.Windows.Forms.Button();
             this.p2WinPanel = new System.Windows.Forms.Panel();
             this.hand2Lbl = new System.Windows.Forms.Label();
             this.turnCK2 = new System.Windows.Forms.Panel();
@@ -148,6 +155,7 @@
             this.secondPpicBox2 = new System.Windows.Forms.PictureBox();
             this.secondPpicBox1 = new System.Windows.Forms.PictureBox();
             this.firstPlayerPanel = new System.Windows.Forms.Panel();
+            this.fold1 = new System.Windows.Forms.Button();
             this.p1WinPanel = new System.Windows.Forms.Panel();
             this.hand1Lbl = new System.Windows.Forms.Label();
             this.turnCK1 = new System.Windows.Forms.Panel();
@@ -161,14 +169,6 @@
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
-            this.fold1 = new System.Windows.Forms.Button();
-            this.fold2 = new System.Windows.Forms.Button();
-            this.fold3 = new System.Windows.Forms.Button();
-            this.fold4 = new System.Windows.Forms.Button();
-            this.fold5 = new System.Windows.Forms.Button();
-            this.fold6 = new System.Windows.Forms.Button();
-            this.fold7 = new System.Windows.Forms.Button();
-            this.fold8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -487,6 +487,17 @@
             this.eighthPlayerPanel.TabIndex = 13;
             this.eighthPlayerPanel.Visible = false;
             // 
+            // fold8
+            // 
+            this.fold8.Location = new System.Drawing.Point(32, 62);
+            this.fold8.Name = "fold8";
+            this.fold8.Size = new System.Drawing.Size(40, 23);
+            this.fold8.TabIndex = 39;
+            this.fold8.Text = "Fold";
+            this.fold8.UseVisualStyleBackColor = true;
+            this.fold8.Visible = false;
+            this.fold8.Click += new System.EventHandler(this.fold);
+            // 
             // p8WinPanel
             // 
             this.p8WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -637,6 +648,17 @@
             this.seventhPlayerPanel.Size = new System.Drawing.Size(217, 153);
             this.seventhPlayerPanel.TabIndex = 13;
             this.seventhPlayerPanel.Visible = false;
+            // 
+            // fold7
+            // 
+            this.fold7.Location = new System.Drawing.Point(32, 62);
+            this.fold7.Name = "fold7";
+            this.fold7.Size = new System.Drawing.Size(40, 23);
+            this.fold7.TabIndex = 38;
+            this.fold7.Text = "Fold";
+            this.fold7.UseVisualStyleBackColor = true;
+            this.fold7.Visible = false;
+            this.fold7.Click += new System.EventHandler(this.fold);
             // 
             // p7WinPanel
             // 
@@ -789,6 +811,17 @@
             this.sixthPlayerPanel.TabIndex = 13;
             this.sixthPlayerPanel.Visible = false;
             // 
+            // fold6
+            // 
+            this.fold6.Location = new System.Drawing.Point(32, 64);
+            this.fold6.Name = "fold6";
+            this.fold6.Size = new System.Drawing.Size(40, 23);
+            this.fold6.TabIndex = 37;
+            this.fold6.Text = "Fold";
+            this.fold6.UseVisualStyleBackColor = true;
+            this.fold6.Visible = false;
+            this.fold6.Click += new System.EventHandler(this.fold);
+            // 
             // p6WinPanel
             // 
             this.p6WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -939,6 +972,17 @@
             this.fifthPlayerPanel.Size = new System.Drawing.Size(217, 153);
             this.fifthPlayerPanel.TabIndex = 13;
             this.fifthPlayerPanel.Visible = false;
+            // 
+            // fold5
+            // 
+            this.fold5.Location = new System.Drawing.Point(31, 62);
+            this.fold5.Name = "fold5";
+            this.fold5.Size = new System.Drawing.Size(40, 23);
+            this.fold5.TabIndex = 36;
+            this.fold5.Text = "Fold";
+            this.fold5.UseVisualStyleBackColor = true;
+            this.fold5.Visible = false;
+            this.fold5.Click += new System.EventHandler(this.fold);
             // 
             // p5WinPanel
             // 
@@ -1091,6 +1135,17 @@
             this.fourthPlayerPanel.TabIndex = 13;
             this.fourthPlayerPanel.Visible = false;
             // 
+            // fold4
+            // 
+            this.fold4.Location = new System.Drawing.Point(31, 62);
+            this.fold4.Name = "fold4";
+            this.fold4.Size = new System.Drawing.Size(40, 23);
+            this.fold4.TabIndex = 35;
+            this.fold4.Text = "Fold";
+            this.fold4.UseVisualStyleBackColor = true;
+            this.fold4.Visible = false;
+            this.fold4.Click += new System.EventHandler(this.fold);
+            // 
             // p4WinPanel
             // 
             this.p4WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -1142,7 +1197,7 @@
             this.fourthPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.fourthPBetBtn.Name = "fourthPBetBtn";
             this.fourthPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.fourthPBetBtn.TabIndex = 9;
+            this.fourthPBetBtn.TabIndex = 1;
             this.fourthPBetBtn.Text = "Bet";
             this.fourthPBetBtn.UseVisualStyleBackColor = true;
             this.fourthPBetBtn.Visible = false;
@@ -1242,6 +1297,17 @@
             this.thirdPlayerPanel.TabIndex = 12;
             this.thirdPlayerPanel.Visible = false;
             // 
+            // fold3
+            // 
+            this.fold3.Location = new System.Drawing.Point(31, 62);
+            this.fold3.Name = "fold3";
+            this.fold3.Size = new System.Drawing.Size(40, 23);
+            this.fold3.TabIndex = 34;
+            this.fold3.Text = "Fold";
+            this.fold3.UseVisualStyleBackColor = true;
+            this.fold3.Visible = false;
+            this.fold3.Click += new System.EventHandler(this.fold);
+            // 
             // p3WinPanel
             // 
             this.p3WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -1293,7 +1359,7 @@
             this.thirdPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.thirdPBetBtn.Name = "thirdPBetBtn";
             this.thirdPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.thirdPBetBtn.TabIndex = 9;
+            this.thirdPBetBtn.TabIndex = 1;
             this.thirdPBetBtn.Text = "Bet";
             this.thirdPBetBtn.UseVisualStyleBackColor = true;
             this.thirdPBetBtn.Visible = false;
@@ -1393,6 +1459,17 @@
             this.secondPlayerPanel.TabIndex = 11;
             this.secondPlayerPanel.Visible = false;
             // 
+            // fold2
+            // 
+            this.fold2.Location = new System.Drawing.Point(31, 64);
+            this.fold2.Name = "fold2";
+            this.fold2.Size = new System.Drawing.Size(40, 23);
+            this.fold2.TabIndex = 33;
+            this.fold2.Text = "Fold";
+            this.fold2.UseVisualStyleBackColor = true;
+            this.fold2.Visible = false;
+            this.fold2.Click += new System.EventHandler(this.fold);
+            // 
             // p2WinPanel
             // 
             this.p2WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -1444,7 +1521,7 @@
             this.secondPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.secondPBetBtn.Name = "secondPBetBtn";
             this.secondPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.secondPBetBtn.TabIndex = 9;
+            this.secondPBetBtn.TabIndex = 1;
             this.secondPBetBtn.Text = "Bet";
             this.secondPBetBtn.UseVisualStyleBackColor = true;
             this.secondPBetBtn.Visible = false;
@@ -1544,6 +1621,17 @@
             this.firstPlayerPanel.TabIndex = 1;
             this.firstPlayerPanel.Visible = false;
             // 
+            // fold1
+            // 
+            this.fold1.Location = new System.Drawing.Point(31, 62);
+            this.fold1.Name = "fold1";
+            this.fold1.Size = new System.Drawing.Size(40, 23);
+            this.fold1.TabIndex = 24;
+            this.fold1.Text = "Fold";
+            this.fold1.UseVisualStyleBackColor = true;
+            this.fold1.Visible = false;
+            this.fold1.Click += new System.EventHandler(this.fold);
+            // 
             // p1WinPanel
             // 
             this.p1WinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -1595,7 +1683,7 @@
             this.firstPBetBtn.Location = new System.Drawing.Point(128, 91);
             this.firstPBetBtn.Name = "firstPBetBtn";
             this.firstPBetBtn.Size = new System.Drawing.Size(75, 23);
-            this.firstPBetBtn.TabIndex = 9;
+            this.firstPBetBtn.TabIndex = 1;
             this.firstPBetBtn.Text = "Bet";
             this.firstPBetBtn.UseVisualStyleBackColor = true;
             this.firstPBetBtn.Visible = false;
@@ -1673,94 +1761,6 @@
             this.firstPpicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
-            // 
-            // fold1
-            // 
-            this.fold1.Location = new System.Drawing.Point(31, 62);
-            this.fold1.Name = "fold1";
-            this.fold1.Size = new System.Drawing.Size(40, 23);
-            this.fold1.TabIndex = 24;
-            this.fold1.Text = "Fold";
-            this.fold1.UseVisualStyleBackColor = true;
-            this.fold1.Visible = false;
-            this.fold1.Click += new System.EventHandler(this.fold);
-            // 
-            // fold2
-            // 
-            this.fold2.Location = new System.Drawing.Point(31, 64);
-            this.fold2.Name = "fold2";
-            this.fold2.Size = new System.Drawing.Size(40, 23);
-            this.fold2.TabIndex = 33;
-            this.fold2.Text = "Fold";
-            this.fold2.UseVisualStyleBackColor = true;
-            this.fold2.Visible = false;
-            this.fold2.Click += new System.EventHandler(this.fold);
-            // 
-            // fold3
-            // 
-            this.fold3.Location = new System.Drawing.Point(31, 62);
-            this.fold3.Name = "fold3";
-            this.fold3.Size = new System.Drawing.Size(40, 23);
-            this.fold3.TabIndex = 34;
-            this.fold3.Text = "Fold";
-            this.fold3.UseVisualStyleBackColor = true;
-            this.fold3.Visible = false;
-            this.fold3.Click += new System.EventHandler(this.fold);
-            // 
-            // fold4
-            // 
-            this.fold4.Location = new System.Drawing.Point(31, 62);
-            this.fold4.Name = "fold4";
-            this.fold4.Size = new System.Drawing.Size(40, 23);
-            this.fold4.TabIndex = 35;
-            this.fold4.Text = "Fold";
-            this.fold4.UseVisualStyleBackColor = true;
-            this.fold4.Visible = false;
-            this.fold4.Click += new System.EventHandler(this.fold);
-            // 
-            // fold5
-            // 
-            this.fold5.Location = new System.Drawing.Point(31, 62);
-            this.fold5.Name = "fold5";
-            this.fold5.Size = new System.Drawing.Size(40, 23);
-            this.fold5.TabIndex = 36;
-            this.fold5.Text = "Fold";
-            this.fold5.UseVisualStyleBackColor = true;
-            this.fold5.Visible = false;
-            this.fold5.Click += new System.EventHandler(this.fold);
-            // 
-            // fold6
-            // 
-            this.fold6.Location = new System.Drawing.Point(32, 64);
-            this.fold6.Name = "fold6";
-            this.fold6.Size = new System.Drawing.Size(40, 23);
-            this.fold6.TabIndex = 37;
-            this.fold6.Text = "Fold";
-            this.fold6.UseVisualStyleBackColor = true;
-            this.fold6.Visible = false;
-            this.fold6.Click += new System.EventHandler(this.fold);
-            // 
-            // fold7
-            // 
-            this.fold7.Location = new System.Drawing.Point(32, 62);
-            this.fold7.Name = "fold7";
-            this.fold7.Size = new System.Drawing.Size(40, 23);
-            this.fold7.TabIndex = 38;
-            this.fold7.Text = "Fold";
-            this.fold7.UseVisualStyleBackColor = true;
-            this.fold7.Visible = false;
-            this.fold7.Click += new System.EventHandler(this.fold);
-            // 
-            // fold8
-            // 
-            this.fold8.Location = new System.Drawing.Point(32, 62);
-            this.fold8.Name = "fold8";
-            this.fold8.Size = new System.Drawing.Size(40, 23);
-            this.fold8.TabIndex = 39;
-            this.fold8.Text = "Fold";
-            this.fold8.UseVisualStyleBackColor = true;
-            this.fold8.Visible = false;
-            this.fold8.Click += new System.EventHandler(this.fold);
             // 
             // mainForm
             // 
