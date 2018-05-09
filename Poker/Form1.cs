@@ -49,43 +49,9 @@ namespace Poker
 
         public void when1Checked(Object sender, EventArgs e)
         {
-            if(firstPPlayingLbl.Checked || !firstPPlayingLbl.Checked)
-            {
-                firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } 
-            if (secondPPlayingLbl.Checked || !secondPPlayingLbl.Checked)
-            {
-                secondPlayerPanel.Visible = (secondPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (secondPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (thirdPPlayingLbl.Checked || !thirdPPlayingLbl.Checked)
-            {
-                thirdPlayerPanel.Visible = (thirdPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (thirdPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (fourthPPlayingLbl.Checked || !fourthPPlayingLbl.Checked)
-            {
-                fourthPlayerPanel.Visible = (fourthPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (fourthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (fifthPPlayingLbl.Checked || !fifthPPlayingLbl.Checked)
-            {
-                fifthPlayerPanel.Visible = (fifthPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (fifthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (sixthPPlayingLbl.Checked || !sixthPPlayingLbl.Checked)
-            {
-                sixthPlayerPanel.Visible = (sixthPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (sixthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (seventhPPlayingLbl.Checked || !seventhPPlayingLbl.Checked)
-            {
-                seventhPlayerPanel.Visible = (seventhPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (seventhPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            } else if (eighthPPlayingLbl.Checked || !eighthPPlayingLbl.Checked)
-            {
-                eighthPlayerPanel.Visible = (eighthPlayerPanel.Visible) ? false : true;
-                countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-            }
 
-            firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
-            countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
+           firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
+                countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
 
         public void when2Checked(Object sender, EventArgs e)
