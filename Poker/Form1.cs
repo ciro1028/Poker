@@ -49,8 +49,6 @@ namespace Poker
 
         public void when1Checked(Object sender, EventArgs e)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
             if(firstPPlayingLbl.Checked || !firstPPlayingLbl.Checked)
             {
                 firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
@@ -85,9 +83,7 @@ namespace Poker
                 eighthPlayerPanel.Visible = (eighthPlayerPanel.Visible) ? false : true;
                 countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
             }
-=======
-=======
->>>>>>> parent of 2840b6a... commit
+
             firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
             countNumberOfPlayers = (firstPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
         }
@@ -132,10 +128,7 @@ namespace Poker
         {
             eighthPlayerPanel.Visible = (eighthPlayerPanel.Visible) ? false : true;
             countNumberOfPlayers = (eighthPlayerPanel.Visible) ? countNumberOfPlayers + 1 : countNumberOfPlayers;
-<<<<<<< HEAD
->>>>>>> parent of 2840b6a... commit
-=======
->>>>>>> parent of 2840b6a... commit
+
         }
 
         public void betTurnListener(Object sender, EventArgs e)
