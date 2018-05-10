@@ -309,30 +309,9 @@ namespace Poker
             }
 
             if(playersWithWinningHands.Count == 1){
-                winLbl.Text = "The winner is " + playersWithWinningHands[0].player.name + " with a " + playersWithWinningHands[0].handType + ".";
+                winLbl.Text = playersWithWinningHands[0].player.name + " wins $" + potAmount + ".00 with a " + playersWithWinningHands[0].handType + ".";
                 playersWithWinningHands[0].player.cash = playersWithWinningHands[0].player.cash + potAmount;
             } else {
-                // transform all 1's in 14's to be comparable to the power of an ace
-                for (int i = 0; i < handsToCompareList.Count; i++)
-                {
-                    for (int j = 0; j < 5; j++)
-                    {
-                        if (handsToCompareList[i][j] == 1)
-                        {
-                            if (arrayStrenght[0] != 5)
-                            {
-                                handsToCompareList[i][j] = 14;
-                            }
-                            else
-                            {
-                                if (handsToCompareList[i][4] == 10)
-                                {
-                                    handsToCompareList[i][j] = 14;
-                                }
-                            }
-                        }
-                    }
-                }
 
                 List<int> winnerIndex = new List<int> { };
                 winnerIndex = compareSimilarHands(handsToCompareList, arrayStrenght[0], pairs);
@@ -363,7 +342,7 @@ namespace Poker
                     this.winnersNamesLbl.Location = new Point(winnersNamesLblLocation, 193);
 
                 } else {
-                    winLbl.Text = "The winner is " + playersWithWinningHands[winnerIndex[0]].player.name + " with a " + playersWithWinningHands[0].handType + ".";
+                    winLbl.Text = playersWithWinningHands[winnerIndex[0]].player.name + " wins $" + potAmount + ".00 with a " + playersWithWinningHands[0].handType + ".";
                 }
 
                 listOfResults[winnerIndex[0]].player.cash = listOfResults[winnerIndex[0]].player.cash  + potAmount;
@@ -373,8 +352,8 @@ namespace Poker
 
             refreshMoney();
             winLbl.Visible = true;
-
-            //return strToReturn;
+            currentBetAmountLbl.Visible = false;
+            potAmountlbl.Visible = false;
         }
 
         // compare similar winning hands and determine who got the best
@@ -883,10 +862,9 @@ namespace Poker
 
                 currentBettingPlayer = setTable.listOfPlayers[0].id;
                 betTurn();
-                currentBetAmountLbl.Visible = true;
+                potAmountlbl.Visible = true;
                 potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                 currentBetAmountLbl.Text = "Current Bet Amount: " + "$" + currentBetAmount + ".00";
-                potAmountlbl.Visible = true;
             }
         }
 
@@ -1283,7 +1261,6 @@ namespace Poker
             currentBettingPlayerCount = 0;
             betTurn();
             currentBetAmount = 0;
-            currentBetAmountLbl.Visible = true;
         }
 
         public void flipCards()
