@@ -54,10 +54,12 @@ namespace Poker
         public mainForm()
         {
             InitializeComponent();
-            int flipBtnLocation = (this.panel1.Size.Width - this.flipBtn.Size.Width) / 2;
-            this.flipBtn.Location = new Point(flipBtnLocation, 210);
+            int winnersNamesLblLocation = (this.panel1.Size.Width - this.winnersNamesLbl.Size.Width) / 2;
+            this.winnersNamesLbl.Location = new Point(winnersNamesLblLocation, 203);
             int dealFlopLbLocation = (this.panel1.Size.Width - this.dealFlopLb.Size.Width) / 2;
-            this.dealFlopLb.Location = new Point(dealFlopLbLocation, 236);
+            this.dealFlopLb.Location = new Point(dealFlopLbLocation, 246);
+            int flipBtnLocation = (this.panel1.Size.Width - this.flipBtn.Size.Width) / 2;
+            this.flipBtn.Location = new Point(flipBtnLocation, 220); ;
         }
 
         public void when1Checked(Object sender, EventArgs e)
@@ -121,7 +123,6 @@ namespace Poker
                     if (betAmount1 < currentBetAmount)
                     {
                         MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                     }
                     else
                     {
@@ -457,33 +458,10 @@ namespace Poker
                 }
             }
 
-            foreach (var item in listOfResults)
-            {
-                for (int i = 0; i < item.finalHand.Length; i++)
-                {
-                    Console.Write(" cards " + item.finalHand[i]);
-                }
-                Console.WriteLine("");
-            }
-
-            Console.WriteLine("");
-
-            foreach (var item in pairs)
-            {
-                for (int i = 0; i < item.Length; i++)
-                {
-                    Console.Write(" pairs " + item[i]);
-                }
-                Console.WriteLine("");
-            }
-
-            Console.WriteLine("");
-
             if(playersWithWinningHands.Count == 1){
-                winLbl.Text = "The winner is " + playersWithWinningHands[0].player.name;
+                winLbl.Text = "The winner is " + playersWithWinningHands[0].player.name + " with a " + playersWithWinningHands[0].handType + ".";
                 playersWithWinningHands[0].player.cash = playersWithWinningHands[0].player.cash + potAmount;
             } else {
-
                 // transform all 1's in 14's to be comparable to the power of an ace
                 for (int i = 0; i < handsToCompareList.Count; i++)
                 {
@@ -506,25 +484,34 @@ namespace Poker
                     }
                 }
 
-                foreach (var item in handsToCompareList)
-                {
-                    for (int i = 0; i < item.Length; i++)
-                    {
-                        Console.Write(" handsToCompareList " + item[i]);
-                    }
-                    Console.WriteLine("");
-                }
-
-                Console.WriteLine("");
-
                 List<int> winnerIndex = new List<int> { };
                 winnerIndex = compareSimilarHands(handsToCompareList, arrayStrenght[0], pairs);
 
                 if(winnerIndex.Count > 1){
-                    winLbl.Text = "Multiple Winners!";
+                    winLbl.Text = "Multiple Winners with a " + playersWithWinningHands[0].handType;
+                    String winners = "(";
+                    for (int i = 0; i < playersWithWinningHands.Count; i++)
+                    {
+                        for (int j = 0; j < winnerIndex.Count; j++)
+                        {
+                            if (i == winnerIndex[j])
+                            {
+                                if (i == playersWithWinningHands.Count - 1)
+                                {
+                                    winners = winners + playersWithWinningHands[i].player.name + ")";
+                                }
+                                else
+                                {
+                                    winners = winners + playersWithWinningHands[i].player.name + ", ";
+                                }
+                            }
+                        }
+                    }
+                    winnersNamesLbl.Text = winners;
+                    winnersNamesLbl.Visible = true;
 
                 } else {
-                    winLbl.Text = "The winner is " + playersWithWinningHands[winnerIndex[0]].player.name;
+                    winLbl.Text = "The winner is " + playersWithWinningHands[winnerIndex[0]].player.name + " with a " + playersWithWinningHands[0].handType + ".";
                 }
 
                 listOfResults[winnerIndex[0]].player.cash = listOfResults[winnerIndex[0]].player.cash  + potAmount;

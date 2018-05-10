@@ -99,6 +99,14 @@ namespace Poker
                     handNumbers[i] = current;
                 }
             }
+            for (int i = 0; i < hand.Length; i++){
+                if (hand[i] == 1){
+                    hand[i] = 14;
+                }
+            }
+
+
+
             return handNumbers;
         }
 
@@ -272,7 +280,7 @@ namespace Poker
                     // this checks to see if the first number of the straight is a 10, if so the ace should also be taken in consideration.
                     if (count == 0)
                     {
-                        if (checkStraightHand[i] == 10)
+                        if (checkStraightHand[i] == 2)
                         {
                             checkStraightWithAce = true;
                         }
@@ -297,8 +305,8 @@ namespace Poker
                     if (count >= 3 && checkStraightWithAce)
                     {
                         foreach (int current in checkStraightHand){
-                            if (current == 1){
-                                finalHand.Add(13);
+                            if (current == 14){
+                                finalHand.Add(5);
                                 finalHand.Add(1);
                                 count++;
                             }

@@ -1,4 +1,6 @@
-﻿namespace Poker
+﻿using System.Drawing;
+
+namespace Poker
 {
     partial class mainForm
     {
@@ -250,7 +252,7 @@
             // winnersNamesLbl
             // 
             this.winnersNamesLbl.AutoSize = true;
-            this.winnersNamesLbl.Location = new System.Drawing.Point(453, 203);
+
             this.winnersNamesLbl.Name = "winnersNamesLbl";
             this.winnersNamesLbl.Size = new System.Drawing.Size(35, 13);
             this.winnersNamesLbl.TabIndex = 31;
@@ -298,7 +300,6 @@
             this.dealFlopLb.AutoSize = true;
             this.dealFlopLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dealFlopLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.dealFlopLb.Location = new System.Drawing.Point(425, 253);
             this.dealFlopLb.Name = "dealFlopLb";
             this.dealFlopLb.Size = new System.Drawing.Size(96, 24);
             this.dealFlopLb.TabIndex = 22;
@@ -352,7 +353,7 @@
             // 
             // flipBtn
             // 
-            this.flipBtn.Location = new System.Drawing.Point(433, 227);
+
             this.flipBtn.Name = "flipBtn";
             this.flipBtn.Size = new System.Drawing.Size(75, 23);
             this.flipBtn.TabIndex = 1;
