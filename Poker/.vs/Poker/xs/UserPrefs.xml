@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{600DE9F2-2C0E-4B52-8664-A1439AD3DBBE}|Default">
   <MonoDevelop.Ide.ItemProperties.Poker PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Form1.Designer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="main.cs">
     <Files>
       <File FileName="main.cs" Line="514" Column="162" />
       <File FileName="Hand.cs" Line="309" Column="48" />
