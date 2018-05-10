@@ -317,6 +317,8 @@ namespace Poker
                 winnerIndex = compareSimilarHands(handsToCompareList, arrayStrenght[0], pairs);
 
                 if(winnerIndex.Count > 1){
+                    int division = 0;
+                    division = potAmount / winnerIndex.Count;
                     winLbl.Text = "Multiple Winners with a " + playersWithWinningHands[0].handType;
                     String winners = "(";
                     for (int i = 0; i < playersWithWinningHands.Count; i++)
@@ -327,11 +329,13 @@ namespace Poker
                             {
                                 if (i == playersWithWinningHands.Count - 1)
                                 {
-                                    winners = winners + playersWithWinningHands[i].player.name + ")";
+                                    winners = winners + playersWithWinningHands[i].player.name + ") Each gets: $" + division + ".00";
+                                    playersWithWinningHands[i].player.cash = playersWithWinningHands[i].player.cash + division;
                                 }
                                 else
                                 {
                                     winners = winners + playersWithWinningHands[i].player.name + ", ";
+                                    playersWithWinningHands[i].player.cash = playersWithWinningHands[i].player.cash + division;
                                 }
                             }
                         }
@@ -343,6 +347,7 @@ namespace Poker
 
                 } else {
                     winLbl.Text = playersWithWinningHands[winnerIndex[0]].player.name + " wins $" + potAmount + ".00 with a " + playersWithWinningHands[0].handType + ".";
+                    playersWithWinningHands[winnerIndex[0]].player.cash = playersWithWinningHands[winnerIndex[0]].player.cash + potAmount;
                 }
 
                 listOfResults[winnerIndex[0]].player.cash = listOfResults[winnerIndex[0]].player.cash  + potAmount;
@@ -360,19 +365,14 @@ namespace Poker
         public List<int> compareSimilarHands(List<int[]> winnersHands, int strenght, List<int[]> pairs){
             List<int> handIndex = new List<int> {};
             if (strenght == 1 || strenght == 5 || strenght == 8 || strenght == 6 || strenght == 9){
-                Console.WriteLine("Strenght " + strenght);
                 handIndex = selectHighestHandByHighestCard(winnersHands);
             } else if (strenght == 2 || strenght == 4 || strenght == 7){
-                Console.WriteLine("Strenght " + strenght);
                 handIndex = selectPairs(winnersHands, pairs);
             } else {
-                Console.WriteLine("Strenght " + strenght);
                 handIndex = selectPairs(winnersHands, pairs);
             }
             return handIndex;
         }
-
-
 
         public List<int> selectPairs(List<int[]> winnersHands, List<int[]> pairs){
             List<int> index = new List<int> {};
@@ -1156,35 +1156,31 @@ namespace Poker
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            this.flipBtn.Visible = false;
-            listOfPlayers.Clear();
+            
             suit = "";
             int[] handNumbersClean = new int[] { 0, 0, 0, 0, 0, 0, 0 };
             handNumbers = handNumbersClean;
 
-            playersList.Clear();
             countFlop = 0;
             int[] flopCardsClean = new int[] { 0, 0, 0, 0, 0 };
             flopCards = flopCardsClean;
             currentBettingPlayer = 0;
             currentBettingPlayerCount = 0;
-            allCardsShown = false;
             potAmount = 0;
             currentBetAmount = 10;
             currentRaiser = 0;
-            winnersNamesLbl.Visible = false;
-
 
             hand.resetHand();
             cleanLabels();
             disablePlayersBoxes();
-            setTable.resetTable();
             strenghtList.Clear();
 
             countFlop = 0;
             currentBettingPlayer = 0;
             currentBettingPlayerCount = 0;
 
+            winnersNamesLbl.Visible = false;
+            flipBtn.Visible = false;
             allCardsShown = false;
             startBtn.Visible = true;
             winLbl.Visible = false;
