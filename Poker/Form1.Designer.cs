@@ -255,7 +255,7 @@ namespace Poker
             this.winnersNamesLbl.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.winnersNamesLbl.Location = new System.Drawing.Point(405, 211);
             this.winnersNamesLbl.Name = "winnersNamesLbl";
-            this.winnersNamesLbl.Size = new System.Drawing.Size(147, 32);
+            this.winnersNamesLbl.Size = new System.Drawing.Size(147, 25);
             this.winnersNamesLbl.TabIndex = 31;
             this.winnersNamesLbl.Text = "(hgkhjhg, uhg, label1)";
             this.winnersNamesLbl.Visible = false;

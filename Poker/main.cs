@@ -18,12 +18,10 @@ namespace Poker
         List<Player> listOfPlayers = new List<Player>();
         String suit = "";
 
-        int[] firstPHand = new int[] { 0, 0, 0, 0, 0, 0, 0 };
         int[] handNumbers = new int[] { 0, 0, 0, 0, 0, 0, 0 };
 
         List<int> playersList = new List<int>();
-        List<int> deck = new List<int>();
-        List<int> cardsDealt = new List<int>();
+        //List<int> deck = new List<int>();
         int countFlop = 0;
         int[] flopCards = new int[] { 0, 0, 0, 0, 0 };
         int currentBettingPlayer = 0;
@@ -52,8 +50,6 @@ namespace Poker
         public mainForm()
         {
             InitializeComponent();
-            int winnersNamesLblLocation = (this.panel1.Size.Width - this.winnersNamesLbl.Size.Width) / 2;
-            this.winnersNamesLbl.Location = new Point(winnersNamesLblLocation, 193);
             int flipBtnLocation = (this.panel1.Size.Width - this.flipBtn.Size.Width) / 2;
             this.flipBtn.Location = new Point(flipBtnLocation, 220); ;
         }
@@ -363,6 +359,8 @@ namespace Poker
                     }
                     winnersNamesLbl.Text = winners;
                     winnersNamesLbl.Visible = true;
+                    int winnersNamesLblLocation = (this.panel1.Size.Width - this.winnersNamesLbl.Size.Width) / 2;
+                    this.winnersNamesLbl.Location = new Point(winnersNamesLblLocation, 193);
 
                 } else {
                     winLbl.Text = "The winner is " + playersWithWinningHands[winnerIndex[0]].player.name + " with a " + playersWithWinningHands[0].handType + ".";
@@ -1180,20 +1178,39 @@ namespace Poker
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            test();
-            //this.flipBtn.Visible = false;
+            this.flipBtn.Visible = false;
+            listOfPlayers.Clear();
+            suit = "";
+            int[] handNumbersClean = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            handNumbers = handNumbersClean;
 
-            //hand.resetHand();
-            //cleanLabels();
-            //countFlop = 0;
-            //allCardsShown = false;
-            //currentBettingPlayer = 0;
-            //currentBettingPlayerCount = 0;
-            //disablePlayersBoxes();
-            //setTable.resetTable();
-            //this.startBtn.Visible = true;
-            //winLbl.Visible = false;
-            //strenghtList.Clear();
+            playersList.Clear();
+            countFlop = 0;
+            int[] flopCardsClean = new int[] { 0, 0, 0, 0, 0 };
+            flopCards = flopCardsClean;
+            currentBettingPlayer = 0;
+            currentBettingPlayerCount = 0;
+            allCardsShown = false;
+            potAmount = 0;
+            currentBetAmount = 10;
+            currentRaiser = 0;
+            winnersNamesLbl.Visible = false;
+
+
+            hand.resetHand();
+            cleanLabels();
+            disablePlayersBoxes();
+            setTable.resetTable();
+            strenghtList.Clear();
+
+            countFlop = 0;
+            currentBettingPlayer = 0;
+            currentBettingPlayerCount = 0;
+
+            allCardsShown = false;
+            startBtn.Visible = true;
+            winLbl.Visible = false;
+
         }
 
         public void cleanLabels()
