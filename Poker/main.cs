@@ -1788,5 +1788,10 @@ namespace Poker
 
         //    } while (handResult != "");
         }
+
+        private void testBtn_Click(object sender, EventArgs e)
+        {
+            test();
+        }
     }
 }
