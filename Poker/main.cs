@@ -33,17 +33,18 @@ namespace Poker
         int potAmount = 0;
         int currentBetAmount = 10;
         int currentRaiser = 0;
-        List<int> strenghtList = new List<int> { };
-        Result result1;
-        Result result2;
-        Result result3;
-        Result result4;
-        Result result5;
-        Result result6;
-        Result result7;
-        Result result8;
-        List<Result> listOfResults = new List<Result> { };
+        List<int> strenghtList = new List<int> { }; Player player1 = new Player(); Player player2 = new Player(); Player player3 = new Player(); Player player4 = new Player();
+        Player player5 = new Player(); Player player6 = new Player(); Player player7 = new Player(); Player player8 = new Player();
 
+        int[] pairs1 = new int[2]; int[] pairs2 = new int[2]; int[] pairs3 = new int[2]; int[] pairs4 = new int[2]; int[] pairs5 = new int[2]; 
+        int[] pairs6 = new int[2]; int[] pairs7 = new int[2]; int[] pairs8 = new int[2]; 
+
+        String[] resultAfterHandChecked1 = new string[9]; String[] resultAfterHandChecked2 = new string[9]; String[] resultAfterHandChecked3 = new string[9];
+        String[] resultAfterHandChecked4 = new string[9]; String[] resultAfterHandChecked5 = new string[9]; String[] resultAfterHandChecked6 = new string[9];
+        String[] resultAfterHandChecked7 = new string[9]; String[] resultAfterHandChecked8 = new string[9];
+
+        Result result1; Result result2; Result result3; Result result4; Result result5; Result result6; Result result7; Result result8;
+        List<Result> listOfResults = new List<Result> { };
 
         Random random = new Random();
 
@@ -53,6 +54,10 @@ namespace Poker
         public mainForm()
         {
             InitializeComponent();
+            int flipBtnLocation = (this.panel1.Size.Width - this.flipBtn.Size.Width) / 2;
+            this.flipBtn.Location = new Point(flipBtnLocation, 210);
+            int dealFlopLbLocation = (this.panel1.Size.Width - this.dealFlopLb.Size.Width) / 2;
+            this.dealFlopLb.Location = new Point(dealFlopLbLocation, 236);
         }
 
         public void when1Checked(Object sender, EventArgs e)
@@ -109,8 +114,8 @@ namespace Poker
             switch (currentBettingPlayer)
             {
                 case 1:
-                    int player = currentBettingPlayer - 1;
-                    int p1Cash = Convert.ToInt32(setTable.listOfPlayers[player].cash);
+                    int p1 = currentBettingPlayer - 1;
+                    int p1Cash = Convert.ToInt32(setTable.listOfPlayers[p1].cash);
                     int betAmount1 = Convert.ToInt32(firstPAmountTxtB.Text);
                     String currentBetText = "Current Bet: $" + betAmount1 + ".00";
                     if (betAmount1 < currentBetAmount)
@@ -132,8 +137,8 @@ namespace Poker
                         potAmount = potAmount + betAmount1;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         firstPCurrentLbl.Text = currentBetText;
-                        setTable.listOfPlayers[player].cash = p1Cash - betAmount1;
-                        firstPmoneyLbl.Text = setTable.listOfPlayers[player].cash.ToString();
+                        setTable.listOfPlayers[p1].cash = p1Cash - betAmount1;
+                        firstPmoneyLbl.Text = setTable.listOfPlayers[p1].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount1 + ".00";
                         currentBetAmount = betAmount1;
                         firstPAmountTxtB.Visible = false;
@@ -144,8 +149,8 @@ namespace Poker
                     }
                     break;
                 case 2:
-                    int player2 = currentBettingPlayer - 1;
-                    int p2Cash = Convert.ToInt32(setTable.listOfPlayers[player2].cash);
+                    int p2 = currentBettingPlayer - 1;
+                    int p2Cash = Convert.ToInt32(setTable.listOfPlayers[p2].cash);
                     int betAmount2 = Convert.ToInt32(secondPAmountTxtB.Text);
                     String currentBetText2 = "Current Bet: $" + betAmount2 + ".00";
                     if (betAmount2 < currentBetAmount)
@@ -166,8 +171,8 @@ namespace Poker
                         potAmount = potAmount + betAmount2;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         secondPCurrentLbl.Text = currentBetText2;
-                        setTable.listOfPlayers[player2].cash = p2Cash - betAmount2;
-                        secondPmoneyLbl.Text = setTable.listOfPlayers[player2].cash.ToString();
+                        setTable.listOfPlayers[p2].cash = p2Cash - betAmount2;
+                        secondPmoneyLbl.Text = setTable.listOfPlayers[p2].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount2 + ".00";
 
                         currentBetAmount = betAmount2;
@@ -187,8 +192,8 @@ namespace Poker
                     }
                     break;
                 case 3:
-                    int player3 = currentBettingPlayer - 1;
-                    int p3Cash = Convert.ToInt32(setTable.listOfPlayers[player3].cash);
+                    int p3 = currentBettingPlayer - 1;
+                    int p3Cash = Convert.ToInt32(setTable.listOfPlayers[p3].cash);
                     int betAmount3 = Convert.ToInt32(thirdPAmountTxtB.Text);
                     String currentBetText3 = "Current Bet: $" + betAmount3 + ".00";
                     if (betAmount3 < currentBetAmount)
@@ -210,8 +215,8 @@ namespace Poker
                         potAmount = potAmount + betAmount3;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         thirdPCurrentLbl.Text = currentBetText3;
-                        setTable.listOfPlayers[player3].cash = p3Cash - betAmount3;
-                        thirdPmoneyLbl.Text = setTable.listOfPlayers[player3].cash.ToString();
+                        setTable.listOfPlayers[p3].cash = p3Cash - betAmount3;
+                        thirdPmoneyLbl.Text = setTable.listOfPlayers[p3].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount3 + ".00";
                         currentBetAmount = betAmount3;
                         thirdPAmountTxtB.Visible = false;
@@ -229,8 +234,8 @@ namespace Poker
                     }
                     break;
                 case 4:
-                    int player4 = currentBettingPlayer - 1;
-                    int p4Cash = Convert.ToInt32(setTable.listOfPlayers[player4].cash);
+                    int p4 = currentBettingPlayer - 1;
+                    int p4Cash = Convert.ToInt32(setTable.listOfPlayers[p4].cash);
                     int betAmount4 = Convert.ToInt32(fourthPAmountTxtB.Text);
                     String currentBetText4 = "Current Bet: $" + betAmount4 + ".00";
                     if (betAmount4 < currentBetAmount)
@@ -252,8 +257,8 @@ namespace Poker
                         potAmount = potAmount + betAmount4;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         fourthPCurrentLbl.Text = currentBetText4;
-                        setTable.listOfPlayers[player4].cash = p4Cash - betAmount4;
-                        fourthPmoneyLbl.Text = setTable.listOfPlayers[player4].cash.ToString();
+                        setTable.listOfPlayers[p4].cash = p4Cash - betAmount4;
+                        fourthPmoneyLbl.Text = setTable.listOfPlayers[p4].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount4 + ".00";
                         currentBetAmount = betAmount4;
                         fourthPAmountTxtB.Visible = false;
@@ -271,8 +276,8 @@ namespace Poker
                     }
                     break;
                 case 5:
-                    int player5 = currentBettingPlayer - 1;
-                    int p5Cash = Convert.ToInt32(setTable.listOfPlayers[player5].cash);
+                    int p5 = currentBettingPlayer - 1;
+                    int p5Cash = Convert.ToInt32(setTable.listOfPlayers[p5].cash);
                     int betAmount5 = Convert.ToInt32(fifthPAmountTxtB.Text);
                     String currentBetText5 = "Current Bet: $" + betAmount5 + ".00";
                     if (betAmount5 < currentBetAmount)
@@ -294,8 +299,8 @@ namespace Poker
                         potAmount = potAmount + betAmount5;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         fifthPCurrentLbl.Text = currentBetText5;
-                        setTable.listOfPlayers[player5].cash = p5Cash - betAmount5;
-                        fifthPmoneyLbl.Text = setTable.listOfPlayers[player5].cash.ToString();
+                        setTable.listOfPlayers[p5].cash = p5Cash - betAmount5;
+                        fifthPmoneyLbl.Text = setTable.listOfPlayers[p5].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount5 + ".00";
                         currentBetAmount = betAmount5;
                         fifthPAmountTxtB.Visible = false;
@@ -306,8 +311,8 @@ namespace Poker
                     }
                     break;
                 case 6:
-                    int player6 = currentBettingPlayer - 1;
-                    int p6Cash = Convert.ToInt32(setTable.listOfPlayers[player6].cash);
+                    int p6 = currentBettingPlayer - 1;
+                    int p6Cash = Convert.ToInt32(setTable.listOfPlayers[p6].cash);
                     int betAmount6 = Convert.ToInt32(sixthPAmountTxtB.Text);
                     String currentBetText6 = "Current Bet: $" + betAmount6 + ".00";
                     if (betAmount6 < currentBetAmount)
@@ -329,8 +334,8 @@ namespace Poker
                         potAmount = potAmount + betAmount6;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         sixthPCurrentLbl.Text = currentBetText6;
-                        setTable.listOfPlayers[player6].cash = p6Cash - betAmount6;
-                        sixthPmoneyLbl.Text = setTable.listOfPlayers[player6].cash.ToString();
+                        setTable.listOfPlayers[p6].cash = p6Cash - betAmount6;
+                        sixthPmoneyLbl.Text = setTable.listOfPlayers[p6].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount6 + ".00";
                         currentBetAmount = betAmount6;
                         sixthPAmountTxtB.Visible = false;
@@ -341,9 +346,9 @@ namespace Poker
                     }
                     break;
                 case 7:
-                    int player7 = currentBettingPlayer - 1;
+                    int p7 = currentBettingPlayer - 1;
 
-                    int p7Cash = Convert.ToInt32(setTable.listOfPlayers[player7].cash);
+                    int p7Cash = Convert.ToInt32(setTable.listOfPlayers[p7].cash);
                     int betAmount7 = Convert.ToInt32(seventhPAmountTxtB.Text);
                     String currentBetText7 = "Current Bet: $" + betAmount7 + ".00";
                     if (betAmount7 < currentBetAmount)
@@ -365,8 +370,8 @@ namespace Poker
                         potAmount = potAmount + betAmount7;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         seventhPCurrentLbl.Text = currentBetText7;
-                        setTable.listOfPlayers[player7].cash = p7Cash - betAmount7;
-                        seventhPmoneyLbl.Text = setTable.listOfPlayers[player7].cash.ToString();
+                        setTable.listOfPlayers[p7].cash = p7Cash - betAmount7;
+                        seventhPmoneyLbl.Text = setTable.listOfPlayers[p7].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount7 + ".00";
                         currentBetAmount = betAmount7;
                         seventhPAmountTxtB.Visible = false;
@@ -377,8 +382,8 @@ namespace Poker
                     }
                     break;
                 case 8:
-                    int player8 = currentBettingPlayer - 1;
-                    int p8Cash = Convert.ToInt32(setTable.listOfPlayers[player8].cash);
+                    int p8 = currentBettingPlayer - 1;
+                    int p8Cash = Convert.ToInt32(setTable.listOfPlayers[p8].cash);
                     int betAmount8 = Convert.ToInt32(eighthPAmountTxtB.Text);
                     String currentBetText8 = "Current Bet: $" + betAmount8 + ".00";
                     if (betAmount8 < currentBetAmount)
@@ -400,8 +405,8 @@ namespace Poker
                         potAmount = potAmount + betAmount8;
                         potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
                         eighthPCurrentLbl.Text = currentBetText8;
-                        setTable.listOfPlayers[player8].cash = p8Cash - betAmount8;
-                        eighthPmoneyLbl.Text = setTable.listOfPlayers[player8].cash.ToString();
+                        setTable.listOfPlayers[p8].cash = p8Cash - betAmount8;
+                        eighthPmoneyLbl.Text = setTable.listOfPlayers[p8].cash.ToString();
                         currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount8 + ".00";
                         currentBetAmount = betAmount8;
                         eighthPAmountTxtB.Visible = false;
@@ -437,27 +442,47 @@ namespace Poker
             int[] arrayStrenght = strenghtList.ToArray();
             List<int[]> pairs = new List<int[]> {};
 
-            List<Result> winners = new List<Result> { };
+            List<Result> playersWithWinningHands = new List<Result> { };
+            List<int[]> handsToCompareList = new List<int[]> { };
+
             Array.Sort(arrayStrenght);
             Array.Sort<int>(arrayStrenght, new Comparison<int>((i1, i2) => i2.CompareTo(i1)));
 
             foreach (var res in listOfResults)
             {
                 if (res.handStrenght == arrayStrenght[0]){
-                    winners.Add(res);
+                    playersWithWinningHands.Add(res);
+                    pairs.Add(res.pairs);
+                    handsToCompareList.Add(res.finalHand);
                 }
             }
 
-            if(winners.Count == 1){
-                winLbl.Text = "The winner is a " + winners[0].player.name;
-                winners[0].player.cash = winners[0].player.cash + potAmount;
-            } else {
-                List<int[]> handsToCompareList = new List<int[]> { };
-                foreach (var result in winners)
+            foreach (var item in listOfResults)
+            {
+                for (int i = 0; i < item.finalHand.Length; i++)
                 {
-                    handsToCompareList.Add(result.finalHand);
-                    pairs.Add(result.pairs);
+                    Console.Write(" cards " + item.finalHand[i]);
                 }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("");
+
+            foreach (var item in pairs)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {
+                    Console.Write(" pairs " + item[i]);
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("");
+
+            if(playersWithWinningHands.Count == 1){
+                winLbl.Text = "The winner is " + playersWithWinningHands[0].player.name;
+                playersWithWinningHands[0].player.cash = playersWithWinningHands[0].player.cash + potAmount;
+            } else {
 
                 // transform all 1's in 14's to be comparable to the power of an ace
                 for (int i = 0; i < handsToCompareList.Count; i++)
@@ -481,14 +506,32 @@ namespace Poker
                     }
                 }
 
-                int winnerIndex = compareSimilarHands(handsToCompareList, arrayStrenght[0], pairs);
-                //int winnerIndex = compareSimilarHands(handsToCompareList, type);
+                foreach (var item in handsToCompareList)
+                {
+                    for (int i = 0; i < item.Length; i++)
+                    {
+                        Console.Write(" handsToCompareList " + item[i]);
+                    }
+                    Console.WriteLine("");
+                }
 
-                winLbl.Text = "The winner is a " + listOfResults[winnerIndex].player.name;
-                //strToReturn = "The winner is " + winners[winnerIndex].name;
-                
-                listOfResults[winnerIndex].player.cash = listOfResults[winnerIndex].player.cash  + potAmount;
+                Console.WriteLine("");
+
+                List<int> winnerIndex = new List<int> { };
+                winnerIndex = compareSimilarHands(handsToCompareList, arrayStrenght[0], pairs);
+
+                if(winnerIndex.Count > 1){
+                    winLbl.Text = "Multiple Winners!";
+
+                } else {
+                    winLbl.Text = "The winner is " + playersWithWinningHands[winnerIndex[0]].player.name;
+                }
+
+                listOfResults[winnerIndex[0]].player.cash = listOfResults[winnerIndex[0]].player.cash  + potAmount;
             }
+            int winLblLocation = (this.panel1.Size.Width - this.winLbl.Size.Width) / 2;
+            this.winLbl.Location = new Point(winLblLocation, 165);
+
             refreshMoney();
             winLbl.Visible = true;
 
@@ -496,14 +539,16 @@ namespace Poker
         }
 
         // compare similar winning hands and determine who got the best
-        public int compareSimilarHands(List<int[]> winnersHands, int strenght, List<int[]> pairs){
-            int handIndex = 0;
+        public List<int> compareSimilarHands(List<int[]> winnersHands, int strenght, List<int[]> pairs){
+            List<int> handIndex = new List<int> {};
             if (strenght == 1 || strenght == 5 || strenght == 8 || strenght == 6 || strenght == 9){
-                handIndex = selectHighestHandByHighestCard(winnersHands, 0);
+                Console.WriteLine("Strenght " + strenght);
+                handIndex = selectHighestHandByHighestCard(winnersHands);
             } else if (strenght == 2 || strenght == 4 || strenght == 7){
                 Console.WriteLine("Strenght " + strenght);
                 handIndex = selectPairs(winnersHands, pairs);
             } else {
+                Console.WriteLine("Strenght " + strenght);
                 handIndex = selectPairs(winnersHands, pairs);
             }
             return handIndex;
@@ -511,34 +556,39 @@ namespace Poker
 
 
 
-        public int selectPairs(List<int[]> winnersHands, List<int[]> pairs){
-            int index = 0;
+        public List<int> selectPairs(List<int[]> winnersHands, List<int[]> pairs){
+            List<int> index = new List<int> {};
 
             List<int> maxNumbers = new List<int> { };
             int[] emptyArray = new int[] { 0, 0, 0 };
-            int[] largestArray = new int[3];
+            int[] largestArray = new int[2];
             int maxNum = 0;
             List<int> indexes = new List<int> { };
 
+            // adding the largest number from each hand into a list and getting the largest one
+            // of them
             for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < pairs.Count; j++)
                 {
                     maxNumbers.Add(pairs[j][i]);
-                    Console.WriteLine("pairs " + pairs[j][i]);
                 }
                 maxNum = maxNumbers.Max();
                 largestArray[i] = maxNum;
+
+                // empting out the pairs that does not contain the largest pair
                 for (int f = 0; f < pairs.Count; f++)
                 {
                     if (pairs[f][i] != maxNum)
                     {
                         pairs[f] = emptyArray;
-                    }
+                    } 
                 }
                 maxNumbers.Clear();
             }
 
+            // checking to see which pairs are equal to the largest pair.
+            // Then save the index of the pairs that are equal.
             int count = 0;
             for (int i = 0; i < pairs.Count; i++)
             {
@@ -548,30 +598,42 @@ namespace Poker
                     indexes.Add(i);
                 }
             }
-
+            // if only one set of pairs match the largest pair, then save the index of that pair
             if (count == 1){
-                index = indexes[0];
+                index.Add(indexes[0]);
             } else {
+                // if more than one set of pairs match the largest pair, then send all the matching pairs
+                // to be checked by the selectHighestHandByHighestCard method.
                 for (int i = 0; i < winnersHands.Count; i++)
                 {
-                    if(i != indexes[i]){
+                    Boolean checkTruth = false;
+                    for (int j = 0; j < indexes.Count; j++)
+                    {
+                        if (i == indexes[j])
+                        {
+                            checkTruth = true;
+                        }
+                    }
+                    if (!checkTruth)
+                    {
                         winnersHands[i] = emptyArray;
                     }
                 }
-                index = selectHighestHandByHighestCard(winnersHands, 0);
+                index = selectHighestHandByHighestCard(winnersHands);
             }
 
             return index;
         }
 
-        public int selectHighestHandByHighestCard(List<int[]> hands, int type){
+        public List<int> selectHighestHandByHighestCard(List<int[]> hands){
             // gathering largesr card from each player
-            List<int> largest = new List<int> { };
-            int index = 0;
+
+            List<int> index = new List<int> {};
             int[] zeroArray = new int[5] { 0, 0, 0, 0, 0 };
 
             for (int i = 0; i < 5; i++)
             {
+                List<int> largest = new List<int> { };
                 // adding highest card from each player into a list
                 for (int j = 0; j < hands.Count; j++)
                 {
@@ -584,19 +646,13 @@ namespace Poker
                 int count = 0;
 
                 // checking to see if there's more than one player with the highest card
+                index.Clear();
                 for (int j = 0; j < hands.Count; j++)
                 {
                     if (maxNumber == hands[j][i])
                     {
-                        if (type == 0){
-                            count++;
-                        } else if (type == 1 && maxNumber != hands[j][i + 1]){
-                                largest[maxIndex] = 0;
-                                maxNumber = largest.Max();
-                                maxIndex = largest.IndexOf(maxNumber);
-                        } else if (type == 1 && maxNumber == hands[j][i + 1]){
-                                count++;
-                        }
+                        count++;
+                        index.Add(j);
                     }
                     else
                     {
@@ -604,13 +660,14 @@ namespace Poker
                         hands[j] = zeroArray;
                     }
                 }
-                largest.Clear();
+
                 // if only one player has the highest card than break and return the player's index
                 if (count == 1)
                 {
-                    index = maxIndex;
+                    index.Clear();
+                    index.Add(maxIndex);
                     break;
-                }
+                } 
             }
             return index;
         }
@@ -1123,12 +1180,13 @@ namespace Poker
             {
                 if (playersList[i] == 1)
                 {
-                    Player player1 = setTable.listOfPlayers[i];
+                    player1 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked1 = new string[10];
                     resultAfterHandChecked1 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs1 = new int[2] {Convert.ToInt32(resultAfterHandChecked1[7]), Convert.ToInt32(resultAfterHandChecked1[8])};
+                    pairs1[0] = Convert.ToInt32(resultAfterHandChecked1[7]); pairs1[1] =  Convert.ToInt32(resultAfterHandChecked1[8]);
+
                     result1 = new Result(player1, player1.hand, resultAfterHandChecked1[0], Convert.ToInt32(resultAfterHandChecked1[1]), handStrToInt(resultAfterHandChecked1), pairs1);
+
                     listOfResults.Add(result1);
                     strenghtList.Add(result1.handStrenght);
 
@@ -1140,12 +1198,12 @@ namespace Poker
                 }
                 if (playersList[i] == 2)
                 {
-                    Player player2 = setTable.listOfPlayers[i];
+                    player2 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked2 = new string[10];
                     resultAfterHandChecked2 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs2 = new int[2] { Convert.ToInt32(resultAfterHandChecked2[7]), Convert.ToInt32(resultAfterHandChecked2[8])};
+                    pairs2[0] = Convert.ToInt32(resultAfterHandChecked2[7]); pairs2[1] = Convert.ToInt32(resultAfterHandChecked2[8]);
                     result2 = new Result(player2, player2.hand, resultAfterHandChecked2[0], Convert.ToInt32(resultAfterHandChecked2[1]), handStrToInt(resultAfterHandChecked2), pairs2);
+
                     listOfResults.Add(result2);
                     strenghtList.Add(result2.handStrenght);
 
@@ -1157,12 +1215,13 @@ namespace Poker
                 }
                 if (playersList[i] == 3)
                 {
-                    Player player3 = setTable.listOfPlayers[i];
+                    player3 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked3 = new string[10];
                     resultAfterHandChecked3 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs3 = new int[2] { Convert.ToInt32(resultAfterHandChecked3[7]), Convert.ToInt32(resultAfterHandChecked3[8])};
+                    pairs3[0] = Convert.ToInt32(resultAfterHandChecked3[7]); pairs3[1] =  Convert.ToInt32(resultAfterHandChecked3[8]);
+
                     result3 = new Result(player3, player3.hand, resultAfterHandChecked3[0], Convert.ToInt32(resultAfterHandChecked3[1]), handStrToInt(resultAfterHandChecked3), pairs3);
+
                     listOfResults.Add(result3);
                     strenghtList.Add(result3.handStrenght);
 
@@ -1174,11 +1233,10 @@ namespace Poker
                 }
                 if (playersList[i] == 4)
                 {
-                    Player player4 = setTable.listOfPlayers[i];
+                    player4 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked4 = new string[10];
                     resultAfterHandChecked4 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs4 = new int[2] { Convert.ToInt32(resultAfterHandChecked4[7]), Convert.ToInt32(resultAfterHandChecked4[8])};
+                    pairs4[0] = Convert.ToInt32(resultAfterHandChecked4[7]); pairs4[1] =  Convert.ToInt32(resultAfterHandChecked4[8]);
                     result4 = new Result(player4, player4.hand, resultAfterHandChecked4[0], Convert.ToInt32(resultAfterHandChecked4[1]), handStrToInt(resultAfterHandChecked4), pairs4);
                     listOfResults.Add(result4);
                     strenghtList.Add(result4.handStrenght);
@@ -1191,11 +1249,10 @@ namespace Poker
                 }
                 if (playersList[i] == 5)
                 {
-                    Player player5 = setTable.listOfPlayers[i];
+                    player5 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked5 = new string[10];
                     resultAfterHandChecked5 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs5 = new int[2] { Convert.ToInt32(resultAfterHandChecked5[7]), Convert.ToInt32(resultAfterHandChecked5[8])};
+                    pairs5[0] = Convert.ToInt32(resultAfterHandChecked5[7]); pairs5[1] =  Convert.ToInt32(resultAfterHandChecked5[8]);
                     result5 = new Result(player5, player5.hand, resultAfterHandChecked5[0], Convert.ToInt32(resultAfterHandChecked5[1]), handStrToInt(resultAfterHandChecked5), pairs5);
                     listOfResults.Add(result5);
                     strenghtList.Add(result5.handStrenght);
@@ -1208,11 +1265,10 @@ namespace Poker
                 }
                 if (playersList[i] == 6)
                 {
-                    Player player6 = setTable.listOfPlayers[i];
+                    player6 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked6 = new string[10];
                     resultAfterHandChecked6 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs6 = new int[2] { Convert.ToInt32(resultAfterHandChecked6[7]), Convert.ToInt32(resultAfterHandChecked6[8]) };
+                    pairs6[0] = Convert.ToInt32(resultAfterHandChecked6[7]); pairs6[1] =  Convert.ToInt32(resultAfterHandChecked6[8]);
                     result6 = new Result(player6, player6.hand, resultAfterHandChecked6[0], Convert.ToInt32(resultAfterHandChecked6[1]), handStrToInt(resultAfterHandChecked6), pairs6);
                     listOfResults.Add(result6);
                     strenghtList.Add(result6.handStrenght);
@@ -1225,11 +1281,10 @@ namespace Poker
                 }
                 if (playersList[i] == 7)
                 {
-                    Player player7 = setTable.listOfPlayers[i];
+                    player7 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked7 = new string[10];
                     resultAfterHandChecked7 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs7 = new int[2] { Convert.ToInt32(resultAfterHandChecked7[7]), Convert.ToInt32(resultAfterHandChecked7[8])};
+                    pairs7[0] = Convert.ToInt32(resultAfterHandChecked7[7]); pairs7[1] =  Convert.ToInt32(resultAfterHandChecked7[8]);
                     result7 = new Result(player7, player7.hand, resultAfterHandChecked7[0], Convert.ToInt32(resultAfterHandChecked7[1]), handStrToInt(resultAfterHandChecked7), pairs7);
                     listOfResults.Add(result7);
                     strenghtList.Add(result7.handStrenght);
@@ -1242,11 +1297,10 @@ namespace Poker
                 }
                 if (playersList[i] == 8)
                 {
-                    Player player8 = setTable.listOfPlayers[i];
+                    player8 = setTable.listOfPlayers[i];
 
-                    String[] resultAfterHandChecked8 = new string[10];
                     resultAfterHandChecked8 = hand.checkHand(setTable.listOfPlayers[i].hand);
-                    int[] pairs8 = new int[2] { Convert.ToInt32(resultAfterHandChecked8[7]), Convert.ToInt32(resultAfterHandChecked8[8]) };
+                    pairs8[0] = Convert.ToInt32(resultAfterHandChecked8[7]); pairs8[1] =  Convert.ToInt32(resultAfterHandChecked8[8]);
                     result8 = new Result(player8, player8.hand, resultAfterHandChecked8[0], Convert.ToInt32(resultAfterHandChecked8[1]), handStrToInt(resultAfterHandChecked8), pairs8);
                     listOfResults.Add(result8);
                     strenghtList.Add(result8.handStrenght);
@@ -1688,57 +1742,104 @@ namespace Poker
         //    }
         //}
 
+        public void click8times(){
+            firstPBetBtn.PerformClick();
+            secondPBetBtn.PerformClick();
+            thirdPBetBtn.PerformClick();
+            fourthPBetBtn.PerformClick();
+            fifthPBetBtn.PerformClick();
+            sixthPBetBtn.PerformClick();
+            seventhPBetBtn.PerformClick();
+            eighthPBetBtn.PerformClick();
+        }
+
         private void test()
         {
-            int[] ar1 = new int[] { 9, 7, 5 };
-            int[] ar2 = new int[] { 8, 3, 1 };
-            int[] ar3 = new int[] { 9, 5, 1 }; 
-            int[] ar4 = new int[] { 9, 7, 4 };
+            // first
+            firstPPlayingLbl.Checked = true;
+            secondPPlayingLbl.Checked = true;
+            thirdPPlayingLbl.Checked = true;
+            fourthPPlayingLbl.Checked = true;
+            fifthPPlayingLbl.Checked = true;
+            sixthPPlayingLbl.Checked = true;
+            seventhPPlayingLbl.Checked = true;
+            eighthPPlayingLbl.Checked = true;
 
-            int[][] theArray = new int[4][];
-            theArray[0] = ar1;
-            theArray[1] = ar2;
-            theArray[2] = ar3;
-            theArray[3] = ar4;
+            // second
+            startBtn.PerformClick();
+
+            // third
+            click8times();
+
+            // fourth
+            flipBtn.PerformClick();
+
+            // fifth
+            click8times();
+
+            // sixth
+            flipBtn.PerformClick();
+
+            // seventh
+            click8times();
+
+            // eighth
+            flipBtn.PerformClick();
+
+            // nineth
+            click8times();
 
 
-            List<int> maxNumbers = new List<int> { };
-            int[] emptyArray = new int[] { 0, 0, 0 };
-            int[] largestArray = new int[3];
-            int maxNum = 0;
-            List<int> indexes = new List<int> { };
 
-            for (int i = 0; i < 2; i++)
-            {
-                for (int j = 0; j < theArray.Length; j++)
-                {
-                    maxNumbers.Add(theArray[j][i]);
-                }
-                maxNum = maxNumbers.Max();
-                largestArray[i] = maxNum;
-                for (int f = 0; f < theArray.Length; f++)
-                {
-                    if(theArray[f][i] != maxNum){
-                        theArray[f] = emptyArray;
-                    }
-                }
-                maxNumbers.Clear();
-            }
+            //int[] ar1 = new int[] { 9, 7, 5 };
+            //int[] ar2 = new int[] { 8, 3, 1 };
+            //int[] ar3 = new int[] { 9, 5, 1 }; 
+            //int[] ar4 = new int[] { 9, 7, 4 };
 
-            int count = 0;
-            for (int i = 0; i < theArray.Length; i++)
-            {
-                if (theArray[i][0] == largestArray[0] && theArray[i][1] == largestArray[1])
-                {
-                    count++;
-                    indexes.Add(i);
-                }
-            }
-            Console.WriteLine(count);
-            foreach (var item in indexes)
-            {
-                Console.Write(item + ", ");
-            }
+            //int[][] theArray = new int[4][];
+            //theArray[0] = ar1;
+            //theArray[1] = ar2;
+            //theArray[2] = ar3;
+            //theArray[3] = ar4;
+
+
+            //List<int> maxNumbers = new List<int> { };
+            //int[] emptyArray = new int[] { 0, 0, 0 };
+            //int[] largestArray = new int[3];
+            //int maxNum = 0;
+            //List<int> indexes = new List<int> { };
+
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    for (int j = 0; j < theArray.Length; j++)
+            //    {
+            //        maxNumbers.Add(theArray[j][i]);
+            //    }
+            //    maxNum = maxNumbers.Max();
+            //    largestArray[i] = maxNum;
+            //    for (int f = 0; f < theArray.Length; f++)
+            //    {
+            //        if(theArray[f][i] != maxNum){
+            //            theArray[f] = emptyArray;
+            //        }
+            //    }
+            //    maxNumbers.Clear();
+            //}
+
+            //int count = 0;
+            //for (int i = 0; i < theArray.Length; i++)
+            //{
+            //    if (theArray[i][0] == largestArray[0] && theArray[i][1] == largestArray[1])
+            //    {
+            //        count++;
+            //        indexes.Add(i);
+            //    }
+            //}
+            //Console.WriteLine(count);
+            //foreach (var item in indexes)
+            //{
+            //    Console.Write(item + ", ");
+            //}
 
 
 

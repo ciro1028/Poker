@@ -18,7 +18,7 @@ namespace Poker
             handStrenght = 0;
             finalCards = new int[6];
             finalHand = new int[4];
-            pairs = new int[3];
+            pairs = new int[2];
         }
 
         public Result(Player player, int[] finalCards, String handType, int handStrenght, int[] finalHand, int[] pairs){
@@ -27,6 +27,7 @@ namespace Poker
             this.handStrenght = handStrenght;
             this.finalCards = finalCards;
             this.finalHand = finalHand;
+            this.pairs = pairs;
         }
     }
 }

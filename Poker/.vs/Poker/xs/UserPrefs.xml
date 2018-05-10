@@ -2,20 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.Poker PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="main.cs">
     <Files>
-      <File FileName="main.cs" Line="528" Column="60" />
-      <File FileName="Hand.cs" Line="651" Column="22" />
-      <File FileName="Result.cs" Line="21" Column="30" />
-      <File FileName="Player.cs" Line="23" Column="29" />
-      <File FileName="SetTable.cs" Line="99" Column="59" />
+      <File FileName="main.cs" Line="546" Column="1" />
+      <File FileName="Hand.cs" Line="587" Column="1" />
+      <File FileName="Result.cs" Line="30" Column="32" />
+      <File FileName="Form1.Designer.cs" Line="289" Column="73" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/Ciro/Documents/GitHub/Poker/Poker/main.cs" relfile="main.cs" line="502" column="1" />
-      <Breakpoint file="/Users/Ciro/Documents/GitHub/Poker/Poker/main.cs" relfile="main.cs" line="505" column="1" />
-      <Breakpoint file="/Users/Ciro/Documents/GitHub/Poker/Poker/main.cs" relfile="main.cs" line="507" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
