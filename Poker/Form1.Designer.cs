@@ -171,6 +171,7 @@ namespace Poker
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
+            this.testBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -214,6 +215,7 @@ namespace Poker
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.testBtn);
             this.panel1.Controls.Add(this.winnersNamesLbl);
             this.panel1.Controls.Add(this.currentBetAmountLbl);
             this.panel1.Controls.Add(this.potAmountlbl);
@@ -249,36 +251,33 @@ namespace Poker
             // 
             // winnersNamesLbl
             // 
-            this.winnersNamesLbl.AutoSize = true;
             this.winnersNamesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winnersNamesLbl.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.winnersNamesLbl.Location = new System.Drawing.Point(405, 211);
             this.winnersNamesLbl.Name = "winnersNamesLbl";
-            this.winnersNamesLbl.Size = new System.Drawing.Size(147, 18);
+            this.winnersNamesLbl.Size = new System.Drawing.Size(147, 32);
             this.winnersNamesLbl.TabIndex = 31;
             this.winnersNamesLbl.Text = "(hgkhjhg, uhg, label1)";
             this.winnersNamesLbl.Visible = false;
             // 
             // currentBetAmountLbl
             // 
-            this.currentBetAmountLbl.AutoSize = true;
             this.currentBetAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentBetAmountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.currentBetAmountLbl.Location = new System.Drawing.Point(255, 300);
             this.currentBetAmountLbl.Name = "currentBetAmountLbl";
-            this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 20);
+            this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 27);
             this.currentBetAmountLbl.TabIndex = 1;
             this.currentBetAmountLbl.Text = "Current Bet Amount: ";
             this.currentBetAmountLbl.Visible = false;
             // 
             // potAmountlbl
             // 
-            this.potAmountlbl.AutoSize = true;
             this.potAmountlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.potAmountlbl.ForeColor = System.Drawing.Color.Blue;
             this.potAmountlbl.Location = new System.Drawing.Point(529, 300);
             this.potAmountlbl.Name = "potAmountlbl";
-            this.potAmountlbl.Size = new System.Drawing.Size(101, 20);
+            this.potAmountlbl.Size = new System.Drawing.Size(101, 27);
             this.potAmountlbl.TabIndex = 12;
             this.potAmountlbl.Text = "Pot Amount: ";
             this.potAmountlbl.Visible = false;
@@ -289,8 +288,9 @@ namespace Poker
             this.winLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLbl.ForeColor = System.Drawing.Color.Lime;
             this.winLbl.Location = new System.Drawing.Point(363, 172);
+            this.winLbl.MinimumSize = new System.Drawing.Size(0, 30);
             this.winLbl.Name = "winLbl";
-            this.winLbl.Size = new System.Drawing.Size(204, 29);
+            this.winLbl.Size = new System.Drawing.Size(188, 30);
             this.winLbl.TabIndex = 23;
             this.winLbl.Text = "Player One Wins!!";
             this.winLbl.Visible = false;
@@ -1765,6 +1765,16 @@ namespace Poker
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
             // 
+            // testBtn
+            // 
+            this.testBtn.Location = new System.Drawing.Point(853, 506);
+            this.testBtn.Name = "testBtn";
+            this.testBtn.Size = new System.Drawing.Size(75, 23);
+            this.testBtn.TabIndex = 32;
+            this.testBtn.Text = "Test!";
+            this.testBtn.UseVisualStyleBackColor = true;
+            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1977,6 +1987,7 @@ namespace Poker
         private System.Windows.Forms.Button fold2;
         private System.Windows.Forms.Button fold1;
         private System.Windows.Forms.Label winnersNamesLbl;
+        private System.Windows.Forms.Button testBtn;
     }
 }
 
