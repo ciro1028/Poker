@@ -57,47 +57,46 @@ namespace Poker
 
         public List<Player> dealCards()
         {
-            int[] stringArrayInitializer = new int[5];
             for (int i = 0; i < playersList.Count; i++)
             {
                 if (playersList[i] == 1)
                 {
-                    Player player1 = new Player(1, "Mark", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player1 = new Player(1, "Mark", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player1);
                 }
                 if (playersList[i] == 2)
                 {
-                    Player player2 = new Player(2, "Paul", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player2 = new Player(2, "Paul", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player2);
                 }
                 if (playersList[i] == 3)
                 {
-                    Player player3 = new Player(3, "Susan", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player3 = new Player(3, "Susan", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player3);
                 }
                 if (playersList[i] == 4)
                 {
-                    Player player4 = new Player(4, "Lucas", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player4 = new Player(4, "Lucas", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player4);
                 }
                 if (playersList[i] == 5)
                 {
-                    Player player5 = new Player(5, "Juan", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player5 = new Player(5, "Juan", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player5);
                 }
                 if (playersList[i] == 6)
                 {
-                    Player player6 = new Player(6, "Maria", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player6 = new Player(6, "Maria", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player6);
                 }
                 if (playersList[i] == 7)
                 {
-                    Player player7 = new Player(7, "Brianna", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player7 = new Player(7, "Brianna", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player7);
                 }
                 if (playersList[i] == 8)
                 {
-                    Player player8 = new Player(8, "Bob", "20000", setPlayerCards(), true, "", "", 0, stringArrayInitializer);
+                    Player player8 = new Player(8, "Bob", 20000, setPlayerCards(), "");
                     listOfPlayers.Add(player8);
                 }
             }

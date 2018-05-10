@@ -30,12 +30,12 @@ namespace Poker
         //check hand that is sent from method checkHands() on Form1 
         public String[] checkHand(int[] handToCheck)
         {
-            String[] handInfo = new String[7];
+            String[] handInfo = new String[10];
             String[] royalArray = new String[7];
             String[] sFArray = new String[7];
             String[] flushArray = new String[7];
             String[] straightArray = new String[7];
-            String[] pairsArray = new String[7];
+            String[] pairsArray = new String[10];
 
             String[] chooseNumbers = new String[5];
 
@@ -142,7 +142,7 @@ namespace Poker
             return handNumberStrenght;
         }
 
-        // Transforms numbers into suits
+        // Transforms numbers into suits to check for flush
         // Anything less than 14 = spades, between 13 and 27 = clubs,
         // between 26 and 40 = diamonds, and 39 and higher = hearts.
         public String[] transformHandsSuits(int[] hand)
@@ -171,7 +171,7 @@ namespace Poker
         }
 
         public String[] checkForRoyalFlush(int[] checkRFHand){
-            String[] handInfo = new String[8];
+            String[] handInfo = new String[10];
 
             String flush = checkForFlush(checkRFHand)[1];
 
@@ -198,16 +198,18 @@ namespace Poker
                     handInfo[4] = "12";
                     handInfo[5] = "11";
                     handInfo[6] = "10";
-                    handInfo[7] = "true";
                 }
             }
+            handInfo[7] = "0";
+            handInfo[8] = "0";
+            handInfo[9] = "0";
 
             return handInfo;
         }
 
         public String[] checkFoStraightFlush(int[] checkSFHand) {
 
-            String[] handInfo = new String[8];
+            String[] handInfo = new String[10];
 
             String flush = checkForFlush(checkSFHand)[1];
 
@@ -237,9 +239,12 @@ namespace Poker
                     handInfo[4] = flushFinal[2].ToString();
                     handInfo[5] = flushFinal[3].ToString();
                     handInfo[6] = flushFinal[4].ToString();
-                    handInfo[7] = "true";
                 }
             }
+
+            handInfo[7] = "0";
+            handInfo[8] = "0";
+            handInfo[9] = "0";
 
             return handInfo;
         }
@@ -254,7 +259,7 @@ namespace Poker
             Boolean checkStraightWithAce = false;
             List<int> finalHand = new List<int> {};
 
-            String[] handInfo = new String[8];
+            String[] handInfo = new String[10];
 
             Array.Sort(checkStraightHand);
 
@@ -322,8 +327,11 @@ namespace Poker
                 handInfo[4] = distinct[2].ToString();
                 handInfo[3] = distinct[3].ToString();
                 handInfo[2] = distinct[4].ToString();
-                handInfo[7] = "true";
             }
+
+            handInfo[7] = "0";
+            handInfo[8] = "0";
+            handInfo[9] = "0";
             return handInfo;
         }
 
@@ -386,8 +394,6 @@ namespace Poker
                     handInfo[5] = finalHand[3].ToString();
                     handInfo[6] = finalHand[4].ToString();
 
-                    handInfo[7] = "true";
-
                     break;
                 }
             }
@@ -404,48 +410,49 @@ namespace Poker
             int num1 = 0;
             int num2 = 0;
             int num3 = 0;
-            String[] handInfo = new String[8];
+            String[] handInfo = new String[10];
             String pairsString = "";
             int[] finalHand = new int[5];
 
             pairs.Clear();
             pairs2.Clear();
             List<int> numberNotToCheck = new List<int> {};
-
+            foreach (var num in handNumbers)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine("");
 
             for (int i = 0; i < 7; i++)
             {
-                for (int j = i; j < 7; j++)
+                for (int j = i + 1; j < 7; j++)
                 {
-                    if (i != j)
+                    if (handNumbers[i] == handNumbers[j] && handNumbers[i] != 0)
                     {
-                        if (handNumbers[i] == handNumbers[j] && handNumbers[i] != 0)
-                        {
-                            Boolean isMarked = false;
-                            foreach(int marked in numberNotToCheck){
-                                if (i == marked){
-                                    isMarked = true;
-                                }
+                        Boolean isMarked = false;
+                        foreach(int marked in numberNotToCheck){
+                            if (i == marked){
+                                isMarked = true;
                             }
+                        }
 
-                            if(!isMarked){
-                                if (num1 == 0 || handNumbers[i] == num1)
-                                {
-                                    num1 = handNumbers[i];
-                                    count1++;
-                                }
-                                else if (num2 == 0 || handNumbers[i] == num2)
-                                {
-                                    num2 = handNumbers[i];
-                                    count2++;
-                                }
-                                else if (num3 == 0 || handNumbers[i] == num3)
-                                {
-                                    num3 = handNumbers[i];
-                                    count3++;
-                                }
-                                numberNotToCheck.Add(j);
+                        if(!isMarked){
+                            if (num1 == 0 || handNumbers[i] == num1)
+                            {
+                                num1 = handNumbers[i];
+                                count1++;
                             }
+                            else if (num2 == 0 || handNumbers[i] == num2)
+                            {
+                                num2 = handNumbers[i];
+                                count2++;
+                            }
+                            else if (num3 == 0 || handNumbers[i] == num3)
+                            {
+                                num3 = handNumbers[i];
+                                count3++;
+                            }
+                            numberNotToCheck.Add(j);
                         }
                     }
                 }
@@ -469,27 +476,40 @@ namespace Poker
             Array.Sort(handNumbers);
             Array.Sort<int>(handNumbers, new Comparison<int>((i1, i2) => i2.CompareTo(i1)));
 
-            if (count1 == 0) {
+            if (count1 == 0)
+            {
                 pairsString = "High Card";
-                for (int i = 0; i < 5; i++){
+                for (int i = 0; i < 5; i++)
+                {
                     finalHand[i] = handNumbers[i];
                 }
-
-            } else if (count1 > 0 && count1 < 2 && count2 == 0) {
+                handInfo[7] = "0";
+                handInfo[8] = "0";
+                handInfo[9] = "0";
+            }
+            else if (count1 > 0 && count1 < 2 && count2 == 0)
+            {
                 pairsString = "One Pair";
                 finalHand[0] = num1;
                 finalHand[1] = num1;
-                List<int> numbersLeft = new List<int> {};
-                foreach(int current in handNumbers){
-                    if (current != num1){
+                List<int> numbersLeft = new List<int> { };
+                foreach (int current in handNumbers)
+                {
+                    if (current != num1)
+                    {
                         numbersLeft.Add(current);
                     }
                 }
                 finalHand[2] = numbersLeft[0];
                 finalHand[3] = numbersLeft[1];
                 finalHand[4] = numbersLeft[2];
+                handInfo[7] = num1.ToString();
+                handInfo[8] = "0";
+                handInfo[9] = "0";
 
-            } else if (count1 > 1 && count1 < 3 && count2 == 0) {
+            }
+            else if (count1 > 1 && count1 < 3 && count2 == 0)
+            {
                 pairsString = "Three of a Kind";
                 finalHand[0] = num1;
                 finalHand[1] = num1;
@@ -504,9 +524,15 @@ namespace Poker
                 }
                 finalHand[3] = numbersLeft[0];
                 finalHand[4] = numbersLeft[1];
-            } else if (count1 > 2 || count2 > 2) {
+                handInfo[7] = num1.ToString();
+                handInfo[8] = "0";
+                handInfo[9] = "0";
+            }
+            else if (count1 > 2 || count2 > 2)
+            {
                 pairsString = "Four of a Kind";
-                if(count1 > count2){
+                if (count1 > count2)
+                {
                     finalHand[0] = num1;
                     finalHand[1] = num1;
                     finalHand[2] = num1;
@@ -520,7 +546,12 @@ namespace Poker
                         }
                     }
                     finalHand[4] = numbersLeft[0];
-                } else {
+                    handInfo[7] = num1.ToString();
+                    handInfo[8] = "0";
+                    handInfo[9] = "0";
+                }
+                else
+                {
                     finalHand[0] = num2;
                     finalHand[1] = num2;
                     finalHand[2] = num2;
@@ -534,13 +565,27 @@ namespace Poker
                         }
                     }
                     finalHand[4] = numbersLeft[0];
+                    handInfo[7] = num2.ToString();
+                    handInfo[8] = "0";
+                    handInfo[9] = "0";
                 }
-            } else if (count1 == 1 && count2 == 1 && count3 == 0 || count1 == 1 && count2 == 1 && count3 == 1){
+            }
+            else if (count1 == 1 && count2 == 1 && count3 == 0 || count1 == 1 && count2 == 1 && count3 == 1)
+            {
                 pairsString = "Two Pairs";
                 finalHand[0] = nums[0];
                 finalHand[1] = nums[0];
                 finalHand[2] = nums[1];
                 finalHand[3] = nums[1];
+                if (nums[0] > nums[1]){
+                    handInfo[7] = nums[0].ToString();
+                    handInfo[8] = nums[1].ToString();
+                    handInfo[9] = "0";
+                } else {
+                    handInfo[7] = nums[1].ToString();
+                    handInfo[8] = nums[0].ToString();
+                    handInfo[9] = "0";
+                }
 
                 List<int> numbersLeft = new List<int> { };
                 foreach (int current in handNumbers)
@@ -558,41 +603,53 @@ namespace Poker
                     finalHand[0] = num1;
                     finalHand[1] = num1;
                     finalHand[2] = num1;
+                    handInfo[7] = num1.ToString();
+                    handInfo[9] = "0";
                     if(num2 > num3) {
                         finalHand[3] = num2;
                         finalHand[4] = num2;
+                        handInfo[8] = num2.ToString();
                     } else {
                         finalHand[3] = num3;
                         finalHand[4] = num3;
+                        handInfo[8] = num3.ToString();
                     }
                 } else if (count2 > count1 && count2 > count3){
                     finalHand[0] = num2;
                     finalHand[1] = num2;
                     finalHand[2] = num2;
+                    handInfo[7] = num2.ToString();
                     if (num1 > num3)
                     {
                         finalHand[3] = num1;
                         finalHand[4] = num1;
+                        handInfo[8] = num1.ToString();
                     }
                     else
                     {
                         finalHand[3] = num3;
                         finalHand[4] = num3;
+                        handInfo[8] = num3.ToString();
                     }
+                    handInfo[9] = "0";
                 } else {
                     finalHand[0] = num3;
                     finalHand[1] = num3;
                     finalHand[2] = num3;
+                    handInfo[7] = num3.ToString();
                     if (num2 > num1)
                     {
                         finalHand[3] = num2;
                         finalHand[4] = num2;
+                        handInfo[8] = num2.ToString();
                     }
                     else
                     {
                         finalHand[3] = num1;
                         finalHand[4] = num1;
+                        handInfo[8] = num1.ToString();
                     }
+                    handInfo[9] = "0";
                 }
             }
 
@@ -609,7 +666,11 @@ namespace Poker
             handInfo[6] = finalHand[4].ToString();
 
 
-            handInfo[7] = "true";
+            foreach (var num in handInfo)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine("");
 
             return handInfo;
         }
