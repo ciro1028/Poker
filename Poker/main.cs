@@ -33,6 +33,7 @@ namespace Poker
         int potAmount = 0;
         int currentBetAmount = 10;
         int currentRaiser = 0;
+
         List<int> strenghtList = new List<int> { }; Player player1 = new Player(); Player player2 = new Player(); Player player3 = new Player(); Player player4 = new Player();
         Player player5 = new Player(); Player player6 = new Player(); Player player7 = new Player(); Player player8 = new Player();
 
@@ -48,16 +49,11 @@ namespace Poker
 
         Random random = new Random();
 
-        //choose between 1 and 13 and then between 1 and 4
-        // 1 - spades, 2 - clubs, 3 - diamonds, 4 - hearts
-
         public mainForm()
         {
             InitializeComponent();
             int winnersNamesLblLocation = (this.panel1.Size.Width - this.winnersNamesLbl.Size.Width) / 2;
-            this.winnersNamesLbl.Location = new Point(winnersNamesLblLocation, 203);
-            int dealFlopLbLocation = (this.panel1.Size.Width - this.dealFlopLb.Size.Width) / 2;
-            this.dealFlopLb.Location = new Point(dealFlopLbLocation, 246);
+            this.winnersNamesLbl.Location = new Point(winnersNamesLblLocation, 193);
             int flipBtnLocation = (this.panel1.Size.Width - this.flipBtn.Size.Width) / 2;
             this.flipBtn.Location = new Point(flipBtnLocation, 220); ;
         }
@@ -111,6 +107,38 @@ namespace Poker
 
         }
 
+        public void betTurnAssistant(int playerNumber, int playerCash, int playerBetAmt, Boolean checkIsOn){
+            String currentBetText = "Current Bet: $" + playerBetAmt + ".00";
+            if (playerBetAmt < currentBetAmount)
+            {
+                MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (checkIsOn)
+                {
+                    playerBetAmt = 0;
+                    currentBetText = "Current Bet: Check";
+                }
+                if (playerBetAmt > currentBetAmount)
+                {
+                    currentRaiser = playerNumber + 1;
+                }
+                potAmount = potAmount + playerBetAmt;
+                potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+
+                setTable.listOfPlayers[playerNumber].cash = playerCash - playerBetAmt;
+
+                currentBetAmountLbl.Text = "Current Bet Amount: $" + playerBetAmt + ".00";
+
+                currentBetAmount = playerBetAmt;
+
+                checkIfLastPlayer();
+                turnOffPlayers();
+                betTurn();
+            }
+        }
+
         public void betTurnListener(Object sender, EventArgs e)
         {
             switch (currentBettingPlayer)
@@ -119,303 +147,129 @@ namespace Poker
                     int p1 = currentBettingPlayer - 1;
                     int p1Cash = Convert.ToInt32(setTable.listOfPlayers[p1].cash);
                     int betAmount1 = Convert.ToInt32(firstPAmountTxtB.Text);
-                    String currentBetText = "Current Bet: $" + betAmount1 + ".00";
-                    if (betAmount1 < currentBetAmount)
+                    Boolean checkIsOn1 = false;
+                    if (firstPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn1 = true;
                     }
-                    else
-                    {
-                        if (firstPCheckRB.Checked)
-                        {
-                            betAmount1 = 0;
-                            currentBetText = "Current Bet: Check";
-                        }
-                        if (betAmount1 > currentBetAmount)
-                        {
-                            currentRaiser = 1;
-                        }
-                        potAmount = potAmount + betAmount1;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        firstPCurrentLbl.Text = currentBetText;
-                        setTable.listOfPlayers[p1].cash = p1Cash - betAmount1;
-                        firstPmoneyLbl.Text = setTable.listOfPlayers[p1].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount1 + ".00";
-                        currentBetAmount = betAmount1;
-                        firstPAmountTxtB.Visible = false;
-                        firstPAmountTxtB.Text = "10";
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    betTurnAssistant(p1, p1Cash, betAmount1, checkIsOn1);
+
+                    firstPmoneyLbl.Text = setTable.listOfPlayers[p1].cash.ToString();
+                    firstPAmountTxtB.Visible = false;
+                    firstPAmountTxtB.Text = "10";
+                    checkIsOn1 = false;
                     break;
                 case 2:
                     int p2 = currentBettingPlayer - 1;
                     int p2Cash = Convert.ToInt32(setTable.listOfPlayers[p2].cash);
                     int betAmount2 = Convert.ToInt32(secondPAmountTxtB.Text);
-                    String currentBetText2 = "Current Bet: $" + betAmount2 + ".00";
-                    if (betAmount2 < currentBetAmount)
+                    Boolean checkIsOn2 = false;
+                    if (secondPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn2 = true;
                     }
-                    else
-                    {
-                        if (secondPCheckRB.Checked)
-                        {
-                            betAmount2 = 0;
-                            currentBetText2 = "Current Bet: Check";
-                        }
-                        if (betAmount2 > currentBetAmount)
-                        {
-                            currentRaiser = 2;
-                        }
-                        potAmount = potAmount + betAmount2;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        secondPCurrentLbl.Text = currentBetText2;
-                        setTable.listOfPlayers[p2].cash = p2Cash - betAmount2;
-                        secondPmoneyLbl.Text = setTable.listOfPlayers[p2].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount2 + ".00";
+                    betTurnAssistant(p2, p2Cash, betAmount2, checkIsOn2);
 
-                        currentBetAmount = betAmount2;
-                        secondPAmountTxtB.Visible = false;
-                        if (secondPCheckRB.Checked)
-                        {
-                            secondPAmountTxtB.Text = "0";
-                        }
-                        else
-                        {
-                            secondPAmountTxtB.Text = "10";
-                        }
-
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    secondPmoneyLbl.Text = setTable.listOfPlayers[p2].cash.ToString();
+                    secondPAmountTxtB.Visible = false;
+                    secondPAmountTxtB.Text = "10";
+                    checkIsOn1 = false;
                     break;
                 case 3:
                     int p3 = currentBettingPlayer - 1;
                     int p3Cash = Convert.ToInt32(setTable.listOfPlayers[p3].cash);
                     int betAmount3 = Convert.ToInt32(thirdPAmountTxtB.Text);
-                    String currentBetText3 = "Current Bet: $" + betAmount3 + ".00";
-                    if (betAmount3 < currentBetAmount)
+                    Boolean checkIsOn3 = false;
+                    if (thirdPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn3 = true;
+                    }
+                    betTurnAssistant(p3, p3Cash, betAmount3, checkIsOn3);
 
-                    }
-                    else
-                    {
-                        if (thirdPCheckRB.Checked)
-                        {
-                            betAmount3 = 0;
-                            currentBetText3 = "Current Bet: Check";
-                        }
-                        if (betAmount3 > currentBetAmount)
-                        {
-                            currentRaiser = 3;
-                        }
-                        potAmount = potAmount + betAmount3;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        thirdPCurrentLbl.Text = currentBetText3;
-                        setTable.listOfPlayers[p3].cash = p3Cash - betAmount3;
-                        thirdPmoneyLbl.Text = setTable.listOfPlayers[p3].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount3 + ".00";
-                        currentBetAmount = betAmount3;
-                        thirdPAmountTxtB.Visible = false;
-                        if (thirdPCheckRB.Checked)
-                        {
-                            thirdPAmountTxtB.Text = "0";
-                        }
-                        else
-                        {
-                            thirdPAmountTxtB.Text = "10";
-                        }
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    thirdPmoneyLbl.Text = setTable.listOfPlayers[p3].cash.ToString();
+                    thirdPAmountTxtB.Visible = false;
+                    thirdPAmountTxtB.Text = "10";
+                    checkIsOn3 = false;
                     break;
                 case 4:
                     int p4 = currentBettingPlayer - 1;
                     int p4Cash = Convert.ToInt32(setTable.listOfPlayers[p4].cash);
                     int betAmount4 = Convert.ToInt32(fourthPAmountTxtB.Text);
-                    String currentBetText4 = "Current Bet: $" + betAmount4 + ".00";
-                    if (betAmount4 < currentBetAmount)
+                    Boolean checkIsOn4 = false;
+                    if (fourthPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn4 = true;
+                    }
+                    betTurnAssistant(p4, p4Cash, betAmount4, checkIsOn4);
 
-                    }
-                    else
-                    {
-                        if (fourthPCheckRB.Checked)
-                        {
-                            betAmount4 = 0;
-                            currentBetText4 = "Current Bet: Check";
-                        }
-                        if (betAmount4 > currentBetAmount)
-                        {
-                            currentRaiser = 4;
-                        }
-                        potAmount = potAmount + betAmount4;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        fourthPCurrentLbl.Text = currentBetText4;
-                        setTable.listOfPlayers[p4].cash = p4Cash - betAmount4;
-                        fourthPmoneyLbl.Text = setTable.listOfPlayers[p4].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount4 + ".00";
-                        currentBetAmount = betAmount4;
-                        fourthPAmountTxtB.Visible = false;
-                        if (fourthPCheckRB.Checked)
-                        {
-                            fourthPAmountTxtB.Text = "0";
-                        }
-                        else
-                        {
-                            fourthPAmountTxtB.Text = "10";
-                        }
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    fourthPmoneyLbl.Text = setTable.listOfPlayers[p4].cash.ToString();
+                    fourthPAmountTxtB.Visible = false;
+                    fourthPAmountTxtB.Text = "10";
+                    checkIsOn4 = false;
                     break;
                 case 5:
                     int p5 = currentBettingPlayer - 1;
                     int p5Cash = Convert.ToInt32(setTable.listOfPlayers[p5].cash);
                     int betAmount5 = Convert.ToInt32(fifthPAmountTxtB.Text);
-                    String currentBetText5 = "Current Bet: $" + betAmount5 + ".00";
-                    if (betAmount5 < currentBetAmount)
+                    Boolean checkIsOn5 = false;
+                    if (fifthPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn5 = true;
+                    }
+                    betTurnAssistant(p5, p5Cash, betAmount5, checkIsOn5);
 
-                    }
-                    else
-                    {
-                        if (fifthPCheckRB.Checked)
-                        {
-                            betAmount5 = 0;
-                            currentBetText5 = "Current Bet: Check";
-                        }
-                        if (betAmount5 > currentBetAmount)
-                        {
-                            currentRaiser = 5;
-                        }
-                        potAmount = potAmount + betAmount5;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        fifthPCurrentLbl.Text = currentBetText5;
-                        setTable.listOfPlayers[p5].cash = p5Cash - betAmount5;
-                        fifthPmoneyLbl.Text = setTable.listOfPlayers[p5].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount5 + ".00";
-                        currentBetAmount = betAmount5;
-                        fifthPAmountTxtB.Visible = false;
-                        fifthPAmountTxtB.Text = "10";
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    fifthPmoneyLbl.Text = setTable.listOfPlayers[p5].cash.ToString();
+                    fifthPAmountTxtB.Visible = false;
+                    fifthPAmountTxtB.Text = "10";
+                    checkIsOn5 = false;
                     break;
                 case 6:
                     int p6 = currentBettingPlayer - 1;
                     int p6Cash = Convert.ToInt32(setTable.listOfPlayers[p6].cash);
                     int betAmount6 = Convert.ToInt32(sixthPAmountTxtB.Text);
-                    String currentBetText6 = "Current Bet: $" + betAmount6 + ".00";
-                    if (betAmount6 < currentBetAmount)
+                    Boolean checkIsOn6 = false;
+                    if (sixthPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn6 = true;
+                    }
+                    betTurnAssistant(p6, p6Cash, betAmount6, checkIsOn6);
 
-                    }
-                    else
-                    {
-                        if (sixthPCheckRB.Checked)
-                        {
-                            betAmount6 = 0;
-                            currentBetText6 = "Current Bet: Check";
-                        }
-                        if (betAmount6 > currentBetAmount)
-                        {
-                            currentRaiser = 6;
-                        }
-                        potAmount = potAmount + betAmount6;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        sixthPCurrentLbl.Text = currentBetText6;
-                        setTable.listOfPlayers[p6].cash = p6Cash - betAmount6;
-                        sixthPmoneyLbl.Text = setTable.listOfPlayers[p6].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount6 + ".00";
-                        currentBetAmount = betAmount6;
-                        sixthPAmountTxtB.Visible = false;
-                        sixthPAmountTxtB.Text = "10";
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    sixthPmoneyLbl.Text = setTable.listOfPlayers[p6].cash.ToString();
+                    sixthPAmountTxtB.Visible = false;
+                    sixthPAmountTxtB.Text = "10";
+                    checkIsOn6 = false;
                     break;
                 case 7:
                     int p7 = currentBettingPlayer - 1;
-
                     int p7Cash = Convert.ToInt32(setTable.listOfPlayers[p7].cash);
                     int betAmount7 = Convert.ToInt32(seventhPAmountTxtB.Text);
-                    String currentBetText7 = "Current Bet: $" + betAmount7 + ".00";
-                    if (betAmount7 < currentBetAmount)
+                    Boolean checkIsOn7 = false;
+                    if (seventhPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn7 = true;
+                    }
+                    betTurnAssistant(p7, p7Cash, betAmount7, checkIsOn7);
 
-                    }
-                    else
-                    {
-                        if (seventhPCheckRB.Checked)
-                        {
-                            betAmount7 = 0;
-                            currentBetText7 = "Current Bet: Check";
-                        }
-                        if (betAmount7 > currentBetAmount)
-                        {
-                            currentRaiser = 7;
-                        }
-                        potAmount = potAmount + betAmount7;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        seventhPCurrentLbl.Text = currentBetText7;
-                        setTable.listOfPlayers[p7].cash = p7Cash - betAmount7;
-                        seventhPmoneyLbl.Text = setTable.listOfPlayers[p7].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount7 + ".00";
-                        currentBetAmount = betAmount7;
-                        seventhPAmountTxtB.Visible = false;
-                        seventhPAmountTxtB.Text = "10";
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    seventhPmoneyLbl.Text = setTable.listOfPlayers[p7].cash.ToString();
+                    seventhPAmountTxtB.Visible = false;
+                    seventhPAmountTxtB.Text = "10";
+                    checkIsOn7 = false;
                     break;
                 case 8:
                     int p8 = currentBettingPlayer - 1;
                     int p8Cash = Convert.ToInt32(setTable.listOfPlayers[p8].cash);
                     int betAmount8 = Convert.ToInt32(eighthPAmountTxtB.Text);
-                    String currentBetText8 = "Current Bet: $" + betAmount8 + ".00";
-                    if (betAmount8 < currentBetAmount)
+                    Boolean checkIsOn8 = false;
+                    if (eighthPCheckRB.Checked)
                     {
-                        MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        checkIsOn8 = true;
+                    }
+                    betTurnAssistant(p8, p8Cash, betAmount8, checkIsOn8);
 
-                    }
-                    else
-                    {
-                        if (eighthPCheckRB.Checked)
-                        {
-                            betAmount8 = 0;
-                            currentBetText8 = "Current Bet: Check";
-                        }
-                        if (betAmount8 > currentBetAmount)
-                        {
-                            currentRaiser = 8;
-                        }
-                        potAmount = potAmount + betAmount8;
-                        potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                        eighthPCurrentLbl.Text = currentBetText8;
-                        setTable.listOfPlayers[p8].cash = p8Cash - betAmount8;
-                        eighthPmoneyLbl.Text = setTable.listOfPlayers[p8].cash.ToString();
-                        currentBetAmountLbl.Text = "Current Bet Amount: $" + betAmount8 + ".00";
-                        currentBetAmount = betAmount8;
-                        eighthPAmountTxtB.Visible = false;
-                        eighthPAmountTxtB.Text = "10";
-                        checkIfLastPlayer();
-                        turnOffPlayers();
-                        betTurn();
-                    }
+                    eighthPmoneyLbl.Text = setTable.listOfPlayers[p8].cash.ToString();
+                    eighthPAmountTxtB.Visible = false;
+                    eighthPAmountTxtB.Text = "10";
+                    checkIsOn8 = false;
                     break;
             }
         }
@@ -709,7 +563,6 @@ namespace Poker
                 turnOffPlayers();
                 currentBettingPlayer = 0;
                 flipBtn.Visible = true;
-                dealFlopLb.Visible = true;
                 currentBetAmount = 0;
                 currentBetAmountLbl.Text = "Current Bet: ";
                 if (allCardsShown)
@@ -717,7 +570,6 @@ namespace Poker
                     checkHands();
                     checkWinner();
                     flipBtn.Visible = false;
-                    dealFlopLb.Visible = false;
                 }
                 currentRaiser = 0;
             }
@@ -1436,18 +1288,14 @@ namespace Poker
                 this.secondFlopPB.BackColor = Color.White;
                 this.thirdFlopPB.BackColor = Color.White;
                 this.flipBtn.Text = "Deal Turn";
-                this.dealFlopLb.Text = "Deal Turn!";
                 this.flipBtn.Visible = false;
-                this.dealFlopLb.Visible = false;
             }
             else if (countFlop == 1)
             {
                 this.turnPB.Load(("../../images/png/" + correctedNumbers(flopCards[3]) + "_of_" + suit + ".png"));
                 this.turnPB.BackColor = Color.White;
                 this.flipBtn.Text = "Deal River";
-                this.dealFlopLb.Text = "Deal River!";
                 this.flipBtn.Visible = false;
-                this.dealFlopLb.Visible = false;
             }
             else if (countFlop == 2)
             {
@@ -1455,9 +1303,7 @@ namespace Poker
                 this.riverPB.BackColor = Color.White;
                 this.turnPB.BackColor = Color.White;
                 this.flipBtn.Text = "Deal Flop";
-                this.dealFlopLb.Text = "Deal Flop!";
                 this.flipBtn.Visible = false;
-                this.dealFlopLb.Visible = false;
                 allCardsShown = true;
             }
             else if (countFlop > 2)
