@@ -30,7 +30,7 @@ namespace Poker
         //check hand that is sent from method checkHands() on Form1 
         public String[] checkHand(int[] handToCheck)
         {
-            String[] handInfo = new String[10];
+            String[] handInfo = new String[9];
             String[] royalArray = new String[7];
             String[] sFArray = new String[7];
             String[] flushArray = new String[7];
@@ -171,7 +171,7 @@ namespace Poker
         }
 
         public String[] checkForRoyalFlush(int[] checkRFHand){
-            String[] handInfo = new String[10];
+            String[] handInfo = new String[9];
 
             String flush = checkForFlush(checkRFHand)[1];
 
@@ -202,14 +202,13 @@ namespace Poker
             }
             handInfo[7] = "0";
             handInfo[8] = "0";
-            handInfo[9] = "0";
 
             return handInfo;
         }
 
         public String[] checkFoStraightFlush(int[] checkSFHand) {
 
-            String[] handInfo = new String[10];
+            String[] handInfo = new String[9];
 
             String flush = checkForFlush(checkSFHand)[1];
 
@@ -244,7 +243,6 @@ namespace Poker
 
             handInfo[7] = "0";
             handInfo[8] = "0";
-            handInfo[9] = "0";
 
             return handInfo;
         }
@@ -259,7 +257,7 @@ namespace Poker
             Boolean checkStraightWithAce = false;
             List<int> finalHand = new List<int> {};
 
-            String[] handInfo = new String[10];
+            String[] handInfo = new String[9];
 
             Array.Sort(checkStraightHand);
 
@@ -331,7 +329,6 @@ namespace Poker
 
             handInfo[7] = "0";
             handInfo[8] = "0";
-            handInfo[9] = "0";
             return handInfo;
         }
 
@@ -346,7 +343,7 @@ namespace Poker
 
             int[] finalHand = new int[5];
             String[] finalHandSuits = new String[5];
-            String[] handInfo = new string[8];
+            String[] handInfo = new string[9];
 
             for (int i = 0; i < 3; i++)
             {
@@ -398,6 +395,9 @@ namespace Poker
                 }
             }
 
+            handInfo[7] = "0";
+            handInfo[8] = "0";
+
             return handInfo;
         }
 
@@ -410,18 +410,13 @@ namespace Poker
             int num1 = 0;
             int num2 = 0;
             int num3 = 0;
-            String[] handInfo = new String[10];
+            String[] handInfo = new String[9];
             String pairsString = "";
             int[] finalHand = new int[5];
 
             pairs.Clear();
             pairs2.Clear();
             List<int> numberNotToCheck = new List<int> {};
-            foreach (var num in handNumbers)
-            {
-                Console.WriteLine(num);
-            }
-            Console.WriteLine("");
 
             for (int i = 0; i < 7; i++)
             {
@@ -485,7 +480,6 @@ namespace Poker
                 }
                 handInfo[7] = "0";
                 handInfo[8] = "0";
-                handInfo[9] = "0";
             }
             else if (count1 > 0 && count1 < 2 && count2 == 0)
             {
@@ -505,15 +499,15 @@ namespace Poker
                 finalHand[4] = numbersLeft[2];
                 handInfo[7] = num1.ToString();
                 handInfo[8] = "0";
-                handInfo[9] = "0";
 
             }
-            else if (count1 > 1 && count1 < 3 && count2 == 0)
+            else if (count1 == 2 && count2 == 0)
             {
                 pairsString = "Three of a Kind";
                 finalHand[0] = num1;
                 finalHand[1] = num1;
                 finalHand[2] = num1;
+
                 List<int> numbersLeft = new List<int> { };
                 foreach (int current in handNumbers)
                 {
@@ -526,7 +520,6 @@ namespace Poker
                 finalHand[4] = numbersLeft[1];
                 handInfo[7] = num1.ToString();
                 handInfo[8] = "0";
-                handInfo[9] = "0";
             }
             else if (count1 > 2 || count2 > 2)
             {
@@ -548,7 +541,6 @@ namespace Poker
                     finalHand[4] = numbersLeft[0];
                     handInfo[7] = num1.ToString();
                     handInfo[8] = "0";
-                    handInfo[9] = "0";
                 }
                 else
                 {
@@ -567,24 +559,36 @@ namespace Poker
                     finalHand[4] = numbersLeft[0];
                     handInfo[7] = num2.ToString();
                     handInfo[8] = "0";
-                    handInfo[9] = "0";
                 }
             }
             else if (count1 == 1 && count2 == 1 && count3 == 0 || count1 == 1 && count2 == 1 && count3 == 1)
             {
                 pairsString = "Two Pairs";
-                finalHand[0] = nums[0];
-                finalHand[1] = nums[0];
-                finalHand[2] = nums[1];
-                finalHand[3] = nums[1];
+                if(count3 == 0){
+                    finalHand[0] = nums[0];
+                    finalHand[1] = nums[0];
+                    finalHand[2] = nums[1];
+                    finalHand[3] = nums[1];
+                } else {
+                    if (count3 > count1 || count3 > count2){
+                        finalHand[0] = nums[2];
+                        finalHand[1] = nums[2];
+                        if(count2 > count1){
+                            finalHand[2] = nums[1];
+                            finalHand[3] = nums[1];
+                        } else {
+                            finalHand[2] = nums[0];
+                            finalHand[3] = nums[0];
+                        }
+                    } 
+                }
+
                 if (nums[0] > nums[1]){
                     handInfo[7] = nums[0].ToString();
                     handInfo[8] = nums[1].ToString();
-                    handInfo[9] = "0";
                 } else {
                     handInfo[7] = nums[1].ToString();
                     handInfo[8] = nums[0].ToString();
-                    handInfo[9] = "0";
                 }
 
                 List<int> numbersLeft = new List<int> { };
@@ -604,7 +608,6 @@ namespace Poker
                     finalHand[1] = num1;
                     finalHand[2] = num1;
                     handInfo[7] = num1.ToString();
-                    handInfo[9] = "0";
                     if(num2 > num3) {
                         finalHand[3] = num2;
                         finalHand[4] = num2;
@@ -631,7 +634,6 @@ namespace Poker
                         finalHand[4] = num3;
                         handInfo[8] = num3.ToString();
                     }
-                    handInfo[9] = "0";
                 } else {
                     finalHand[0] = num3;
                     finalHand[1] = num3;
@@ -649,7 +651,6 @@ namespace Poker
                         finalHand[4] = num1;
                         handInfo[8] = num1.ToString();
                     }
-                    handInfo[9] = "0";
                 }
             }
 
@@ -664,13 +665,6 @@ namespace Poker
             handInfo[4] = finalHand[2].ToString();
             handInfo[5] = finalHand[3].ToString();
             handInfo[6] = finalHand[4].ToString();
-
-
-            foreach (var num in handInfo)
-            {
-                Console.WriteLine(num);
-            }
-            Console.WriteLine("");
 
             return handInfo;
         }
