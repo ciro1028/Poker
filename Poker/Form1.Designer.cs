@@ -35,7 +35,6 @@ namespace Poker
             this.currentBetAmountLbl = new System.Windows.Forms.Label();
             this.potAmountlbl = new System.Windows.Forms.Label();
             this.winLbl = new System.Windows.Forms.Label();
-            this.dealFlopLb = new System.Windows.Forms.Label();
             this.secondFlopPB = new System.Windows.Forms.PictureBox();
             this.thirdFlopPB = new System.Windows.Forms.PictureBox();
             this.turnPB = new System.Windows.Forms.PictureBox();
@@ -219,7 +218,6 @@ namespace Poker
             this.panel1.Controls.Add(this.currentBetAmountLbl);
             this.panel1.Controls.Add(this.potAmountlbl);
             this.panel1.Controls.Add(this.winLbl);
-            this.panel1.Controls.Add(this.dealFlopLb);
             this.panel1.Controls.Add(this.secondFlopPB);
             this.panel1.Controls.Add(this.thirdFlopPB);
             this.panel1.Controls.Add(this.turnPB);
@@ -252,11 +250,13 @@ namespace Poker
             // winnersNamesLbl
             // 
             this.winnersNamesLbl.AutoSize = true;
-
+            this.winnersNamesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winnersNamesLbl.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.winnersNamesLbl.Location = new System.Drawing.Point(405, 211);
             this.winnersNamesLbl.Name = "winnersNamesLbl";
-            this.winnersNamesLbl.Size = new System.Drawing.Size(35, 13);
+            this.winnersNamesLbl.Size = new System.Drawing.Size(147, 18);
             this.winnersNamesLbl.TabIndex = 31;
-            this.winnersNamesLbl.Text = "label1";
+            this.winnersNamesLbl.Text = "(hgkhjhg, uhg, label1)";
             this.winnersNamesLbl.Visible = false;
             // 
             // currentBetAmountLbl
@@ -286,25 +286,14 @@ namespace Poker
             // winLbl
             // 
             this.winLbl.AutoSize = true;
-            this.winLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLbl.ForeColor = System.Drawing.Color.Lime;
             this.winLbl.Location = new System.Drawing.Point(363, 172);
             this.winLbl.Name = "winLbl";
-            this.winLbl.Size = new System.Drawing.Size(232, 31);
+            this.winLbl.Size = new System.Drawing.Size(204, 29);
             this.winLbl.TabIndex = 23;
             this.winLbl.Text = "Player One Wins!!";
             this.winLbl.Visible = false;
-            // 
-            // dealFlopLb
-            // 
-            this.dealFlopLb.AutoSize = true;
-            this.dealFlopLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealFlopLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.dealFlopLb.Name = "dealFlopLb";
-            this.dealFlopLb.Size = new System.Drawing.Size(96, 24);
-            this.dealFlopLb.TabIndex = 22;
-            this.dealFlopLb.Text = "Deal Flop!";
-            this.dealFlopLb.Visible = false;
             // 
             // secondFlopPB
             // 
@@ -353,7 +342,7 @@ namespace Poker
             // 
             // flipBtn
             // 
-
+            this.flipBtn.Location = new System.Drawing.Point(433, 260);
             this.flipBtn.Name = "flipBtn";
             this.flipBtn.Size = new System.Drawing.Size(75, 23);
             this.flipBtn.TabIndex = 1;
@@ -1961,7 +1950,6 @@ namespace Poker
         private System.Windows.Forms.Panel turnCK3;
         private System.Windows.Forms.Panel turnCK1;
         private System.Windows.Forms.Panel turnCK5;
-        private System.Windows.Forms.Label dealFlopLb;
         private System.Windows.Forms.Label winLbl;
         private System.Windows.Forms.Panel p8WinPanel;
         private System.Windows.Forms.Label hand8Lbl;
