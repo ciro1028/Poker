@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.winnersNamesLbl = new System.Windows.Forms.Label();
             this.currentBetAmountLbl = new System.Windows.Forms.Label();
             this.potAmountlbl = new System.Windows.Forms.Label();
             this.winLbl = new System.Windows.Forms.Label();
@@ -212,6 +213,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.winnersNamesLbl);
             this.panel1.Controls.Add(this.currentBetAmountLbl);
             this.panel1.Controls.Add(this.potAmountlbl);
             this.panel1.Controls.Add(this.winLbl);
@@ -245,12 +247,22 @@
             this.panel1.Size = new System.Drawing.Size(958, 549);
             this.panel1.TabIndex = 0;
             // 
+            // winnersNamesLbl
+            // 
+            this.winnersNamesLbl.AutoSize = true;
+            this.winnersNamesLbl.Location = new System.Drawing.Point(453, 203);
+            this.winnersNamesLbl.Name = "winnersNamesLbl";
+            this.winnersNamesLbl.Size = new System.Drawing.Size(35, 13);
+            this.winnersNamesLbl.TabIndex = 31;
+            this.winnersNamesLbl.Text = "label1";
+            this.winnersNamesLbl.Visible = false;
+            // 
             // currentBetAmountLbl
             // 
             this.currentBetAmountLbl.AutoSize = true;
             this.currentBetAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentBetAmountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.currentBetAmountLbl.Location = new System.Drawing.Point(255, 295);
+            this.currentBetAmountLbl.Location = new System.Drawing.Point(255, 300);
             this.currentBetAmountLbl.Name = "currentBetAmountLbl";
             this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 20);
             this.currentBetAmountLbl.TabIndex = 1;
@@ -262,7 +274,7 @@
             this.potAmountlbl.AutoSize = true;
             this.potAmountlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.potAmountlbl.ForeColor = System.Drawing.Color.Blue;
-            this.potAmountlbl.Location = new System.Drawing.Point(529, 293);
+            this.potAmountlbl.Location = new System.Drawing.Point(529, 300);
             this.potAmountlbl.Name = "potAmountlbl";
             this.potAmountlbl.Size = new System.Drawing.Size(101, 20);
             this.potAmountlbl.TabIndex = 12;
@@ -274,7 +286,7 @@
             this.winLbl.AutoSize = true;
             this.winLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLbl.ForeColor = System.Drawing.Color.Lime;
-            this.winLbl.Location = new System.Drawing.Point(363, 184);
+            this.winLbl.Location = new System.Drawing.Point(363, 172);
             this.winLbl.Name = "winLbl";
             this.winLbl.Size = new System.Drawing.Size(232, 31);
             this.winLbl.TabIndex = 23;
@@ -1975,6 +1987,7 @@
         private System.Windows.Forms.Button fold3;
         private System.Windows.Forms.Button fold2;
         private System.Windows.Forms.Button fold1;
+        private System.Windows.Forms.Label winnersNamesLbl;
     }
 }
 
