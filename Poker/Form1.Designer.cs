@@ -31,6 +31,7 @@ namespace Poker
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.testBtn = new System.Windows.Forms.Button();
             this.winnersNamesLbl = new System.Windows.Forms.Label();
             this.currentBetAmountLbl = new System.Windows.Forms.Label();
             this.potAmountlbl = new System.Windows.Forms.Label();
@@ -171,7 +172,6 @@ namespace Poker
             this.firstPmoneyLbl = new System.Windows.Forms.Label();
             this.firstPpicBox2 = new System.Windows.Forms.PictureBox();
             this.firstPpicBox1 = new System.Windows.Forms.PictureBox();
-            this.testBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.secondFlopPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdFlopPB)).BeginInit();
@@ -249,6 +249,16 @@ namespace Poker
             this.panel1.Size = new System.Drawing.Size(958, 549);
             this.panel1.TabIndex = 0;
             // 
+            // testBtn
+            // 
+            this.testBtn.Location = new System.Drawing.Point(853, 506);
+            this.testBtn.Name = "testBtn";
+            this.testBtn.Size = new System.Drawing.Size(75, 23);
+            this.testBtn.TabIndex = 32;
+            this.testBtn.Text = "Test!";
+            this.testBtn.UseVisualStyleBackColor = true;
+            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
+            // 
             // winnersNamesLbl
             // 
             this.winnersNamesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -262,22 +272,24 @@ namespace Poker
             // 
             // currentBetAmountLbl
             // 
+            this.currentBetAmountLbl.AutoSize = true;
             this.currentBetAmountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentBetAmountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.currentBetAmountLbl.Location = new System.Drawing.Point(255, 300);
             this.currentBetAmountLbl.Name = "currentBetAmountLbl";
-            this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 27);
+            this.currentBetAmountLbl.Size = new System.Drawing.Size(159, 20);
             this.currentBetAmountLbl.TabIndex = 1;
             this.currentBetAmountLbl.Text = "Current Bet Amount: ";
             this.currentBetAmountLbl.Visible = false;
             // 
             // potAmountlbl
             // 
+            this.potAmountlbl.AutoSize = true;
             this.potAmountlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.potAmountlbl.ForeColor = System.Drawing.Color.Blue;
             this.potAmountlbl.Location = new System.Drawing.Point(529, 300);
             this.potAmountlbl.Name = "potAmountlbl";
-            this.potAmountlbl.Size = new System.Drawing.Size(101, 27);
+            this.potAmountlbl.Size = new System.Drawing.Size(101, 20);
             this.potAmountlbl.TabIndex = 12;
             this.potAmountlbl.Text = "Pot Amount: ";
             this.potAmountlbl.Visible = false;
@@ -290,7 +302,7 @@ namespace Poker
             this.winLbl.Location = new System.Drawing.Point(363, 172);
             this.winLbl.MinimumSize = new System.Drawing.Size(0, 30);
             this.winLbl.Name = "winLbl";
-            this.winLbl.Size = new System.Drawing.Size(188, 30);
+            this.winLbl.Size = new System.Drawing.Size(161, 30);
             this.winLbl.TabIndex = 23;
             this.winLbl.Text = "Player One Wins!!";
             this.winLbl.Visible = false;
@@ -1764,16 +1776,6 @@ namespace Poker
             this.firstPpicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.firstPpicBox1.TabIndex = 1;
             this.firstPpicBox1.TabStop = false;
-            // 
-            // testBtn
-            // 
-            this.testBtn.Location = new System.Drawing.Point(853, 506);
-            this.testBtn.Name = "testBtn";
-            this.testBtn.Size = new System.Drawing.Size(75, 23);
-            this.testBtn.TabIndex = 32;
-            this.testBtn.Text = "Test!";
-            this.testBtn.UseVisualStyleBackColor = true;
-            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
             // 
             // mainForm
             // 
