@@ -22,6 +22,8 @@ namespace Poker
 
         public void createDeck()
         {
+            deck.Clear();
+            countFlop = 0;
             for (int i = 1; i < 53; i++)
             {
                 deck.Add(i);
@@ -104,7 +106,7 @@ namespace Poker
             return listOfPlayers;
         }
 
-        private int[] setPlayerCards()
+        public int[] setPlayerCards()
         {
             int[] hand = new int[7];
             int randomNumber1;
