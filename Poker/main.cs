@@ -31,6 +31,7 @@ namespace Poker
         int potAmount = 0;
         int currentBetAmount = 10;
         int currentRaiser = 0;
+        Boolean played = false;
 
         List<int> strenghtList = new List<int> { }; Player player1 = new Player(); Player player2 = new Player(); Player player3 = new Player(); Player player4 = new Player();
         Player player5 = new Player(); Player player6 = new Player(); Player player7 = new Player(); Player player8 = new Player();
@@ -54,6 +55,7 @@ namespace Poker
             this.flipBtn.Location = new Point(flipBtnLocation, 220); ;
         }
 
+        // Event listeners to handle the player addition checkboxes
         public void when1Checked(Object sender, EventArgs e)
         {
            firstPlayerPanel.Visible = (firstPlayerPanel.Visible) ? false : true;
@@ -103,35 +105,357 @@ namespace Poker
 
         }
 
-        public void betTurnAssistant(int playerNumber, int playerCash, int playerBetAmt, Boolean checkIsOn){
-            String currentBetText = "Current Bet: $" + playerBetAmt + ".00";
-            if (playerBetAmt < currentBetAmount)
+        // start game button
+        private void startBtn_Click(object sender, EventArgs e)
+        {
+            if (countNumberOfPlayers < 2)
             {
-                MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please select at least two players.", "Select Players", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (checkIsOn)
-                {
-                    playerBetAmt = 0;
-                    currentBetText = "Current Bet: Check";
+                if(!played){
+                    playersList = setTable.setTable(firstPlayerPanel.Visible, secondPlayerPanel.Visible, thirdPlayerPanel.Visible,
+                fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible,
+                seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);
                 }
-                if (playerBetAmt > currentBetAmount)
-                {
-                    currentRaiser = playerNumber + 1;
-                }
-                potAmount = potAmount + playerBetAmt;
-                potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
 
-                setTable.listOfPlayers[playerNumber].cash = playerCash - playerBetAmt;
+                setPlayers();
+                disablePlayersBoxes();
 
-                currentBetAmountLbl.Text = "Current Bet Amount: $" + playerBetAmt + ".00";
-
-                currentBetAmount = playerBetAmt;
-
-                checkIfLastPlayer();
-                turnOffPlayers();
+                currentBettingPlayer = setTable.listOfPlayers[0].id;
                 betTurn();
+                potAmountlbl.Visible = true;
+                potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+                currentBetAmountLbl.Text = "Current Bet Amount: " + "$" + currentBetAmount + ".00";
+                played = true;
+            }
+        }
+
+        // after table is set the initial cards are set up based on the list of players generated
+        public void setPlayers()
+        {
+            if(!played){
+                listOfPlayers = setTable.dealCards();
+            } else{
+                for (int i = 0; i < listOfPlayers.Count; i++)
+                {
+                    listOfPlayers[i].hand = setTable.setPlayerCards();
+                }
+            }
+
+            for (int i = 0; i < listOfPlayers.Count; i++)
+            {
+                if (listOfPlayers[i].id == 1)
+                {
+                    this.name1Lbl.Text = listOfPlayers[i].name;
+                    this.firstPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.firstPpicBox1.BackColor = Color.White;
+                    this.firstPpicBox2.BackColor = Color.White;
+                    this.firstPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.firstPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+                if (listOfPlayers[i].id == 2)
+                {
+                    this.name2Lbl.Text = listOfPlayers[i].name;
+                    this.secondPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.secondPpicBox1.BackColor = Color.White;
+                    this.secondPpicBox2.BackColor = Color.White;
+                    this.secondPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.secondPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+                if (listOfPlayers[i].id == 3)
+                {
+                    this.name3Lbl.Text = listOfPlayers[i].name;
+                    this.thirdPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.thirdPpicBox1.BackColor = Color.White;
+                    this.thirdPpicBox2.BackColor = Color.White;
+                    this.thirdPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.thirdPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+                if (listOfPlayers[i].id == 4)
+                {
+                    this.name4Lbl.Text = listOfPlayers[i].name;
+                    this.fourthPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.fourthPpicBox1.BackColor = Color.White;
+                    this.fourthPpicBox2.BackColor = Color.White;
+                    this.fourthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.fourthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+                if (listOfPlayers[i].id == 5)
+                {
+                    this.name5Lbl.Text = listOfPlayers[i].name;
+                    this.fifthPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.fifthPpicBox1.BackColor = Color.White;
+                    this.fifthPpicBox2.BackColor = Color.White;
+                    this.fifthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.fifthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+                if (listOfPlayers[i].id == 6)
+                {
+                    this.name6Lbl.Text = listOfPlayers[i].name;
+                    this.thirdPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.sixthPpicBox1.BackColor = Color.White;
+                    this.sixthPpicBox2.BackColor = Color.White;
+                    this.sixthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.sixthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+                if (listOfPlayers[i].id == 7)
+                {
+                    this.name7Lbl.Text = listOfPlayers[i].name;
+                    this.seventhPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.seventhPpicBox1.BackColor = Color.White;
+                    this.seventhPpicBox2.BackColor = Color.White;
+                    this.seventhPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.seventhPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+                if (listOfPlayers[i].id == 8)
+                {
+                    this.name8Lbl.Text = listOfPlayers[i].name;
+                    this.eighthPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
+                    this.eighthPpicBox1.BackColor = Color.White;
+                    this.eighthPpicBox2.BackColor = Color.White;
+                    this.eighthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
+                    this.eighthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
+                }
+            }
+        }
+
+        public void disablePlayersBoxes()
+        {
+            if (startBtn.Visible)
+            {
+                firstPPlayingLbl.Enabled = false;
+                secondPPlayingLbl.Enabled = false;
+                thirdPPlayingLbl.Enabled = false;
+                fourthPPlayingLbl.Enabled = false;
+                fifthPPlayingLbl.Enabled = false;
+                sixthPPlayingLbl.Enabled = false;
+                seventhPPlayingLbl.Enabled = false;
+                eighthPPlayingLbl.Enabled = false;
+                startBtn.Visible = false;
+            }
+            else
+            {
+                firstPPlayingLbl.Enabled = true;
+                secondPPlayingLbl.Enabled = true;
+                thirdPPlayingLbl.Enabled = true;
+                fourthPPlayingLbl.Enabled = true;
+                fifthPPlayingLbl.Enabled = true;
+                sixthPPlayingLbl.Enabled = true;
+                seventhPPlayingLbl.Enabled = true;
+                eighthPPlayingLbl.Enabled = true;
+                startBtn.Visible = true;
+            }
+        }
+
+        // method to handle each player's turn
+        public void betTurn()
+        {
+            Console.WriteLine("craiser " + currentRaiser);
+            Console.WriteLine("ct " + currentBettingPlayer);
+            Console.WriteLine("ccount " + currentBettingPlayerCount);
+            if (currentRaiser == currentBettingPlayer)
+            {
+                currentBettingPlayer = 0;
+                currentBettingPlayerCount = 0;
+                currentRaiser = 0;
+            }
+
+            if (currentBettingPlayerCount == 0 && currentBettingPlayer == 0 && (currentRaiser == currentBettingPlayer || currentRaiser == 1))
+            {
+                turnOffPlayers();
+                currentBettingPlayer = 0;
+                flipBtn.Visible = true;
+                currentBetAmount = 0;
+                currentBetAmountLbl.Text = "Current Bet: ";
+                if (allCardsShown)
+                {
+                    checkHands();
+                    checkWinner();
+                    flipBtn.Visible = false;
+                }
+                currentRaiser = 0;
+            }
+            else
+            {
+                if (currentRaiser != 0 && currentBettingPlayer == 0)
+                {
+                    if (currentRaiser == 1)
+                    {
+                        currentRaiser = 0;
+                    }
+                    currentBettingPlayer = setTable.listOfPlayers[0].id;
+                    currentBettingPlayerCount = 0;
+                }
+
+                switch (currentBettingPlayer)
+                {
+                    case 1:
+                        this.turnCK1.BackColor = Color.Lime;
+                        this.firstPbetRB.Visible = true;
+                        this.firstPCheckRB.Visible = true;
+                        this.firstPBetBtn.Visible = true;
+                        this.firstPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            firstPCheckRB.Visible = false;
+                            firstPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.firstPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.firstPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                    case 2:
+                        this.turnCK2.BackColor = Color.Lime;
+                        this.secondPbetRB.Visible = true;
+                        this.secondPCheckRB.Visible = true;
+                        this.secondPBetBtn.Visible = true;
+                        this.secondPCheckRB.Checked = true;
+                        if (secondPCheckRB.Checked)
+                        {
+                            secondPAmountTxtB.Text = "10";
+                        }
+                        if (currentBetAmount > 0)
+                        {
+                            secondPCheckRB.Visible = false;
+                            secondPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.secondPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.secondPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                    case 3:
+                        this.turnCK3.BackColor = Color.Lime;
+                        this.thirdPbetRB.Visible = true;
+                        this.thirdPCheckRB.Visible = true;
+                        this.thirdPBetBtn.Visible = true;
+                        this.thirdPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            thirdPCheckRB.Visible = false;
+                            thirdPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.thirdPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.thirdPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                    case 4:
+                        this.turnCK4.BackColor = Color.Lime;
+                        this.fourthPbetRB.Visible = true;
+                        this.fourthPCheckRB.Visible = true;
+                        this.fourthPBetBtn.Visible = true;
+                        this.fourthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            fourthPCheckRB.Visible = false;
+                            fourthPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.fourthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.fourthPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                    case 5:
+                        this.turnCK5.BackColor = Color.Lime;
+                        this.fifthPbetRB.Visible = true;
+                        this.fifthPCheckRB.Visible = true;
+                        this.fifthPBetBtn.Visible = true;
+                        this.fifthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            fifthPCheckRB.Visible = false;
+                            fifthPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.fifthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.fifthPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                    case 6:
+                        this.turnCK6.BackColor = Color.Lime;
+                        this.sixthPbetRB.Visible = true;
+                        this.sixthPCheckRB.Visible = true;
+                        this.sixthPBetBtn.Visible = true;
+                        this.sixthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            sixthPCheckRB.Visible = false;
+                            sixthPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.sixthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.sixthPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                    case 7:
+                        this.turnCK7.BackColor = Color.Lime;
+                        this.seventhPbetRB.Visible = true;
+                        this.seventhPCheckRB.Visible = true;
+                        this.seventhPBetBtn.Visible = true;
+                        this.seventhPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            seventhPCheckRB.Visible = false;
+                            seventhPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.seventhPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.seventhPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                    case 8:
+                        this.turnCK8.BackColor = Color.Lime;
+                        this.eighthPbetRB.Visible = true;
+                        this.eighthPCheckRB.Visible = true;
+                        this.eighthPBetBtn.Visible = true;
+                        this.eighthPCheckRB.Checked = true;
+                        if (currentBetAmount > 0)
+                        {
+                            eighthPCheckRB.Visible = false;
+                            eighthPbetRB.Checked = true;
+                        }
+                        if (currentBetAmount == 0)
+                        {
+                            this.eighthPAmountTxtB.Text = "10";
+                        }
+                        else
+                        {
+                            this.eighthPAmountTxtB.Text = currentBetAmount.ToString();
+                        }
+                        break;
+                }
             }
         }
 
@@ -270,8 +594,42 @@ namespace Poker
             }
         }
 
+        public void betTurnAssistant(int playerNumber, int playerCash, int playerBetAmt, Boolean checkIsOn)
+        {
+            String currentBetText = "Current Bet: $" + playerBetAmt + ".00";
+            if (playerBetAmt < currentBetAmount)
+            {
+                MessageBox.Show("Bet amount has to match or be higher than current bet.", "Higher!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (checkIsOn)
+                {
+                    playerBetAmt = 0;
+                    currentBetText = "Current Bet: Check";
+                }
+                if (playerBetAmt > currentBetAmount)
+                {
+                    currentRaiser = playerNumber + 1;
+                }
+                potAmount = potAmount + playerBetAmt;
+                potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
+
+                setTable.listOfPlayers[playerNumber].cash = playerCash - playerBetAmt;
+
+                currentBetAmountLbl.Text = "Current Bet Amount: $" + playerBetAmt + ".00";
+
+                currentBetAmount = playerBetAmt;
+
+                checkIfLastPlayer();
+                turnOffPlayers();
+                betTurn();
+            }
+        }
+
         public void checkIfLastPlayer()
         {
+            Console.WriteLine("count " + setTable.listOfPlayers.Count);
             //check to see if the current player is the last player, if yes, reset count
             if (currentBettingPlayerCount < setTable.listOfPlayers.Count - 1)
             {
@@ -319,6 +677,7 @@ namespace Poker
                 if(winnerIndex.Count > 1){
                     int division = 0;
                     division = potAmount / winnerIndex.Count;
+                    Console.WriteLine(division);
                     winLbl.Text = "Multiple Winners with a " + playersWithWinningHands[0].handType;
                     String winners = "(";
                     for (int i = 0; i < playersWithWinningHands.Count; i++)
@@ -525,208 +884,7 @@ namespace Poker
             }
         }
 
-        // method to handle each player's turn
-        public void betTurn()
-        {
-            if (currentRaiser == currentBettingPlayer)
-            {
-                currentBettingPlayer = 0;
-                currentBettingPlayerCount = 0;
-                currentRaiser = 0;
-            }
 
-            if (currentBettingPlayerCount == 0 && currentBettingPlayer == 0 && (currentRaiser == currentBettingPlayer || currentRaiser == 1))
-            {
-                turnOffPlayers();
-                currentBettingPlayer = 0;
-                flipBtn.Visible = true;
-                currentBetAmount = 0;
-                currentBetAmountLbl.Text = "Current Bet: ";
-                if (allCardsShown)
-                {
-                    checkHands();
-                    checkWinner();
-                    flipBtn.Visible = false;
-                }
-                currentRaiser = 0;
-            }
-            else
-            {
-                if (currentRaiser != 0 && currentBettingPlayer == 0)
-                {
-                    if(currentRaiser == 1){
-                        currentRaiser = 0;
-                    }
-                    currentBettingPlayer = setTable.listOfPlayers[0].id;
-                    currentBettingPlayerCount = 0;
-                }
-
-                switch (currentBettingPlayer)
-                {
-                    case 1:
-                        this.turnCK1.BackColor = Color.Lime;
-                        this.firstPbetRB.Visible = true;
-                        this.firstPCheckRB.Visible = true;
-                        this.firstPBetBtn.Visible = true;
-                        this.firstPCheckRB.Checked = true;
-                        if (currentBetAmount > 0)
-                        {
-                            firstPCheckRB.Visible = false;
-                            firstPbetRB.Checked = true;
-                        }
-                        if(currentBetAmount == 0){
-                            this.firstPAmountTxtB.Text = "10";
-                        } else {
-                            this.firstPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                    case 2:
-                        this.turnCK2.BackColor = Color.Lime;
-                        this.secondPbetRB.Visible = true;
-                        this.secondPCheckRB.Visible = true;
-                        this.secondPBetBtn.Visible = true;
-                        this.secondPCheckRB.Checked = true;
-                        if (secondPCheckRB.Checked)
-                        {
-                            secondPAmountTxtB.Text = "10";
-                        }
-                        if (currentBetAmount > 0)
-                        {
-                            secondPCheckRB.Visible = false;
-                            secondPbetRB.Checked = true;
-                        }
-                        if (currentBetAmount == 0)
-                        {
-                            this.secondPAmountTxtB.Text = "10";
-                        }
-                        else
-                        {
-                            this.secondPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                    case 3:
-                        this.turnCK3.BackColor = Color.Lime;
-                        this.thirdPbetRB.Visible = true;
-                        this.thirdPCheckRB.Visible = true;
-                        this.thirdPBetBtn.Visible = true;
-                        this.thirdPCheckRB.Checked = true;
-                        if (currentBetAmount > 0)
-                        {
-                            thirdPCheckRB.Visible = false;
-                            thirdPbetRB.Checked = true;
-                        }
-                        if (currentBetAmount == 0)
-                        {
-                            this.thirdPAmountTxtB.Text = "10";
-                        }
-                        else
-                        {
-                            this.thirdPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                    case 4:
-                        this.turnCK4.BackColor = Color.Lime;
-                        this.fourthPbetRB.Visible = true;
-                        this.fourthPCheckRB.Visible = true;
-                        this.fourthPBetBtn.Visible = true;
-                        this.fourthPCheckRB.Checked = true;
-                        if (currentBetAmount > 0)
-                        {
-                            fourthPCheckRB.Visible = false;
-                            fourthPbetRB.Checked = true;
-                        }
-                        if (currentBetAmount == 0)
-                        {
-                            this.fourthPAmountTxtB.Text = "10";
-                        }
-                        else
-                        {
-                            this.fourthPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                    case 5:
-                        this.turnCK5.BackColor = Color.Lime;
-                        this.fifthPbetRB.Visible = true;
-                        this.fifthPCheckRB.Visible = true;
-                        this.fifthPBetBtn.Visible = true;
-                        this.fifthPCheckRB.Checked = true;
-                        if (currentBetAmount > 0)
-                        {
-                            fifthPCheckRB.Visible = false;
-                            fifthPbetRB.Checked = true;
-                        }
-                        if (currentBetAmount == 0)
-                        {
-                            this.fifthPAmountTxtB.Text = "10";
-                        }
-                        else
-                        {
-                            this.fifthPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                    case 6:
-                        this.turnCK6.BackColor = Color.Lime;
-                        this.sixthPbetRB.Visible = true;
-                        this.sixthPCheckRB.Visible = true;
-                        this.sixthPBetBtn.Visible = true;
-                        this.sixthPCheckRB.Checked = true;
-                        if (currentBetAmount > 0)
-                        {
-                            sixthPCheckRB.Visible = false;
-                            sixthPbetRB.Checked = true;
-                        }
-                        if (currentBetAmount == 0)
-                        {
-                            this.sixthPAmountTxtB.Text = "10";
-                        }
-                        else
-                        {
-                            this.sixthPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                    case 7:
-                        this.turnCK7.BackColor = Color.Lime;
-                        this.seventhPbetRB.Visible = true;
-                        this.seventhPCheckRB.Visible = true;
-                        this.seventhPBetBtn.Visible = true;
-                        this.seventhPCheckRB.Checked = true;
-                        if (currentBetAmount > 0)
-                        {
-                            seventhPCheckRB.Visible = false;
-                            seventhPbetRB.Checked = true;
-                        }
-                        if (currentBetAmount == 0)
-                        {
-                            this.seventhPAmountTxtB.Text = "10";
-                        }
-                        else
-                        {
-                            this.seventhPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                    case 8:
-                        this.turnCK8.BackColor = Color.Lime;
-                        this.eighthPbetRB.Visible = true;
-                        this.eighthPCheckRB.Visible = true;
-                        this.eighthPBetBtn.Visible = true;
-                        this.eighthPCheckRB.Checked = true;
-                        if (currentBetAmount > 0)
-                        {
-                            eighthPCheckRB.Visible = false;
-                            eighthPbetRB.Checked = true;
-                        }
-                        if (currentBetAmount == 0)
-                        {
-                            this.eighthPAmountTxtB.Text = "10";
-                        }
-                        else
-                        {
-                            this.eighthPAmountTxtB.Text = currentBetAmount.ToString();
-                        }
-                        break;
-                }
-            }
-        }
 
         public void firstRB(Object sender, EventArgs e)
         {
@@ -844,139 +1002,7 @@ namespace Poker
         {
 
         }
-
-        private void startBtn_Click(object sender, EventArgs e)
-        {
-            if (countNumberOfPlayers < 2)
-            {
-                MessageBox.Show("Please select at least two players.", "Select Players", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                playersList = setTable.setTable(firstPlayerPanel.Visible, secondPlayerPanel.Visible, thirdPlayerPanel.Visible,
-                fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible,
-                seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);
-                setPlayers();
-
-                disablePlayersBoxes();
-
-                currentBettingPlayer = setTable.listOfPlayers[0].id;
-                betTurn();
-                potAmountlbl.Visible = true;
-                potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
-                currentBetAmountLbl.Text = "Current Bet Amount: " + "$" + currentBetAmount + ".00";
-            }
-        }
-
-        // after table is set the initial cards are set up based on the list of players generated
-        public void setPlayers()
-        {
-            listOfPlayers = setTable.dealCards();
-            for (int i = 0; i < listOfPlayers.Count; i++)
-            {
-                if (listOfPlayers[i].id == 1)
-                {
-                    this.name1Lbl.Text = listOfPlayers[i].name;
-                    this.firstPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.firstPpicBox1.BackColor = Color.White;
-                    this.firstPpicBox2.BackColor = Color.White;
-                    this.firstPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.firstPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-                if (listOfPlayers[i].id == 2)
-                {
-                    this.name2Lbl.Text = listOfPlayers[i].name;
-                    this.secondPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.secondPpicBox1.BackColor = Color.White;
-                    this.secondPpicBox2.BackColor = Color.White;
-                    this.secondPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.secondPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-                if (listOfPlayers[i].id == 3)
-                {
-                    this.name3Lbl.Text = listOfPlayers[i].name;
-                    this.thirdPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.thirdPpicBox1.BackColor = Color.White;
-                    this.thirdPpicBox2.BackColor = Color.White;
-                    this.thirdPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.thirdPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-                if (listOfPlayers[i].id == 4)
-                {
-                    this.name4Lbl.Text = listOfPlayers[i].name;
-                    this.fourthPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.fourthPpicBox1.BackColor = Color.White;
-                    this.fourthPpicBox2.BackColor = Color.White;
-                    this.fourthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.fourthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-                if (listOfPlayers[i].id == 5)
-                {
-                    this.name5Lbl.Text = listOfPlayers[i].name;
-                    this.fifthPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.fifthPpicBox1.BackColor = Color.White;
-                    this.fifthPpicBox2.BackColor = Color.White;
-                    this.fifthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.fifthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-                if (listOfPlayers[i].id == 6)
-                {
-                    this.name6Lbl.Text = listOfPlayers[i].name;
-                    this.thirdPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.sixthPpicBox1.BackColor = Color.White;
-                    this.sixthPpicBox2.BackColor = Color.White;
-                    this.sixthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.sixthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-                if (listOfPlayers[i].id == 7)
-                {
-                    this.name7Lbl.Text = listOfPlayers[i].name;
-                    this.seventhPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.seventhPpicBox1.BackColor = Color.White;
-                    this.seventhPpicBox2.BackColor = Color.White;
-                    this.seventhPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.seventhPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-                if (listOfPlayers[i].id == 8)
-                {
-                    this.name8Lbl.Text = listOfPlayers[i].name;
-                    this.eighthPmoneyLbl.Text = listOfPlayers[i].cash.ToString();
-                    this.eighthPpicBox1.BackColor = Color.White;
-                    this.eighthPpicBox2.BackColor = Color.White;
-                    this.eighthPpicBox1.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[0]) + "_of_" + suit + ".png");
-                    this.eighthPpicBox2.Load("../../images/png/" + correctedNumbers(listOfPlayers[i].hand[1]) + "_of_" + suit + ".png");
-                }
-            }
-        }
-
-        public void disablePlayersBoxes()
-        {
-            if (startBtn.Visible)
-            {
-                firstPPlayingLbl.Enabled = false;
-                secondPPlayingLbl.Enabled = false;
-                thirdPPlayingLbl.Enabled = false;
-                fourthPPlayingLbl.Enabled = false;
-                fifthPPlayingLbl.Enabled = false;
-                sixthPPlayingLbl.Enabled = false;
-                seventhPPlayingLbl.Enabled = false;
-                eighthPPlayingLbl.Enabled = false;
-                startBtn.Visible = false;
-            }
-            else
-            {
-                firstPPlayingLbl.Enabled = true;
-                secondPPlayingLbl.Enabled = true;
-                thirdPPlayingLbl.Enabled = true;
-                fourthPPlayingLbl.Enabled = true;
-                fifthPPlayingLbl.Enabled = true;
-                sixthPPlayingLbl.Enabled = true;
-                seventhPPlayingLbl.Enabled = true;
-                eighthPPlayingLbl.Enabled = true;
-                startBtn.Visible = true;
-            }
-        }
-
+     
         public int[] handStrToInt(String[] strHand){
             int[] intHand = new int[5];
 
@@ -1161,23 +1187,22 @@ namespace Poker
             int[] handNumbersClean = new int[] { 0, 0, 0, 0, 0, 0, 0 };
             handNumbers = handNumbersClean;
 
-            countFlop = 0;
             int[] flopCardsClean = new int[] { 0, 0, 0, 0, 0 };
             flopCards = flopCardsClean;
-            currentBettingPlayer = 0;
-            currentBettingPlayerCount = 0;
+
             potAmount = 0;
             currentBetAmount = 10;
-            currentRaiser = 0;
 
             hand.resetHand();
             cleanLabels();
             disablePlayersBoxes();
             strenghtList.Clear();
+            setTable.createDeck();
 
             countFlop = 0;
             currentBettingPlayer = 0;
             currentBettingPlayerCount = 0;
+            currentRaiser = 0;
 
             winnersNamesLbl.Visible = false;
             flipBtn.Visible = false;
