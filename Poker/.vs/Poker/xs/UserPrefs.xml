@@ -2,10 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.Poker PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="main.cs">
     <Files>
-      <File FileName="main.cs" Line="677" Column="43" />
-      <File FileName="Hand.cs" Line="680" Column="30" />
-      <File FileName="Result.cs" Line="30" Column="32" />
-      <File FileName="Form1.Designer.cs" Line="1938" Column="45" />
+      <File FileName="main.cs" Line="1619" Column="19" />
       <File FileName="SetTable.cs" Line="107" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
