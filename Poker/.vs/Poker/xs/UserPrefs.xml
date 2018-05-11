@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.ItemProperties.Poker PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="main.cs">
     <Files>
-      <File FileName="main.cs" Line="1619" Column="19" />
-      <File FileName="SetTable.cs" Line="107" Column="10" />
+      <File FileName="main.cs" Line="1306" Column="38" />
+      <File FileName="SetTable.cs" Line="110" Column="98" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -16,11 +16,13 @@ namespace Poker
 
         SetTable setTable = new SetTable();
         List<Player> listOfPlayers = new List<Player>();
+        List<Player> copyListOfPlayers = new List<Player>();
         String suit = "";
 
         int[] handNumbers = new int[] { 0, 0, 0, 0, 0, 0, 0 };
 
         List<int> playersList = new List<int>();
+        List<int> copyPlayersList = new List<int>();
         //List<int> deck = new List<int>();
         int countFlop = 0;
         int[] flopCards = new int[] { 0, 0, 0, 0, 0 };
@@ -33,6 +35,7 @@ namespace Poker
         int currentRaiser = 0;
         Boolean played = false;
         Boolean allFolded = false;
+        Boolean nextRound = false;
 
         List<int> strenghtList = new List<int> { }; Player player1 = new Player(); Player player2 = new Player(); Player player3 = new Player(); Player player4 = new Player();
         Player player5 = new Player(); Player player6 = new Player(); Player player7 = new Player(); Player player8 = new Player();
@@ -106,7 +109,6 @@ namespace Poker
 
         }
 
-        // start game button
         private void startBtn_Click(object sender, EventArgs e)
         {
             currentBetAmount = 10;
@@ -119,13 +121,13 @@ namespace Poker
                 if(!played){
                     playersList = setTable.setTable(firstPlayerPanel.Visible, secondPlayerPanel.Visible, thirdPlayerPanel.Visible,
                 fourthPlayerPanel.Visible, fifthPlayerPanel.Visible, sixthPlayerPanel.Visible,
-                seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);
+                seventhPlayerPanel.Visible, eighthPlayerPanel.Visible);   
                 }
 
                 setPlayers();
                 disablePlayersBoxes();
+                currentBettingPlayer = listOfPlayers[0].id;
 
-                currentBettingPlayer = setTable.listOfPlayers[0].id;
                 betTurn();
                 potAmountlbl.Visible = true;
                 currentBetAmountLbl.Visible = true;
@@ -140,8 +142,11 @@ namespace Poker
         public void setPlayers()
         {
             if(!played){
-                listOfPlayers = setTable.dealCards();
+                listOfPlayers = setTable.dealCards(true);
+
             } else{
+                listOfPlayers.Clear();
+                listOfPlayers = setTable.dealCards(false);
                 for (int i = 0; i < listOfPlayers.Count; i++)
                 {
                     listOfPlayers[i].hand = setTable.setPlayerCards();
@@ -377,7 +382,7 @@ namespace Poker
                 }
                 if (playerBetAmt > currentBetAmount)
                 {
-                    currentRaiser = position + 1;
+                    currentRaiser = listOfPlayers[position].id;
                 }
                 potAmount = potAmount + playerBetAmt;
                 potAmountlbl.Text = "Pot Amount: " + "$" + potAmount + ".00";
@@ -404,7 +409,6 @@ namespace Poker
                 currentBettingPlayerCount = 0;
                 currentRaiser = 0;
             }
-
             if (currentBettingPlayerCount == 0 && currentBettingPlayer == 0 && (currentRaiser == currentBettingPlayer || currentRaiser == 1))
             {
                 turnOffPlayers();
@@ -415,7 +419,6 @@ namespace Poker
                 {
                     checkHands();
                     checkWinner();
-                    flipBtn.Visible = false;
                 }
                 currentRaiser = 0;
             }
@@ -427,7 +430,7 @@ namespace Poker
                     {
                         currentRaiser = 0;
                     }
-                    currentBettingPlayer = setTable.listOfPlayers[0].id;
+                    currentBettingPlayer = listOfPlayers[0].id;
                     currentBettingPlayerCount = 0;
                 }
 
@@ -442,7 +445,7 @@ namespace Poker
                         this.fold1.Visible = true;
                         if (currentBetAmount > 0)
                         {
-                            firstPCheckRB.Visible = false;
+                                firstPCheckRB.Visible = false;
                             firstPbetRB.Checked = true;
                         }
                         if (currentBetAmount == 0)
@@ -622,7 +625,7 @@ namespace Poker
         public void checkIfLastPlayer()
         {
             //check to see if the current player is the last player, if yes, reset count
-            if (currentBettingPlayerCount < setTable.listOfPlayers.Count - 1)
+            if (currentBettingPlayerCount < listOfPlayers.Count - 1)
             {
                 currentBettingPlayerCount++;
                 currentBettingPlayer = setTable.listOfPlayers[currentBettingPlayerCount].id;
@@ -642,6 +645,8 @@ namespace Poker
             if(allFolded){
                 winLbl.Text = listOfPlayers[0].name + " wins $" + potAmount + ".00 before showdown.";
                 listOfPlayers[0].cash = listOfPlayers[0].cash + potAmount;
+                this.flipBtn.Text = "Next Round!";
+                this.flipBtn.Visible = true;
             }else {
                 int[] arrayStrenght = strenghtList.ToArray();
                 List<int[]> pairs = new List<int[]> { };
@@ -709,8 +714,6 @@ namespace Poker
                         winLbl.Text = playersWithWinningHands[winnerIndex[0]].player.name + " wins $" + potAmount + ".00 with a " + playersWithWinningHands[0].handType + ".";
                         playersWithWinningHands[winnerIndex[0]].player.cash = playersWithWinningHands[winnerIndex[0]].player.cash + potAmount;
                     }
-
-                    listOfResults[winnerIndex[0]].player.cash = listOfResults[winnerIndex[0]].player.cash + potAmount;
                 }
             }
             int winLblLocation = (this.panel1.Size.Width - this.winLbl.Size.Width) / 2;
@@ -1000,9 +1003,9 @@ namespace Poker
         }
 
         public void foldOperation(int remove, int removeAt){
-            playersList.Remove(remove);
+            //playersList.Remove(remove);
             listOfPlayers.RemoveAt(removeAt);
-            countNumberOfPlayers--;
+            //countNumberOfPlayers--;
             currentBettingPlayerCount--;
         }
 
@@ -1247,31 +1250,25 @@ namespace Poker
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            DialogResult confirmMB = MessageBox.Show("Are you sure you want to reset the game? All the information will be lost.", 
-                                                     "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if(confirmMB == DialogResult.OK){
-                suit = "";
-                int[] handNumbersClean = new int[] { 0, 0, 0, 0, 0, 0, 0 };
-                handNumbers = handNumbersClean;
+            //suit = "";
+            //int[] handNumbersClean = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            //handNumbers = handNumbersClean;
 
-                int[] flopCardsClean = new int[] { 0, 0, 0, 0, 0 };
-                flopCards = flopCardsClean;
-
+            //int[] flopCardsClean = new int[] { 0, 0, 0, 0, 0 };
+            //flopCards = flopCardsClean;
+            if(nextRound){
                 potAmount = 0;
                 currentBetAmount = 0;
+                countFlop = 0;
+                currentBettingPlayer = 0;
+                currentBettingPlayerCount = 0;
+                currentRaiser = 0;
 
                 hand.resetHand();
                 cleanLabels();
                 disablePlayersBoxes();
                 strenghtList.Clear();
                 setTable.createDeck();
-                listOfPlayers.Clear();
-                playersList.Clear();
-                played = false;
-                countFlop = 0;
-                currentBettingPlayer = 0;
-                currentBettingPlayerCount = 0;
-                currentRaiser = 0;
 
                 winnersNamesLbl.Visible = false;
                 flipBtn.Visible = false;
@@ -1279,7 +1276,37 @@ namespace Poker
                 startBtn.Visible = true;
                 winLbl.Visible = false;
                 turnOffPlayers();
+            }else{
+                
+                DialogResult confirmMB = MessageBox.Show("Are you sure you want to reset the game? All the information will be lost.",
+                                                     "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (confirmMB == DialogResult.OK)
+                {
+                    listOfPlayers.Clear();
+                    playersList.Clear();
+                    played = false;
+                    potAmount = 0;
+                    currentBetAmount = 0;
+                    countFlop = 0;
+                    currentBettingPlayer = 0;
+                    currentBettingPlayerCount = 0;
+                    currentRaiser = 0;
+
+                    hand.resetHand();
+                    cleanLabels();
+                    disablePlayersBoxes();
+                    strenghtList.Clear();
+                    setTable.createDeck();
+
+                    winnersNamesLbl.Visible = false;
+                    flipBtn.Visible = false;
+                    allCardsShown = false;
+                    startBtn.Visible = true;
+                    winLbl.Visible = false;
+                    turnOffPlayers();
+                }
             }
+            nextRound = false;
         }
 
         public void cleanLabels()
@@ -1347,11 +1374,18 @@ namespace Poker
 
         private void flipBtn_Click(object sender, EventArgs e)
         {
-            flipCards();
-            currentBettingPlayer = setTable.listOfPlayers[0].id;
-            currentBettingPlayerCount = 0;
-            betTurn();
-            currentBetAmount = 0;
+            if(flipBtn.Text == "Next Round!"){
+                nextRound = true;
+                resetBtn.PerformClick();
+                this.flipBtn.Text = "Deal Flop";
+                this.flipBtn.Visible = false;
+            }else {
+                flipCards();
+                currentBettingPlayer = setTable.listOfPlayers[0].id;
+                currentBettingPlayerCount = 0;
+                betTurn();
+                currentBetAmount = 0;
+            }
         }
 
         public void flipCards()
@@ -1387,11 +1421,11 @@ namespace Poker
                 this.riverPB.Load(("../../images/png/" + correctedNumbers(flopCards[4]) + "_of_" + suit + ".png"));
                 this.riverPB.BackColor = Color.White;
                 this.turnPB.BackColor = Color.White;
-                this.flipBtn.Text = "Deal Flop";
+                this.flipBtn.Text = "Next Round!";
                 this.flipBtn.Visible = false;
                 allCardsShown = true;
-            }
-            else if (countFlop > 2)
+                nextRound = true;
+            } if (countFlop > 2)
             {
                 countFlop = 0;
             }
